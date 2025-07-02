@@ -1,0 +1,130 @@
+<!-- coming-soon-basic.html -->
+<!DOCTYPE html>
+<html lang="en" class="text-white">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming Soon | Amitto Wallpapers</title>
+    <link href="./src/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .animate-fadeInUp {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        .animate-fadeInUp.delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .animate-fadeInUp.delay-400 {
+            animation-delay: 0.4s;
+        }
+
+        .animate-fadeInUp.delay-600 {
+            animation-delay: 0.6s;
+        }
+
+        .animate-fadeInUp.delay-800 {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#101014] to-[#1a1a1a] text-white overflow-hidden px-6">
+
+    <!-- Content -->
+    <main class="text-center max-w-7xl w-full">
+        <!-- Logo & Tagline -->
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-wide mb-4 animate-fadeInUp">AmittoSenpai</h1>
+        <p class="text-xl md:text-2xl mb-6 max-w-5xl mx-auto animate-fadeInUp delay-200">
+            Launching soon! Your favorite high-quality anime wallpapers are almost here.<br>
+            We're working behind the scenes to bring you the best — stay connected!
+        </p>
+
+        <!-- Countdown -->
+        <div id="countdown"
+            class="flex justify-center flex-wrap gap-6 text-lg md:text-xl font-semibold mb-8 animate-fadeInUp delay-400">
+            <p>Launch Date: NA</p>
+        </div>
+
+        <!-- COMING SOON FORM -->
+        <form id="coming-soon-form" class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <input name="email" type="email" required placeholder="Enter your email"
+                class="px-4 py-3 rounded-full bg-white text-black focus:outline-none w-full sm:w-auto">
+            <button type="submit"
+                class="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-full font-semibold transition-colors">
+                Notify Me
+            </button>
+        </form>
+
+        <!-- MODAL -->
+        <div id="coming-soon-modal"
+            class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-70 z-50">
+            <div class="bg-white text-black rounded-lg p-8 max-w-sm w-full text-center">
+                <h2 class="text-2xl font-bold mb-4">Thank You!</h2>
+                <p class="mb-6">You've been added to our early access list. Stay tuned!</p>
+                <button id="close-modal"
+                    class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full font-semibold transition-colors">Close</button>
+            </div>
+        </div>
+        <!-- CTA: Call to Action Text -->
+        <p class="text-sm text-gray-400 mb-8 animate-fadeInUp delay-800">Be the first to know when we launch!</p>
+
+        <!-- Social Icons -->
+        <div class="flex justify-center gap-6 text-2xl animate-fadeInUp delay-800">
+            <a href="#" class="hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-red-500 transition"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="hover:text-indigo-500 transition"><i class="fab fa-discord"></i></a>
+        </div>
+    </main>
+    <script>
+        const form = document.getElementById('coming-soon-form');
+        const modal = document.getElementById('coming-soon-modal');
+        const closeModal = document.getElementById('close-modal');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+
+            // Replace with your actual Formspree endpoint:
+            await fetch('https://formspree.io/f/xgvyddee', {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            // Show modal
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+
+            // Reset form
+            form.reset();
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en" id="home" class="scroll-smooth overflow-x-hidden">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AmittoWallpapers | Free Anime HD Wallpapers</title>
+  <meta name="description"
+    content="AmittoWallpapers is your ultimate source for high-quality anime wallpapers. Download free HD wallpapers for Naruto, Bleach, One Piece, and more. Fresh, curated anime backgrounds for desktop and mobile." />
+  <link href="./src/output.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Custom styles for the Inter font */
+    body {
+      font-family: "Inter", sans-serif;
+    }
+
+    .brand-logo {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Custom animation for the hero button */
+    @keyframes bounce-pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+      }
+
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
+      }
+    }
+
+    .animate-bounce-pulse {
+      animation: bounce-pulse 2s infinite;
+    }
+
+    #collapseMenu.show {
+      display: block;
+    }
+
+    #collapseMenu.show {
+      display: block;
+    }
+
+    #menuOverlay.show {
+      display: block;
+    }
+
+    .wallpaper-card img {
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .wallpaper-card img:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+  </style>
+</head>
+
+<body class="bg-[#0d0d0d] text-white">
+  <!-- ✅ HTML HEADER -->
+  <header class="border-b border-gray-300 bg-black min-h-[60px] px-4 py-6 tracking-wide relative z-50">
+    <div class="flex flex-wrap items-center max-lg:gap-y-6 max-sm:gap-x-4">
+      <!-- Brand -->
+      <a href="amittowallpapers.netlify.app" class="lg:flex text-2xl font-bold flex-wrap font-sans">
+        Amitto<span class="text-red-400">Wallpapers</span>
+      </a>
+
+      <!-- DESKTOP MENU -->
+      <div id="collapseMenu"
+        class="max-lg:hidden lg:flex lg:items-center lg:gap-y-8 mx-auto max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:w-2/3 max-lg:min-w-[300px] max-lg:h-full max-lg:bg-[#101014] max-lg:shadow-md max-lg:overflow-auto max-lg:px-10 max-lg:py-6 z-50">
+        <!-- Mobile close button -->
+        <button id="toggleClose"
+          class="lg:hidden fixed top-4 right-4 z-[100] rounded-full bg-white w-9 h-9 flex items-center justify-center border border-gray-200 cursor-pointer">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <ul class="flex flex-col space-y-8 lg:space-y-0 text-center lg:text-left lg:flex-row space-x-4 w-full">
+          <li class="mb-10 hidden max-lg:block">
+            <a href="javascript:void(0)" class="text-2xl font-bold flex-wrap">
+              Amitto<span class="text-red-400">Wallpapers</span>
+            </a>
+          </li>
+          <li><a href="#home" class="block hover:text-red-400 text-[18px] font-medium">Home</a></li>
+          <li><a href="#latest" class="block hover:text-red-400 text-[18px] font-medium">Latest</a></li>
+          <li><a href="#categories" class="block hover:text-red-400 text-[18px] font-medium">Categories</a></li>
+          <li><a href="#about" class="block hover:text-red-400 text-[18px] font-medium">About</a></li>
+          <li><a href="#community" class="block hover:text-red-400 text-[18px] font-medium">Community</a></li>
+          <li><a href="#contact" class="block hover:text-red-400 text-[18px] font-medium">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Overlay (for mobile) -->
+      <div id="menuOverlay" class="hidden fixed inset-0 bg-black/40 z-40"></div>
+
+      <!-- Social icons (desktop only) -->
+      <div class="hidden lg:flex items-center ml-6 text-2xl space-x-6 text-white">
+        <!-- Add your social icons here -->
+        <a href="comingsoon.html" class="text-red-400" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="comingsoon.html" class="text-purple-600" target="_blank"><i class="fa-brands fa-discord"></i></a>
+        <a href="comingsoon.html" class="text-red-500" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        <a href="comingsoon.html" class="text-blue-500" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+
+      <!-- Toggle button (hamburger) -->
+      <button id="toggleOpen" class="lg:hidden cursor-pointer ml-auto">
+        <svg class="w-7 h-7" fill="white" viewBox="0 0 20 20">
+          <path fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Search bar -->
+    <div
+      class="bg-white border focus-within:border-slate-900 flex items-center px-4 rounded-full h-10 lg:w-2/4 mt-3 mx-auto transition-all">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" class="w-4 h-4 mr-3">
+        <path
+          d="M190.707 180.101l-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 005.303 2.197 7.498 7.498 0 005.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z" />
+      </svg>
+      <input type="search" id="searchInput" placeholder="Search..." autocomplete="off"
+        class="w-full outline-none bg-white text-black text-[15px]" />
+    </div>
+  </header>
+  <!-- Grid container -->
+  <div id="wallpaperGrid" class="columns-1 w-[95%] mx-auto md:columns-3 gap-6 mb-2"></div>
+  <section id="hero-section" class="relative bg-[#0f0f1b] text-white py-16 px-6 md:px-12 overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute hero-bg inset-0 bg-cover bg-center">
+    </div>
+    <!-- Overlay (optional for extra darkening) -->
+    <div class="absolute inset-0"></div>
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto flex justify-around flex-col md:flex-row items-center gap-10">
+      <!-- Text Content -->
+      <div class="md:w-1/2 text-center md:text-left">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
+          Discover Stunning <span class="text-blue-500">Anime Wallpapers</span>
+        </h1>
+        <p class="text-gray-300 font-bold text-lg lg:text-xl mb-4">
+          Dive into a world of high-quality anime backgrounds - from iconic classics to the latest seasonal
+          gems.
+        </p>
+        <p class="text-gray-400 font-bold lg:text-lg text-sm mb-6">
+          Whether you're into action-packed scenes, peaceful landscapes, or your favorite waifus and husbandos
+          —
+          <span class="text-white font-semibold">AmittoSenpai</span> has something for every screen. Updated
+          daily with handpicked wallpapers.
+        </p>
+        <div class="flex justify-center md:justify-start gap-4">
+          <a href="#categories"
+            class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold transition">
+            Explore Now
+          </a>
+          <a href="#community"
+            class="px-6 py-3 border border-gray-300 hover:bg-white hover:text-black duration-200 text-white rounded-lg text-sm font-semibold transition">
+            Join Community
+          </a>
+        </div>
+      </div>
+      <!-- Hero Image -->
+      <div class="relative">
+        <img src="assets/images/hero-images/unnamed-removebg-preview.png" alt=""
+          class="w-full max-w-md mx-auto rounded-2xl shadow-lg">
+      </div>
+    </div>
+  </section>
+  <section id="latest" class="bg-[#101014] text-white py-16 px-6 md:px-12 lg:px-24">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+        <i class="fa-solid fa-clock mr-2"></i>Latest Wallpapers
+      </h2>
+      <!-- Masonry Grid -->
+      <div id="wallpaperGrid" class="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
+        <!-- === Row 1 === -->
+        <!-- Desktop -->
+        <div class="wallpaper-card break-inside-avoid overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg">
+          <!-- Your card content -->
+          <a href="assets/images/wallpapers/naruto/desktop/naruto/1.jpg" class="relative">
+            <img src="assets/images/wallpapers/naruto/desktop/naruto/1.jpg" alt="Desktop 1"
+              class="w-full object-cover" />
+            <span class="absolute top-3 left-3 bg-red-600 text-white px-2 py-1 text-xs rounded-full">Desktop</span>
+          </a>
+          <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
+            <div class="flex gap-2">
+              <a href="assets/images/wallpapers/naruto/desktop/naruto/1.jpg" download
+                class="bg-blue-600 px-3 py-1 rounded"><i class="fa-solid fa-download mr-1 text-white"></i>Download</a>
+              <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white">
+                <i class="likeIcon far fa-thumbs-up mr-1"></i><span class="likeCount">40,599</span>
+              </button>
+            </div>
+            <div class="text-xs text-gray-400">
+              <i class="fa-solid fa-eye ml-1 mr-1"></i>177,600
+            </div>
+          </div>
+          <div class="px-4 py-4 flex flex-wrap gap-2 text-sm">
+            <span class="font-bold"><i class="fa-solid fa-tags mr-1"></i>Tags:</span>
+            <span class="bg-gray-800 px-3 py-1 rounded-full">Naruto</span>
+            <span class="bg-gray-800 px-3 py-1 rounded-full">Anime</span>
+          </div>
+        </div>
+
+        <!-- Mobile -->
+        <div class="wallpaper-card break-inside-avoid overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg">
+          <a href="assets/images/wallpapers/naruto/mobile/itachi/2.jpg" class="relative">
+            <img src="assets/images/wallpapers/naruto/mobile/itachi/2.jpg" alt="Mobile 1"
+              class="w-auto mx-auto h-[300px] md:h-[500px] object-fill" />
+            <span class="absolute top-3 left-3 bg-red-600 text-white px-2 py-1 text-xs rounded-full">Mobile</span>
+          </a>
+          <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
+            <div class="flex gap-2">
+              <a href="assets/images/wallpapers/naruto/mobile/itachi/2.jpg" download
+                class="bg-blue-600 px-3 py-1 rounded"><i class="fa-solid fa-download mr-1 text-white"></i>Download</a>
+              <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white">
+                <i class="likeIcon far fa-thumbs-up mr-1"></i><span class="likeCount">40,599</span>
+              </button>
+            </div>
+            <div class="text-xs text-gray-400">
+              <i class="fa-solid fa-eye ml-1 mr-1"></i>177,600
+            </div>
+          </div>
+          <div class="px-4 py-4 flex flex-wrap gap-2 text-sm">
+            <span class="font-bold"><i class="fa-solid fa-tags mr-1"></i>Tags:</span>
+            <span class="bg-gray-800 px-3 py-1 rounded-full">Naruto</span>
+            <span class="bg-gray-800 px-3 py-1 rounded-full">Anime</span>
+          </div>
+        </div>
+        <!-- === Row 2 === -->
+        <div class="wallpaper-card break-inside-avoid overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg">
+          <a href="assets/images/wallpapers/naruto/mobile/akatsuki/1.jpg" class="relative">
+            <img src="assets/images/wallpapers/naruto/mobile/akatsuki/1.jpg" alt="Mobile 2"
+              class="w-auto mx-auto h-[300px] md:h-[500px] object-fill" />
+            <span class="absolute top-3 left-3 bg-red-600 text-white px-2 py-1 text-xs rounded-full">Mobile</span>
+          </a>
+          <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
+            <div class="flex gap-2">
+              <a href="assets/images/wallpapers/naruto/mobile/akatsuki/1.jpg" download
+                class="bg-blue-600 px-3 py-1 rounded"><i class="fa-solid fa-download mr-1 text-white"></i>Download</a>
+              <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white">
+                <i class="likeIcon far fa-thumbs-up mr-1"></i><span class="likeCount">40,599</span>
+              </button>
+            </div>
+            <div class="text-xs text-gray-400">
+              <i class="fa-solid fa-eye ml-1 mr-1"></i>177,600
+            </div>
+          </div>
+          <div class="px-4 py-4 flex flex-wrap gap-2 text-sm">
+            <span class="font-bold"><i class="fa-solid fa-tags mr-1"></i>Tags:</span>
+            <span class="bg-gray-800 px-3 py-1 rounded-full">Naruto</span>
+            <span class="bg-gray-800 px-3 py-1 rounded-full">Anime</span>
+          </div>
+        </div>
+
+        <div class="wallpaper-card break-inside-avoid overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg">
+          <a href="assets/images/wallpapers/bleach/desktop/ichigo/7.png" class="relative">
+            <img src="assets/images/wallpapers/bleach/desktop/ichigo/7.png" alt="Desktop 3"
+              class="w-full object-cover" />
+            <span class="absolute top-3 left-3 bg-red-600 text-white px-2 py-1 text-xs rounded-full">Desktop</span>
+          </a>
+          <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
+            <div class="flex gap-2">
+              <a href="assets/images/wallpapers/bleach/desktop/ichigo/7.png" download
+                class="bg-blue-600 px-3 py-1 rounded"><i class="fa-solid fa-download mr-1 text-white"></i>Download</a>
+              <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white">
+                <i class="likeIcon far fa-thumbs-up mr-1"></i><span class="likeCount">40,599</span>
+              </button>
+            </div>
+            <div class="text-xs text-gray-400">
+              <i class="fa-solid fa-eye ml-1 mr-1"></i>177,600
+            </div>
+          </div>
+          <div class="px-4 py-4 flex flex-wrap gap-2 text-sm">
+            <span class="font-bold"><i class="fa-solid fa-tags mr-1"></i>Tags:</span>
+            <span class="bg-gray-800 px-3 py-1 rounded-full">Naruto</span>
+            <span class="bg-gray-800 px-3 py-1 rounded-full">Anime</span>
+          </div>
+        </div>
+        <div class="wallpaper-card break-inside-avoid overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg">
+          <a href="assets/images/wallpapers/naruto/desktop/kakashi/4.jpg" class="relative">
+            <img src="assets/images/wallpapers/naruto/desktop/kakashi/4.jpg" alt="Desktop 3"
+              class="w-full object-cover" />
+            <span class="absolute top-3 left-3 bg-red-600 text-white px-2 py-1 text-xs rounded-full">Desktop</span>
+          </a>
+          <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
+            <div class="flex gap-2">
+              <a href="assets/images/wallpapers/naruto/desktop/kakashi/4.jpg" download
+                class="bg-blue-600 px-3 py-1 rounded"><i class="fa-solid fa-download mr-1 text-white"></i>Download</a>
+              <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white">
+                <i class="likeIcon far fa-thumbs-up mr-1"></i><span class="likeCount">40,599</span>
+              </button>
+            </div>
+            <div class="text-xs text-gray-400">
+              <i class="fa-solid fa-eye ml-1 mr-1"></i>177,600
+            </div>
+          </div>
+          <div class="px-4 py-4 flex flex-wrap gap-2 text-sm">
+            <span class="font-bold"><i class="fa-solid fa-tags mr-1"></i>Tags:</span>
+            <span class="bg-gray-800 px-3 py-1 rounded-full">Naruto</span>
+            <span class="bg-gray-800 px-3 py-1 rounded-full">Anime</span>
+          </div>
+        </div>
+        <div class="wallpaper-card break-inside-avoid overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg">
+          <a href="assets/images/wallpapers/naruto/mobile/naruto/2.jpg" class="relative">
+            <img src="assets/images/wallpapers/naruto/mobile/naruto/2.jpg" alt="Mobile 3"
+              class="w-auto mx-auto h-[300px] md:h-[500px] object-fill" />
+            <span class="absolute top-3 left-3 bg-red-600 text-white px-2 py-1 text-xs rounded-full">Mobile</span>
+          </a>
+          <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
+            <div class="flex gap-2">
+              <a href="assets/images/wallpapers/naruto/mobile/naruto/2.jpg" download
+                class="bg-blue-600 px-3 py-1 rounded"><i class="fa-solid fa-download mr-1 text-white"></i>Download</a>
+              <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white">
+                <i class="likeIcon far fa-thumbs-up mr-1"></i><span class="likeCount">40,599</span>
+              </button>
+            </div>
+            <div class="text-xs text-gray-400">
+              <i class="fa-solid fa-eye ml-1 mr-1"></i>177,600
+            </div>
+          </div>
+          <div class="px-4 py-4 flex flex-wrap gap-2 text-sm">
+            <span class="font-bold"><i class="fa-solid fa-tags mr-1"></i>Tags:</span>
+            <span class="bg-gray-800 px-3 py-1 rounded-full">Naruto</span>
+            <span class="bg-gray-800 px-3 py-1 rounded-full">Anime</span>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section id="categories" class="bg-[#0d0d0d] text-white py-16 px-6 md:px-12 lg:px-24">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+        <i class="fa-solid fa-layer-group mr-2"></i>Explore by Category
+      </h2>
+      <h3 class="text-3xl md:text-3xl font-bold mb-12">
+        <i class="fa-solid fa-layer-group mr-2"></i>Browse by Anime
+      </h3>
+      <div id="categoryGrid" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <!--card 1-->
+        <a href="naruto.html" target="_blank"
+          class="group relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300">
+          <img src="assets/images/anime-logos/naruto-logo.jpg" alt="Naruto"
+            class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300">
+          <div class="absolute bottom-0 left-0 right-0 bg-black opacity-80 p-4 text-center">
+            <h3 class="text-lg font-semibold">Naruto</h3>
+          </div>
+        </a>
+        <a href="one-piece.html" target="_blank"
+          class="group relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300">
+          <img src="assets/images/anime-logos/one-piece-logo.jpg" alt="One Piece"
+            class="w-full h-48 object-fill opacity-80 group-hover:opacity-100 transition duration-300">
+          <div class="absolute bottom-0 left-0 right-0 bg-black opacity-80 p-4 text-center">
+            <h3 class="text-lg font-semibold">One Piece</h3>
+          </div>
+        </a>
+
+        <a href="comingsoon.html" target="_blank"
+          class="group relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300">
+          <img src="assets/images/anime-logos/dragon-ball-logo.jpg" alt="Jujutsu Kaisen"
+            class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300">
+          <div class="absolute bottom-0 left-0 right-0 bg-black opacity-80 p-4 text-center">
+            <h3 class="text-lg font-semibold">Dragon Ball</h3>
+          </div>
+        </a>
+        <a href="bleach.html" target="_blank"
+          class="group relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300">
+          <img src="assets/images/anime-logos/bleach-logo.png" alt="Bleach"
+            class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300">
+          <div class="absolute bottom-0 left-0 right-0 bg-black opacity-80 p-4 text-center">
+            <h3 class="text-lg font-semibold">Bleach</h3>
+          </div>
+        </a>
+        <!-- Hidden Cards -->
+        <a href="comingsoon.html" target="_blank"
+          class="group hidden more-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300">
+          <img src="assets/images/anime-logos/demon-slayer-logo.jpeg" alt="Demon Slayer"
+            class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300">
+          <div class="absolute bottom-0 left-0 right-0 bg-black opacity-80 p-4 text-center">
+            <h3 class="text-lg font-semibold">Demon Slayer</h3>
+          </div>
+        </a>
+        <a href="comingsoon.html" target="_blank"
+          class="group hidden more-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300">
+          <img src="assets/images/anime-logos/chainsaw-man-logo.png" alt="Chainsaw Man"
+            class="w-full h-48 object-fill opacity-80 group-hover:opacity-100 transition duration-300">
+          <div class="absolute bottom-0 left-0 right-0 bg-black opacity-80 p-4 text-center">
+            <h3 class="text-lg font-semibold">Chainsaw Man</h3>
+          </div>
+        </a>
+
+        <a href="comingsoon.html" target="_blank"
+          class="group hidden more-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300">
+          <img src="assets/images/anime-logos/tokyo-ghoul-logo.jpg" alt="Tokyo Ghoul"
+            class="w-full h-48 object-fill opacity-80 group-hover:opacity-100 transition duration-300">
+          <div class="absolute bottom-0 left-0 right-0 bg-black opacity-80 p-4 text-center">
+            <h3 class="text-lg font-semibold">Tokyo Ghoul</h3>
+          </div>
+        </a>
+
+        <a href="comingsoon.html" target="_blank"
+          class="group hidden more-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300">
+          <img src="assets/images/anime-logos/death-note-logo.jpg" alt="Death Note"
+            class="w-full h-48 object-fill opacity-80 group-hover:opacity-100 transition duration-300">
+          <div class="absolute bottom-0 left-0 right-0 bg-black opacity-80 p-4 text-center">
+            <h3 class="text-lg font-semibold">Death Note</h3>
+          </div>
+        </a>
+      </div>
+      <!-- Buttons -->
+      <div class="mt-12 text-center space-x-4">
+        <button id="showMoreCategories"
+          class="px-6 py-3 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition">
+          Show More
+        </button>
+        <button id="showLessCategories"
+          class="px-6 py-3 cursor-pointer bg-red-600 hover:bg-red-700 text-white rounded-lg font-semibold transition hidden">
+          Show Less
+        </button>
+      </div>
+    </div>
+  </section>
+  <section id="about" class="bg-[#0d0d0d] text-white py-16 px-6 md:px-12 lg:px-24">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        <i class="fa-solid fa-circle-info mr-2 text-blue-500"></i>About Amitto<span class="text-red-400">Wallpaper
+      </h2>
+      <p class="text-gray-300 text-lg leading-relaxed">
+        <span class="font-semibold text-white">AmittoWallpapers</span> is a fan-made anime wallpaper hub where passion
+        meets pixels. We curate a stunning gallery of HD wallpapers from classic to seasonal anime, featuring your
+        favorite characters in breathtaking resolution. Our mission is simple: share anime art that inspires fans and
+        enhances screens—no ads, no clutter, just pure anime love.
+      </p>
+    </div>
+  </section>
+  <section id="community" class="bg-[#101014] text-white py-16 px-6 md:px-12 lg:px-24">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        <i class="fa-solid fa-users mr-2 text-purple-500"></i>Join the Community
+      </h2>
+      <p class="text-gray-300 text-lg">
+        Be a part of the <span class="text-white font-semibold">AmittoSenpai</span> anime fan!
+        Stay updated, share your favorite wallpapers, and connect with other fans on social platforms.
+      </p>
+
+      <!-- Socials -->
+      <div class="flex ">
+        <ul class="flex mt-4 mx-auto text-2xl space-x-4">
+          <!-- Instagram -->
+          <li>
+            <a href="comingsoon.html" target="_blank" title="Instagram"
+              class="bg-white h-10 w-10 flex items-center justify-center rounded-full">
+              <i class="fab fa-instagram text-pink-600"></i>
+            </a>
+          </li>
+          <!-- Facebook -->
+          <li>
+            <a href="comingsoon.html" target="_blank" title="Facebook"
+              class="bg-white h-10 w-10 flex items-center justify-center rounded-full">
+              <i class="fab fa-facebook-f text-blue-600"></i>
+            </a>
+          </li>
+          <!-- YouTube -->
+          <li>
+            <a href="comingsoon.html" target="_blank" title="YouTube"
+              class="bg-white h-10 w-10 flex items-center justify-center rounded-full">
+              <i class="fab fa-youtube text-red-600"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section -->
+  <section id="contact" class="scroll-mt-16 py-16 px-6 md:px-12 lg:px-24 text-white">
+    <div class="max-w-sm mx-auto">
+      <h2 class="text-3xl font-semibold">Let's Talk</h2>
+      <p class="text-[16px] text-white mt-4 mb-4 leading-relaxed">
+        Have some big idea or brand to develop and need help? Then reach out — we'd love to hear about your project
+        and help you make it real.
+      </p>
+
+      <!-- ✅ Contact Form -->
+      <form action="https://formspree.io/f/xgvydqkp" method="POST" id="contactForm" class="space-y-4">
+        <input type="text" name="name" placeholder="Name" required autocomplete="off"
+          class="w-full bg-[#101014] rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-0 focus:border-blue-500" />
+        <input type="email" name="email" placeholder="Email" required autocomplete="off"
+          class="w-full bg-[#101014] rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-0 focus:border-blue-500" />
+        <input type="text" name="subject" placeholder="Subject" autocomplete="off"
+          class="w-full bg-[#101014] rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-0 focus:border-blue-500" />
+        <textarea name="message" rows="5" placeholder="Message" required autocomplete="off"
+          class="w-full resize-none bg-[#101014] rounded-md px-4 border border-gray-300 text-sm pt-2.5 outline-0 focus:border-blue-500"></textarea>
+        <button type="submit"
+          class="text-white bg-blue-500 hover:bg-blue-600 rounded-md text-[15px] font-medium px-4 py-2 w-full cursor-pointer mt-4">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+  <!-- ✅ Thank You Modal Overlay -->
+  <div id="thankYouOverlay" class="fixed inset-0 bg-black/50 hidden z-40"></div>
+
+  <!-- ✅ Thank You Modal Box -->
+  <div id="thankYouModal"
+    class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-md w-full bg-[#101014] text-white p-8 rounded-lg shadow-2xl hidden z-50 text-center">
+    <h2 class="text-2xl font-bold mb-4">Thank You!</h2>
+    <p class="mb-6">We've received your message and will get back to you as soon as possible.
+      You'll hear from us shortly. Thank you for trusting us!</p>
+    <button id="closeThankYou"
+      class="bg-blue-600 cursor-pointer hover:bg-blue-700 px-4 py-2 rounded-md text-white font-semibold">Close</button>
+  </div>
+  <footer class="bg-[#0d0d0d] border-t-2 text-gray-400 py-10 px-6 md:px-12 lg:px-24">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- Site Name -->
+      <div>
+        <h2 class="text-white text-xl font-semibold mb-4">AmittoWallpapers</h2>
+        <p class="text-sm leading-relaxed">
+          Discover the best HD anime wallpapers. Join the community and personalize your screen with your favorite
+          characters.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#hero" class="hover:text-white transition">Home</a></li>
+          <li><a href="#latest" class="hover:text-white transition">Latest Wallpapers</a></li>
+          <li><a href="#categories" class="hover:text-white transition">Categories</a></li>
+          <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Community -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Community</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="comingsoon.html" class="hover:text-white transition" target="_blank">Instagram</a></li>
+          <li><a href="comingsoon.html" class="hover:text-white transition" target="_blank">Facebook</a></li>
+          <li><a href="comingsoon.html" class="hover:text-white transition" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+
+      <!-- Stay Updated -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Stay Updated</h3>
+        <p class="text-sm mb-4">Get updates on the latest wallpapers and trends.</p>
+        <form action="https://formspree.io/f/xwpbyzdw" method="POST" id="subscribeForm" class="flex items-center">
+          <input type="email" name="email" placeholder="Your email" required autocomplete="off"
+            class="w-full py-2 px-3 rounded-l-md bg-[#1a1a1a] text-sm text-white focus:outline-none">
+          <button type="submit"
+            class="bg-blue-600 cursor-pointer hover:bg-blue-700 px-4 py-2 rounded-r-md text-sm text-white">Subscribe</button>
+        </form>
+      </div>
+      <!-- Modal -->
+      <div id="subscribeModal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50">
+        <div class="bg-[#1a1a1a] text-white rounded-lg p-6 max-w-sm text-center shadow-lg">
+          <h2 class="text-2xl font-bold mb-2">Subscribed!</h2>
+          <p class="text-sm mb-4">Thank you for subscribing. You'll receive updates soon!</p>
+          <button id="closeSubscribeModal"
+            class="bg-blue-600 cursor-pointer hover:bg-blue-700 px-4 py-2 rounded text-white">Close</button>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom Footer -->
+    <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500">
+      &copy; 2025 AmittoWallpapers. All rights reserved.
+    </div>
+  </footer>
+  <script type="module" src="assets/index.js"></script>
+  <script type="module" src="assets/wallpaper.js"></script>
+  <script src="assets/latest.js"></script>
+  <script>
+    const form = document.getElementById('contactForm');
+    const thankYouModal = document.getElementById('thankYouModal');
+    const thankYouOverlay = document.getElementById('thankYouOverlay');
+    const closeThankYou = document.getElementById('closeThankYou');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' },
+        });
+
+        if (response.ok) {
+          // ✅ Show modal
+          thankYouModal.classList.remove('hidden');
+          thankYouOverlay.classList.remove('hidden');
+          form.reset();
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      } catch (error) {
+        alert('Something went wrong. Please try again.');
+      }
+    });
+
+    closeThankYou.addEventListener('click', () => {
+      thankYouModal.classList.add('hidden');
+      thankYouOverlay.classList.add('hidden');
+    });
+
+    thankYouOverlay.addEventListener('click', () => {
+      thankYouModal.classList.add('hidden');
+      thankYouOverlay.classList.add('hidden');
+    });
+  </script>
+  <script>
+    const subscribeForm = document.getElementById('subscribeForm');
+    const subscribeModal = document.getElementById('subscribeModal');
+    const closeSubscribeModal = document.getElementById('closeSubscribeModal');
+
+    subscribeForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      try {
+        const response = await fetch(subscribeForm.action, {
+          method: 'POST',
+          body: new FormData(subscribeForm),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          subscribeModal.classList.remove('hidden');
+          subscribeModal.classList.add('flex');
+          subscribeForm.reset();
+        } else {
+          alert('There was a problem submitting the form. Please try again.');
+        }
+      } catch (error) {
+        console.error('Network error:', error);
+        alert('There was a network error. Please try again.');
+      }
+    });
+
+    // ✅ This is the close logic:
+    closeSubscribeModal.addEventListener('click', () => {
+      subscribeModal.classList.add('hidden');
+      subscribeModal.classList.remove('flex');
+    });
+
+  </script>
+
+  <!-- <script>
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+
+    // Disable developer tools and view source
+    document.addEventListener('keydown', function (e) {
+      const key = e.key.toLowerCase();
+
+      // F12
+      if (key === 'f12') {
+        e.preventDefault();
+        return false;
+      }
+
+      // Ctrl/Cmd + Shift + I/J/C
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].includes(key)) {
+        e.preventDefault();
+        return false;
+      }
+
+      // Ctrl/Cmd + U or Ctrl/Cmd + S
+      if ((e.ctrlKey || e.metaKey) && ['u', 's'].includes(key)) {
+        e.preventDefault();
+        return false;
+      }
+    });
+  </script> -->
+</body>
+
+</html>
