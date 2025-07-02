@@ -7,7 +7,7 @@
   <title>AmittoWallpapers | Free Anime HD Wallpapers</title>
   <meta name="description"
     content="AmittoWallpapers is your ultimate source for high-quality anime wallpapers. Download free HD wallpapers for Naruto, Bleach, One Piece, and more. Fresh, curated anime backgrounds for desktop and mobile." />
-  <link href="./src/output.css" rel="stylesheet" />
+  <link href="/src/output.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -52,6 +52,11 @@
       display: block;
     }
 
+    .hero-bg {
+      background-image: url(assets/images/hero-images/hero-bg.jpg);
+      opacity: 12%;
+    }
+
     .wallpaper-card img {
       transition: transform 0.2s ease, filter 0.2s ease;
     }
@@ -68,7 +73,8 @@
   <header class="border-b border-gray-300 bg-black min-h-[60px] px-4 py-6 tracking-wide relative z-50">
     <div class="flex flex-wrap items-center max-lg:gap-y-6 max-sm:gap-x-4">
       <!-- Brand -->
-      <a href="index.html" class="lg:flex text-2xl font-bold flex-wrap font-sans">
+      <a href="index.html" class="flex text-2xl items-center font-bold flex-wrap font-sans">
+        <img src="assets/images/logo/luffy-hat.png" class="w-10 lg:-mt-1" alt="">
         Amitto<span class="text-red-400">Wallpapers</span>
       </a>
 
@@ -83,7 +89,7 @@
 
         <ul class="flex flex-col space-y-8 lg:space-y-0 text-center lg:text-left lg:flex-row space-x-4 w-full">
           <li class="mb-10 hidden max-lg:block">
-            <a href="https://amittowallpapers.netlify.app/" class="text-2xl font-bold flex-wrap">
+            <a href="index.html" class="text-2xl font-bold flex-wrap">
               Amitto<span class="text-red-400">Wallpapers</span>
             </a>
           </li>
@@ -167,8 +173,7 @@
       </div>
       <!-- Hero Image -->
       <div class="relative">
-        <img src="assets/images/hero-images/unnamed-removebg-preview.png" alt=""
-          class="w-full max-w-md mx-auto rounded-2xl shadow-lg">
+        <img src="assets/images/hero-images/heroimg.png" alt="" class="w-full max-w-md mx-auto rounded-2xl shadow-lg">
       </div>
     </div>
   </section>
@@ -571,6 +576,8 @@
     <!-- Bottom Footer -->
     <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500">
       &copy; 2025 AmittoWallpapers. All rights reserved.
+      <br>
+      Made with ❤️ by <a href="https://amitdevstudio.netlify.app/" target="_blank" class="font-semibold text-white">AmitDevStudio</a>.
     </div>
   </footer>
   <script type="module" src="assets/index.js"></script>
@@ -649,10 +656,9 @@
       subscribeModal.classList.add('hidden');
       subscribeModal.classList.remove('flex');
     });
-
   </script>
 
-  <<script>
+  <script>
     // Disable right-click context menu
     document.addEventListener('contextmenu', function (e) {
       e.preventDefault();
@@ -680,7 +686,7 @@
         return false;
       }
     });
-  </script> 
+  </script>
 </body>
 
 </html>
