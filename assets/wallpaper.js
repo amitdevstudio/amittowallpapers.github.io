@@ -32,7 +32,8 @@ export const wallpapers = [
     tags: ["Naruto", "Anime", "Desktop"],
     images: [
       "assets/images/wallpapers/naruto/desktop/naruto/1.jpg",
-      "assets/images/wallpapers/naruto/desktop/naruto/2.jpg"
+      "assets/images/wallpapers/naruto/desktop/naruto/2.jpg",
+      "assets/images/wallpapers/naruto/desktop/naruto/3.jpg",
     ]
   },
   {
@@ -41,7 +42,9 @@ export const wallpapers = [
     tags: ["Naruto", "Anime", "Mobile"],
     images: [
       "assets/images/wallpapers/naruto/mobile/naruto/1.jpg",
-      "assets/images/wallpapers/naruto/mobile/naruto/2.jpg"
+      "assets/images/wallpapers/naruto/mobile/naruto/2.jpg",
+      "assets/images/wallpapers/naruto/mobile/naruto/3.jpg",
+      "assets/images/wallpapers/naruto/mobile/naruto/4.jpg",
     ]
   },
   {
@@ -161,17 +164,17 @@ export const wallpapers = [
     images: [
       "assets/images/wallpapers/one-piece/mobile/luffy/1.jpg",
       "assets/images/wallpapers/one-piece/mobile/luffy/2.jpg",
-      "assets/images/wallpapers/one-piece/mobile/luffy/3.jpg", ,
-      "assets/images/wallpapers/one-piece/mobile/luffy/4.jpg", ,
-      "assets/images/wallpapers/one-piece/mobile/luffy/5.jpg", ,
-      "assets/images/wallpapers/one-piece/mobile/luffy/6.jpg", ,
-      "assets/images/wallpapers/one-piece/mobile/luffy/7.jpg", ,
-      "assets/images/wallpapers/one-piece/mobile/luffy/8.jpg", ,
-      "assets/images/wallpapers/one-piece/mobile/luffy/9.jpg", ,
-      "assets/images/wallpapers/one-piece/mobile/luffy/10.jpg", ,
-      "assets/images/wallpapers/one-piece/mobile/luffy/11.jpg", ,
-      "assets/images/wallpapers/one-piece/mobile/luffy/12.jpg", ,
-      "assets/images/wallpapers/one-piece/mobile/luffy/13.jpg", ,
+      "assets/images/wallpapers/one-piece/mobile/luffy/3.jpg", 
+      "assets/images/wallpapers/one-piece/mobile/luffy/4.jpg",
+      "assets/images/wallpapers/one-piece/mobile/luffy/5.jpg",
+      "assets/images/wallpapers/one-piece/mobile/luffy/6.jpg",
+      "assets/images/wallpapers/one-piece/mobile/luffy/7.jpg",
+      "assets/images/wallpapers/one-piece/mobile/luffy/8.jpg",
+      "assets/images/wallpapers/one-piece/mobile/luffy/9.jpg",
+      "assets/images/wallpapers/one-piece/mobile/luffy/10.jpg",
+      "assets/images/wallpapers/one-piece/mobile/luffy/11.jpg",
+      "assets/images/wallpapers/one-piece/mobile/luffy/12.jpg",
+      "assets/images/wallpapers/one-piece/mobile/luffy/13.jpg",
     ]
   },
     {
@@ -200,6 +203,9 @@ export const wallpapers = [
       "assets/images/wallpapers/one-piece/mobile/zoro/5.jpg", 
       "assets/images/wallpapers/one-piece/mobile/zoro/6.jpg", 
       "assets/images/wallpapers/one-piece/mobile/zoro/7.jpg", 
+      "assets/images/wallpapers/one-piece/mobile/zoro/8.jpg", 
+      "assets/images/wallpapers/one-piece/mobile/zoro/9.jpg", 
+      "assets/images/wallpapers/one-piece/mobile/zoro/10.jpg", 
     ]
   },
   // Add more wallpaper objects here...

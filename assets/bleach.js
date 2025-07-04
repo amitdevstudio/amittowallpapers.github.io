@@ -2,7 +2,7 @@ import { wallpapers } from './wallpaper.js';
 
 const allWallpapers = [];
 
-// ✅ Only include One Piece wallpapers
+// ✅ Only include Bleach wallpapers
 wallpapers.forEach(item => {
   if (item.tags.includes('Bleach')) {
     item.images.forEach(url => {
@@ -16,25 +16,47 @@ wallpapers.forEach(item => {
   }
 });
 
+// ✅ Shuffle them
 shuffle(allWallpapers);
 
 const desktopWallpapers = allWallpapers.filter(w => w.type.toLowerCase() === 'desktop');
 const mobileWallpapers = allWallpapers.filter(w => w.type.toLowerCase() === 'mobile');
 
-renderWallpapers(desktopWallpapers, 'desktop-grid');
-renderWallpapers(mobileWallpapers, 'mobile-grid');
+// ✅ Show More logic
+let desktopIndex = 0;
+let mobileIndex = 0;
+const increment = 4;
 
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+const desktopShowMoreBtn = document.getElementById('desktop-showmore');
+const mobileShowMoreBtn = document.getElementById('mobile-showmore');
+
+renderWallpapers(desktopWallpapers, 'desktop-grid', desktopIndex, increment);
+desktopIndex += increment;
+
+renderWallpapers(mobileWallpapers, 'mobile-grid', mobileIndex, increment);
+mobileIndex += increment;
+
+desktopShowMoreBtn.addEventListener('click', () => {
+  renderWallpapers(desktopWallpapers, 'desktop-grid', desktopIndex, increment);
+  desktopIndex += increment;
+  if (desktopIndex >= desktopWallpapers.length) {
+    desktopShowMoreBtn.style.display = 'none';
   }
-}
+});
 
-function renderWallpapers(wallpapers, containerId) {
+mobileShowMoreBtn.addEventListener('click', () => {
+  renderWallpapers(mobileWallpapers, 'mobile-grid', mobileIndex, increment);
+  mobileIndex += increment;
+  if (mobileIndex >= mobileWallpapers.length) {
+    mobileShowMoreBtn.style.display = 'none';
+  }
+});
+
+function renderWallpapers(wallpapers, containerId, start, limit) {
   const grid = document.getElementById(containerId);
+  const slice = wallpapers.slice(start, start + limit);
 
-  wallpapers.forEach(wallpaper => {
+  slice.forEach(wallpaper => {
     const card = document.createElement('div');
     card.className = "wallpaper-card break-inside-avoid overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg";
 
@@ -44,7 +66,6 @@ function renderWallpapers(wallpapers, containerId) {
     let likes = localStorage.getItem(storageKeyLikes);
     let views = localStorage.getItem(storageKeyViews);
 
-    // ✅ If no likes saved yet, create 20k–40k
     if (!likes) {
       likes = randomRange(20000, 40000);
       localStorage.setItem(storageKeyLikes, likes);
@@ -52,17 +73,15 @@ function renderWallpapers(wallpapers, containerId) {
       likes = parseInt(likes, 10);
     }
 
-    // ✅ If no views saved yet, make sure views > likes
     if (!views) {
-      views = likes + randomRange(10000, 100000); // Always bigger
+      views = likes + randomRange(10000, 100000);
       localStorage.setItem(storageKeyViews, views);
     } else {
       views = parseInt(views, 10);
     }
 
-    // ✅ If views are somehow not greater, fix them
     if (views <= likes) {
-      views = likes + randomRange(10000, 100000);
+      views = likes + randomRange(10000, 50000);
       localStorage.setItem(storageKeyViews, views);
     }
 
@@ -79,7 +98,7 @@ function renderWallpapers(wallpapers, containerId) {
       </a>
       <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
         <div class="flex gap-2">
-          <a href="${wallpaper.url}" download class="bg-blue-600 hover:bg-blue-700 active:bg-blue-600 px-3 py-1 rounded">
+          <a href="${wallpaper.url}" download class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded">
             <i class="fa-solid fa-download mr-1 text-white"></i>Download
           </a>
           <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white">
@@ -93,9 +112,7 @@ function renderWallpapers(wallpapers, containerId) {
       </div>
       <div class="px-4 py-4 flex flex-wrap gap-2 text-sm">
         <span class="font-bold"><i class="fa-solid fa-tags mr-1"></i>Tags:</span>
-        ${wallpaper.tags.map(tag => `
-          <span class="bg-gray-800 px-3 py-1 rounded-full">${tag}</span>
-        `).join('')}
+        ${wallpaper.tags.map(tag => `<span class="bg-gray-800 px-3 py-1 rounded-full">${tag}</span>`).join('')}
       </div>
     `;
 
@@ -116,7 +133,6 @@ function renderWallpapers(wallpapers, containerId) {
         userLiked = false;
       }
 
-      // ✅ After like change, re-check views > likes
       if (views <= likes) {
         views = likes + randomRange(10000, 50000);
         localStorage.setItem(storageKeyViews, views);
@@ -126,10 +142,15 @@ function renderWallpapers(wallpapers, containerId) {
       likeCountSpan.innerText = formatNumber(likes);
       likeIcon.classList.toggle('far', !userLiked);
       likeIcon.classList.toggle('fas', userLiked);
-
-      // Optionally update views on UI too if you display them dynamically
     });
   });
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
 }
 
 function randomRange(min, max) {
