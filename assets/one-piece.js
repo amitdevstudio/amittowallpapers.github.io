@@ -2,25 +2,29 @@ import { wallpapers } from './wallpaper.js';
 
 const allWallpapers = [];
 
-// ✅ Filter only One Piece
+// ✅ Filter One Piece only
 wallpapers.forEach(item => {
   if (item.tags.includes('One Piece')) {
-    item.images.forEach(url => {
+    item.images.forEach(img => {
       allWallpapers.push({
         character: item.character,
         type: item.type.toLowerCase(),
         tags: item.tags,
-        url: url
+        url: img.url,
+        date: img.date
       });
     });
   }
 });
 
-shuffle(allWallpapers);
+// ✅ Sort newest first
+allWallpapers.sort((a, b) => new Date(b.date) - new Date(a.date));
 
+// ✅ Split into desktop/mobile
 const desktopWallpapers = allWallpapers.filter(w => w.type === 'desktop');
 const mobileWallpapers = allWallpapers.filter(w => w.type === 'mobile');
 
+// ✅ Initialize with show more
 initShowMore(desktopWallpapers, 'desktop-grid', 'desktop-show-more');
 initShowMore(mobileWallpapers, 'mobile-grid', 'mobile-show-more');
 
@@ -85,9 +89,9 @@ function createCard(wallpaper) {
       <img 
         src="${wallpaper.url}" 
         alt="${wallpaper.character}" 
-        class="w-auto mx-auto object-fill ${wallpaper.type === 'mobile' ? 'h-120' : 'h-60'} rounded-lg" 
+        class="w-auto mx-auto object-fill ${wallpaper.type === 'mobile' ? 'h-80' : 'h-60'} rounded-lg" 
       />
-      <span class="absolute top-3 left-3 ${wallpaper.type === 'desktop' ? 'bg-red-600' : 'bg-green-600'} text-white px-2 py-1 text-xs rounded-lg">
+      <span class="absolute top-3 left-3 ${wallpaper.type.toLowerCase() === 'desktop' ? 'bg-red-600' : 'bg-green-600'} text-white px-2 py-1 text-xs rounded-lg">
         ${wallpaper.type.charAt(0).toUpperCase() + wallpaper.type.slice(1)}
       </span>
     </a>

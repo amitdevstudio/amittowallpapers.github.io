@@ -2,27 +2,29 @@ import { wallpapers } from './wallpaper.js';
 
 const allWallpapers = [];
 
-// Filter Naruto wallpapers
+// ✅ Filter One Piece only
 wallpapers.forEach(item => {
   if (item.tags.includes('Naruto')) {
-    item.images.forEach(url => {
+    item.images.forEach(img => {
       allWallpapers.push({
         character: item.character,
         type: item.type.toLowerCase(),
         tags: item.tags,
-        url: url
+        url: img.url,
+        date: img.date
       });
     });
   }
 });
 
-shuffle(allWallpapers);
+// ✅ Sort newest first
+allWallpapers.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-// ✅ Split by type
+// ✅ Split into desktop/mobile
 const desktopWallpapers = allWallpapers.filter(w => w.type === 'desktop');
 const mobileWallpapers = allWallpapers.filter(w => w.type === 'mobile');
 
-// ✅ INIT show more logic for both
+// ✅ Initialize with show more
 initShowMore(desktopWallpapers, 'desktop-grid', 'desktop-show-more');
 initShowMore(mobileWallpapers, 'mobile-grid', 'mobile-show-more');
 
@@ -73,36 +75,37 @@ function renderCard(wallpaper, grid) {
   let likes = parseInt(localStorage.getItem(storageKey), 10);
   const views = parseInt(localStorage.getItem(viewsKey), 10);
 
-  card.innerHTML = `
-    <a href="${wallpaper.url}" class="relative">
-      <img 
-        src="${wallpaper.url}" 
-        alt="${wallpaper.character}" 
-        class="w-auto mx-auto object-fill ${wallpaper.type === 'mobile' ? 'h-120' : 'h-60'} rounded-lg" 
-      />
-      <span class="absolute top-3 left-3 ${wallpaper.type === 'desktop' ? 'bg-red-600' : 'bg-green-600'} text-white px-2 py-1 text-xs rounded-lg">
-        ${wallpaper.type.charAt(0).toUpperCase() + wallpaper.type.slice(1)}
-      </span>
-    </a>
-    <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
-      <div class="flex gap-2">
-        <a href="${wallpaper.url}" download class="bg-blue-600 hover:bg-blue-700 active:bg-blue-600 px-3 py-1 rounded">
-          <i class="fa-solid fa-download mr-1 text-white"></i>Download
-        </a>
-        <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white">
-          <i class="likeIcon far fa-thumbs-up mr-1"></i>
-          <span class="likeCount">${formatNumber(likes)}</span>
-        </button>
-      </div>
-      <div class="text-xs text-gray-400">
-        <i class="fa-solid fa-eye ml-1 mr-1"></i>${formatNumber(views)}
-      </div>
+card.innerHTML = `
+  <a href="${wallpaper.url}" class="relative group block overflow-hidden rounded-lg">
+    <img 
+      src="${wallpaper.url}" 
+      alt="${wallpaper.character}" 
+      class="w-auto mx-auto object-fill transition-transform duration-300 ease-in-out ${wallpaper.type === 'mobile' ? 'h-80' : 'h-60'} group-hover:scale-105 group-hover:brightness-110" 
+    />
+    <span class="absolute top-3 left-3 ${wallpaper.type.toLowerCase() === 'desktop' ? 'bg-red-600' : 'bg-green-600'} text-white px-2 py-1 text-xs rounded-lg">
+      ${wallpaper.type.charAt(0).toUpperCase() + wallpaper.type.slice(1)}
+    </span>
+  </a>
+  <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
+    <div class="flex gap-2">
+      <a href="${wallpaper.url}" download class="bg-blue-600 hover:bg-blue-700 active:bg-blue-600 px-3 py-1 rounded">
+        <i class="fa-solid fa-download mr-1 text-white"></i>Download
+      </a>
+      <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white">
+        <i class="likeIcon far fa-thumbs-up mr-1"></i>
+        <span class="likeCount">${formatNumber(likes)}</span>
+      </button>
     </div>
-    <div class="px-4 py-4 flex flex-wrap gap-2 text-sm">
-      <span class="font-bold"><i class="fa-solid fa-tags mr-1"></i>Tags:</span>
-      ${wallpaper.tags.map(tag => `<span class="bg-gray-800 px-3 py-1 rounded-full">${tag}</span>`).join('')}
+    <div class="text-xs text-gray-400">
+      <i class="fa-solid fa-eye ml-1 mr-1"></i>${formatNumber(views)}
     </div>
-  `;
+  </div>
+  <div class="px-4 py-4 flex flex-wrap gap-2 text-sm">
+    <span class="font-bold"><i class="fa-solid fa-tags mr-1"></i>Tags:</span>
+    ${wallpaper.tags.map(tag => `<span class="bg-gray-800 px-3 py-1 rounded-full">${tag}</span>`).join('')}
+  </div>
+`;
+
 
   grid.appendChild(card);
 
