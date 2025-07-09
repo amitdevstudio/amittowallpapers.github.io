@@ -84,7 +84,7 @@ function renderWallpapers(list) {
 
     card.innerHTML = `
   <a href="${wallpaper.url}" class="relative group block overflow-hidden rounded-lg">
-    <img 
+    <img loading="lazy"
       src="${wallpaper.url}" 
       alt="${wallpaper.character}" 
       class="w-auto object-fill mx-auto transition-transform duration-300 ease-in-out ${wallpaper.type.toLowerCase() === 'mobile' ? 'h-80' : 'h-60'} group-hover:scale-105 group-hover:brightness-110" 

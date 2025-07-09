@@ -84,36 +84,39 @@ function createCard(wallpaper) {
     localStorage.setItem(storageKeyViews, views);
   }
 
-  card.innerHTML = `
-    <a href="${wallpaper.url}" class="relative">
-      <img 
-        src="${wallpaper.url}" 
-        alt="${wallpaper.character}" 
-        class="w-auto mx-auto object-fill ${wallpaper.type === 'mobile' ? 'h-80' : 'h-60'} rounded-lg" 
-      />
-      <span class="absolute top-3 left-3 ${wallpaper.type.toLowerCase() === 'desktop' ? 'bg-red-600' : 'bg-green-600'} text-white px-2 py-1 text-xs rounded-lg">
-        ${wallpaper.type.charAt(0).toUpperCase() + wallpaper.type.slice(1)}
-      </span>
-    </a>
-    <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
-      <div class="flex gap-2">
-        <a href="${wallpaper.url}" download class="bg-blue-600 hover:bg-blue-700 active:bg-blue-600 px-3 py-1 rounded">
-          <i class="fa-solid fa-download mr-1 text-white"></i>Download
-        </a>
-        <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white">
-          <i class="likeIcon far fa-thumbs-up mr-1"></i>
-          <span class="likeCount">${formatNumber(likes)}</span>
-        </button>
-      </div>
-      <div class="text-xs text-gray-400">
-        <i class="fa-solid fa-eye ml-1 mr-1"></i>${formatNumber(views)}
-      </div>
+ card.innerHTML = `
+  <a href="${wallpaper.url}" class="relative group block overflow-hidden rounded-lg">
+    <img loading="lazy"
+      src="${wallpaper.url}" 
+      alt="${wallpaper.character}" 
+      class="w-auto object-fill mx-auto transition-transform duration-300 ease-in-out ${wallpaper.type.toLowerCase() === 'mobile' ? 'h-80' : 'h-60'} group-hover:scale-105 group-hover:brightness-110" 
+    />
+    <span class="absolute top-3 left-3 ${wallpaper.type.toLowerCase() === 'desktop' ? 'bg-red-600' : 'bg-green-600'
+      } text-white px-2 py-1 text-xs rounded-lg">
+      ${wallpaper.type.charAt(0).toUpperCase() + wallpaper.type.slice(1)}
+    </span>
+  </a>
+  <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
+    <div class="flex flex-wrap gap-2">
+      <a href="${wallpaper.url}" download class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-white">
+        <i class="fa-solid fa-download mr-1"></i>Download
+      </a>
+      <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white">
+        <i class="likeIcon far fa-thumbs-up mr-1"></i>
+        <span class="likeCount">${formatNumber(likes)}</span>
+      </button>
     </div>
-    <div class="px-4 py-4 flex flex-wrap gap-2 text-sm">
-      <span class="font-bold"><i class="fa-solid fa-tags mr-1"></i>Tags:</span>
-      ${wallpaper.tags.map(tag => `<span class="bg-gray-800 px-3 py-1 rounded-full">${tag}</span>`).join('')}
+    <div class="text-xs text-gray-400">
+      <i class="fa-solid fa-eye ml-1 mr-1"></i>${formatNumber(views)}
     </div>
-  `;
+  </div>
+  <div class="px-4 py-4 flex flex-wrap gap-2 text-sm">
+    <span class="font-bold">
+      <i class="fa-solid fa-tags mr-1"></i>Tags:
+    </span>
+    ${wallpaper.tags.map(tag => `<span class="bg-gray-800 px-3 py-1 rounded-full">${tag}</span>`).join('')}
+  </div>
+`;
 
   const likeBtn = card.querySelector('.likeBtn');
   const likeIcon = card.querySelector('.likeIcon');
