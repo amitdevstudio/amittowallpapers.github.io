@@ -89,7 +89,7 @@ function renderWallpapers(list) {
       alt="${wallpaper.character}" 
       class="w-auto object-fill mx-auto transition-transform duration-300 ease-in-out ${wallpaper.type.toLowerCase() === 'mobile' ? 'h-80' : 'h-60'} group-hover:scale-105 group-hover:brightness-110" 
     />
-    <span class="absolute z-10 top-3 left-3 ${wallpaper.type.toLowerCase() === 'desktop' ? 'bg-red-600' : 'bg-[#00C249]'
+    <span class="absolute z-10 top-3 left-3 ${wallpaper.type.toLowerCase() === 'desktop' ? 'bg-red-600' : 'bg-green-600'
       } text-white px-2 py-1 text-xs rounded-lg">
       ${wallpaper.type.charAt(0).toUpperCase() + wallpaper.type.slice(1)}
     </span>
@@ -99,7 +99,7 @@ function renderWallpapers(list) {
       <a href="${wallpaper.url}" download class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-white">
         <i class="fa-solid fa-download mr-1"></i>Download
       </a>
-      <button class="likeBtn cursor-pointer bg-[#00C249] px-3 py-1 rounded text-white">
+      <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white">
         <i class="likeIcon far fa-thumbs-up mr-1"></i>
         <span class="likeCount">${formatNumber(likes)}</span>
       </button>
