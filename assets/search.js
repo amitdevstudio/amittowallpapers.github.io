@@ -89,8 +89,7 @@ function renderWallpapers(list) {
       alt="${wallpaper.character}" 
       class="w-auto object-fill mx-auto transition-transform duration-300 ease-in-out ${wallpaper.type.toLowerCase() === 'mobile' ? 'h-80' : 'h-60'} group-hover:scale-105 group-hover:brightness-110" 
     />
-    <span class="absolute top-3 left-3 ${wallpaper.type.toLowerCase() === 'desktop' ? 'bg-red-600' : 'bg-[#00C249]'
-      } text-white px-2 py-1 text-xs rounded-lg">
+    <span class="absolute top-3 left-3 ${wallpaper.type.toLowerCase() === 'desktop' ? 'bg-red-600' : 'bg-[#00C249]'} text-white px-2 py-1 text-xs rounded-lg">
       ${wallpaper.type.charAt(0).toUpperCase() + wallpaper.type.slice(1)}
     </span>
   </a>
