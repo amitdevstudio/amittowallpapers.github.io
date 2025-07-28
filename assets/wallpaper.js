@@ -371,6 +371,25 @@ export const wallpapers = [
   // Dragon Ball
   {
     character: "Son Goku",
+    type: "Desktop",
+    tags: ["Dragon Ball", "Anime", "Desktop", "Goku", "Son Goku"],
+    images: [
+      {
+        url: "assets/images/wallpapers/dragon-ball/desktop/goku/1.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/dragon-ball/desktop/goku/2.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/dragon-ball/desktop/goku/3.jpg",
+        date: "2025-07-26"
+      },
+    ]
+  },
+  {
+    character: "Son Goku",
     type: "Mobile",
     tags: ["Dragon Ball", "Anime", "Mobile", "Goku", "Son Goku"],
     images: [
@@ -386,6 +405,18 @@ export const wallpapers = [
         url: "assets/images/wallpapers/dragon-ball/mobile/goku/3.jpg",
         date: "2025-07-26"
       },
+      {
+        url: "assets/images/wallpapers/dragon-ball/mobile/goku/4.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/dragon-ball/mobile/goku/5.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/dragon-ball/mobile/goku/6.jpg",
+        date: "2025-07-26"
+      },
     ]
   },
   {
@@ -395,6 +426,10 @@ export const wallpapers = [
     images: [
       {
         url: "assets/images/wallpapers/dragon-ball/desktop/vegeta/1.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/dragon-ball/desktop/vegeta/2.jpg",
         date: "2025-07-26"
       },
     ]
