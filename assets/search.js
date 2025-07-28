@@ -12,7 +12,11 @@ wallpapers.forEach(item => {
       type: item.type.toLowerCase(),
       tags: item.tags,
       url: img.url,
-      date: img.date
+      date: img.date,
+      // Ensure these properties exist and are handled
+      mobile: img.mobile || '', 
+      tablet: img.tablet || '',
+      desktop: img.desktop || ''
     });
   });
 });
@@ -32,11 +36,15 @@ searchInput.addEventListener('input', () => {
     return;
   }
 
-  const filtered = allWallpapers.filter(wp =>
-    wp.character.toLowerCase().includes(term) ||
-    wp.type.toLowerCase().includes(term) ||
-    wp.tags.some(tag => tag.toLowerCase().includes(term))
-  );
+  const filtered = allWallpapers.filter(wp => {
+    // Ensure wp.character and wp.type are strings before calling toLowerCase()
+    const character = typeof wp.character === 'string' ? wp.character.toLowerCase() : '';
+    const type = typeof wp.type === 'string' ? wp.type.toLowerCase() : '';
+
+    return character.includes(term) ||
+           type.includes(term) ||
+           (Array.isArray(wp.tags) && wp.tags.some(tag => typeof tag === 'string' && tag.toLowerCase().includes(term)));
+  });
 
   renderWallpapers(filtered);
 });
@@ -83,7 +91,7 @@ function renderWallpapers(list) {
     card.className = "wallpaper-card break-inside-avoid overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg mb-6";
 
     card.innerHTML = `
-  <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}&mobile=${encodeURIComponent(wallpaper.mobile)}&tablet=${encodeURIComponent(wallpaper.tablet)}&desktop=${encodeURIComponent(wallpaper.desktop)}" 
+  <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}&mobile=${encodeURIComponent(wallpaper.mobile || '')}&tablet=${encodeURIComponent(wallpaper.tablet || '')}&desktop=${encodeURIComponent(wallpaper.desktop || '')}" 
      target="_blank" class="relative group block overflow-hidden rounded-lg">
     <img loading="lazy"
       src="${wallpaper.url}" 
@@ -96,7 +104,7 @@ function renderWallpapers(list) {
   </a>
   <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
     <div class="flex flex-wrap gap-2">
-      <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}&mobile=${encodeURIComponent(wallpaper.mobile)}&tablet=${encodeURIComponent(wallpaper.tablet)}&desktop=${encodeURIComponent(wallpaper.desktop)}"
+      <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}&mobile=${encodeURIComponent(wallpaper.mobile || '')}&tablet=${encodeURIComponent(wallpaper.tablet || '')}&desktop=${encodeURIComponent(wallpaper.desktop || '')}"
           target="_blank" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-white">
         <i class="fa-solid fa-download mr-1"></i>Download
       </a>
