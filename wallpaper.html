@@ -79,13 +79,13 @@
     </header>
     <div id="wallpaperGrid" class="w-[95%] mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4"></div>
 
-    <section class="max-w-6xl mx-auto bg-[#1a1a1a] rounded-xl mt-8 shadow-lg p-6">
-        <div class="flex flex-col lg:flex-row gap-12 items-start justify-between">
-            <div class="w-full lg:w-1/2">
-                <img id="wallpaperPreview" class="max-h-80 object-contain rounded-lg"
+    <section class="max-w-6xl mx-auto lg:bg-[#1a1a1a] rounded-xl mt-8 shadow-lg p-6">
+        <div class="flex flex-col lg:flex-row gap-12 items-start justify-around">
+            <div class="mx-auto">
+                <img id="wallpaperPreview" class="h-96 object-contain rounded-lg"
                     alt="Wallpaper Preview" />
             </div>
-            <div class="w-full lg:w-1/2 space-y-4">
+            <div class="w-full lg:w-1/2 mx-auto space-y-2">
                 <h1 id="wallpaperTitle" class="text-2xl font-bold">Wallpaper</h1>
                 <a id="previewBtn"
                     class="block w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg text-center font-medium cursor-pointer">
@@ -120,7 +120,7 @@
 
     <section class="max-w-7xl mx-auto w-[90%] mb-4 mt-4">
         <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">You Might Also Like</h2>
-        <div id="relatedWallpapers" class="columns-1 sm:columns-2 lg:columns-4 gap-6 space-y-6">
+        <div id="relatedWallpapers" class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
         </div>
     </section>
 
@@ -247,7 +247,7 @@
             wallpaperTitle.textContent = currentTitle || "Wallpaper";
 
             // Display the user's screen resolution
-            document.getElementById('screenRes').textContent = `${window.screen.width}×${window.screen.height}`;
+            document.getElementById('screenRes').textContent = `${window.screen.width}x${window.screen.height}`;
 
             // Set the original download link (still uses the direct currentImgUrl)
             originalDownload.href = currentImgUrl;
