@@ -213,10 +213,6 @@ export const wallpapers = [
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/desktop/zoro/5.jpg",
-        date: "2025-07-26"
-      },
-      {
         url: "assets/images/wallpapers/one-piece/desktop/zoro/6.jpg",
         date: "2025-07-26"
       },
