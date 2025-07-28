@@ -494,14 +494,6 @@ export const wallpapers = [
         url: "assets/images/wallpapers/naruto/desktop/naruto/2.jpg",
         date: "2025-07-27"
       },
-      {
-        url: "assets/images/wallpapers/naruto/desktop/naruto/3.jpg",
-        date: "2025-07-27"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/desktop/naruto/4.jpg",
-        date: "2025-07-27"
-      },
     ]
   },
   {
