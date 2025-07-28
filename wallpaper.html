@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download Wallpaper - AmittoWallpapers</title>
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="bg-[#0f0f0f] text-white min-h-screen">
+    <header class="border-b border-gray-300 bg-black min-h-[60px] px-4 py-6 tracking-wide relative z-50">
+        <div class="flex flex-wrap items-center max-lg:gap-y-6 max-sm:gap-x-4">
+            <a href="index.html" class="flex text-2xl items-center font-bold flex-wrap font-sans">
+                <img src="assets/images/logo/luffy-hat.png" class="w-10 lg:-mt-1" alt="">
+                Amitto<span class="text-red-400">Wallpapers</span>
+            </a>
+
+            <div id="collapseMenu"
+                class="max-lg:hidden lg:flex lg:items-center lg:gap-y-8 mx-auto max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:w-2/3 max-lg:min-w-[300px] max-lg:h-full max-lg:bg-[#101014] max-lg:shadow-md max-lg:overflow-auto max-lg:px-10 max-lg:py-6 z-50">
+                <button id="toggleClose"
+                    class="lg:hidden fixed top-4 right-4 z-[100] rounded-full text-black bg-white w-9 h-9 flex items-center justify-center border border-gray-200 cursor-pointer">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <ul class="flex flex-col space-y-8 lg:space-y-0 text-center lg:text-left lg:flex-row space-x-4 w-full">
+                    <li class="mb-10 hidden max-lg:block">
+                        <a href="index.html" class="text-2xl font-bold flex-wrap">
+                            Amitto<span class="text-red-400">Wallpapers</span>
+                        </a>
+                    </li>
+                    <li><a href="#home" class="block hover:text-red-400 text-[18px] font-medium">Home</a></li>
+                    <li><a href="https://amittowallpapers.netlify.app/#latest" class="block hover:text-red-400 text-[18px] font-medium">Latest</a></li>
+                    <li><a href="https://amittowallpapers.netlify.app/#categories" class="block hover:text-red-400 text-[18px] font-medium">Categories</a>
+                    </li>
+                    <li><a href="https://amittowallpapers.netlify.app/#about" class="block hover:text-red-400 text-[18px] font-medium">About</a></li>
+                    <li><a href="https://amittowallpapers.netlify.app/#community" class="block hover:text-red-400 text-[18px] font-medium">Community</a></li>
+                    <li><a href="https://amittowallpapers.netlify.app/#contact" class="block hover:text-red-400 text-[18px] font-medium">Contact</a></li>
+                </ul>
+            </div>
+
+            <div id="menuOverlay" class="hidden fixed inset-0 bg-black/40 z-40"></div>
+
+            <div class="hidden lg:flex items-center ml-6 text-2xl space-x-6 text-white">
+                <a href="comingsoon.html" class="text-red-400" target="_blank"><i
+                                class="fa-brands fa-instagram"></i></a>
+                <a href="comingsoon.html" class="text-purple-600" target="_blank"><i
+                                class="fa-brands fa-discord"></i></a>
+                <a href="comingsoon.html" class="text-red-500" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="comingsoon.html" class="text-blue-500" target="_blank"><i
+                                class="fa-brands fa-facebook"></i></a>
+            </div>
+
+            <button id="toggleOpen" class="lg:hidden cursor-pointer ml-auto">
+                <svg class="w-7 h-7" fill="white" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div
+            class="bg-white border focus-within:border-slate-900 flex items-center px-4 rounded-full h-10 lg:w-2/4 mt-3 mx-auto transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" class="w-4 h-4 mr-3">
+                <path
+                    d="M190.707 180.101l-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 005.303 2.197 7.498 7.498 0 005.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z" />
+            </svg>
+            <input type="search" id="searchInput" placeholder="Search..." autocomplete="off"
+                class="w-full outline-none bg-white text-black text-[15px]" />
+        </div>
+    </header>
+    <div id="wallpaperGrid" class="w-[95%] mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4"></div>
+
+    <section class="max-w-6xl mx-auto bg-[#1a1a1a] rounded-xl mt-8 shadow-lg p-6">
+        <div class="flex flex-col lg:flex-row gap-12 items-start justify-between">
+            <div class="w-full lg:w-1/2">
+                <img id="wallpaperPreview" class="w-full max-h-[80vh] object-contain rounded-lg"
+                    alt="Wallpaper Preview" />
+            </div>
+            <div class="w-full lg:w-1/2 space-y-4">
+                <h1 id="wallpaperTitle" class="text-2xl font-bold">Wallpaper</h1>
+                <a id="previewBtn"
+                    class="block w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg text-center font-medium cursor-pointer">
+                    Preview Fullscreen
+                </a>
+                <button id="autoDownloadResize"
+                    class="block w-full bg-blue-600 hover:bg-blue-700 text-white py-3 cursor-pointer rounded-lg text-center font-semibold">
+                    Download for my screen (<span id="screenRes"></span>)
+                </button>
+
+                <a id="originalDownload"
+                    class="block w-full bg-blue-600 hover:bg-blue-700 cursor-pointer text-white py-3 rounded-lg text-center" download>
+                    Download original wallpaper
+                </a>
+
+                <div class="flex gap-4 mt-6 text-white">
+                    <div class="flex items-center gap-2 px-3 py-1 rounded-md bg-[#1a1a1a] border border-[#2a2a2a]">
+                        <i class="fa-solid fa-eye text-blue-400"></i>
+                        <span class="viewCount">0</span>
+                    </div>
+
+                    <div
+                        class="likeBtn flex items-center gap-2 px-3 py-1 cursor-pointer bg-green-600 rounded text-white">
+                        <i class="likeIcon far fa-thumbs-up mr-1"></i>
+                        <span class="likeCount">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto w-[90%] mb-4 mt-12">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">You Might Also Like</h2>
+        <div id="relatedWallpapers" class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+        </div>
+    </section>
+
+    <footer class="bg-[#0d0d0d] border-t-2 border-gray-700 text-gray-400 py-10 px-6 md:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <div>
+                <h2 class="text-white text-xl font-semibold mb-4">AmittoWallpapers</h2>
+                <p class="text-sm leading-relaxed">
+                    Discover the best HD anime wallpapers. Join the community and personalize your screen with your
+                    favorite
+                    characters.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#hero-section" class="hover:text-white transition">Home</a></li>
+                    <li><a href="#latest" class="hover:text-white transition">Latest Wallpapers</a></li>
+                    <li><a href="#categories" class="hover:text-white transition">Categories</a></li>
+                    <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-white font-semibold mb-4">Community</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="javascript:void(0)" class="hover:text-white transition" target="_blank">Instagram</a>
+                    </li>
+                    <li><a href="javascript:void(0)" class="hover:text-white transition" target="_blank">Facebook</a>
+                    </li>
+                    <li><a href="javascript:void(0)" class="hover:text-white transition" target="_blank">Discord</a>
+                    </li>
+                    <li><a href="javascript:void(0)" class="hover:text-white transition" target="_blank">YouTube</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-white font-semibold mb-4">Stay Updated</h3>
+                <p class="text-sm mb-4">Get updates on the latest wallpapers and trends.</p>
+                <form action="https://formspree.io/f/xwpbyzdw" method="POST" id="subscribeForm"
+                    class="flex items-center">
+                    <input type="email" name="email" placeholder="Your email" required autocomplete="off"
+                        class="w-full py-2 px-3 rounded-l-md bg-[#1a1a1a] text-sm text-white focus:outline-none focus:border-blue-500">
+                    <button type="submit"
+                        class="bg-blue-600 cursor-pointer hover:bg-blue-700 px-4 py-2 rounded-r-md text-sm text-white">Subscribe</button>
+                </form>
+            </div>
+            <div id="subscribeModal"
+                class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50">
+                <div class="bg-[#1a1a1a] text-white rounded-lg p-6 max-w-sm text-center shadow-lg">
+                    <h2 class="text-2xl font-bold mb-2">Subscribed!</h2>
+                    <p class="text-sm mb-4">Thank you for subscribing. You'll receive updates soon!</p>
+                    <button id="closeSubscribeModal"
+                        class="bg-blue-600 cursor-pointer hover:bg-blue-700 px-4 py-2 rounded text-white">Close</button>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
+            &copy; 2025 AmittoWallpapers. All rights reserved.
+            <br>
+            Made with ❤️ by <a href="javascript:void(0)" target="_blank"
+                class="font-semibold text-white hover:underline">AmitDevStudio</a>.
+        </div>
+    </footer>
+
+    <script>
+        const toggleOpen = document.getElementById("toggleOpen");
+        const toggleClose = document.getElementById("toggleClose");
+        const collapseMenu = document.getElementById("collapseMenu");
+        const menuOverlay = document.getElementById("menuOverlay");
+
+        function openMenu() {
+            collapseMenu.classList.remove("max-lg:hidden");
+            menuOverlay.classList.remove("hidden");
+            document.body.style.overflow = "hidden"; // lock scroll
+        }
+
+        function closeMenu() {
+            collapseMenu.classList.add("max-lg:hidden");
+            menuOverlay.classList.add("hidden");
+            document.body.style.overflow = ""; // unlock scroll
+        }
+
+        toggleOpen.addEventListener("click", openMenu);
+        toggleClose.addEventListener("click", closeMenu);
+        menuOverlay.addEventListener("click", closeMenu);
+
+        // Close menu when a link is clicked
+        document.querySelectorAll("#collapseMenu a").forEach(link => {
+            link.addEventListener("click", closeMenu);
+        });
+    </script>
+    <script type="module">
+        import { wallpapers } from './assets/wallpaper.js'; // Ensure this path is correct and wallpaper.js exists
+        let likes, views; // Removed userLiked from global scope as it will be local to each card/main wallpaper
+        const wallpaperPreview = document.getElementById('wallpaperPreview');
+        const wallpaperTitle = document.getElementById('wallpaperTitle');
+        const previewBtn = document.getElementById('previewBtn');
+        const autoDownloadResizeBtn = document.getElementById('autoDownloadResize');
+        const originalDownload = document.getElementById('originalDownload');
+        const relatedGrid = document.getElementById('relatedWallpapers');
+
+        // Get query parameters from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const currentImgUrl = urlParams.get('img');
+        const currentTitle = urlParams.get('title');
+
+        // Find the current wallpaper object based on the URL
+        const currentWallpaper = wallpapers.find(wp =>
+            wp.images.some(img => img.url === currentImgUrl)
+        );
+
+        // --- Main Wallpaper Display and Download Logic ---
+        if (currentImgUrl) {
+            wallpaperPreview.src = currentImgUrl;
+            wallpaperPreview.alt = currentTitle || "Wallpaper Preview";
+            wallpaperTitle.textContent = currentTitle || "Wallpaper";
+
+            // Display the user's screen resolution
+            document.getElementById('screenRes').textContent = `${window.screen.width}×${window.screen.height}`;
+
+            // Set the original download link (still uses the direct currentImgUrl)
+            originalDownload.href = currentImgUrl;
+            originalDownload.download = `${currentTitle || 'wallpaper'}-original.webp`;
+
+            // --- AUTO RESIZE AND DOWNLOAD BUTTON LOGIC ---
+            if (autoDownloadResizeBtn) {
+                autoDownloadResizeBtn.addEventListener('click', () => {
+                    const targetWidth = window.screen.width;
+                    const targetHeight = window.screen.height;
+                    const filename = `${currentTitle || 'wallpaper'}-resized-${targetWidth}x${targetHeight}.webp`;
+
+                    resizeAndDownloadImage(currentImgUrl, targetWidth, targetHeight, filename);
+                });
+            }
+
+
+            // Fullscreen Preview functionality
+            previewBtn.addEventListener('click', () => {
+                const img = document.createElement('img');
+                img.src = currentImgUrl; // Uses the full image URL for fullscreen
+                img.alt = currentTitle || "Wallpaper Preview";
+                img.style.cssText = `width: 100vw; height: 100vh; object-fit: contain; background-color: black;`;
+
+                const wrapper = document.createElement('div');
+                wrapper.style.margin = '0';
+                wrapper.style.padding = '0';
+                wrapper.style.backgroundColor = 'black';
+                wrapper.style.height = '100%';
+                wrapper.style.width = '100%';
+                wrapper.style.display = 'flex';
+                wrapper.style.justifyContent = 'center';
+                wrapper.style.alignItems = 'center';
+                wrapper.appendChild(img);
+
+                document.body.appendChild(wrapper);
+
+                // Request fullscreen
+                if (wrapper.requestFullscreen) {
+                    wrapper.requestFullscreen();
+                } else if (wrapper.webkitRequestFullscreen) {
+                    wrapper.webkitRequestFullscreen();
+                } else if (wrapper.msRequestFullscreen) {
+                    wrapper.msRequestFullscreen();
+                }
+
+                // Exit fullscreen when user clicks or presses Escape
+                const exitHandler = () => {
+                    if (document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
+                        document.exitFullscreen?.();
+                        document.webkitExitFullscreen?.();
+                        document.msExitFullscreen?.();
+                    }
+                    wrapper.remove();
+                    document.removeEventListener('keydown', keyListener);
+                    wrapper.removeEventListener('click', exitHandler);
+                };
+
+                const keyListener = (e) => {
+                    if (e.key === 'Escape') {
+                        exitHandler();
+                    }
+                };
+
+                document.addEventListener('keydown', keyListener);
+                wrapper.addEventListener('click', exitHandler);
+            });
+
+        } else {
+            // Handle cases where no image URL is provided in the query string
+            wallpaperPreview.src = 'https://via.placeholder.com/1280x720?text=No+Wallpaper+Selected';
+            wallpaperPreview.alt = 'No Wallpaper Selected';
+            wallpaperTitle.textContent = 'No Wallpaper Selected';
+            // Hide relevant buttons if no wallpaper is selected
+            if (autoDownloadResizeBtn) autoDownloadResizeBtn.style.display = 'none';
+            originalDownload.style.display = 'none';
+            previewBtn.style.display = 'none';
+            relatedGrid.innerHTML = '<p class="text-white">Please select a wallpaper from the gallery.</p>';
+        }
+
+        // --- Core Image Resizing Function ---
+        async function resizeAndDownloadImage(imageUrl, targetWidth, targetHeight, filename) {
+            try {
+                const img = new Image();
+                img.crossOrigin = 'anonymous'; // This is CRUCIAL for CORS if images are from another domain
+                img.src = imageUrl;
+
+                // Create a temporary loading indicator (optional but good for UX)
+                autoDownloadResizeBtn.textContent = 'Resizing...';
+                autoDownloadResizeBtn.disabled = true;
+
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+
+                    // Calculate aspect ratios
+                    const imageAspectRatio = img.width / img.height;
+                    const targetAspectRatio = targetWidth / targetHeight;
+
+                    let sourceX = 0;
+                    let sourceY = 0;
+                    let sourceWidth = img.width;
+                    let sourceHeight = img.height;
+
+                    // Implement "cover" behavior: fill the target dimensions, crop if necessary
+                    if (imageAspectRatio > targetAspectRatio) {
+                        // Image is wider than target, crop width
+                        sourceWidth = img.height * targetAspectRatio;
+                        sourceX = (img.width - sourceWidth) / 2;
+                    } else {
+                        // Image is taller than target, crop height
+                        sourceHeight = img.width / targetAspectRatio;
+                        sourceY = (img.height - sourceHeight) / 2;
+                    }
+
+                    canvas.width = targetWidth;
+                    canvas.height = targetHeight;
+
+                    // Draw the cropped and resized image onto the canvas
+                    ctx.drawImage(img, sourceX, sourceY, sourceWidth, sourceHeight, 0, 0, targetWidth, targetHeight);
+
+                    // Export the canvas content as a Blob
+                    canvas.toBlob((blob) => {
+                        if (blob) {
+                            const url = URL.createObjectURL(blob);
+                            const a = document.createElement('a');
+                            a.href = url;
+                            a.download = filename;
+                            document.body.appendChild(a); // Append to body is good practice
+                            a.click(); // Programmatically click the link
+                            document.body.removeChild(a); // Clean up
+                            URL.revokeObjectURL(url); // Release the object URL
+
+                            // Reset button text
+                            autoDownloadResizeBtn.textContent = `Download for my screen (${targetWidth}×${targetHeight})`;
+                            autoDownloadResizeBtn.disabled = false;
+                        } else {
+                            alert('Failed to generate resized image.');
+                            autoDownloadResizeBtn.textContent = `Download for my screen (${targetWidth}×${targetHeight})`;
+                            autoDownloadResizeBtn.disabled = false;
+                        }
+                    }, 'image/jpg', 0.9); 
+                };
+
+                img.onerror = (e) => {
+                    console.error("Error loading image for resizing:", e);
+                    alert("Could not load wallpaper for resizing. This might be due to a server issue or cross-origin restrictions (CORS).");
+                    autoDownloadResizeBtn.textContent = `Download for my screen (${targetWidth}×${targetHeight})`;
+                    autoDownloadResizeBtn.disabled = false;
+                };
+
+            } catch (error) {
+                console.error("Error in resizeAndDownloadImage:", error);
+                alert("An unexpected error occurred during image resizing.");
+                autoDownloadResizeBtn.textContent = `Download for my screen (${targetWidth}×${targetHeight})`;
+                autoDownloadResizeBtn.disabled = false;
+            }
+        }
+
+        // --- Related Wallpapers Section ---
+        // Fallback if current wallpaper not found from data (should ideally be found if URL is valid)
+        if (!currentWallpaper) {
+            relatedGrid.innerHTML = '<p class="text-white">No related wallpapers found.</p>';
+        } else {
+            // Flatten related wallpapers (same tag at least)
+            const relatedList = [];
+
+            if (currentWallpaper && Array.isArray(currentWallpaper.tags)) {
+                const currentTags = currentWallpaper.tags.map(t => t.toLowerCase().trim());
+
+                wallpapers.forEach(wp => {
+                    if (wp === currentWallpaper || !Array.isArray(wp.tags)) return;
+
+                    const wpTags = wp.tags.map(t => t.toLowerCase().trim());
+                    const hasTagMatch = wpTags.some(tag => currentTags.includes(tag));
+
+                    if (hasTagMatch) {
+                        // Make sure wp.images is valid
+                        if (Array.isArray(wp.images)) {
+                            wp.images.forEach(img => {
+                                relatedList.push({
+                                    character: wp.character,
+                                    type: wp.type, // Keep original casing for display
+                                    tags: wp.tags,
+                                    url: img.url,
+                                    date: img.date,
+                                    mobile: img.mobile,
+                                    tablet: img.tablet,
+                                    desktop: img.desktop
+                                });
+                            });
+                        }
+                    }
+                });
+            }
+
+            // Shuffle the related list before sorting (or instead of sorting by date if you prefer full randomness)
+            shuffleArray(relatedList);
+
+            // Render all related wallpapers
+            renderRelated(relatedList);
+        }
+
+        function renderRelated(list) {
+            relatedGrid.innerHTML = ''; // Clear previous content
+
+            if (list.length === 0) {
+                relatedGrid.innerHTML = '<p class="text-white">No related wallpapers found with similar tags.</p>';
+                return;
+            }
+
+            list.forEach(wallpaper => {
+                const storageKey = `likes_${wallpaper.url}`;
+                const viewsKey = `views_${wallpaper.url}`;
+                const likedStateKey = `liked_${wallpaper.url}`; // New key for liked state
+
+                let likes = parseInt(localStorage.getItem(storageKey), 10);
+                let views = parseInt(localStorage.getItem(viewsKey), 10);
+                // We load userLiked, but don't use it for initial icon state (always 'far')
+                let userLikedPersisted = localStorage.getItem(likedStateKey) === 'true'; 
+
+
+                if (!likes || isNaN(likes)) {
+                    likes = randomRange(20000, 40000);
+                    localStorage.setItem(storageKey, likes);
+                }
+
+                if (!views || isNaN(views)) {
+                    views = randomRange(50000, 200000);
+                    localStorage.setItem(viewsKey, views);
+                }
+
+                // Ensure views are always greater than likes
+                if (views <= likes) {
+                    views = likes + randomRange(10000, 50000);
+                    localStorage.setItem(viewsKey, views);
+                }
+
+                const card = document.createElement('div');
+                card.className = "wallpaper-card break-inside-avoid overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg mb-6";
+
+                card.innerHTML = `
+                    <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}&mobile=${encodeURIComponent(wallpaper.mobile || '')}&tablet=${encodeURIComponent(wallpaper.tablet || '')}&desktop=${encodeURIComponent(wallpaper.desktop || '')}"
+                        target="_blank" class="relative group block overflow-hidden rounded-lg">
+                        <img loading="lazy"
+                            src="${wallpaper.url}"
+                            alt="${wallpaper.character}"
+                            class="w-auto object-fill mx-auto transition-transform duration-300 ease-in-out ${wallpaper.type === 'mobile' ? 'h-80' : 'h-60'} group-hover:scale-105 group-hover:brightness-110"
+                        />
+                        <span class="absolute z-10 top-3 left-3 ${wallpaper.type === 'desktop' ? 'bg-red-600' : 'bg-green-600'} text-white px-2 py-1 text-xs rounded-lg">
+                            ${wallpaper.type.charAt(0).toUpperCase() + wallpaper.type.slice(1)}
+                        </span>
+                    </a>
+                    <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
+                        <div class="flex flex-wrap gap-2">
+                            <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}&mobile=${encodeURIComponent(wallpaper.mobile || '')}&tablet=${encodeURIComponent(wallpaper.tablet || '')}&desktop=${encodeURIComponent(wallpaper.desktop || '')}"
+                                class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-white">
+                                <i class="fa-solid fa-download mr-1"></i>Download
+                            </a>
+                            <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white" data-wallpaper-url="${wallpaper.url}">
+                                <i class="likeIcon far fa-thumbs-up mr-1"></i> <span class="likeCount">${formatNumber(likes)}</span>
+                            </button>
+                        </div>
+                        <div class="text-xs text-gray-400">
+                            <i class="fa-solid fa-eye ml-1 mr-1"></i>${formatNumber(views)}
+                        </div>
+                    </div>
+                    <div class="px-4 py-4 flex flex-wrap gap-2 text-sm">
+                        <span class="font-bold">
+                            <i class="fa-solid fa-tags mr-1"></i>Tags:
+                        </span>
+                        ${wallpaper.tags.map(tag => `<span class="bg-gray-800 px-3 py-1 rounded-full">${tag}</span>`).join('')}
+                    </div>
+                `;
+
+                relatedGrid.appendChild(card);
+
+                // Attach event listener to the like button for this specific card
+                const currentCardLikeBtn = card.querySelector('.likeBtn');
+                const currentCardLikeIcon = currentCardLikeBtn.querySelector('.likeIcon');
+                const currentCardLikeCountSpan = currentCardLikeBtn.querySelector('.likeCount');
+                const currentCardWallpaperUrl = currentCardLikeBtn.dataset.wallpaperUrl; // Get the URL from the data attribute
+
+                currentCardLikeBtn.addEventListener('click', () => {
+                    let currentCardLikes = parseInt(localStorage.getItem(`likes_${currentCardWallpaperUrl}`), 10);
+                    // Check the current VISUAL state of the icon
+                    let isCurrentlyVisualyLiked = currentCardLikeIcon.classList.contains('fas');
+
+                    if (!isCurrentlyVisualyLiked) { // If it's currently showing 'far' (unliked)
+                        currentCardLikes++;
+                        localStorage.setItem(`liked_${currentCardWallpaperUrl}`, 'true'); // Save actual liked state
+                        currentCardLikeIcon.classList.remove('far');
+                        currentCardLikeIcon.classList.add('fas');
+                    } else { // If it's currently showing 'fas' (liked)
+                        currentCardLikes--;
+                        localStorage.setItem(`liked_${currentCardWallpaperUrl}`, 'false'); // Save actual unliked state
+                        currentCardLikeIcon.classList.remove('fas');
+                        currentCardLikeIcon.classList.add('far');
+                    }
+                    localStorage.setItem(storageKey, currentCardLikes); // Save the updated count
+                    currentCardLikeCountSpan.innerText = formatNumber(currentCardLikes);
+                });
+            });
+        }
+
+        // === Main Wallpaper Like & View Counters (for the currently displayed wallpaper) ===
+        // These are distinct from the related wallpapers' counters
+
+        const mainLikeBtn = document.querySelector('.likeBtn'); // Selects the like button in the main section
+        const mainLikeIcon = document.querySelector('.likeIcon');
+        const mainLikeCountSpan = document.querySelector('.likeCount');
+        const mainViewCountSpan = document.querySelector('.viewCount');
+
+        // LocalStorage keys for the main wallpaper
+        const storageLikeKey = `likes_${currentImgUrl}`;
+        const storageViewKey = `views_${currentImgUrl}`;
+        const storageLikedKey = `liked_${currentImgUrl}`; // New: Key for liked state persistence
+
+        // Load existing values or initialize for the main wallpaper
+        likes = parseInt(localStorage.getItem(storageLikeKey), 10);
+        views = parseInt(localStorage.getItem(storageViewKey), 10);
+        // We load userLiked, but don't use it for initial icon state (always 'far')
+        let userLikedPersisted = localStorage.getItem(storageLikedKey) === 'true'; 
+
+        if (isNaN(likes)) {
+            likes = randomRange(20000, 40000);
+            localStorage.setItem(storageLikeKey, likes);
+        }
+        if (isNaN(views)) {
+            views = randomRange(50000, 150000);
+            // Increment view count each time the page is loaded/reloaded
+            views++;
+            localStorage.setItem(storageViewKey, views);
+        } else {
+            // Increment view count on page load
+            views++;
+            localStorage.setItem(storageViewKey, views);
+        }
+
+        if (views <= likes) {
+            views = likes + randomRange(10000, 30000);
+            localStorage.setItem(storageViewKey, views);
+        }
+
+        // Set UI on load for the main wallpaper
+        mainLikeCountSpan.innerText = formatNumber(likes);
+        mainViewCountSpan.innerText = formatNumber(views);
+        // ALWAYS show 'far' (unliked) on page load, regardless of 'userLiked' state in localStorage
+        mainLikeIcon.classList.remove('fas'); // Ensure solid is removed
+        mainLikeIcon.classList.add('far');    // Ensure outline is added
+
+        // Like button click handler for the main wallpaper
+        mainLikeBtn.addEventListener('click', () => {
+            // Check the current VISUAL state of the icon
+            let isCurrentlyVisualyLiked = mainLikeIcon.classList.contains('fas');
+
+            if (!isCurrentlyVisualyLiked) { // If it's currently showing 'far' (unliked)
+                likes++;
+                localStorage.setItem(storageLikedKey, 'true'); // Save actual liked state
+                mainLikeIcon.classList.remove('far');
+                mainLikeIcon.classList.add('fas');
+            } else { // If it's currently showing 'fas' (liked)
+                likes--;
+                localStorage.setItem(storageLikedKey, 'false'); // Save actual unliked state
+                mainLikeIcon.classList.remove('fas');
+                mainLikeIcon.classList.add('far');
+            }
+
+            localStorage.setItem(storageLikeKey, likes); // Save the updated count
+            mainLikeCountSpan.innerText = formatNumber(likes);
+        });
+
+
+        // === Helpers ===
+        function randomRange(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function formatNumber(num) {
+            if (num >= 1_000_000) return (num / 1_000_000).toFixed(1).replace(/\.0$/, '') + 'M';
+            if (num >= 1_000) return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
+            return num.toString();
+        }
+
+        // Fisher-Yates (Knuth) Shuffle algorithm
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+            }
+        }
+
+    </script>
+</body>
+
+</html>
