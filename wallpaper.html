@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Download Wallpaper - AmittoWallpapers</title>
     <link rel="icon" href="assets/images/logo/luffy-hat.png" type="image/png" />
-    <link href="/dist/output.css" rel="stylesheet" />
+    <link href="./dist/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        .main-wallpaper img {
-            max-width: 50%;
+        /* The max-height for wallpaperPreview is now set dynamically by JavaScript based on wallpaper type. */
+        #wallpaperPreview {
+            width: auto; /* Allow width to adjust based on height and aspect ratio */
+            object-fit: contain; /* Keep object-fit contain to ensure aspect ratio */
         }
+        /* Removed the redundant .main-wallpaper img rule as Tailwind classes are used directly. */
     </style>
 </head>
 
@@ -85,9 +88,11 @@
     <div id="wallpaperGrid" class="w-[95%] mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4"></div>
 
     <section id="main-wallpaper" class="max-w-6xl mx-auto lg:bg-[#1a1a1a] rounded-xl shadow-lg p-6 md:mt-8">
-        <div class="flex flex-col lg:flex-row gap-12 items-start justify-around">
-            <div class="max-h-[100vh] flex justify-center items-center">
-                <img id="wallpaperPreview" class="max-w-[50%] max-h-screen object-contain" alt="Wallpaper" />
+        <div class="max-h-[100vh] w-full flex justify-center items-center flex-col lg:flex-row gap-12 lg:items-start lg:justify-around">
+            <!-- Added w-full to this div for proper centering on mobile -->
+            <div class="flex justify-center items-center">
+                <!-- max-w-sm is kept here to control width, max-height will be set by JS -->
+                <img id="wallpaperPreview" class="max-w-sm object-contain" alt="Wallpaper" />
             </div>
             <div class="w-full lg:w-1/2 -mt-8 md:mt-8 mx-auto space-y-2">
                 <h1 id="wallpaperTitle" class="text-2xl font-bold">Wallpaper</h1>
@@ -238,6 +243,9 @@
         const urlParams = new URLSearchParams(window.location.search);
         const currentImgUrl = urlParams.get('img');
         const currentTitle = urlParams.get('title');
+        // Get the 'type' of the wallpaper from the URL
+        const currentWallpaperType = urlParams.get('type'); 
+
 
         // Find the current wallpaper object based on the URL
         const currentWallpaper = wallpapers.find(wp =>
@@ -249,6 +257,16 @@
             wallpaperPreview.src = currentImgUrl;
             wallpaperPreview.alt = currentTitle || "Wallpaper Preview";
             wallpaperTitle.textContent = currentTitle || "Wallpaper";
+
+            // Set the max-height based on the wallpaper type
+            if (currentWallpaperType === 'mobile') {
+                wallpaperPreview.style.maxHeight = '20vh'; // Mobile wallpaper preview height
+            } else if (currentWallpaperType === 'desktop') {
+                wallpaperPreview.style.maxHeight = '50vh'; // Desktop wallpaper preview height (changed from 60vh to 50vh)
+            } else {
+                // Default or fallback if type is not specified (e.g., direct access without type)
+                wallpaperPreview.style.maxHeight = '40vh'; 
+            }
 
             // Display the user's screen resolution
             document.getElementById('screenRes').textContent = `${window.screen.width}x${window.screen.height}`;
@@ -494,7 +512,7 @@
                 card.className = "wallpaper-card break-inside-avoid overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg mb-6";
 
                 card.innerHTML = `
-                    <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}&mobile=${encodeURIComponent(wallpaper.mobile || '')}&tablet=${encodeURIComponent(wallpaper.tablet || '')}&desktop=${encodeURIComponent(wallpaper.desktop || '')}"
+                    <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}&type=${encodeURIComponent(wallpaper.type || '')}&mobile=${encodeURIComponent(wallpaper.mobile || '')}&tablet=${encodeURIComponent(wallpaper.tablet || '')}&desktop=${encodeURIComponent(wallpaper.desktop || '')}"
                         target="_blank" class="relative group block overflow-hidden rounded-lg">
                         <img loading="lazy"
                             src="${wallpaper.url}"
@@ -507,7 +525,7 @@
                     </a>
                     <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
                         <div class="flex flex-wrap gap-2">
-                            <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}&mobile=${encodeURIComponent(wallpaper.mobile || '')}&tablet=${encodeURIComponent(wallpaper.tablet || '')}&desktop=${encodeURIComponent(wallpaper.desktop || '')}"
+                            <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}&type=${encodeURIComponent(wallpaper.type || '')}&mobile=${encodeURIComponent(wallpaper.mobile || '')}&tablet=${encodeURIComponent(wallpaper.tablet || '')}&desktop=${encodeURIComponent(wallpaper.desktop || '')}"
                                 class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-white">
                                 <i class="fa-solid fa-download mr-1"></i>Download
                             </a>
