@@ -108,7 +108,182 @@ export const wallpapers = [
       },
     ]
   },
-
+  // One Piece
+  {
+    character: "Monkey D Luffy",
+    type: "Desktop",
+    tags: ["One Piece", "Anime", "Mobile", "Luffy", "Monkey D Luffy"],
+    images: [
+      {
+        url: "assets/images/wallpapers/one-piece/desktop/luffy/1.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/desktop/luffy/2.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/desktop/luffy/3.jpg",
+        date: "2025-07-26"
+      },
+    ]
+  },
+  {
+    character: "Monkey D Luffy",
+    type: "Mobile",
+    tags: ["One Piece", "Anime", "Mobile", "Luffy", "Monkey D Luffy"],
+    images: [
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/luffy/1.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/luffy/2.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/luffy/3.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/luffy/4.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/luffy/5.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/luffy/6.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/luffy/7.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/luffy/8.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/luffy/9.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/luffy/10.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/luffy/11.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/luffy/12.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/luffy/13.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/luffy/14.jpg",
+        date: "2025-07-26"
+      },
+    ]
+  },
+  {
+    character: "Roronoa Zoro",
+    type: "Desktop",
+    tags: ["One Piece", "Anime", "Mobile", "Zoro", "Roronoa Zoro"],
+    images: [
+      {
+        url: "assets/images/wallpapers/one-piece/desktop/zoro/1.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/desktop/zoro/2.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/desktop/zoro/3.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/desktop/zoro/5.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/desktop/zoro/5.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/desktop/zoro/6.jpg",
+        date: "2025-07-26"
+      },
+    ]
+  },
+  {
+    character: "Roronoa Zoro",
+    type: "Mobile",
+    tags: ["One Piece", "Anime", "Mobile", "Zoro", "Roronoa Zoro"],
+    images: [
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/zoro/1.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/zoro/2.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/zoro/3.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/zoro/4.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/zoro/5.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/zoro/6.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/luffy/7.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/zoro/8.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/zoro/9.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/zoro/10.jpg",
+        date: "2025-07-26"
+      },
+    ]
+  },
+  {
+    character: "Portgas D. Ace",
+    type: "Mobile",
+    tags: ["One Piece", "Anime", "Mobile", "Ace", "Portgas D. Ace"],
+    images: [
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/ace/1.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/one-piece/mobile/ace/2.jpg",
+        date: "2025-07-26"
+      },
+    ]
+  },
   // Demon Slayer
   {
     character: "Tanjiro Kamado",

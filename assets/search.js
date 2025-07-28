@@ -97,7 +97,7 @@ function renderWallpapers(list) {
   <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
     <div class="flex flex-wrap gap-2">
       <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}&mobile=${encodeURIComponent(wallpaper.mobile)}&tablet=${encodeURIComponent(wallpaper.tablet)}&desktop=${encodeURIComponent(wallpaper.desktop)}"
-         class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-white">
+          target="_blank" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-white">
         <i class="fa-solid fa-download mr-1"></i>Download
       </a>
       <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white">

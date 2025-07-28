@@ -89,8 +89,9 @@ function renderCard(wallpaper, grid) {
   </a>
   <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
     <div class="flex gap-2">
-      <a href="${wallpaper.url}" download class="bg-blue-600 hover:bg-blue-700 active:bg-blue-600 px-3 py-1 rounded">
-        <i class="fa-solid fa-download mr-1 text-white"></i>Download
+      <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}&mobile=${encodeURIComponent(wallpaper.mobile)}&tablet=${encodeURIComponent(wallpaper.tablet)}&desktop=${encodeURIComponent(wallpaper.desktop)}"
+          target="_blank" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-white">
+        <i class="fa-solid fa-download mr-1"></i>Download
       </a>
       <button class="likeBtn cursor-pointer bg-[#00C249] px-3 py-1 rounded text-white">
         <i class="likeIcon far fa-thumbs-up mr-1"></i>
