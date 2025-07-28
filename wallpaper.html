@@ -14,7 +14,6 @@
             width: auto; /* Allow width to adjust based on height and aspect ratio */
             object-fit: contain; /* Keep object-fit contain to ensure aspect ratio */
         }
-        /* Removed the redundant .main-wallpaper img rule as Tailwind classes are used directly. */
     </style>
 </head>
 
@@ -90,7 +89,7 @@
     <section id="main-wallpaper" class="max-w-6xl mx-auto lg:bg-[#1a1a1a] rounded-xl shadow-lg p-6 md:mt-8 overflow-x-hidden">
         <div class="max-h-[100vh] w-full flex justify-center items-center flex-col lg:flex-row gap-12 lg:items-start lg:justify-around">
             <!-- Added w-full to this div for proper centering on mobile -->
-            <div class="flex justify-center items-center">
+            <div class="flex justify-center items-center overflow-x-hidden">
                 <!-- max-w-sm is kept here to control width, max-height will be set by JS -->
                 <img id="wallpaperPreview" class="max-w-sm object-contain" alt="Wallpaper" />
             </div>
