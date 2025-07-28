@@ -5,11 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Download Wallpaper - AmittoWallpapers</title>
-    <link href="/dist/output.css" rel="stylesheet" />
+    <link rel="icon" href="assets/images/logo/luffy-hat.png" type="image/png" />
+    <link href="./dist/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body class="bg-[#0f0f0f] text-white min-h-screen">
+<body class="bg-[#0d0d0d] text-white min-h-screen">
     <header class="border-b border-gray-300 bg-black min-h-[60px] px-4 py-6 tracking-wide relative z-50">
         <div class="flex flex-wrap items-center max-lg:gap-y-6 max-sm:gap-x-4">
             <a href="index.html" class="flex text-2xl items-center font-bold flex-wrap font-sans">
@@ -31,12 +32,17 @@
                         </a>
                     </li>
                     <li><a href="#home" class="block hover:text-red-400 text-[18px] font-medium">Home</a></li>
-                    <li><a href="https://amittowallpapers.netlify.app/#latest" class="block hover:text-red-400 text-[18px] font-medium">Latest</a></li>
-                    <li><a href="https://amittowallpapers.netlify.app/#categories" class="block hover:text-red-400 text-[18px] font-medium">Categories</a>
+                    <li><a href="https://amittowallpapers.netlify.app/#latest"
+                            class="block hover:text-red-400 text-[18px] font-medium">Latest</a></li>
+                    <li><a href="https://amittowallpapers.netlify.app/#categories"
+                            class="block hover:text-red-400 text-[18px] font-medium">Categories</a>
                     </li>
-                    <li><a href="https://amittowallpapers.netlify.app/#about" class="block hover:text-red-400 text-[18px] font-medium">About</a></li>
-                    <li><a href="https://amittowallpapers.netlify.app/#community" class="block hover:text-red-400 text-[18px] font-medium">Community</a></li>
-                    <li><a href="https://amittowallpapers.netlify.app/#contact" class="block hover:text-red-400 text-[18px] font-medium">Contact</a></li>
+                    <li><a href="https://amittowallpapers.netlify.app/#about"
+                            class="block hover:text-red-400 text-[18px] font-medium">About</a></li>
+                    <li><a href="https://amittowallpapers.netlify.app/#community"
+                            class="block hover:text-red-400 text-[18px] font-medium">Community</a></li>
+                    <li><a href="https://amittowallpapers.netlify.app/#contact"
+                            class="block hover:text-red-400 text-[18px] font-medium">Contact</a></li>
                 </ul>
             </div>
 
@@ -44,12 +50,12 @@
 
             <div class="hidden lg:flex items-center ml-6 text-2xl space-x-6 text-white">
                 <a href="comingsoon.html" class="text-red-400" target="_blank"><i
-                                class="fa-brands fa-instagram"></i></a>
+                        class="fa-brands fa-instagram"></i></a>
                 <a href="comingsoon.html" class="text-purple-600" target="_blank"><i
-                                class="fa-brands fa-discord"></i></a>
+                        class="fa-brands fa-discord"></i></a>
                 <a href="comingsoon.html" class="text-red-500" target="_blank"><i class="fa-brands fa-youtube"></i></a>
                 <a href="comingsoon.html" class="text-blue-500" target="_blank"><i
-                                class="fa-brands fa-facebook"></i></a>
+                        class="fa-brands fa-facebook"></i></a>
             </div>
 
             <button id="toggleOpen" class="lg:hidden cursor-pointer ml-auto">
@@ -76,7 +82,7 @@
     <section class="max-w-6xl mx-auto bg-[#1a1a1a] rounded-xl mt-8 shadow-lg p-6">
         <div class="flex flex-col lg:flex-row gap-12 items-start justify-between">
             <div class="w-full lg:w-1/2">
-                <img id="wallpaperPreview" class="w-full max-h-[80vh] object-contain rounded-lg"
+                <img id="wallpaperPreview" class="w-full max-h-80 object-contain rounded-lg"
                     alt="Wallpaper Preview" />
             </div>
             <div class="w-full lg:w-1/2 space-y-4">
@@ -91,7 +97,8 @@
                 </button>
 
                 <a id="originalDownload"
-                    class="block w-full bg-blue-600 hover:bg-blue-700 cursor-pointer text-white py-3 rounded-lg text-center" download>
+                    class="block w-full bg-blue-600 hover:bg-blue-700 cursor-pointer text-white py-3 rounded-lg text-center"
+                    download>
                     Download original wallpaper
                 </a>
 
@@ -111,7 +118,7 @@
         </div>
     </section>
 
-    <section class="max-w-7xl mx-auto w-[90%] mb-4 mt-12">
+    <section class="max-w-7xl mx-auto w-[90%] mb-4 mt-4">
         <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">You Might Also Like</h2>
         <div id="relatedWallpapers" class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
         </div>
@@ -132,23 +139,27 @@
             <div>
                 <h3 class="text-white font-semibold mb-4">Quick Links</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#hero-section" class="hover:text-white transition">Home</a></li>
-                    <li><a href="#latest" class="hover:text-white transition">Latest Wallpapers</a></li>
-                    <li><a href="#categories" class="hover:text-white transition">Categories</a></li>
-                    <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                    <li><a href="https://amittowallpapers.netlify.app/#hero-section"
+                            class="hover:text-white transition">Home</a></li>
+                    <li><a href="https://amittowallpapers.netlify.app/#latest"
+                            class="hover:text-white transition">Latest Wallpapers</a></li>
+                    <li><a href="https://amittowallpapers.netlify.app/#categories"
+                            class="hover:text-white transition">Categories</a></li>
+                    <li><a href="https://amittowallpapers.netlify.app/#contact"
+                            class="hover:text-white transition">Contact</a></li>
                 </ul>
             </div>
 
             <div>
                 <h3 class="text-white font-semibold mb-4">Community</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="javascript:void(0)" class="hover:text-white transition" target="_blank">Instagram</a>
+                    <li><a href="comingsoon.html" class="hover:text-white transition" target="_blank">Instagram</a>
                     </li>
-                    <li><a href="javascript:void(0)" class="hover:text-white transition" target="_blank">Facebook</a>
+                    <li><a href="comingsoon.html" class="hover:text-white transition" target="_blank">Facebook</a>
                     </li>
-                    <li><a href="javascript:void(0)" class="hover:text-white transition" target="_blank">Discord</a>
+                    <li><a href="comingsoon.html" class="hover:text-white transition" target="_blank">Discord</a>
                     </li>
-                    <li><a href="javascript:void(0)" class="hover:text-white transition" target="_blank">YouTube</a>
+                    <li><a href="comingsoon.html" class="hover:text-white transition" target="_blank">YouTube</a>
                     </li>
                 </ul>
             </div>
@@ -378,7 +389,7 @@
                             autoDownloadResizeBtn.textContent = `Download for my screen (${targetWidth}×${targetHeight})`;
                             autoDownloadResizeBtn.disabled = false;
                         }
-                    }, 'image/jpg', 0.9); 
+                    }, 'image/jpg', 0.9);
                 };
 
                 img.onerror = (e) => {
@@ -456,7 +467,7 @@
                 let likes = parseInt(localStorage.getItem(storageKey), 10);
                 let views = parseInt(localStorage.getItem(viewsKey), 10);
                 // We load userLiked, but don't use it for initial icon state (always 'far')
-                let userLikedPersisted = localStorage.getItem(likedStateKey) === 'true'; 
+                let userLikedPersisted = localStorage.getItem(likedStateKey) === 'true';
 
 
                 if (!likes || isNaN(likes)) {
@@ -559,7 +570,7 @@
         likes = parseInt(localStorage.getItem(storageLikeKey), 10);
         views = parseInt(localStorage.getItem(storageViewKey), 10);
         // We load userLiked, but don't use it for initial icon state (always 'far')
-        let userLikedPersisted = localStorage.getItem(storageLikedKey) === 'true'; 
+        let userLikedPersisted = localStorage.getItem(storageLikedKey) === 'true';
 
         if (isNaN(likes)) {
             likes = randomRange(20000, 40000);
