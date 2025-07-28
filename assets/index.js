@@ -40,3 +40,21 @@ showLessBtn.addEventListener("click", () => {
     showMoreBtn.classList.remove("hidden");
     showLessBtn.classList.add("hidden");
 });
+
+// Back to Top Button Logic
+const backToTopButton = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) { // Show button after scrolling down 300px
+        backToTopButton.classList.remove('hidden');
+    } else {
+        backToTopButton.classList.add('hidden');
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});

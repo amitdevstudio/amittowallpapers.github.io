@@ -1,207 +1,17 @@
 export const wallpapers = [
-  // Naruto
-  {
-    character: "Itachi",
-    type: "Desktop",
-    tags: ["Naruto", "Anime", "Itachi", "Desktop"],
-    images: [
-      {
-        url: "assets/images/wallpapers/naruto/desktop/itachi/1.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/desktop/itachi/2.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/desktop/itachi/3.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/desktop/itachi/4.webp",
-        date: "2025-07-03"
-      },
-    ]
-  },
-  {
-    character: "Itachi",
-    type: "Mobile",
-    tags: ["Naruto", "Anime", "Itachi", "Mobile"],
-    images: [
-      {
-        url: "assets/images/wallpapers/naruto/mobile/itachi/1.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/mobile/itachi/2.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/mobile/itachi/3.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/mobile/itachi/4.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/mobile/itachi/5.webp",
-        date: "2025-07-03"
-      },
-    ]
-  },
-  {
-    character: "Naruto",
-    type: "Desktop",
-    tags: ["Naruto", "Anime", "Desktop"],
-    images: [
-      {
-        url: "assets/images/wallpapers/naruto/desktop/naruto/1.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/desktop/naruto/2.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/desktop/naruto/3.webp",
-        date: "2025-07-08"
-      },
-    ]
-  },
-  {
-    character: "Naruto",
-    type: "Mobile",
-    tags: ["Naruto", "Anime", "Mobile"],
-    images: [
-      {
-        url: "assets/images/wallpapers/naruto/mobile/naruto/1.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/mobile/naruto/2.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/mobile/naruto/3.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/mobile/naruto/4.webp",
-        date: "2025-07-03"
-      },
-    ]
-  },
-  {
-    character: "Kakashi",
-    type: "Desktop",
-    tags: ["Naruto", "Anime", "Desktop", "Kakashi"],
-    images: [
-      {
-        url: "assets/images/wallpapers/naruto/desktop/kakashi/1.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/desktop/kakashi/2.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/desktop/kakashi/3.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/desktop/kakashi/4.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/desktop/kakashi/5.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/desktop/kakashi/6.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/desktop/kakashi/7.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/desktop/kakashi/8.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/desktop/kakashi/9.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/naruto/desktop/kakashi/10.webp",
-        date: "2025-07-03"
-      },
-    ]
-  },
-  {
-    character: "Akatsuki",
-    type: "Mobile",
-    tags: ["Naruto", "Anime", "Mobile", "Akatsuki"],
-    images: [
-      {
-        url: "assets/images/wallpapers/naruto/mobile/akatsuki/1.webp",
-        date: "2025-07-03"
-      },
-    ]
-  },
   // Bleach
-  {
-    character: "Aizen",
-    type: "Mobile",
-    tags: ["Bleach", "Anime", "Mobile", "Aizen"],
-    images: [
-      {
-        url: "assets/images/wallpapers/bleach/mobile/aizen/1.webp",
-        date: "2025-07-03"
-      },
-    ]
-  },
   {
     character: "Ichigo",
     type: "Desktop",
     tags: ["Bleach", "Anime", "Desktop", "Ichigo"],
     images: [
       {
-        url: "assets/images/wallpapers/bleach/desktop/ichigo/1.webp",
-        date: "2025-07-03"
+        url: "assets/images/wallpapers/bleach/desktop/ichigo/1.jpg",
+        date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/bleach/desktop/ichigo/2.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/bleach/desktop/ichigo/3.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/bleach/desktop/ichigo/4.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/bleach/desktop/ichigo/5.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/bleach/desktop/ichigo/6.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/bleach/desktop/ichigo/7.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/bleach/desktop/ichigo/8.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/bleach/desktop/ichigo/9.webp",
-        date: "2025-07-03"
+        url: "assets/images/wallpapers/bleach/desktop/ichigo/2.jpg",
+        date: "2025-07-26"
       },
     ]
   },
@@ -211,43 +21,53 @@ export const wallpapers = [
     tags: ["Bleach", "Anime", "Mobile", "Ichigo"],
     images: [
       {
-        url: "assets/images/wallpapers/bleach/mobile/ichigo/1.webp",
-        date: "2025-07-03"
+        url: "assets/images/wallpapers/bleach/mobile/ichigo/1.jpg",
+        date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/bleach/mobile/ichigo/2.webp",
-        date: "2025-07-03"
+        url: "assets/images/wallpapers/bleach/mobile/ichigo/2.jpg",
+        date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/bleach/mobile/ichigo/3.webp",
-        date: "2025-07-03"
+        url: "assets/images/wallpapers/bleach/mobile/ichigo/3.jpg",
+        date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/bleach/mobile/ichigo/4.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/bleach/mobile/ichigo/5.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/bleach/mobile/ichigo/6.webp",
-        date: "2025-07-03"
+        url: "assets/images/wallpapers/bleach/mobile/ichigo/4.jpg",
+        date: "2025-07-27"
       },
     ]
   },
   {
-    character: "Rukia",
+    character: "Urahara",
     type: "Desktop",
-    tags: ["Bleach", "Anime", "Desktop", "Rukia"],
+    tags: ["Bleach", "Anime", "Desktop", "Urahara"],
     images: [
       {
-        url: "assets/images/wallpapers/bleach/desktop/rukia/1.webp",
-        date: "2025-07-03"
+        url: "assets/images/wallpapers/bleach/desktop/urahara/1.jpg",
+        date: "2025-07-26"
       },
+    ]
+  },
+  // {
+  //   character: "Urahara",
+  //   type: "Mobile",
+  //   tags: ["Bleach", "Anime", "Mobile", "Urahara"],
+  //   images: [
+  //     {
+  //       url: "assets/images/wallpapers/bleach/mobile/urahara/1.jpg",
+  //       date: "2025-07-26"
+  //     },
+  //   ]
+  // },
+  {
+    character: "Yamamoto",
+    type: "Desktop",
+    tags: ["Bleach", "Anime", "Desktop", "Yamamoto"],
+    images: [
       {
-        url: "assets/images/wallpapers/bleach/desktop/rukia/2.webp",
-        date: "2025-07-03"
+        url: "assets/images/wallpapers/bleach/desktop/yamamoto/1.jpg",
+        date: "2025-07-27"
       },
     ]
   },
@@ -257,8 +77,8 @@ export const wallpapers = [
     tags: ["Bleach", "Anime", "Mobile", "Grimmjow"],
     images: [
       {
-        url: "assets/images/wallpapers/bleach/mobile/grimmjow/1.webp",
-        date: "2025-07-03"
+        url: "assets/images/wallpapers/bleach/mobile/grimmjow/1.jpg",
+        date: "2025-07-27"
       },
     ]
   },
@@ -268,191 +88,178 @@ export const wallpapers = [
     tags: ["Bleach", "Anime", "Mobile", "Toshiro"],
     images: [
       {
-        url: "assets/images/wallpapers/bleach/mobile/toshiro/1.webp",
-        date: "2025-07-03"
+        url: "assets/images/wallpapers/bleach/mobile/toshiro/1.jpg",
+        date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/bleach/mobile/toshiro/2.webp",
-        date: "2025-07-08"
+        url: "assets/images/wallpapers/bleach/mobile/toshiro/2.jpg",
+        date: "2025-07-27"
       },
     ]
   },
+
+  // Demon Slayer
   {
-    character: "Urahara",
+    character: "Tanjiro Kamado",
     type: "Mobile",
-    tags: ["Bleach", "Anime", "Mobile", "Urahara"],
+    tags: ["Demon Slayer", "Anime", "Mobile", "Tanjiro"],
     images: [
       {
-        url: "assets/images/wallpapers/bleach/mobile/urahara/1.webp",
-        date: "2025-07-03"
+        url: "assets/images/wallpapers/demon-slayer/mobile/tanjiro/1.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/demon-slayer/mobile/tanjiro/2.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/demon-slayer/mobile/tanjiro/3.jpg",
+        date: "2025-07-26"
       },
     ]
   },
-  // One Piece
   {
-    character: "Luffy",
+    character: "Nezuko Kamado",
+    type: "Mobile",
+    tags: ["Demon Slayer", "Anime", "Mobile", "Nezuko"],
+    images: [
+      {
+        url: "assets/images/wallpapers/demon-slayer/mobile/nezuko/1.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/demon-slayer/mobile/nezuko/2.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/demon-slayer/mobile/nezuko/3.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/demon-slayer/mobile/nezuko/4.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/demon-slayer/mobile/nezuko/5.jpg",
+        date: "2025-07-27"
+      },
+    ]
+  },
+  {
+    character: "Zenitsu Agatsuma",
+    type: "Mobile",
+    tags: ["Demon Slayer", "Anime", "Mobile", "zenitsu"],
+    images: [
+      {
+        url: "assets/images/wallpapers/demon-slayer/mobile/zenitsu/1.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "assets/images/wallpapers/demon-slayer/mobile/zenitsu/2.jpg",
+        date: "2025-07-26"
+      },
+    ]
+  },
+  {
+    character: "Kokoshibu",
+    type: "Mobile",
+    tags: ["Demon Slayer", "Anime", "Mobile", "Kokoshibu"],
+    images: [
+      {
+        url: "assets/images/wallpapers/demon-slayer/mobile/kokoshibu/1.jpg",
+        date: "2025-07-26"
+      },
+    ]
+  },
+  {
+    character: "Giyu Tomioka",
+    type: "Mobile",
+    tags: ["Demon Slayer", "Anime", "Mobile", "Giyu Tomioka"],
+    images: [
+      {
+        url: "assets/images/wallpapers/demon-slayer/mobile/giyu/1.jpg",
+        date: "2025-07-26"
+      },
+    ]
+  },
+  // Dragon Ball
+  {
+    character: "Goku",
     type: "Desktop",
-    tags: ["One Piece", "Anime", "Desktop", "Luffy"],
+    tags: ["Dragon Ball", "Anime", "Mobile", "Goku"],
     images: [
       {
-        url: "assets/images/wallpapers/one-piece/desktop/luffy/1.webp",
-        date: "2025-07-03"
+        url: "assets/images/wallpapers/dragon-ball/mobile/goku/1.jpg",
+        date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/desktop/luffy/2.webp",
-        date: "2025-07-03"
+        url: "assets/images/wallpapers/dragon-ball/mobile/goku/2.jpg",
+        date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/desktop/luffy/3.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/desktop/luffy/4.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/desktop/luffy/5.webp",
-        date: "2025-07-03"
+        url: "assets/images/wallpapers/dragon-ball/mobile/goku/3.jpg",
+        date: "2025-07-26"
       },
     ]
   },
   {
-    character: "Luffy",
-    type: "Mobile",
-    tags: ["One Piece", "Anime", "Mobile", "Luffy"],
-    images: [
-      {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/1.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/2.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/3.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/4.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/5.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/6.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/7.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/8.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/9.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/10.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/11.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/12.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/13.webp",
-        date: "2025-07-03"
-      },
-    ]
-  },
-  {
-    character: "Zoro",
+    character: "Vegeta",
     type: "Desktop",
-    tags: ["One Piece", "Anime", "Desktop", "Zoro"],
+    tags: ["Dragon Ball", "Anime", "Desktop", "Vegeta"],
     images: [
       {
-        url: "assets/images/wallpapers/one-piece/desktop/zoro/1.webp",
-        date: "2025-07-08"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/desktop/zoro/2.webp",
-        date: "2025-07-08"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/desktop/zoro/3.webp",
-        date: "2025-07-08"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/desktop/zoro/4.webp",
-        date: "2025-07-08"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/desktop/zoro/5.webp",
-        date: "2025-07-08"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/desktop/zoro/6.webp",
-        date: "2025-07-08"
+        url: "assets/images/wallpapers/dragon-ball/desktop/vegeta/1.jpg",
+        date: "2025-07-26"
       },
     ]
   },
   {
-    character: "Zoro",
+    character: "Vegeta",
     type: "Mobile",
-    tags: ["One Piece", "Anime", "Mobile", "Zoro"],
+    tags: ["Dragon Ball", "Anime", "Mobile", "Vegeta"],
     images: [
       {
-        url: "assets/images/wallpapers/one-piece/mobile/zoro/1.webp",
+        url: "assets/images/wallpapers/dragon-ball/mobile/vegeta/1.jpg",
         date: "2025-07-03"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/zoro/2.webp",
-        date: "2025-07-03"
+        url: "assets/images/wallpapers/dragon-ball/mobile/vegeta/2.jpg",
+        date: "2025-07-27"
       },
+    ]
+  },
+  // Naruto
+  {
+    character: "Naruto",
+    type: "Mobile",
+    tags: ["Naruto", "Anime", "Mobile", "Naruto"],
+    images: [
       {
-        url: "assets/images/wallpapers/one-piece/mobile/zoro/3.webp",
-        date: "2025-07-03"
+        url: "assets/images/wallpapers/naruto/mobile/naruto/1.jpg",
+        date: "2025-07-27"
       },
+    ]
+  },
+  {
+    character: "Itachi",
+    type: "Mobile",
+    tags: ["Naruto", "Anime", "Mobile", "Itachi"],
+    images: [
       {
-        url: "assets/images/wallpapers/one-piece/mobile/zoro/4.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/mobile/zoro/5.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/mobile/zoro/6.webp",
-        date: "2025-07-03"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/mobile/zoro/7.webp",
+        url: "assets/images/wallpapers/naruto/mobile/itachi/1.jpg",
         date: "2025-07-03"
       },
     ]
   },
-    {
-    character: "Ace",
+  // Jujutsu Kaisen
+  {
+    character: "Gojo",
     type: "Mobile",
-    tags: ["One Piece", "Anime", "Mobile", "Ace"],
+    tags: ["Dragon Ball", "Anime", "Mobile", "Gojo"],
     images: [
       {
-        url: "assets/images/wallpapers/one-piece/mobile/ace/1.webp",
-        date: "2025-07-09"
-      },
-      {
-        url: "assets/images/wallpapers/one-piece/mobile/ace/2.webp",
-        date: "2025-07-07"
+        url: "assets/images/wallpapers/jujutsu-kaisen/mobile/gojo/1.jpg",
+        date: "2025-07-27"
       },
     ]
   },
