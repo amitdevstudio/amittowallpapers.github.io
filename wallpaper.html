@@ -9,7 +9,7 @@
     <link href="./dist/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        .image {
+        .main-wallpaper img {
             max-width: 50%;
         }
     </style>
@@ -84,10 +84,10 @@
     </header>
     <div id="wallpaperGrid" class="w-[95%] mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4"></div>
 
-    <section class="max-w-6xl mx-auto lg:bg-[#1a1a1a] rounded-xl shadow-lg p-6 md:mt-8">
+    <section id="main-wallpaper" class="max-w-6xl mx-auto lg:bg-[#1a1a1a] rounded-xl shadow-lg p-6 md:mt-8">
         <div class="flex flex-col lg:flex-row gap-12 items-start justify-around">
             <div class="max-h-[100vh] flex justify-center items-center">
-                <img id="wallpaperPreview" class="w-[50%] max-h-screen object-contain" alt="Wallpaper" />
+                <img id="wallpaperPreview" class="max-w-[50%] max-h-screen object-contain" alt="Wallpaper" />
             </div>
             <div class="w-full lg:w-1/2 -mt-8 md:mt-8 mx-auto space-y-2">
                 <h1 id="wallpaperTitle" class="text-2xl font-bold">Wallpaper</h1>
