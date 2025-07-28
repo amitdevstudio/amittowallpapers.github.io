@@ -416,6 +416,60 @@ export const wallpapers = [
   },
   // Naruto
   {
+    character: "Akatsuki",
+    type: "Mobile",
+    tags: ["Naruto", "Anime", "Mobile", "Naruto", "Akatsuki"],
+    images: [
+      {
+        url: "assets/images/wallpapers/naruto/mobile/akatsuki/1.jpg",
+        date: "2025-07-27"
+      },
+      {
+        url: "assets/images/wallpapers/naruto/mobile/akatsuki/2.jpg",
+        date: "2025-07-27"
+      },
+      {
+        url: "assets/images/wallpapers/naruto/mobile/akatsuki/3.jpg",
+        date: "2025-07-27"
+      },
+      {
+        url: "assets/images/wallpapers/naruto/mobile/akatsuki/4.jpg",
+        date: "2025-07-27"
+      },
+      {
+        url: "assets/images/wallpapers/naruto/mobile/akatsuki/5.jpg",
+        date: "2025-07-27"
+      },
+      {
+        url: "assets/images/wallpapers/naruto/mobile/akatsuki/6.jpg",
+        date: "2025-07-27"
+      },
+    ]
+  },
+  {
+    character: "Naruto Uzumaki",
+    type: "Desktop",
+    tags: ["Naruto", "Anime", "Desktop", "Naruto", "Naruto Uzumaki"],
+    images: [
+      {
+        url: "assets/images/wallpapers/naruto/desktop/naruto/1.jpg",
+        date: "2025-07-27"
+      },
+      {
+        url: "assets/images/wallpapers/naruto/desktop/naruto/2.jpg",
+        date: "2025-07-27"
+      },
+      {
+        url: "assets/images/wallpapers/naruto/desktop/naruto/3.jpg",
+        date: "2025-07-27"
+      },
+      {
+        url: "assets/images/wallpapers/naruto/desktop/naruto/4.jpg",
+        date: "2025-07-27"
+      },
+    ]
+  },
+  {
     character: "Naruto Uzumaki",
     type: "Mobile",
     tags: ["Naruto", "Anime", "Mobile", "Naruto", "Naruto Uzumaki"],
@@ -428,16 +482,12 @@ export const wallpapers = [
         url: "assets/images/wallpapers/naruto/mobile/naruto/2.jpg",
         date: "2025-07-27"
       },
-      {
-        url: "assets/images/wallpapers/naruto/mobile/naruto/3.jpg",
-        date: "2025-07-27"
-      },
     ]
   },
   {
     character: "Itachi Uchiha",
     type: "Mobile",
-    tags: ["Naruto", "Anime", "Mobile", "Itachi", "Itachi Uchiha"],
+    tags: ["Naruto", "Anime", "Mobile", "Naruto", "Itachi Uchiha"],
     images: [
       {
         url: "assets/images/wallpapers/naruto/mobile/itachi/1.jpg",
@@ -457,6 +507,51 @@ export const wallpapers = [
       },
       {
         url: "assets/images/wallpapers/naruto/mobile/itachi/5.jpg",
+        date: "2025-07-03"
+      },
+      {
+        url: "assets/images/wallpapers/naruto/mobile/itachi/6.jpg",
+        date: "2025-07-03"
+      },
+      {
+        url: "assets/images/wallpapers/naruto/mobile/itachi/7.jpg",
+        date: "2025-07-03"
+      },
+      {
+        url: "assets/images/wallpapers/naruto/mobile/itachi/8.jpg",
+        date: "2025-07-03"
+      },
+    ]
+  },
+  {
+    character: "Jiraya",
+    type: "Mobile",
+    tags: ["Naruto", "Anime", "Mobile", "Naruto", "Jiraya"],
+    images: [
+      {
+        url: "assets/images/wallpapers/naruto/mobile/jiraya/1.jpg",
+        date: "2025-07-03"
+      },
+    ]
+  },
+  {
+    character: "Minato Namikaze",
+    type: "Mobile",
+    tags: ["Naruto", "Anime", "Mobile", "Naruto", "Minato Namikaze"],
+    images: [
+      {
+        url: "assets/images/wallpapers/naruto/mobile/minato/1.jpg",
+        date: "2025-07-03"
+      },
+    ]
+  },
+  {
+    character: ["Nagato Uzumaki", "Pain"],
+    type: "Mobile",
+    tags: ["Naruto", "Anime", "Mobile", "Naruto" ,"Nagato Uzumaki", "Pain"],
+    images: [
+      {
+        url: "assets/images/wallpapers/naruto/mobile/pain/1.jpg",
         date: "2025-07-03"
       },
     ]
