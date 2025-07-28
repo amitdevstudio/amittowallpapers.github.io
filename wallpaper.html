@@ -84,12 +84,13 @@
     </header>
     <div id="wallpaperGrid" class="w-[95%] mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4"></div>
 
-    <section class="max-w-6xl mx-auto lg:bg-[#1a1a1a] rounded-xl mt-8 shadow-lg p-6">
+    <section class="max-w-6xl mx-auto lg:bg-[#1a1a1a] rounded-xl shadow-lg p-6 md:mt-8">
         <div class="flex flex-col lg:flex-row gap-12 items-start justify-around">
-            <div class="image mx-auto">
-                <img id="wallpaperPreview" class="h-80 w-full object-cover rounded-lg" alt="Wallpaper Preview" />
+            <div class="w-full max-h-[80vh] flex justify-center items-center overflow-hidden">
+                <img id="wallpaperPreview" src="" alt="Wallpaper Preview"
+                    class="object-contain sm:object-cover max-h-[40vh] w-auto h-auto rounded shadow-lg" />
             </div>
-            <div class="w-full lg:w-1/2 mx-auto space-y-2">
+            <div class="w-full lg:w-1/2 -mt-8 md:mt-8 mx-auto space-y-2">
                 <h1 id="wallpaperTitle" class="text-2xl font-bold">Wallpaper</h1>
                 <a id="previewBtn"
                     class="block w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg text-center font-medium cursor-pointer">
@@ -386,11 +387,11 @@
                             URL.revokeObjectURL(url); // Release the object URL
 
                             // Reset button text
-                            autoDownloadResizeBtn.textContent = `Download for my screen (${targetWidth}×${targetHeight})`;
+                            autoDownloadResizeBtn.textContent = `Download for my screen (${targetWidth}x${targetHeight})`;
                             autoDownloadResizeBtn.disabled = false;
                         } else {
                             alert('Failed to generate resized image.');
-                            autoDownloadResizeBtn.textContent = `Download for my screen (${targetWidth}×${targetHeight})`;
+                            autoDownloadResizeBtn.textContent = `Download for my screen (${targetWidth}x${targetHeight})`;
                             autoDownloadResizeBtn.disabled = false;
                         }
                     }, 'image/jpg', 0.9);
@@ -399,7 +400,7 @@
                 img.onerror = (e) => {
                     console.error("Error loading image for resizing:", e);
                     alert("Could not load wallpaper for resizing. This might be due to a server issue or cross-origin restrictions (CORS).");
-                    autoDownloadResizeBtn.textContent = `Download for my screen (${targetWidth}×${targetHeight})`;
+                    autoDownloadResizeBtn.textContent = `Download for my screen (${targetWidth}x${targetHeight})`;
                     autoDownloadResizeBtn.disabled = false;
                 };
 
