@@ -1,7 +1,7 @@
 export const wallpapers = [
   // Bleach
   {
-    character: "Ichigo",
+    character: "Ichigo Kurosaki",
     type: "Desktop",
     tags: ["Bleach", "Anime", "Desktop", "Ichigo"],
     images: [
@@ -16,7 +16,7 @@ export const wallpapers = [
     ]
   },
   {
-    character: "Ichigo",
+    character: "Ichigo Kurosaki",
     type: "Mobile",
     tags: ["Bleach", "Anime", "Mobile", "Ichigo"],
     images: [
@@ -39,7 +39,18 @@ export const wallpapers = [
     ]
   },
   {
-    character: "Urahara",
+    character: "Sousuke Aizen",
+    type: "Mobile",
+    tags: ["Bleach", "Anime", "Mobile", "Aizen"],
+    images: [
+      {
+        url: "assets/images/wallpapers/bleach/mobile/aizen/1.jpg",
+        date: "2025-07-26"
+      },
+    ]
+  },
+  {
+    character: "Kisuke Urahara",
     type: "Desktop",
     tags: ["Bleach", "Anime", "Desktop", "Urahara"],
     images: [
@@ -50,7 +61,7 @@ export const wallpapers = [
     ]
   },
   // {
-  //   character: "Urahara",
+  //   character: "Kisuke Urahara",
   //   type: "Mobile",
   //   tags: ["Bleach", "Anime", "Mobile", "Urahara"],
   //   images: [
@@ -61,7 +72,7 @@ export const wallpapers = [
   //   ]
   // },
   {
-    character: "Yamamoto",
+    character: "Genryusai Shigekuni Yamamoto",
     type: "Desktop",
     tags: ["Bleach", "Anime", "Desktop", "Yamamoto"],
     images: [
@@ -72,7 +83,7 @@ export const wallpapers = [
     ]
   },
   {
-    character: "Grimmjow",
+    character: "Grimmjow Jaegerjaquez",
     type: "Mobile",
     tags: ["Bleach", "Anime", "Mobile", "Grimmjow"],
     images: [
@@ -83,9 +94,9 @@ export const wallpapers = [
     ]
   },
   {
-    character: "Toshiro",
+    character: "Tōshirō Hitsugaya",
     type: "Mobile",
-    tags: ["Bleach", "Anime", "Mobile", "Toshiro"],
+    tags: ["Bleach", "Anime", "Mobile", "Tōshirō"],
     images: [
       {
         url: "assets/images/wallpapers/bleach/mobile/toshiro/1.jpg",
@@ -161,9 +172,9 @@ export const wallpapers = [
     ]
   },
   {
-    character: "Kokoshibu",
+    character: "Michikatsu Tsugikuni (Kokoshibu)",
     type: "Mobile",
-    tags: ["Demon Slayer", "Anime", "Mobile", "Kokoshibu"],
+    tags: ["Demon Slayer", "Anime", "Mobile", "Kokoshibu", "Michikatsu Tsugikuni"],
     images: [
       {
         url: "assets/images/wallpapers/demon-slayer/mobile/kokoshibu/1.jpg",
@@ -184,9 +195,9 @@ export const wallpapers = [
   },
   // Dragon Ball
   {
-    character: "Goku",
-    type: "Desktop",
-    tags: ["Dragon Ball", "Anime", "Mobile", "Goku"],
+    character: "Son Goku",
+    type: "Mobile",
+    tags: ["Dragon Ball", "Anime", "Mobile", "Goku", "Son Goku"],
     images: [
       {
         url: "assets/images/wallpapers/dragon-ball/mobile/goku/1.jpg",
@@ -203,9 +214,9 @@ export const wallpapers = [
     ]
   },
   {
-    character: "Vegeta",
+    character: "Prince Vegeta",
     type: "Desktop",
-    tags: ["Dragon Ball", "Anime", "Desktop", "Vegeta"],
+    tags: ["Dragon Ball", "Anime", "Desktop", "Vegeta", "Prince Vegeta", "Vegeta IV"],
     images: [
       {
         url: "assets/images/wallpapers/dragon-ball/desktop/vegeta/1.jpg",
@@ -214,9 +225,9 @@ export const wallpapers = [
     ]
   },
   {
-    character: "Vegeta",
+    character: "Prince Vegeta",
     type: "Mobile",
-    tags: ["Dragon Ball", "Anime", "Mobile", "Vegeta"],
+    tags: ["Dragon Ball", "Anime", "Mobile", "Vegeta", "Prince Vegeta", "Vegeta IV"],
     images: [
       {
         url: "assets/images/wallpapers/dragon-ball/mobile/vegeta/1.jpg",
@@ -230,32 +241,56 @@ export const wallpapers = [
   },
   // Naruto
   {
-    character: "Naruto",
+    character: "Naruto Uzumaki",
     type: "Mobile",
-    tags: ["Naruto", "Anime", "Mobile", "Naruto"],
+    tags: ["Naruto", "Anime", "Mobile", "Naruto", "Naruto Uzumaki"],
     images: [
       {
         url: "assets/images/wallpapers/naruto/mobile/naruto/1.jpg",
         date: "2025-07-27"
       },
+      {
+        url: "assets/images/wallpapers/naruto/mobile/naruto/2.jpg",
+        date: "2025-07-27"
+      },
+      {
+        url: "assets/images/wallpapers/naruto/mobile/naruto/3.jpg",
+        date: "2025-07-27"
+      },
     ]
   },
   {
-    character: "Itachi",
+    character: "Itachi Uchiha",
     type: "Mobile",
-    tags: ["Naruto", "Anime", "Mobile", "Itachi"],
+    tags: ["Naruto", "Anime", "Mobile", "Itachi", "Itachi Uchiha"],
     images: [
       {
         url: "assets/images/wallpapers/naruto/mobile/itachi/1.jpg",
+        date: "2025-07-03"
+      },
+      {
+        url: "assets/images/wallpapers/naruto/mobile/itachi/2.jpg",
+        date: "2025-07-03"
+      },
+      {
+        url: "assets/images/wallpapers/naruto/mobile/itachi/3.jpg",
+        date: "2025-07-03"
+      },
+      {
+        url: "assets/images/wallpapers/naruto/mobile/itachi/4.jpg",
+        date: "2025-07-03"
+      },
+      {
+        url: "assets/images/wallpapers/naruto/mobile/itachi/5.jpg",
         date: "2025-07-03"
       },
     ]
   },
   // Jujutsu Kaisen
   {
-    character: "Gojo",
+    character: "Satoru Gojo",
     type: "Mobile",
-    tags: ["Dragon Ball", "Anime", "Mobile", "Gojo"],
+    tags: ["Dragon Ball", "Anime", "Mobile", "Satoru Gojo", "Gojo"],
     images: [
       {
         url: "assets/images/wallpapers/jujutsu-kaisen/mobile/gojo/1.jpg",
