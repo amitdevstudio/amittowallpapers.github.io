@@ -184,13 +184,10 @@
     <!-- Grid container -->
     <div id="wallpaperGrid" class="w-[95%] mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4"></div>
     <!-- Hero Section -->
-    <section id="hero-section" class="relative text-white p-4 py-14 overflow-hidden">
+    <section id="hero-section" class="relative text-white overflow-hidden min-h-screen flex items-center">
         <!-- Background Layer -->
-        <div
-            class="absolute inset-0 bg-cover py-20 bg-center">
-        </div>
-        <!-- Overlay -->
-        <div class="absolute inset-0 hero-bg bg-cover py-20 bg-center"></div>
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat hero-bg"></div>
+
         <!-- Content -->
         <div class="relative z-10 max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
             <!-- Left: Text -->
@@ -217,6 +214,7 @@
                     </a>
                 </div>
             </div>
+
             <!-- Right: Hero Image -->
             <div class="md:w-1/2" data-aos="fade-left" data-aos-duration="1000">
                 <img src="assets/images/hero-images/heroimg.png" alt="Anime Hero"
@@ -524,7 +522,8 @@
         <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
             &copy; 2025 AmittoWallpapers. All rights reserved.
             <br>
-            Made with <span class="text-red-500"><i class="fa-solid fa-heart"></i></span> by <a href="https://amitdevstudio.netlify.app" target="_blank"
+            Made with <span class="text-red-500"><i class="fa-solid fa-heart"></i></span> by <a
+                href="https://amitdevstudio.netlify.app" target="_blank"
                 class="font-semibold text-white hover:underline">AmitDevStudio</a>.
         </div>
     </footer>
