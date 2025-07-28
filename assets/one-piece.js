@@ -102,7 +102,7 @@ function createCard(wallpaper) {
           target="_blank" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-white">
         <i class="fa-solid fa-download mr-1"></i>Download
       </a>
-      <button class="likeBtn cursor-pointer bg-[#00C249] px-3 py-1 rounded text-white">
+      <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white">
         <i class="likeIcon far fa-thumbs-up mr-1"></i>
         <span class="likeCount">${formatNumber(likes)}</span>
       </button>
