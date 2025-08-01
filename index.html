@@ -24,7 +24,7 @@
         "query-input": "required name=search_term_string"
       }
     }
-    </script
+</script>
     <link rel="icon" href="assets/images/logo/luffy-hat.png" type="image/png" />
     <link href="./dist/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
@@ -199,7 +199,8 @@
     <div id="wallpaperGrid" class="w-[95%] mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4"></div>
 
     <!-- Hero Section -->
-    <section id="hero-section" class="relative text-white overflow-hidden h-[calc(100vh-130px)] pt-16 flex items-center">
+    <section id="hero-section"
+        class="relative text-white overflow-hidden h-[calc(100vh-130px)] pt-16 flex items-center">
         <!-- Background Layer -->
         <div class="absolute inset-0 bg-cover bg-center bg-no-repeat hero-bg"></div>
 
@@ -429,7 +430,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="scroll-mt-16 py-16 px-6 md:px-12 lg:px-24 text-white bg-[#101014]">
+    <section id="contact" class="scroll-mt-10 py-16 px-6 md:px-12 lg:px-24 text-white bg-[#101014]">
         <div class="max-w-sm mx-auto" data-aos="fade-up">
             <h2 class="text-3xl font-semibold text-center mb-4">Let's Talk</h2>
             <p class="text-[16px] text-gray-300 mt-4 mb-8 leading-relaxed text-center">
@@ -446,6 +447,24 @@
                     class="w-full bg-[#101014] rounded-md py-2.5 px-4 border border-gray-700 text-sm outline-0 focus:border-blue-500" />
                 <textarea name="message" rows="5" placeholder="Message" required autocomplete="off"
                     class="w-full resize-none bg-[#101014] rounded-md px-4 border border-gray-700 text-sm pt-2.5 outline-0 focus:border-blue-500"></textarea>
+
+                <div class="flex items-center mt-4">
+                    <input type="checkbox" id="termsCheckbox" name="terms" required
+                        class="h-4 w-4 text-blue-600 cursor-pointer focus:ring-blue-500 border-gray-700 rounded bg-[#1a1a1a]">
+                    <label for="termsCheckbox" class="ml-2 cursor-pointer block text-sm text-gray-300">
+                        I have read and agree to the <a href="terms.html" target="_blank"
+                            class="text-green-500 hover:underline">Terms and Conditions</a>
+                    </label>
+                </div>
+
+                <div class="flex items-center mt-2">
+                    <input type="checkbox" id="emailConsentCheckbox" name="email_consent"
+                        class="h-4 w-4 text-blue-600 cursor-pointer focus:ring-blue-500 border-gray-700 rounded bg-[#1a1a1a]">
+                    <label for="emailConsentCheckbox" class="ml-2 cursor-pointer block text-sm text-gray-300">
+                        I agree to receive emails about updates and promotions.
+                    </label>
+                </div>
+
                 <button type="submit"
                     class="text-white bg-blue-600 hover:bg-blue-700 rounded-md text-[15px] font-medium px-4 py-2 w-full cursor-pointer mt-4">
                     Send Message
