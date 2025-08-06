@@ -24,14 +24,15 @@ allWallpapers.sort((a, b) => new Date(b.date) - new Date(a.date));
 const desktopWallpapers = allWallpapers.filter(w => w.type === 'desktop');
 const mobileWallpapers = allWallpapers.filter(w => w.type === 'mobile');
 
-// Initialize Show More for each type
-initShowMore(desktopWallpapers, 'desktop-grid', 'desktop-show-more');
-initShowMore(mobileWallpapers, 'mobile-grid', 'mobile-show-more');
+// Initialize Show More for each type, passing the loader ID
+initShowMore(desktopWallpapers, 'desktop-grid', 'desktop-show-more', 'desktop-loader');
+initShowMore(mobileWallpapers, 'mobile-grid', 'mobile-show-more', 'mobile-loader');
 
 // Show More chunk loader
-function initShowMore(wallpapers, gridId, buttonId) {
+function initShowMore(wallpapers, gridId, buttonId, loaderId) {
   const grid = document.getElementById(gridId);
   const button = document.getElementById(buttonId);
+  const loader = document.getElementById(loaderId); // Get the loader element
   const chunkSize = 4;
   let currentIndex = 0;
 
@@ -43,9 +44,20 @@ function initShowMore(wallpapers, gridId, buttonId) {
     if (currentIndex >= wallpapers.length) {
       button.style.display = 'none';
     }
+
+    // Hide the loader after the first chunk is rendered
+    if (loader && currentIndex > 0) {
+      loader.style.display = 'none';
+    }
   }
 
-  renderChunk(); // Initial render
+  // Show the loader initially
+  if (loader) {
+    loader.style.display = 'block';
+  }
+
+  // Set a small delay before rendering the first chunk to ensure the loader is visible.
+  setTimeout(renderChunk, 500);
 
   button.addEventListener('click', renderChunk);
 }
@@ -75,7 +87,7 @@ function renderCard(wallpaper, grid) {
 
   card.innerHTML = `
   <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}&mobile=${encodeURIComponent(wallpaper.mobile)}&tablet=${encodeURIComponent(wallpaper.tablet)}&desktop=${encodeURIComponent(wallpaper.desktop)}" 
-     target="_blank" class="relative group block overflow-hidden rounded-lg">
+      target="_blank" class="relative group block overflow-hidden rounded-lg">
     <img loading="lazy"
       src="${wallpaper.url}" 
       alt="${wallpaper.character}" 
