@@ -1,3 +1,13 @@
+To incorporate the loading animation, you'll need to add the **HTML for the loaders** and the **CSS** to your existing code.
+
+Here's a breakdown of the changes and the complete, updated HTML file:
+
+  * **HTML Loader (`div`)**: I've added a `<div class="loader"></div>` with unique IDs (`desktop-loader` and `mobile-loader`) directly before each of your wallpaper grid containers (`desktop-grid` and `mobile-grid`).
+  * **CSS Styling**: The CSS for the `.loader` and `@keyframes l7` is placed in a `<style>` tag within the `<head>` of your HTML document. This ensures the styles are loaded and applied as soon as the page loads.
+
+With these changes, the JavaScript you previously provided will now be able to find and control these loader elements, hiding them after the wallpapers are loaded.
+
+```html
 <!DOCTYPE html>
 <html lang="en" id="home" class="scroll-smooth overflow-x-hidden">
 
@@ -42,31 +52,59 @@
       transform: scale(1.05);
       filter: brightness(1.1);
     }
+    
+    /* Loader CSS */
+    .loader {
+      width: 60px;
+      aspect-ratio: 4;
+      --_g: no-repeat radial-gradient(circle closest-side, #000 90%, #0000);
+      background:
+        var(--_g) 0% 50%,
+        var(--_g) 50% 50%,
+        var(--_g) 100% 50%;
+      background-size: calc(100%/3) 100%;
+      animation: l7 1s infinite linear;
+      margin: 2rem auto;
+      display: none; /* Initially hidden, will be shown by JS */
+    }
+
+    @keyframes l7 {
+      33% {
+        background-size: calc(100%/3) 0%, calc(100%/3) 100%, calc(100%/3) 100%
+      }
+
+      50% {
+        background-size: calc(100%/3) 100%, calc(100%/3) 0%, calc(100%/3) 100%
+      }
+
+      66% {
+        background-size: calc(100%/3) 100%, calc(100%/3) 100%, calc(100%/3) 0%
+      }
+    }
   </style>
 </head>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-048LX9JF5P"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
   gtag('js', new Date());
 
   gtag('config', 'G-048LX9JF5P');
 </script>
+
 <body class="bg-[#0d0d0d] text-white">
-  <!-- ✅ HTML HEADER -->
   <header class="border-b border-gray-300 bg-black min-h-[60px] px-4 py-6 tracking-wide relative z-50">
     <div class="flex flex-wrap items-center max-lg:gap-y-6 max-sm:gap-x-4">
-      <!-- Brand -->
       <a href="index.html" class="flex text-2xl items-center font-bold flex-wrap font-sans">
         <img src="assets/images/logo/luffy-hat.png" class="w-10 lg:-mt-1" alt="">
         Amitto<span class="text-red-400">Wallpapers</span>
       </a>
 
-      <!-- DESKTOP MENU -->
       <div id="collapseMenu"
         class="max-lg:hidden lg:flex lg:items-center lg:gap-y-8 mx-auto max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:w-2/3 max-lg:min-w-[300px] max-lg:h-full max-lg:bg-[#101014] max-lg:shadow-md max-lg:overflow-auto max-lg:px-10 max-lg:py-6 z-50">
-        <!-- Mobile close button -->
         <button id="toggleClose"
           class="lg:hidden fixed top-4 right-4 z-[100] rounded-full text-black bg-white w-9 h-9 flex items-center justify-center border border-gray-200 cursor-pointer">
           <i class="fa-solid fa-xmark"></i>
@@ -87,19 +125,15 @@
         </ul>
       </div>
 
-      <!-- Overlay (for mobile) -->
       <div id="menuOverlay" class="hidden fixed inset-0 bg-black/40 z-40"></div>
 
-      <!-- Social icons (desktop only) -->
       <div class="hidden lg:flex items-center ml-6 text-2xl space-x-6 text-white">
-        <!-- Add your social icons here -->
         <a href="comingsoon.html" class="text-red-400" target="_blank"><i class="fa-brands fa-instagram"></i></a>
         <a href="comingsoon.html" class="text-purple-600" target="_blank"><i class="fa-brands fa-discord"></i></a>
         <a href="comingsoon.html" class="text-red-500" target="_blank"><i class="fa-brands fa-youtube"></i></a>
         <a href="comingsoon.html" class="text-blue-500" target="_blank"><i class="fa-brands fa-facebook"></i></a>
       </div>
 
-      <!-- Toggle button (hamburger) -->
       <button id="toggleOpen" class="lg:hidden cursor-pointer ml-auto">
         <svg class="w-7 h-7" fill="white" viewBox="0 0 20 20">
           <path fill-rule="evenodd"
@@ -109,7 +143,6 @@
       </button>
     </div>
 
-    <!-- Search bar -->
     <div
       class="bg-white border focus-within:border-slate-900 flex items-center px-4 rounded-full h-10 lg:w-2/4 mt-3 mx-auto transition-all">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" class="w-4 h-4 mr-3">
@@ -120,20 +153,18 @@
         class="w-full outline-none bg-white text-black text-[15px]" />
     </div>
   </header>
-  <!-- Grid container -->
   <div id="wallpaperGrid" class="w-[95%] mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4"></div>
-  <!-- ✅ Hero Section -->
   <section id="hero-section" class="relative bg-[#101014] text-white py-4 px-6 md:px-12">
-    <!-- ✅ Desktop Wallpapers -->
     <h2 class="text-3xl font-semibold mb-4 text-center">Desktop Wallpapers</h2>
+    <div id="desktop-loader" class="loader"></div>
     <div id="desktop-grid" class="grid w-full mx-auto grid-cols-1 md:grid-cols-4 gap-6 mb-6"></div>
     <button id="desktop-show-more"
       class="block mx-auto mb-12 bg-blue-600 hover:bg-blue-700 cursor-pointer px-4 py-2 rounded text-white">
       Show More
     </button>
 
-    <!-- ✅ Mobile Wallpapers -->
     <h2 class="text-3xl font-semibold mb-4 text-center">Mobile Wallpapers</h2>
+    <div id="mobile-loader" class="loader"></div>
     <div id="mobile-grid" class="grid w-full mx-auto grid-cols-1 md:grid-cols-4 gap-6 mb-6"></div>
     <button id="mobile-show-more"
       class="block mx-auto mb-12 cursor-pointer bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white">
@@ -208,7 +239,6 @@
         class="font-semibold text-white hover:underline">AmitDevStudio</a>.
     </div>
   </footer>
-  <!-- ✅ JS file -->
   <script type="module" src="assets/bleach.js"></script>
   <script type="module" src="assets/search.js"></script>
   <script type="module" src="assets/wallpaper.js"></script>
@@ -251,7 +281,9 @@
         const response = await fetch(subscribeForm.action, {
           method: 'POST',
           body: new FormData(subscribeForm),
-          headers: { 'Accept': 'application/json' }
+          headers: {
+            'Accept': 'application/json'
+          }
         });
 
         if (response.ok) {
@@ -275,12 +307,12 @@
   </script>
   <script>
     // Disable right-click context menu
-    document.addEventListener('contextmenu', function (e) {
+    document.addEventListener('contextmenu', function(e) {
       e.preventDefault();
     });
 
     // Disable developer tools and view source
-    document.addEventListener('keydown', function (e) {
+    document.addEventListener('keydown', function(e) {
       const key = e.key.toLowerCase();
 
       // F12
@@ -304,5 +336,5 @@
   </script>
 </body>
 
-
 </html>
+```
