@@ -1,13 +1,3 @@
-To incorporate the loading animation, you'll need to add the **HTML for the loaders** and the **CSS** to your existing code.
-
-Here's a breakdown of the changes and the complete, updated HTML file:
-
-  * **HTML Loader (`div`)**: I've added a `<div class="loader"></div>` with unique IDs (`desktop-loader` and `mobile-loader`) directly before each of your wallpaper grid containers (`desktop-grid` and `mobile-grid`).
-  * **CSS Styling**: The CSS for the `.loader` and `@keyframes l7` is placed in a `<style>` tag within the `<head>` of your HTML document. This ensures the styles are loaded and applied as soon as the page loads.
-
-With these changes, the JavaScript you previously provided will now be able to find and control these loader elements, hiding them after the wallpapers are loaded.
-
-```html
 <!DOCTYPE html>
 <html lang="en" id="home" class="scroll-smooth overflow-x-hidden">
 
@@ -338,3 +328,4 @@ With these changes, the JavaScript you previously provided will now be able to f
 
 </html>
 ```
+
