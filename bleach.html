@@ -12,66 +12,67 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    /* Custom styles for the Inter font */
-    body {
-      font-family: "Inter", sans-serif;
+ <style>
+  /* Custom styles for the Inter font */
+  body {
+    font-family: "Inter", sans-serif;
+  }
+
+  .brand-logo {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  #collapseMenu.show {
+    display: block;
+  }
+
+  #collapseMenu.show {
+    display: block;
+  }
+
+  #menuOverlay.show {
+    display: block;
+  }
+
+  .wallpaper-card img {
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+
+  .wallpaper-card img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+  
+  /* Loader CSS */
+  .loader {
+    width: 60px;
+    aspect-ratio: 4;
+    /* Updated loader color to a visible grey */
+    --_g: no-repeat radial-gradient(circle closest-side, #666 90%, #0000); 
+    background:
+      var(--_g) 0% 50%,
+      var(--_g) 50% 50%,
+      var(--_g) 100% 50%;
+    background-size: calc(100%/3) 100%;
+    animation: l7 1s infinite linear;
+    margin: 2rem auto;
+    display: none; /* Initially hidden, will be shown by JS */
+  }
+
+  @keyframes l7 {
+    33% {
+      background-size: calc(100%/3) 0%, calc(100%/3) 100%, calc(100%/3) 100%
     }
 
-    .brand-logo {
-      font-family: 'Poppins', sans-serif;
+    50% {
+      background-size: calc(100%/3) 100%, calc(100%/3) 0%, calc(100%/3) 100%
     }
 
-    #collapseMenu.show {
-      display: block;
+    66% {
+      background-size: calc(100%/3) 100%, calc(100%/3) 100%, calc(100%/3) 0%
     }
-
-    #collapseMenu.show {
-      display: block;
-    }
-
-    #menuOverlay.show {
-      display: block;
-    }
-
-    .wallpaper-card img {
-      transition: transform 0.2s ease, filter 0.2s ease;
-    }
-
-    .wallpaper-card img:hover {
-      transform: scale(1.05);
-      filter: brightness(1.1);
-    }
-    
-    /* Loader CSS */
-    .loader {
-      width: 60px;
-      aspect-ratio: 4;
-      --_g: no-repeat radial-gradient(circle closest-side, #000 90%, #0000);
-      background:
-        var(--_g) 0% 50%,
-        var(--_g) 50% 50%,
-        var(--_g) 100% 50%;
-      background-size: calc(100%/3) 100%;
-      animation: l7 1s infinite linear;
-      margin: 2rem auto;
-      display: none; /* Initially hidden, will be shown by JS */
-    }
-
-    @keyframes l7 {
-      33% {
-        background-size: calc(100%/3) 0%, calc(100%/3) 100%, calc(100%/3) 100%
-      }
-
-      50% {
-        background-size: calc(100%/3) 100%, calc(100%/3) 0%, calc(100%/3) 100%
-      }
-
-      66% {
-        background-size: calc(100%/3) 100%, calc(100%/3) 100%, calc(100%/3) 0%
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-048LX9JF5P"></script>
 <script>
@@ -328,4 +329,5 @@
 
 </html>
 ```
+
 
