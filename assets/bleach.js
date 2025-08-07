@@ -2,7 +2,7 @@ import { wallpapers } from './wallpaper.js';
 
 const allWallpapers = [];
 
-// Filter ONLY Bleach wallpapers
+// Filter One Piece only
 wallpapers.forEach(item => {
   if (item.tags.includes('Bleach')) {
     item.images.forEach(img => {
@@ -11,28 +11,34 @@ wallpapers.forEach(item => {
         type: item.type.toLowerCase(),
         tags: item.tags,
         url: img.url,
-        date: img.date // Make sure each image has date!
+        date: img.date
       });
     });
   }
 });
 
-// Sort newest first by date
+// Sort newest first
 allWallpapers.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-// Split into desktop & mobile
+// Split into desktop/mobile
 const desktopWallpapers = allWallpapers.filter(w => w.type === 'desktop');
 const mobileWallpapers = allWallpapers.filter(w => w.type === 'mobile');
 
-// Initialize Show More for each type, passing the loader ID
-initShowMore(desktopWallpapers, 'desktop-grid', 'desktop-show-more', 'desktop-loader');
-initShowMore(mobileWallpapers, 'mobile-grid', 'mobile-show-more', 'mobile-loader');
+// Initialize with show more
+initShowMore(desktopWallpapers, 'desktop-grid', 'desktop-show-more');
+initShowMore(mobileWallpapers, 'mobile-grid', 'mobile-show-more');
 
-// Show More chunk loader
-function initShowMore(wallpapers, gridId, buttonId, loaderId) {
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+// Generic chunk loader
+function initShowMore(wallpapers, gridId, buttonId) {
   const grid = document.getElementById(gridId);
   const button = document.getElementById(buttonId);
-  const loader = document.getElementById(loaderId); // Get the loader element
   const chunkSize = 4;
   let currentIndex = 0;
 
@@ -44,28 +50,17 @@ function initShowMore(wallpapers, gridId, buttonId, loaderId) {
     if (currentIndex >= wallpapers.length) {
       button.style.display = 'none';
     }
-
-    // Hide the loader after the first chunk is rendered
-    if (loader && currentIndex > 0) {
-      loader.style.display = 'none';
-    }
   }
 
-  // Show the loader initially
-  if (loader) {
-    loader.style.display = 'block';
-  }
-
-  // Set a small delay before rendering the first chunk to ensure the loader is visible.
-  setTimeout(renderChunk, 500);
+  renderChunk(); // initial render
 
   button.addEventListener('click', renderChunk);
 }
 
-// Render a single card
+// Same card logic, extracted
 function renderCard(wallpaper, grid) {
   const card = document.createElement('div');
-  card.className = "wallpaper-card break-inside-avoid overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg mb-6";
+  card.className = "wallpaper-card break-inside-avoid overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg";
 
   const storageKey = `likes_${wallpaper.url}`;
   const viewsKey = `views_${wallpaper.url}`;
@@ -74,20 +69,15 @@ function renderCard(wallpaper, grid) {
     localStorage.setItem(storageKey, randomRange(20000, 40000));
   }
   if (!localStorage.getItem(viewsKey)) {
-    localStorage.setItem(viewsKey, randomRange(50000, 100000));
+    localStorage.setItem(viewsKey, randomRange(5000, 100000));
   }
 
   let likes = parseInt(localStorage.getItem(storageKey), 10);
-  let views = parseInt(localStorage.getItem(viewsKey), 10);
-
-  if (views <= likes) {
-    views = likes + randomRange(10000, 50000);
-    localStorage.setItem(viewsKey, views);
-  }
+  const views = parseInt(localStorage.getItem(viewsKey), 10);
 
   card.innerHTML = `
   <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}&mobile=${encodeURIComponent(wallpaper.mobile)}&tablet=${encodeURIComponent(wallpaper.tablet)}&desktop=${encodeURIComponent(wallpaper.desktop)}" 
-      target="_blank" class="relative group block overflow-hidden rounded-lg">
+     target="_blank" class="relative group block overflow-hidden rounded-lg">
     <img loading="lazy"
       src="${wallpaper.url}" 
       alt="${wallpaper.character}" 
@@ -97,26 +87,27 @@ function renderCard(wallpaper, grid) {
       ${wallpaper.type.charAt(0).toUpperCase() + wallpaper.type.slice(1)}
     </span>
   </a>
-    <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
-      <div class="flex gap-2">
+  <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
+    <div class="flex gap-2">
       <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}&mobile=${encodeURIComponent(wallpaper.mobile)}&tablet=${encodeURIComponent(wallpaper.tablet)}&desktop=${encodeURIComponent(wallpaper.desktop)}"
           target="_blank" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-white">
         <i class="fa-solid fa-download mr-1"></i>Download
       </a>
-        <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white">
-          <i class="likeIcon far fa-thumbs-up mr-1"></i>
-          <span class="likeCount">${formatNumber(likes)}</span>
-        </button>
-      </div>
-      <div class="text-xs text-gray-400">
-        <i class="fa-solid fa-eye ml-1 mr-1"></i>${formatNumber(views)}
-      </div>
+      <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white">
+        <i class="likeIcon far fa-thumbs-up mr-1"></i>
+        <span class="likeCount">${formatNumber(likes)}</span>
+      </button>
     </div>
-    <div class="px-4 py-4 flex flex-wrap gap-2 text-sm">
-      <span class="font-bold"><i class="fa-solid fa-tags mr-1"></i>Tags:</span>
-      ${wallpaper.tags.map(tag => `<span class="bg-gray-800 px-3 py-1 rounded-full">${tag}</span>`).join('')}
+    <div class="text-xs text-gray-400">
+      <i class="fa-solid fa-eye ml-1 mr-1"></i>${formatNumber(views)}
     </div>
-  `;
+  </div>
+  <div class="px-4 py-4 flex flex-wrap gap-2 text-sm">
+    <span class="font-bold"><i class="fa-solid fa-tags mr-1"></i>Tags:</span>
+    ${wallpaper.tags.map(tag => `<span class="bg-gray-800 px-3 py-1 rounded-full">${tag}</span>`).join('')}
+  </div>
+`;
+
 
   grid.appendChild(card);
 
@@ -134,12 +125,6 @@ function renderCard(wallpaper, grid) {
       likes--;
       userLiked = false;
     }
-
-    if (views <= likes) {
-      views = likes + randomRange(10000, 50000);
-      localStorage.setItem(viewsKey, views);
-    }
-
     localStorage.setItem(storageKey, likes);
     likeCountSpan.innerText = formatNumber(likes);
     likeIcon.classList.toggle('far', !userLiked);
@@ -147,7 +132,6 @@ function renderCard(wallpaper, grid) {
   });
 }
 
-// Helpers
 function randomRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
