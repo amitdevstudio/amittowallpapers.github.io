@@ -8,71 +8,105 @@
   <link rel="icon" href="assets/images/logo/luffy-hat.png" type="image/png" />
   <meta name="description"
     content="Get stunning Bleach anime wallpapers featuring Ichigo, Rukia, Aizen, Toshiro, Grimmjow, and more. Free high-resolution Bleach backgrounds for desktop and mobile. Perfect for any Bleach fan!" />
-  <link href="./dist/output.css" rel="stylesheet" />
+  <!-- Open Graph (for social sharing) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AmittoWallpapers | Free Anime HD Wallpapers" />
+  <meta property="og:description"
+    content="HD anime wallpapers for desktop & mobile - Naruto, One Piece, Bleach, Demon Slayer and more." />
+  <meta property="og:image" content="assets/images/hero-images/heroimg.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/logo/luffy-hat.png" type="image/png" />
+
+  <link rel="preload" href="assets/images/hero-images/heroimg.png" as="image" fetchpriority="high">
+  <link rel="preload" href="assets/images/hero-images/hero-bg.jpg" as="image">
+  <link rel="preload" href="assets/images/logo/luffy-hat.png" as="image">
+
+  <link rel="preload" href="/src/output.css" as="style" onload="this.rel='stylesheet'">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
+
+  <!-- AOS (for animations) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
- <style>
-  /* Custom styles for the Inter font */
-  body {
-    font-family: "Inter", sans-serif;
-  }
 
-  .brand-logo {
-    font-family: 'Poppins', sans-serif;
-  }
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  #collapseMenu.show {
-    display: block;
-  }
-
-  #collapseMenu.show {
-    display: block;
-  }
-
-  #menuOverlay.show {
-    display: block;
-  }
-
-  .wallpaper-card img {
-    transition: transform 0.2s ease, filter 0.2s ease;
-  }
-
-  .wallpaper-card img:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1);
-  }
-  
-  /* Loader CSS */
-  .loader {
-    width: 60px;
-    aspect-ratio: 4;
-    /* Updated loader color to a visible grey */
-    --_g: no-repeat radial-gradient(circle closest-side, #666 90%, #0000); 
-    background:
-      var(--_g) 0% 50%,
-      var(--_g) 50% 50%,
-      var(--_g) 100% 50%;
-    background-size: calc(100%/3) 100%;
-    animation: l7 1s infinite linear;
-    margin: 2rem auto;
-    display: none; /* Initially hidden, will be shown by JS */
-  }
-
-  @keyframes l7 {
-    33% {
-      background-size: calc(100%/3) 0%, calc(100%/3) 100%, calc(100%/3) 100%
+  <!-- Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-048LX9JF5P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-048LX9JF5P');
+  </script>
+  <style>
+    /* Custom styles for the Inter font */
+    body {
+      font-family: "Inter", sans-serif;
     }
 
-    50% {
-      background-size: calc(100%/3) 100%, calc(100%/3) 0%, calc(100%/3) 100%
+    .brand-logo {
+      font-family: 'Poppins', sans-serif;
     }
 
-    66% {
-      background-size: calc(100%/3) 100%, calc(100%/3) 100%, calc(100%/3) 0%
+    #collapseMenu.show {
+      display: block;
     }
-  }
-</style>
+
+    #collapseMenu.show {
+      display: block;
+    }
+
+    #menuOverlay.show {
+      display: block;
+    }
+
+    .wallpaper-card img {
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .wallpaper-card img:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+
+    /* Loader CSS */
+    .loader {
+      width: 60px;
+      aspect-ratio: 4;
+      /* Updated loader color to a visible grey */
+      --_g: no-repeat radial-gradient(circle closest-side, #666 90%, #0000);
+      background:
+        var(--_g) 0% 50%,
+        var(--_g) 50% 50%,
+        var(--_g) 100% 50%;
+      background-size: calc(100%/3) 100%;
+      animation: l7 1s infinite linear;
+      margin: 2rem auto;
+      display: none;
+      /* Initially hidden, will be shown by JS */
+    }
+
+    @keyframes l7 {
+      33% {
+        background-size: calc(100%/3) 0%, calc(100%/3) 100%, calc(100%/3) 100%
+      }
+
+      50% {
+        background-size: calc(100%/3) 100%, calc(100%/3) 0%, calc(100%/3) 100%
+      }
+
+      66% {
+        background-size: calc(100%/3) 100%, calc(100%/3) 100%, calc(100%/3) 0%
+      }
+    }
+  </style>
 </head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-048LX9JF5P"></script>
 <script>
@@ -86,16 +120,21 @@
   gtag('config', 'G-048LX9JF5P');
 </script>
 
-<body class="bg-[#0d0d0d] text-white">
+<body class="bg-[#0d0d0d] text-white overflow-x-hidden">
+
+  <!-- ✅ HTML HEADER -->
   <header class="border-b border-gray-300 bg-black min-h-[60px] px-4 py-6 tracking-wide relative z-50">
     <div class="flex flex-wrap items-center max-lg:gap-y-6 max-sm:gap-x-4">
+      <!-- Brand -->
       <a href="index.html" class="flex text-2xl items-center font-bold flex-wrap font-sans">
         <img src="assets/images/logo/luffy-hat.png" class="w-10 lg:-mt-1" alt="">
         Amitto<span class="text-red-400">Wallpapers</span>
       </a>
 
+      <!-- DESKTOP MENU -->
       <div id="collapseMenu"
         class="max-lg:hidden lg:flex lg:items-center lg:gap-y-8 mx-auto max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:w-2/3 max-lg:min-w-[300px] max-lg:h-full max-lg:bg-[#101014] max-lg:shadow-md max-lg:overflow-auto max-lg:px-10 max-lg:py-6 z-50">
+        <!-- Mobile close button -->
         <button id="toggleClose"
           class="lg:hidden fixed top-4 right-4 z-[100] rounded-full text-black bg-white w-9 h-9 flex items-center justify-center border border-gray-200 cursor-pointer">
           <i class="fa-solid fa-xmark"></i>
@@ -103,30 +142,63 @@
 
         <ul class="flex flex-col space-y-8 lg:space-y-0 text-center lg:text-left lg:flex-row space-x-4 w-full">
           <li class="mb-10 hidden max-lg:block">
-            <a href="index.html" class="text-2xl font-bold flex-wrap">
+            <a href="index.html" class="flex text-xl text-left items-center font-bold flex-wrap font-sans">
+              <img src="assets/images/logo/luffy-hat.png" class="w-10 lg:-mt-1" alt="">
               Amitto<span class="text-red-400">Wallpapers</span>
             </a>
           </li>
-          <li><a href="#home" class="block hover:text-red-400 text-[18px] font-medium">Home</a></li>
-          <li><a href="#latest" class="block hover:text-red-400 text-[18px] font-medium">Latest</a></li>
-          <li><a href="#categories" class="block hover:text-red-400 text-[18px] font-medium">Categories</a></li>
-          <li><a href="#about" class="block hover:text-red-400 text-[18px] font-medium">About</a></li>
-          <li><a href="#community" class="block hover:text-red-400 text-[18px] font-medium">Community</a></li>
-          <li><a href="#contact" class="block hover:text-red-400 text-[18px] font-medium">Contact</a></li>
+          <li
+            class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
+            <a href="#home" class="block text-[18px] font-medium">Home</a>
+          </li>
+          <li
+            class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
+            <a href="#latest" class="block text-[18px] font-medium">Latest</a>
+          </li>
+          <li
+            class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
+            <a href="#categories" class="block text-[18px] font-medium">Categories</a>
+          </li>
+          <li
+            class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
+            <a href="#about" class="block text-[18px] font-medium">About</a>
+          </li>
+          <li
+            class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
+            <a href="#community" class="block text-[18px] font-medium">Community</a>
+          </li>
+          <li
+            class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
+            <a href="#contact" class="block text-[18px] font-medium">Contact</a>
+          </li>
         </ul>
       </div>
 
+      <!-- Overlay (for mobile) -->
       <div id="menuOverlay" class="hidden fixed inset-0 bg-black/40 z-40"></div>
 
+      <!-- Social icons (desktop only) -->
       <div class="hidden lg:flex items-center ml-6 text-2xl space-x-6 text-white">
-        <a href="comingsoon.html" class="text-red-400" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="comingsoon.html" class="text-purple-600" target="_blank"><i class="fa-brands fa-discord"></i></a>
-        <a href="comingsoon.html" class="text-red-500" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-        <a href="comingsoon.html" class="text-blue-500" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <ul class="flex text-2xl space-x-4" aria-label="Social media">
+          <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Instagram"
+              aria-label="Instagram"
+              class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-pink-600 transition-colors"><i
+                class="fab fa-instagram text-white"></i></a></li>
+          <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Facebook" aria-label="Facebook"
+              class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-blue-600 transition-colors"><i
+                class="fab fa-facebook-f text-white"></i></a></li>
+          <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="YouTube" aria-label="YouTube"
+              class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-red-600 transition-colors"><i
+                class="fab fa-youtube text-white"></i></a></li>
+          <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Discord" aria-label="Discord"
+              class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-purple-700 transition-colors"><i
+                class="fab fa-discord text-white"></i></a></li>
+        </ul>
       </div>
 
-      <button id="toggleOpen" class="lg:hidden cursor-pointer ml-auto">
-        <svg class="w-7 h-7" fill="white" viewBox="0 0 20 20">
+      <!-- Toggle button (hamburger) -->
+      <button id="toggleOpen" class="lg:hidden cursor-pointer ml-auto" aria-label="Open navigation menu">
+        <svg class="w-7 h-7" fill="white" viewBox="0 0 20 20" aria-hidden="true">
           <path fill-rule="evenodd"
             d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
             clip-rule="evenodd"></path>
@@ -134,19 +206,20 @@
       </button>
     </div>
 
+    <!-- Search bar -->
     <div
       class="bg-white border focus-within:border-slate-900 flex items-center px-4 rounded-full h-10 lg:w-2/4 mt-3 mx-auto transition-all">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" class="w-4 h-4 mr-3">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" class="w-4 h-4 mr-3 text-gray-500">
         <path
           d="M190.707 180.101l-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 005.303 2.197 7.498 7.498 0 005.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z" />
       </svg>
       <input type="search" id="searchInput" placeholder="Search..." autocomplete="off"
-        class="w-full outline-none bg-white text-black text-[15px]" />
+        class="w-full outline-none bg-white text-black text-[15px] placeholder-gray-500 placeholder-opacity-100 focus:placeholder-gray-400 transition" />
     </div>
   </header>
   <div id="wallpaperGrid" class="w-[95%] mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4"></div>
   <section id="hero-section" class="relative bg-[#101014] text-white py-4 px-6 md:px-12">
-    <h2 class="text-3xl font-semibold mb-4 text-center">Desktop Wallpapers</h2>
+    <h1 class="text-3xl font-semibold mb-4 text-center">Desktop Wallpapers</h1>
     <div id="desktop-loader" class="loader"></div>
     <div id="desktop-grid" class="grid w-full mx-auto grid-cols-1 md:grid-cols-4 gap-6 mb-6"></div>
     <button id="desktop-show-more"
@@ -154,7 +227,7 @@
       Show More
     </button>
 
-    <h2 class="text-3xl font-semibold mb-4 text-center">Mobile Wallpapers</h2>
+    <h1 class="text-3xl font-semibold mb-4 text-center">Mobile Wallpapers</h1>
     <div id="mobile-loader" class="loader"></div>
     <div id="mobile-grid" class="grid w-full mx-auto grid-cols-1 md:grid-cols-4 gap-6 mb-6"></div>
     <button id="mobile-show-more"
@@ -179,12 +252,14 @@
       <div>
         <h3 class="text-white font-semibold mb-4">Quick Links</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href="https://amittowallpapers.netlify.app/#hero-section" class="hover:text-white transition">Home</a>
-          </li>
+          <li><a href="https://amittowallpapers.netlify.app/#home" class="hover:text-white transition">Home</a></li>
           <li><a href="https://amittowallpapers.netlify.app/#latest" class="hover:text-white transition">Latest
               Wallpapers</a></li>
           <li><a href="https://amittowallpapers.netlify.app/#categories"
               class="hover:text-white transition">Categories</a></li>
+          <li><a href="https://amittowallpapers.netlify.app/#about" class="hover:text-white transition">About</a></li>
+          <li><a href="https://amittowallpapers.netlify.app/#community"
+              class="hover:text-white transition">Community</a></li>
           <li><a href="https://amittowallpapers.netlify.app/#contact" class="hover:text-white transition">Contact</a>
           </li>
         </ul>
@@ -226,13 +301,13 @@
     <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
       &copy; 2025 AmittoWallpapers. All rights reserved.
       <br>
-      Made with ❤️ by <a href="javascript:void(0)" target="_blank"
+      Made with ❤️ by <a href="https://amitdevstudio.netlify.app/" target="_blank"
         class="font-semibold text-white hover:underline">AmitDevStudio</a>.
     </div>
   </footer>
-  <script type="module" src="assets/bleach.js"></script>
-  <script type="module" src="assets/search.js"></script>
-  <script type="module" src="assets/wallpaper.js"></script>
+  <script type="module" src="assets/bleach.js" defer></script>
+  <script type="module" src="assets/search.js" defer></script>
+  <script type="module" src="assets/wallpaper.js" defer></script>
   <script>
     // Menu Button
     const toggleOpen = document.getElementById("toggleOpen");
@@ -296,14 +371,14 @@
       subscribeModal.classList.remove('flex');
     });
   </script>
-  <script>
+  <!-- <script>
     // Disable right-click context menu
-    document.addEventListener('contextmenu', function(e) {
+    document.addEventListener('contextmenu', function (e) {
       e.preventDefault();
     });
 
     // Disable developer tools and view source
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       const key = e.key.toLowerCase();
 
       // F12
@@ -324,7 +399,7 @@
         return false;
       }
     });
-  </script>
+  </script> -->
 </body>
 
 </html>

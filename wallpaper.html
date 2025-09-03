@@ -5,27 +5,65 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Download Wallpaper - AmittoWallpapers</title>
+    <!-- Open Graph (for social sharing) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="AmittoWallpapers | Free Anime HD Wallpapers" />
+    <meta property="og:description"
+        content="Discover and download high-quality anime wallpapers for free. Personalize your screen with stunning HD images of your favorite characters." />
+    <meta property="og:image" content="assets/images/hero-images/heroimg.png" />
+
+    <!-- Favicon -->
     <link rel="icon" href="assets/images/logo/luffy-hat.png" type="image/png" />
-    <link href="./dist/output.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="preload" href="assets/images/hero-images/heroimg.png" as="image" fetchpriority="high">
+    <link rel="preload" href="assets/images/hero-images/hero-bg.jpg" as="image">
+    <link rel="preload" href="assets/images/logo/luffy-hat.png" as="image">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" href="/src/output.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
+
+    <!-- AOS (for animations) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-048LX9JF5P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-048LX9JF5P');
+    </script>
     <style>
         /* The max-height for wallpaperPreview is now set dynamically by JavaScript based on wallpaper type. */
         #wallpaperPreview {
-            width: auto; /* Allow width to adjust based on height and aspect ratio */
-            object-fit: contain; /* Keep object-fit contain to ensure aspect ratio */
+            width: auto;
+            /* Allow width to adjust based on height and aspect ratio */
+            object-fit: contain;
+            /* Keep object-fit contain to ensure aspect ratio */
         }
+
         /* Removed the redundant .main-wallpaper img rule as Tailwind classes are used directly. */
     </style>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-048LX9JF5P"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-048LX9JF5P');
+    gtag('config', 'G-048LX9JF5P');
 </script>
+
 <body class="bg-[#0d0d0d] text-white min-h-screen">
     <header class="border-b border-gray-300 bg-black min-h-[60px] px-4 py-6 tracking-wide relative z-50">
         <div class="flex flex-wrap items-center max-lg:gap-y-6 max-sm:gap-x-4">
@@ -43,22 +81,35 @@
 
                 <ul class="flex flex-col space-y-8 lg:space-y-0 text-center lg:text-left lg:flex-row space-x-4 w-full">
                     <li class="mb-10 hidden max-lg:block">
-                        <a href="index.html" class="text-2xl font-bold flex-wrap">
+                        <a href="index.html" class="flex text-xl text-left items-center font-bold flex-wrap font-sans">
+                            <img src="assets/images/logo/luffy-hat.png" class="w-10 lg:-mt-1" alt="">
                             Amitto<span class="text-red-400">Wallpapers</span>
                         </a>
                     </li>
-                    <li><a href="#home" class="block hover:text-red-400 text-[18px] font-medium">Home</a></li>
-                    <li><a href="https://amittowallpapers.netlify.app/#latest"
-                            class="block hover:text-red-400 text-[18px] font-medium">Latest</a></li>
-                    <li><a href="https://amittowallpapers.netlify.app/#categories"
-                            class="block hover:text-red-400 text-[18px] font-medium">Categories</a>
+                    <li
+                        class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
+                        <a href="#home" class="block text-[18px] font-medium">Home</a>
                     </li>
-                    <li><a href="https://amittowallpapers.netlify.app/#about"
-                            class="block hover:text-red-400 text-[18px] font-medium">About</a></li>
-                    <li><a href="https://amittowallpapers.netlify.app/#community"
-                            class="block hover:text-red-400 text-[18px] font-medium">Community</a></li>
-                    <li><a href="https://amittowallpapers.netlify.app/#contact"
-                            class="block hover:text-red-400 text-[18px] font-medium">Contact</a></li>
+                    <li
+                        class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
+                        <a href="#latest" class="block text-[18px] font-medium">Latest</a>
+                    </li>
+                    <li
+                        class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
+                        <a href="#categories" class="block text-[18px] font-medium">Categories</a>
+                    </li>
+                    <li
+                        class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
+                        <a href="#about" class="block text-[18px] font-medium">About</a>
+                    </li>
+                    <li
+                        class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
+                        <a href="#community" class="block text-[18px] font-medium">Community</a>
+                    </li>
+                    <li
+                        class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
+                        <a href="#contact" class="block text-[18px] font-medium">Contact</a>
+                    </li>
                 </ul>
             </div>
 
@@ -95,8 +146,9 @@
     </header>
     <div id="wallpaperGrid" class="w-[95%] mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4"></div>
 
-        <section id="main-wallpaper" class="max-w-6xl mx-auto lg:bg-[#1a1a1a] rounded-xl shadow-lg p-6 md:mt-8">
-        <div class="max-h-[100vh] w-full flex justify-center items-center flex-col lg:flex-row gap-12 lg:items-start lg:justify-around">
+    <section id="main-wallpaper" class="max-w-6xl mx-auto lg:bg-[#1a1a1a] rounded-xl shadow-lg p-6 md:mt-8">
+        <div
+            class="max-h-[100vh] w-full flex justify-center items-center flex-col lg:flex-row gap-12 lg:items-start lg:justify-around">
             <!-- Added w-full to this div for proper centering on mobile -->
             <div class="flex justify-center items-center">
                 <!-- max-w-sm is kept here to control width, max-height will be set by JS -->
@@ -156,14 +208,20 @@
             <div>
                 <h3 class="text-white font-semibold mb-4">Quick Links</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="https://amittowallpapers.netlify.app/#hero-section"
+                    <li><a href="https://amittowallpapers.netlify.app/#home"
                             class="hover:text-white transition">Home</a></li>
                     <li><a href="https://amittowallpapers.netlify.app/#latest"
-                            class="hover:text-white transition">Latest Wallpapers</a></li>
+                            class="hover:text-white transition">Latest
+                            Wallpapers</a></li>
                     <li><a href="https://amittowallpapers.netlify.app/#categories"
                             class="hover:text-white transition">Categories</a></li>
+                    <li><a href="https://amittowallpapers.netlify.app/#about"
+                            class="hover:text-white transition">About</a></li>
+                    <li><a href="https://amittowallpapers.netlify.app/#community"
+                            class="hover:text-white transition">Community</a></li>
                     <li><a href="https://amittowallpapers.netlify.app/#contact"
-                            class="hover:text-white transition">Contact</a></li>
+                            class="hover:text-white transition">Contact</a>
+                    </li>
                 </ul>
             </div>
 
@@ -209,7 +267,7 @@
                 class="font-semibold text-white hover:underline">AmitDevStudio</a>.
         </div>
     </footer>
-        <script type="module" src="assets/index.js"></script>
+    <script type="module" src="assets/index.js"></script>
     <script type="module" src="assets/search.js"></script>
     <script>
         const toggleOpen = document.getElementById("toggleOpen");
@@ -253,7 +311,7 @@
         const currentImgUrl = urlParams.get('img');
         const currentTitle = urlParams.get('title');
         // Get the 'type' of the wallpaper from the URL
-        const currentWallpaperType = urlParams.get('type'); 
+        const currentWallpaperType = urlParams.get('type');
 
 
         // Find the current wallpaper object based on the URL
@@ -274,7 +332,7 @@
                 wallpaperPreview.style.maxHeight = '50vh'; // Desktop wallpaper preview height (changed from 60vh to 50vh)
             } else {
                 // Default or fallback if type is not specified (e.g., direct access without type)
-                wallpaperPreview.style.maxHeight = '40vh'; 
+                wallpaperPreview.style.maxHeight = '40vh';
             }
 
             // Display the user's screen resolution
@@ -675,6 +733,3 @@
 </body>
 
 </html>
-
-
-

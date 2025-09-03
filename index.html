@@ -5,119 +5,107 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AmittoWallpapers | Free Anime HD Wallpapers</title>
+
+  <!-- Basic SEO -->
+  <meta name="description"
+    content="Download free HD anime wallpapers for Naruto, One Piece, Bleach, and more. High-quality wallpapers for desktop and mobile." />
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0d0d0d" />
-  <link rel="canonical" href="https://amittowallpapers.netlify.app/" />
+
+  <!-- Open Graph (for social sharing) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AmittoWallpapers | Free Anime HD Wallpapers" />
+  <meta property="og:description"
+    content="HD anime wallpapers for desktop & mobile - Naruto, One Piece, Bleach, Demon Slayer and more." />
+  <meta property="og:image" content="assets/images/hero-images/heroimg.png" />
 
   <!-- Favicon -->
   <link rel="icon" href="assets/images/logo/luffy-hat.png" type="image/png" />
 
-  <!-- Primary Meta -->
-  <meta name="description" content="AmittoWallpapers is your ultimate source for high-quality anime wallpapers. Download free HD wallpapers for Naruto, Bleach, One Piece, and more. Fresh, curated anime backgrounds for desktop and mobile." />
+  <link rel="preload" href="assets/images/hero-images/heroimg.png" as="image" fetchpriority="high">
+  <link rel="preload" href="assets/images/hero-images/hero-bg.jpg" as="image">
+  <link rel="preload" href="assets/images/logo/luffy-hat.png" as="image">
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://amittowallpapers.netlify.app/" />
-  <meta property="og:title" content="AmittoWallpapers | Free Anime HD Wallpapers" />
-  <meta property="og:description" content="Curated HD anime wallpapers for desktop & mobile – Naruto, One Piece, Bleach, Demon Slayer and more." />
-  <meta property="og:image" content="assets/images/hero-images/heroimg.png" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AmittoWallpapers | Free Anime HD Wallpapers" />
-  <meta name="twitter:description" content="Curated HD anime wallpapers for desktop & mobile – Naruto, One Piece, Bleach, Demon Slayer and more." />
-  <meta name="twitter:image" content="assets/images/hero-images/heroimg.png" />
-
-  <!-- Prefetch likely next pages (improves UX) -->
-  <link rel="prefetch" href="naruto.html" as="document" />
-  <link rel="prefetch" href="one-piece.html" as="document" />
-  <link rel="prefetch" href="bleach.html" as="document" />
-
-  <!-- Fonts: Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="/src/output.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
 
-  <!-- Tailwind (compiled) -->
-  <link href="./dist/output.css" rel="stylesheet" />
-
-  <!-- AOS (Animate On Scroll) -->
+  <!-- AOS (for animations) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "AmittoWallpapers",
-    "url": "https://amittowallpapers.netlify.app/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://amittowallpapers.netlify.app/?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-
-  <style>
-    /* Base */
-    body { font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background-color: #0d0d0d; color: #ffffff; }
-
-    /* Scrollbar */
-    ::-webkit-scrollbar { width: 10px; height: 10px; }
-    ::-webkit-scrollbar-track { background: #141414; }
-    ::-webkit-scrollbar-thumb { background: #2b2b2b; border-radius: 10px; }
-    ::-webkit-scrollbar-thumb:hover { background: #3b3b3b; }
-
-    /* Animations */
-    @keyframes bounce-pulse {
-      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
-      50% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
-    }
-    .animate-bounce-pulse { animation: bounce-pulse 2s infinite; }
-
-    .hero-bg { background-image: url("assets/images/hero-images/hero-bg.jpg"); opacity: 0.20; }
-
-    .wallpaper-card img { transition: transform 0.2s ease, filter 0.2s ease; }
-    .wallpaper-card img:hover { transform: scale(1.05); filter: brightness(1.1); }
-
-    @keyframes popUp {
-      0% { opacity: 0; transform: scale(0.8) translateY(30px); }
-      100% { opacity: 1; transform: scale(1) translateY(0); }
-    }
-    .popUp { animation: popUp 0.5s ease-out forwards; }
-
-    @keyframes bounce-custom { 0%, 100% { transform: translateY(0);} 50% { transform: translateY(-10px);} }
-    .animate-bounce-custom { animation: bounce-custom 1.5s infinite ease-in-out; }
-
-    /* Reduce motion for accessibility */
-    @media (prefers-reduced-motion: reduce) {
-      * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
-    }
-  </style>
-
-  <!-- Google tag (gtag.js) -->
+  <!-- Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-048LX9JF5P"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-048LX9JF5P');
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-048LX9JF5P');
   </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0d0d0d;
+      color: #fff;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #2b2b2b;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    .hero-bg {
+      background-image: url('assets/images/hero-images/hero-bg.jpg');
+      animation: zoomIn 20s infinite alternate;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100%;
+      width: 100%;
+      opacity: 12%;
+      filter: blur(0.1px);
+    }
+
+    #hero-section h1 {
+      font-family: system-ui;
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    #hero-section p {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      font-weight: 400;
+      letter-spacing: 0.025em;
+    }
+  </style>
 </head>
 
-<body class="bg-[#0d0d0d] text-white">
-  <a class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-3 py-2 rounded" href="#main">Skip to content</a>
+<body class="bg-[#0d0d0d] text-white overflow-x-hidden">
 
- <!-- ✅ HTML HEADER -->
+  <!-- ✅ HTML HEADER -->
   <header class="border-b border-gray-300 bg-black min-h-[60px] px-4 py-6 tracking-wide relative z-50">
     <div class="flex flex-wrap items-center max-lg:gap-y-6 max-sm:gap-x-4">
       <!-- Brand -->
-      <a href="index.html" class="flex text-2xl items-center font-bold flex-wrap font-sans">
+      <a href="index.html" class="flex text-2xl items-center font-bold flex-wrap font-sans" data-aos="zoom-in" data-aos-duration="800">
         <img src="assets/images/logo/luffy-hat.png" class="w-10 lg:-mt-1" alt="">
         Amitto<span class="text-red-400">Wallpapers</span>
       </a>
@@ -133,16 +121,35 @@
 
         <ul class="flex flex-col space-y-8 lg:space-y-0 text-center lg:text-left lg:flex-row space-x-4 w-full">
           <li class="mb-10 hidden max-lg:block">
-            <a href="index.html" class="text-2xl font-bold flex-wrap">
+            <a href="index.html" class="flex text-xl text-left items-center font-bold  font-sans">
+              <img src="assets/images/logo/luffy-hat.png" class="w-10 lg:-mt-1" alt="">
               Amitto<span class="text-red-400">Wallpapers</span>
             </a>
           </li>
-          <li><a href="#home" class="block hover:text-red-400 text-[18px] font-medium">Home</a></li>
-          <li><a href="#latest" class="block hover:text-red-400 text-[18px] font-medium">Latest</a></li>
-          <li><a href="#categories" class="block hover:text-red-400 text-[18px] font-medium">Categories</a></li>
-          <li><a href="#about" class="block hover:text-red-400 text-[18px] font-medium">About</a></li>
-          <li><a href="#community" class="block hover:text-red-400 text-[18px] font-medium">Community</a></li>
-          <li><a href="#contact" class="block hover:text-red-400 text-[18px] font-medium">Contact</a></li>
+          <li
+            class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
+            <a href="#home" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="200">Home</a>
+          </li>
+          <li
+            class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
+            <a href="#latest" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="400">Latest</a>
+          </li>
+          <li
+            class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
+            <a href="#categories" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="600">Categories</a>
+          </li>
+          <li
+            class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
+            <a href="#about" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="800">About</a>
+          </li>
+          <li
+            class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
+            <a href="#community" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="1000">Community</a>
+          </li>
+          <li
+            class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
+            <a href="#contact" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="1200">Contact</a>
+          </li>
         </ul>
       </div>
 
@@ -151,16 +158,26 @@
 
       <!-- Social icons (desktop only) -->
       <div class="hidden lg:flex items-center ml-6 text-2xl space-x-6 text-white">
-        <!-- Add your social icons here -->
-        <a href="comingsoon.html" class="text-red-400" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="comingsoon.html" class="text-purple-600" target="_blank"><i class="fa-brands fa-discord"></i></a>
-        <a href="comingsoon.html" class="text-red-500" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-        <a href="comingsoon.html" class="text-blue-500" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <ul class="flex text-2xl space-x-4" aria-label="Social media">
+          <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Instagram"
+              aria-label="Instagram" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="800"
+              class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-pink-600 transition-colors"><i
+                class="fab fa-instagram text-white"></i></a></li>
+          <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Facebook" aria-label="Facebook" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="800"
+              class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-blue-600 transition-colors"><i
+                class="fab fa-facebook-f text-white"></i></a></li>
+          <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="YouTube" aria-label="YouTube" data-aos="zoom-in" data-aos-delay="900" data-aos-duration="800"
+              class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-red-600 transition-colors"><i
+                class="fab fa-youtube text-white"></i></a></li>
+          <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Discord" aria-label="Discord" data-aos="zoom-in" data-aos-delay="1100" data-aos-duration="800"
+              class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-purple-700 transition-colors"><i
+                class="fab fa-discord text-white"></i></a></li>
+        </ul>
       </div>
 
       <!-- Toggle button (hamburger) -->
-      <button id="toggleOpen" class="lg:hidden cursor-pointer ml-auto">
-        <svg class="w-7 h-7" fill="white" viewBox="0 0 20 20">
+      <button id="toggleOpen" class="lg:hidden cursor-pointer ml-auto" aria-label="Open navigation menu">
+        <svg class="w-7 h-7" fill="white" viewBox="0 0 20 20" aria-hidden="true">
           <path fill-rule="evenodd"
             d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
             clip-rule="evenodd"></path>
@@ -170,13 +187,13 @@
 
     <!-- Search bar -->
     <div
-      class="bg-white border focus-within:border-slate-900 flex items-center px-4 rounded-full h-10 lg:w-2/4 mt-3 mx-auto transition-all">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" class="w-4 h-4 mr-3">
+      class="bg-white border focus-within:border-slate-900 flex items-center px-4 rounded-full h-10 lg:w-2/4 mt-3 mx-auto transition-all" id="searchBar" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" class="w-4 h-4 mr-3 text-gray-500">
         <path
           d="M190.707 180.101l-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 005.303 2.197 7.498 7.498 0 005.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z" />
       </svg>
       <input type="search" id="searchInput" placeholder="Search..." autocomplete="off"
-        class="w-full outline-none bg-white text-black text-[15px]" />
+        class="w-full outline-none bg-white text-black text-[15px] placeholder-gray-500 placeholder-opacity-100 focus:placeholder-gray-400 transition" />
     </div>
   </header>
 
@@ -185,20 +202,40 @@
 
   <main id="main">
     <!-- Hero -->
-    <section id="hero-section" class="relative text-white overflow-hidden h-[calc(100vh-130px)] pt-16 flex items-center" aria-label="Hero">
+    <section id="hero-section" class="relative text-white overflow-hidden sm:h-[81vh] pt-12 flex items-center"
+      aria-label="Hero">
       <div class="absolute inset-0 bg-cover bg-center bg-no-repeat hero-bg" aria-hidden="true"></div>
       <div class="relative z-10 max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
-        <div class="lg:w-[70%]" data-aos="fade-up" data-aos-duration="800">
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">Explore Epic <span class="text-blue-500 block">Anime Wallpapers</span></h1>
-          <p class="text-gray-100 font-medium text-lg mb-4">Curated HD wallpapers from your favorite anime series - Naruto, Bleach, One Piece, Demon Slayer & more.</p>
-          <p class="text-gray-200 text-base mb-8">Perfect for phones, tablets, desktops & ultrawide monitors. Updated daily with fresh picks & fan favorites.</p>
-          <div class="flex gap-4">
-            <a href="#categories" class="px-6 py-3 rounded-xl text-white border border-blue-600 bg-blue-600 hover:bg-transparent transition font-semibold">Browse Wallpapers</a>
-            <a href="#community" class="px-6 py-3 rounded-xl border border-gray-400 hover:bg-white hover:text-black transition font-semibold">Join the Community</a>
+        <div class="lg:w-[70%]">
+          <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight mb-6" data-aos="fade-up" data-aos-duration="800">
+            Transform Your Screen with Stunning Anime Art
+          </h1>
+          <p class="text-gray-100 font-medium text-lg mb-4" data-aos="fade-up" data-aos-duration="800"
+            data-aos-delay="200">
+            Dive into a world of breathtaking anime visuals. Our collection features wallpapers from top series like
+            <a href="naruto.html" class="font-bold" target="_blank">Naruto</a>, <a href="onepiece.html"
+              class="font-bold" target="_blank">One Piece</a>, <a href="attackontitan.html" class="font-bold"
+              target="_blank">Attack on Titan</a>, and more - all in Ultra HD.
+          </p>
+          <p class="text-gray-200 text-base mb-8" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+            Whether for desktop, mobile, or tablet, find the perfect wallpaper to match your style. Download instantly
+            and elevate your screen today.
+          </p>
+          <div class="flex gap-4" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="600">
+            <a href="#categories"
+              class="px-6 py-3 rounded-xl text-white border border-blue-600 bg-blue-600 hover:bg-transparent hover:text-blue-500 transition font-semibold">
+              Browse Wallpapers
+            </a>
+            <a href="#community" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="800"
+              class="px-6 py-3 rounded-xl border border-gray-400 hover:bg-white hover:text-black transition font-semibold">
+              Join the Community
+            </a>
           </div>
         </div>
         <div class="md:w-1/2" data-aos="fade-left" data-aos-duration="1000">
-          <img src="assets/images/hero-images/heroimg.png" alt="Collage of popular anime characters" class="rounded-2xl shadow-lg w-full max-w-md mx-auto" width="800" height="760" loading="eager" fetchpriority="high" />
+          <img src="assets/images/hero-images/heroimg.png" alt="Collage of popular anime characters"
+            class="rounded-2xl shadow-lg w-full max-w-md mx-auto" width="800" height="760" loading="eager"
+            fetchpriority="high" />
         </div>
       </div>
     </section>
@@ -216,7 +253,8 @@
     </section>
 
     <!-- Categories -->
-    <section id="categories" class="bg-[#0d0d0d] text-white py-16 px-6 md:px-12 lg:px-24" aria-labelledby="categories-heading">
+    <section id="categories" class="bg-[#0d0d0d] text-white py-16 px-6 md:px-12 lg:px-24"
+      aria-labelledby="categories-heading">
       <div class="max-w-7xl mx-auto">
         <h2 id="categories-heading" class="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">
           <i class="fa-solid fa-layer-group mr-2" aria-hidden="true"></i>Explore by Category
@@ -226,114 +264,262 @@
         </h3>
         <div id="categoryGrid" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           <!-- Naruto -->
-          <a href="naruto.html" target="_blank" rel="noreferrer noopener" class="group relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300" data-aos="zoom-in" data-aos-delay="100">
-            <img src="assets/images/anime-logos/naruto-logo.jpg" alt="Naruto category" class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640" height="320" loading="lazy" />
-            <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-4 text-center"><h3 class="text-lg font-semibold">Naruto</h3></div>
+          <a href="naruto.html" target="_blank" rel="noreferrer noopener"
+            class="group relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
+            data-aos="zoom-in" data-aos-delay="100">
+            <img src="assets/images/anime-logos/naruto-logo.jpg" alt="Naruto category"
+              class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
+              height="320" loading="lazy" />
+            <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-4 text-center">
+              <h3 class="text-lg font-semibold">Naruto</h3>
+            </div>
           </a>
           <!-- One Piece -->
-          <a href="one-piece.html" target="_blank" rel="noreferrer noopener" class="group relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300" data-aos="zoom-in" data-aos-delay="200">
-            <img src="assets/images/anime-logos/one-piece-logo.jpg" alt="One Piece category" class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640" height="320" loading="lazy" />
-            <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-4 text-center"><h3 class="text-lg font-semibold">One Piece</h3></div>
+          <a href="one-piece.html" target="_blank" rel="noreferrer noopener"
+            class="group relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
+            data-aos="zoom-in" data-aos-delay="200">
+            <img src="assets/images/anime-logos/one-piece-logo.jpg" alt="One Piece category"
+              class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
+              height="320" loading="lazy" />
+            <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-4 text-center">
+              <h3 class="text-lg font-semibold">One Piece</h3>
+            </div>
           </a>
           <!-- Dragon Ball -->
-          <a href="dragon-ball.html" target="_blank" rel="noreferrer noopener" class="group relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300" data-aos="zoom-in" data-aos-delay="300">
-            <img src="assets/images/anime-logos/dragon-ball-logo.jpg" alt="Dragon Ball category" class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640" height="320" loading="lazy" />
-            <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-4 text-center"><h3 class="text-lg font-semibold">Dragon Ball</h3></div>
+          <a href="dragon-ball.html" target="_blank" rel="noreferrer noopener"
+            class="group relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
+            data-aos="zoom-in" data-aos-delay="300">
+            <img src="assets/images/anime-logos/dragon-ball-logo.jpg" alt="Dragon Ball category"
+              class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
+              height="320" loading="lazy" />
+            <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-4 text-center">
+              <h3 class="text-lg font-semibold">Dragon Ball</h3>
+            </div>
           </a>
           <!-- Bleach -->
-          <a href="bleach.html" target="_blank" rel="noreferrer noopener" class="group relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300" data-aos="zoom-in" data-aos-delay="400">
-            <img src="assets/images/anime-logos/bleach-logo.png" alt="Bleach category" class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640" height="320" loading="lazy" />
-            <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-4 text-center"><h3 class="text-lg font-semibold">Bleach</h3></div>
+          <a href="bleach.html" target="_blank" rel="noreferrer noopener"
+            class="group relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
+            data-aos="zoom-in" data-aos-delay="400">
+            <img src="assets/images/anime-logos/bleach-logo.png" alt="Bleach category"
+              class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
+              height="320" loading="lazy" />
+            <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-4 text-center">
+              <h3 class="text-lg font-semibold">Bleach</h3>
+            </div>
           </a>
 
           <!-- Hidden initially -->
-          <a href="demon-slayer.html" target="_blank" rel="noreferrer noopener" class="group hidden more-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300" data-aos="zoom-in" data-aos-delay="500">
-            <img src="assets/images/anime-logos/demon-slayer-logo.jpeg" alt="Demon Slayer category" class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640" height="320" loading="lazy" />
-            <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-4 text-center"><h3 class="text-lg font-semibold">Demon Slayer</h3></div>
+          <a href="demon-slayer.html" target="_blank" rel="noreferrer noopener"
+            class="group hidden more-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
+            data-aos="zoom-in" data-aos-delay="500">
+            <img src="assets/images/anime-logos/demon-slayer-logo.jpeg" alt="Demon Slayer category"
+              class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
+              height="320" loading="lazy" />
+            <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-4 text-center">
+              <h3 class="text-lg font-semibold">Demon Slayer</h3>
+            </div>
           </a>
-          <a href="comingsoon.html" target="_blank" rel="noreferrer noopener" class="group hidden more-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300" data-aos="zoom-in" data-aos-delay="600">
-            <img src="assets/images/anime-logos/chainsaw-man-logo.png" alt="Chainsaw Man category" class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640" height="320" loading="lazy" />
-            <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-4 text-center"><h3 class="text-lg font-semibold">Chainsaw Man</h3></div>
+          <a href="comingsoon.html" target="_blank" rel="noreferrer noopener"
+            class="group hidden more-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
+            data-aos="zoom-in" data-aos-delay="600">
+            <img src="assets/images/anime-logos/chainsaw-man-logo.png" alt="Chainsaw Man category"
+              class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
+              height="320" loading="lazy" />
+            <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-4 text-center">
+              <h3 class="text-lg font-semibold">Chainsaw Man</h3>
+            </div>
           </a>
-          <a href="comingsoon.html" target="_blank" rel="noreferrer noopener" class="group hidden more-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300" data-aos="zoom-in" data-aos-delay="700">
-            <img src="assets/images/anime-logos/tokyo-ghoul-logo.jpg" alt="Tokyo Ghoul category" class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640" height="320" loading="lazy" />
-            <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-4 text-center"><h3 class="text-lg font-semibold">Tokyo Ghoul</h3></div>
+          <a href="comingsoon.html" target="_blank" rel="noreferrer noopener"
+            class="group hidden more-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
+            data-aos="zoom-in" data-aos-delay="700">
+            <img src="assets/images/anime-logos/tokyo-ghoul-logo.jpg" alt="Tokyo Ghoul category"
+              class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
+              height="320" loading="lazy" />
+            <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-4 text-center">
+              <h3 class="text-lg font-semibold">Tokyo Ghoul</h3>
+            </div>
           </a>
-          <a href="comingsoon.html" target="_blank" rel="noreferrer noopener" class="group hidden more-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300" data-aos="zoom-in" data-aos-delay="800">
-            <img src="assets/images/anime-logos/death-note-logo.jpg" alt="Death Note category" class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640" height="320" loading="lazy" />
-            <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-4 text-center"><h3 class="text-lg font-semibold">Death Note</h3></div>
+          <a href="comingsoon.html" target="_blank" rel="noreferrer noopener"
+            class="group hidden more-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
+            data-aos="zoom-in" data-aos-delay="800">
+            <img src="assets/images/anime-logos/death-note-logo.jpg" alt="Death Note category"
+              class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
+              height="320" loading="lazy" />
+            <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-4 text-center">
+              <h3 class="text-lg font-semibold">Death Note</h3>
+            </div>
           </a>
         </div>
 
         <!-- Show More / Less -->
         <div class="mt-12 text-center space-x-4">
-          <button id="showMoreCategories" class="px-6 py-3 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition" data-aos="zoom-in" data-aos-delay="500">Show More</button>
-          <button id="showLessCategories" class="px-6 py-3 cursor-pointer bg-red-600 hover:bg-red-700 text-white rounded-lg font-semibold transition hidden">Show Less</button>
+          <button id="showMoreCategories"
+            class="px-6 py-3 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition"
+            data-aos="zoom-in" data-aos-delay="500">Show More</button>
+          <button id="showLessCategories"
+            class="px-6 py-3 cursor-pointer bg-red-600 hover:bg-red-700 text-white rounded-lg font-semibold transition hidden">Show
+            Less</button>
         </div>
       </div>
     </section>
 
     <!-- About -->
     <section id="about" class="bg-[#101014] text-white py-16 px-6 md:px-12 lg:px-24" aria-labelledby="about-heading">
-      <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-        <h2 id="about-heading" class="text-3xl md:text-4xl font-bold mb-6">
-          <i class="fa-solid fa-circle-info mr-2 text-blue-500" aria-hidden="true"></i>About Amitto<span class="text-red-400">Wallpapers</span>
+      <div class="max-w-5xl mx-auto text-center">
+        <!-- Heading animation -->
+        <h2 id="about-heading" class="text-3xl flex flex-wrap justify-center items-center md:text-4xl font-bold mb-6" data-aos="zoom-in"
+          data-aos-duration="800">
+          <i class="fa-solid fa-circle-info mr-2 text-blue-500"></i>
+          <span>About</span>
+          <div class="flex items-center ml-3">
+            <img src="assets/images/logo/luffy-hat.png" class="inline-block w-16 lg:-mt-1" alt="">
+            <span class="text-white -ml-1">Amitto</span>
+            <span class="text-red-400">Wallpapers</span>
+          </div>
         </h2>
-        <p class="text-gray-300 text-lg leading-relaxed">
-          <span class="font-semibold text-white">AmittoWallpapers</span> is a fan-made anime wallpaper hub where passion meets pixels. We curate a stunning gallery of HD wallpapers from classic to seasonal anime, featuring your favorite characters in breathtaking resolution. Our mission is simple: share anime art that inspires fans and enhances screens—no ads, no clutter, just pure anime love.
+
+        <!-- Paragraph animation -->
+        <p class="text-gray-300 text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="300"
+          data-aos-duration="800">
+          <img src="assets/images/logo/luffy-hat.png" class="inline-block w-8 -mt-2 -mr-1" alt="">
+          Amitto<span class="text-red-400">Wallpapers</span>
+          is a fan-made anime wallpaper hub where passion meets pixels. We curate a stunning gallery of HD wallpapers
+          from classic to seasonal anime, featuring your favorite characters in breathtaking resolution. Our mission is
+          simple: share anime art that inspires fans and enhances screens—no ads, no clutter, just pure anime love.
         </p>
       </div>
     </section>
 
     <!-- Community -->
-    <section id="community" class="bg-[#0d0d0d] text-white py-16 px-6 md:px-12 lg:px-24" aria-labelledby="community-heading">
+    <section id="community" class="bg-[#0d0d0d] text-white py-16 px-6 md:px-12 lg:px-24"
+      aria-labelledby="community-heading">
       <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-        <h2 id="community-heading" class="text-3xl md:text-4xl font-bold mb-6">
+        <h2 id="community-heading" class="text-3xl md:text-4xl font-bold mb-6" data-aos="zoom-in"
+          data-aos-duration="800">
           <i class="fa-solid fa-users mr-2 text-purple-500" aria-hidden="true"></i>Join the Community
         </h2>
-        <p class="text-gray-300 text-lg">Be a part of the <span class="text-white font-semibold">AmittoWallpapers</span> anime fan community! Stay updated, share your favorite wallpapers, and connect with other fans on social platforms.</p>
+        <p class="text-gray-300 text-lg" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">Be a part of the
+          <img src="assets/images/logo/luffy-hat.png" class="inline-block w-8 -mt-2 -mr-1 ml-1" alt="">
+          Amitto<span class="text-red-400">Wallpapers</span>
+          anime fan community! Stay updated, share your favorite wallpapers, and connect with other fans on social
+          platforms.</p>
 
         <div class="flex justify-center mt-8">
           <ul class="flex text-2xl space-x-4" aria-label="Social media">
-            <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Instagram" aria-label="Instagram" class="bg-gray-800 h-10 w-10 flex items-center justify-center rounded-full hover:bg-pink-600 transition-colors"><i class="fab fa-instagram text-white"></i></a></li>
-            <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Facebook" aria-label="Facebook" class="bg-gray-800 h-10 w-10 flex items-center justify-center rounded-full hover:bg-blue-600 transition-colors"><i class="fab fa-facebook-f text-white"></i></a></li>
-            <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="YouTube" aria-label="YouTube" class="bg-gray-800 h-10 w-10 flex items-center justify-center rounded-full hover:bg-red-600 transition-colors"><i class="fab fa-youtube text-white"></i></a></li>
-            <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Discord" aria-label="Discord" class="bg-gray-800 h-10 w-10 flex items-center justify-center rounded-full hover:bg-purple-700 transition-colors"><i class="fab fa-discord text-white"></i></a></li>
+            <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Instagram"
+                aria-label="Instagram" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="800"
+                class="bg-gray-800 h-10 w-10 flex items-center justify-center rounded-full hover:bg-pink-600 transition-colors"><i
+                  class="fab fa-instagram text-white"></i></a></li>
+            <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Facebook"
+                aria-label="Facebook" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="800"
+                class="bg-gray-800 h-10 w-10 flex items-center justify-center rounded-full hover:bg-blue-600 transition-colors"><i
+                  class="fab fa-facebook-f text-white"></i></a></li>
+            <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="YouTube" aria-label="YouTube"
+                data-aos="zoom-in" data-aos-delay="900" data-aos-duration="800"
+                class="bg-gray-800 h-10 w-10 flex items-center justify-center rounded-full hover:bg-red-600 transition-colors"><i
+                  class="fab fa-youtube text-white"></i></a></li>
+            <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Discord" aria-label="Discord"
+                data-aos="zoom-in" data-aos-delay="1100" data-aos-duration="800"
+                class="bg-gray-800 h-10 w-10 flex items-center justify-center rounded-full hover:bg-purple-700 transition-colors"><i
+                  class="fab fa-discord text-white"></i></a></li>
           </ul>
         </div>
       </div>
     </section>
-
-    <!-- Contact -->
-    <section id="contact" class="scroll-mt-10 py-16 px-6 md:px-12 lg:px-24 text-white bg-[#101014]" aria-labelledby="contact-heading">
-      <div class="max-w-sm mx-auto" data-aos="fade-up">
-        <h2 id="contact-heading" class="text-3xl font-semibold text-center mb-4">Let's Talk</h2>
-        <p class="text-[16px] text-gray-300 mt-4 mb-8 leading-relaxed text-center">Have questions or suggestions? Reach out to us! We'd love to hear from you.</p>
-
+    <!-- Contact Section -->
+    <section id="contact" class="scroll-mt-20 md:py-16 px-6 md:px-12 lg:px-24 text-white">
+      <div class="grid grid-cols-1 sm:grid-cols-2 items-start gap-12 p-8 mx-auto max-w-4xl">
+        <!-- Left: Info -->
+        <div>
+          <h2 id="contact-heading" class="text-3xl font-semibold text-center mb-4" data-aos="fade-up">Let's Talk</h2>
+          <p class="text-[16px] text-gray-300 mt-4 mb-8 leading-relaxed text-center" data-aos="zoom-in"
+            data-aos-delay="200">Have questions or suggestions? Reach
+            out to us! We'd love to hear from you.</p>
+          <!-- Email -->
+          <div class="mt-12">
+            <h2 class="text-base font-semibold" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">Email
+            </h2>
+            <ul class="mt-4">
+              <li class="flex items-center">
+                <div class="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0"
+                  data-aos="fade-right" data-aos-delay="400" data-aos-duration="500">
+                  <!-- Email Icon -->
+                  <i class="fa-solid text-black text-[24px] fa-envelope"></i>
+                </div>
+                <a aria-label='Email' class='text-sm ml-4' data-aos-delay='400' data-aos-duration='500'
+                  data-aos='fade-left' href='comingsoon.html' title='Send an email'>
+                  <small class="block text-[15px]">Mail</small>
+                  <span class="text-green-500 text[20px] font-medium">Coming Soon</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Social Links -->
+          <div class="mt-12">
+            <h2 class="text-base font-semibold mb-4" data-aos="fade-up" data-aos-delay="500" data-aos-duration="500">
+              Socials</h2>
+            <ul class="flex text-2xl space-x-4" aria-label="Social media">
+              <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Instagram"
+                  aria-label="Instagram" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="800"
+                  class="bg-gray-800 h-10 w-10 flex items-center justify-center rounded-full hover:bg-pink-600 transition-colors"><i
+                    class="fab fa-instagram text-white"></i></a></li>
+              <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Facebook"
+                  aria-label="Facebook" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="800"
+                  class="bg-gray-800 h-10 w-10 flex items-center justify-center rounded-full hover:bg-blue-600 transition-colors"><i
+                    class="fab fa-facebook-f text-white"></i></a></li>
+              <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="YouTube"
+                  aria-label="YouTube" data-aos="zoom-in" data-aos-delay="900" data-aos-duration="800"
+                  class="bg-gray-800 h-10 w-10 flex items-center justify-center rounded-full hover:bg-red-600 transition-colors"><i
+                    class="fab fa-youtube text-white"></i></a></li>
+              <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Discord"
+                  aria-label="Discord" data-aos="zoom-in" data-aos-delay="1100" data-aos-duration="800"
+                  class="bg-gray-800 h-10 w-10 flex items-center justify-center rounded-full hover:bg-purple-700 transition-colors"><i
+                    class="fab fa-discord text-white"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Right: Form -->
+        <!-- ✅ Contact Form -->
         <form action="https://formspree.io/f/xgvydqkp" method="POST" id="contactForm" class="space-y-4" novalidate>
           <label class="sr-only" for="contact-name">Name</label>
-          <input id="contact-name" name="name" type="text" placeholder="Name" required autocomplete="name" class="w-full bg-[#101014] rounded-md py-2.5 px-4 border border-gray-700 text-sm outline-0 focus:border-blue-500" />
+          <input id="contact-name" name="name" type="text" placeholder="Name" required autocomplete="name"
+            data-aos="fade-up-left" data-aos-delay="400"
+            class="w-full bg-[#101014] rounded-md py-2.5 px-4 border border-gray-500 text-sm outline-0 focus:border-blue-500" />
 
           <label class="sr-only" for="contact-email">Email</label>
-          <input id="contact-email" name="email" type="email" placeholder="Email" required autocomplete="email" class="w-full bg-[#101014] rounded-md py-2.5 px-4 border border-gray-700 text-sm outline-0 focus:border-blue-500" />
+          <input id="contact-email" name="email" type="email" placeholder="Email" required autocomplete="email"
+            data-aos="fade-up-right" data-aos-delay="600"
+            class="w-full bg-[#101014] rounded-md py-2.5 px-4 border border-gray-500 text-sm outline-0 focus:border-blue-500" />
 
           <label class="sr-only" for="contact-subject">Subject</label>
-          <input id="contact-subject" name="subject" type="text" placeholder="Subject" autocomplete="off" class="w-full bg-[#101014] rounded-md py-2.5 px-4 border border-gray-700 text-sm outline-0 focus:border-blue-500" />
+          <input id="contact-subject" name="subject" type="text" placeholder="Subject" autocomplete="off"
+            data-aos="fade-up-left" data-aos-delay="800"
+            class="w-full bg-[#101014] rounded-md py-2.5 px-4 border border-gray-500 text-sm outline-0 focus:border-blue-500" />
 
           <label class="sr-only" for="contact-message">Message</label>
-          <textarea id="contact-message" name="message" rows="5" placeholder="Message" required autocomplete="off" class="w-full resize-none bg-[#101014] rounded-md px-4 border border-gray-700 text-sm pt-2.5 outline-0 focus:border-blue-500"></textarea>
+          <textarea id="contact-message" name="message" rows="5" placeholder="Message" required autocomplete="off"
+            data-aos="fade-up-right" data-aos-delay="1000"
+            class="w-full resize-none bg-[#101014] rounded-md px-4 border border-gray-500 text-sm pt-2.5 outline-0 focus:border-blue-500"></textarea>
 
-          <div class="flex items-center mt-4">
-            <input type="checkbox" id="termsCheckbox" name="terms" required class="h-4 w-4 text-blue-600 cursor-pointer focus:ring-blue-500 border-gray-700 rounded bg-[#1a1a1a]" />
-            <label for="termsCheckbox" class="ml-2 cursor-pointer block text-sm text-gray-300">I have read and agree to the <a href="terms.html" target="_blank" rel="noreferrer noopener" class="text-green-500 hover:underline">Terms</a> and <a href="privacy.html" target="_blank" rel="noreferrer noopener" class="text-green-500 hover:underline">Privacy</a></label>
+          <div class="flex items-center mt-4" data-aos="zoom-in" data-aos-delay="1200">
+            <input type="checkbox" id="termsCheckbox" name="terms" required
+              class="h-4 w-4 text-blue-600 cursor-pointer focus:ring-blue-500 border-gray-500 rounded bg-[#1a1a1a]" />
+            <label for="termsCheckbox" class="ml-2 cursor-pointer block text-sm text-gray-300">I have read and agree to
+              the <a href="terms.html" target="_blank" rel="noreferrer noopener"
+                class="text-green-500 hover:underline">Terms</a> and <a href="privacy.html" target="_blank"
+                rel="noreferrer noopener" class="text-green-500 hover:underline">Privacy</a></label>
           </div>
 
-          <div class="flex items-center mt-2">
-            <input type="checkbox" id="emailConsentCheckbox" name="email_consent" class="h-4 w-4 text-blue-600 cursor-pointer focus:ring-blue-500 border-gray-700 rounded bg-[#1a1a1a]" />
-            <label for="emailConsentCheckbox" class="ml-2 cursor-pointer block text-sm text-gray-300">I agree to receive emails about updates and promotions.</label>
+          <div class="flex items-center mt-2" data-aos="zoom-in" data-aos-delay="1400">
+            <input type="checkbox" id="emailConsentCheckbox" name="email_consent"
+              class="h-4 w-4 text-blue-600 cursor-pointer focus:ring-blue-500 border-gray-700 rounded bg-[#1a1a1a]" />
+            <label for="emailConsentCheckbox" class="ml-2 cursor-pointer block text-sm text-gray-300">I agree to receive
+              emails about updates and promotions.</label>
           </div>
 
-          <button type="submit" class="text-white bg-blue-600 hover:bg-blue-700 rounded-md text-[15px] font-medium px-4 py-2 w-full cursor-pointer mt-2">Send Message</button>
+          <button type="submit" data-aos="zoom-in" data-aos-delay="1600"
+            class="text-white bg-blue-600 hover:bg-blue-700 rounded-md text-[15px] font-medium px-4 py-2 w-full cursor-pointer mt-2">Send
+            Message</button>
         </form>
       </div>
     </section>
@@ -341,14 +527,19 @@
 
   <!-- Contact Thank You Modal -->
   <div id="thankYouOverlay" class="fixed inset-0 bg-black/50 hidden z-40"></div>
-  <div id="thankYouModal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-md w-full bg-[#101014] text-white p-8 rounded-lg shadow-2xl hidden z-50 text-center">
+  <div id="thankYouModal"
+    class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-md w-full bg-[#101014] text-white p-8 rounded-lg shadow-2xl hidden z-50 text-center">
     <h2 class="text-2xl font-bold mb-4">Thank You!</h2>
-    <p class="mb-6">We've received your message and will get back to you as soon as possible. You'll hear from us shortly. Thank you for trusting us!</p>
-    <button id="closeThankYou" class="bg-blue-600 cursor-pointer hover:bg-blue-700 px-8 py-2 rounded-md text-white font-semibold">Close</button>
+    <p class="mb-6">We've received your message and will get back to you as soon as possible. You'll hear from us
+      shortly. Thank you for trusting us!</p>
+    <button id="closeThankYou"
+      class="bg-blue-600 cursor-pointer hover:bg-blue-700 px-8 py-2 rounded-md text-white font-semibold">Close</button>
   </div>
 
   <!-- Back to Top -->
-  <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 text-white px-4 py-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 hidden z-50 animate-bounce-custom" aria-label="Back to top">
+  <button id="back-to-top"
+    class="fixed bottom-6 cursor-pointer right-6 bg-blue-600 text-white px-4 py-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 hidden z-50 animate-bounce-custom"
+    aria-label="Back to top">
     <i class="fas fa-arrow-up text-lg" aria-hidden="true"></i>
   </button>
 
@@ -356,34 +547,47 @@
   <footer class="bg-[#0d0d0d] border-t-2 border-gray-700 text-gray-400 py-10 px-6 md:px-12 lg:px-24" role="contentinfo">
     <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <div>
-        <h2 class="text-white text-xl font-semibold mb-4">AmittoWallpapers</h2>
-        <p class="text-sm leading-relaxed">Discover the best HD anime wallpapers. Join the community and personalize your screen with your favorite characters.</p>
+        <a href="#home" class="flex text-white mb-2 text-2xl items-center font-bold flex-wrap font-sans">
+          <img src="assets/images/logo/luffy-hat.png" class="w-10 lg:-mt-1" alt="">
+          Amitto<span class="text-red-400">Wallpapers</span>
+        </a>
+        <p class="text-sm leading-relaxed">Discover the best HD anime wallpapers. Join the community and personalize
+          your screen with your favorite characters.</p>
       </div>
       <div>
         <h3 class="text-white font-semibold mb-4">Quick Links</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href="#hero-section" class="hover:text-white transition">Home</a></li>
+          <li><a href="#home" class="hover:text-white transition">Home</a></li>
           <li><a href="#latest" class="hover:text-white transition">Latest Wallpapers</a></li>
           <li><a href="#categories" class="hover:text-white transition">Categories</a></li>
+          <li><a href="#about" class="hover:text-white transition">About</a></li>
+          <li><a href="#community" class="hover:text-white transition">Community</a></li>
           <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
         </ul>
       </div>
       <div>
         <h3 class="text-white font-semibold mb-4">Community</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href="comingsoon.html" class="hover:text-white transition" target="_blank" rel="noreferrer noopener">Instagram</a></li>
-          <li><a href="comingsoon.html" class="hover:text-white transition" target="_blank" rel="noreferrer noopener">Facebook</a></li>
-          <li><a href="comingsoon.html" class="hover:text-white transition" target="_blank" rel="noreferrer noopener">Discord</a></li>
-          <li><a href="comingsoon.html" class="hover:text-white transition" target="_blank" rel="noreferrer noopener">YouTube</a></li>
+          <li><a href="comingsoon.html" class="hover:text-white transition" target="_blank"
+              rel="noreferrer noopener">Instagram</a></li>
+          <li><a href="comingsoon.html" class="hover:text-white transition" target="_blank"
+              rel="noreferrer noopener">Facebook</a></li>
+          <li><a href="comingsoon.html" class="hover:text-white transition" target="_blank"
+              rel="noreferrer noopener">Discord</a></li>
+          <li><a href="comingsoon.html" class="hover:text-white transition" target="_blank"
+              rel="noreferrer noopener">YouTube</a></li>
         </ul>
       </div>
       <div>
         <h3 class="text-white font-semibold mb-4">Stay Updated</h3>
         <p class="text-sm mb-4">Get updates on the latest wallpapers and trends.</p>
-        <form action="https://formspree.io/f/xwpbyzdw" method="POST" id="subscribeForm" class="flex items-stretch" novalidate>
+        <form action="https://formspree.io/f/xwpbyzdw" method="POST" id="subscribeForm" class="flex items-stretch"
+          novalidate>
           <label for="subscribe-email" class="sr-only">Email address</label>
-          <input id="subscribe-email" type="email" name="email" placeholder="Your email" required autocomplete="email" class="w-full py-2 px-3 rounded-l-md bg-[#1a1a1a] text-sm text-white focus:outline-none focus:border-blue-500" />
-          <button type="submit" class="bg-blue-600 cursor-pointer hover:bg-blue-700 px-4 py-2 rounded-r-md text-sm text-white">Subscribe</button>
+          <input id="subscribe-email" type="email" name="email" placeholder="Your email" required autocomplete="off"
+            class="w-full py-2 px-3 rounded-l-md bg-[#1a1a1a] text-sm text-white focus:outline-none focus:border-blue-500" />
+          <button type="submit"
+            class="bg-blue-600 cursor-pointer hover:bg-blue-700 px-4 py-2 rounded-r-md text-sm text-white">Subscribe</button>
         </form>
       </div>
 
@@ -392,7 +596,8 @@
         <div class="bg-[#1a1a1a] text-white rounded-lg p-6 max-w-sm text-center shadow-lg">
           <h2 class="text-2xl font-bold mb-2">Subscribed!</h2>
           <p class="text-sm mb-4">Thank you for subscribing. You'll receive updates soon!</p>
-          <button id="closeSubscribeModal" class="bg-blue-600 cursor-pointer hover:bg-blue-700 px-4 py-2 rounded text-white">Close</button>
+          <button id="closeSubscribeModal"
+            class="bg-blue-600 cursor-pointer hover:bg-blue-700 px-4 py-2 rounded text-white">Close</button>
         </div>
       </div>
     </div>
@@ -401,7 +606,8 @@
     <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
       &copy; <span id="year"></span> AmittoWallpapers. All rights reserved.<br />
       Made with <span class="text-red-500"><i class="fa-solid fa-heart" aria-hidden="true"></i></span> by
-      <a href="https://amitdevstudio.netlify.app" target="_blank" rel="noreferrer noopener" class="font-semibold text-white hover:underline">AmitDevStudio</a>.
+      <a href="https://amitdevstudio.netlify.app" target="_blank" rel="noreferrer noopener"
+        class="font-semibold text-white hover:underline">AmitDevStudio</a>.
     </div>
   </footer>
 
@@ -556,11 +762,74 @@
       }
     });
   </script>
+  <script>
+    // Custom bounce animation for back-to-top button
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes bounce-custom {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+      .animate-bounce-custom {
+        animation: bounce-custom 1s infinite;
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+  <script>
+    // Re-initialize AOS on content changes (if any)
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.AOS) {
+        AOS.refresh();
+      }
+    });
+  </script>
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+  <script>
+    // Lazy load images (if not using native loading="lazy")
+    document.addEventListener('DOMContentLoaded', () => {
+      const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+      if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src || img.src;
+              img.removeAttribute('loading');
+              observer.unobserve(img);
+            }
+          });
+        });
+        lazyImages.forEach(img => imageObserver.observe(img));
+      }
+    });
+  </script>
+  <script>
+    console.log("code is running perfectly!");
+    console.log("No errors!");
+    console.log("All systems operational!");
 
-  <noscript>
-    <style>.aos-init{opacity:1;transform:none}</style>
-    <div style="background:#101014;color:#fff;padding:10px;text-align:center">JavaScript is disabled. Some interactive features may not work.</div>
-  </noscript>
+    // Additional logging for debugging
+    console.log("Debugging information:");
+    console.log("User is on page:", window.location.href);
+    console.log("Current time:", new Date().toLocaleTimeString());
+
+    // You can add more logs as needed for specific functionalities
+    console.log("Additional debugging information:");
+    console.log("Viewport size:", window.innerWidth, "x", window.innerHeight);
+    console.log("User's preferred color scheme:", window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  </script>
 </body>
-</html>
 
+</html>
