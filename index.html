@@ -25,11 +25,12 @@
   <link rel="preload" href="assets/images/hero-images/hero-bg.jpg" as="image">
   <link rel="preload" href="assets/images/logo/luffy-hat.png" as="image">
 
+  <link rel="preload" href="./src/output.css" as="style" onload="this.rel='stylesheet'">
+  
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="preload" href="/src/output.css" as="style" onload="this.rel='stylesheet'">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
@@ -831,5 +832,6 @@
     console.log("User's preferred color scheme:", window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   </script>
 </body>
+
 
 </html>
