@@ -8,7 +8,24 @@
     <link rel="icon" href="assets/images/logo/luffy-hat.png" type="image/png" />
     <meta name="description"
         content="Terms and Conditions for AmittoWallpapers, outlining the rules and guidelines for using our website." />
-    <link href="./src/output.css" rel="stylesheet" />
+    <!-- Favicon as Open Graph image (for link previews) -->
+    <meta property="og:image" content="assets/images/logo/luffy-hat.png" />
+    <meta property="og:image:width" content="490" />
+    <meta property="og:image:height" content="490" />
+    <meta property="og:image:alt" content="AmittoWallpapers Logo" />
+
+    <link rel="preload" href="assets/images/logo/luffy-hat.png" as="image">
+
+    <link href="./src/output.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         body {
@@ -85,12 +102,13 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-048LX9JF5P"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-048LX9JF5P');
+    gtag('config', 'G-048LX9JF5P');
 </script>
+
 <body class="bg-[#0d0d0d] text-white">
     <div class="container">
         <h1>Terms and Conditions for AmittoWallpapers</h1>
@@ -114,7 +132,8 @@
 
         <h2>1. Cookies</h2>
         <p>We employ the use of cookies. By accessing AmittoWallpapers, you agreed to use cookies in agreement with the
-            AmittoWallpapers' <a href="privacy.html" target="_blank" class="text-green-500 hover:underline">Privacy Policy</a>.</p>
+            AmittoWallpapers' <a href="privacy.html" target="_blank" class="text-green-500 hover:underline">Privacy
+                Policy</a>.</p>
         <p>Most interactive websites use cookies to let us retrieve the user's details for each visit. Cookies are used
             by our website to enable the functionality of certain areas to make it easier for people visiting our
             website. Some of our affiliate/advertising partners may also use cookies.</p>
@@ -252,8 +271,9 @@
             Lucknow, Uttar Pradesh, India.</p>
 
         <h2>11. Contact Information</h2>
-        <p>If you have any questions about these Terms and Conditions, please contact us via our <a href="https://amittowallpapers.netlify.app/#contact"
-                class="text-green-500 hover:underline">Contact Section</a> on the homepage.</p>
+        <p>If you have any questions about these Terms and Conditions, please contact us via our <a
+                href="https://amittowallpapers.netlify.app/#contact" class="text-green-500 hover:underline">Contact
+                Section</a> on the homepage.</p>
     </div>
     <div class="border-t border-gray-700 mt-10 mb-4 pt-6 text-center text-sm text-gray-400">
         &copy; 2025 AmittoWallpapers. All rights reserved.
@@ -313,4 +333,3 @@
 
 
 </html>
-
