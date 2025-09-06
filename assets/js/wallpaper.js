@@ -332,7 +332,7 @@ export const wallpapers = [
       },
     ]
   },
-   // Jujutsu Kaisen
+  // Jujutsu Kaisen
   {
     character: "Satoru Gojo",
     type: "Mobile",
@@ -470,7 +470,7 @@ export const wallpapers = [
   {
     character: ["Nagato Uzumaki", "Pain"],
     type: "Mobile",
-    tags: ["Naruto", "Anime", "Mobile", "Naruto" ,"Nagato Uzumaki", "Pain"],
+    tags: ["Naruto", "Anime", "Mobile", "Naruto", "Nagato Uzumaki", "Pain"],
     images: [
       {
         url: "assets/images/wallpapers/naruto/mobile/pain/1.jpg",
@@ -654,6 +654,121 @@ export const wallpapers = [
       },
     ]
   },
-  // Add more wallpaper objects here...
 
+
+  //   // Live Wallpapers
+  //   // Naruto Live Wallpaper
+  {
+    character: "Naruto Uzumaki",
+    type: "Desktop Live",
+    tags: ["Naruto", "Live Wallpaper", "Desktop", "Naruto", "Naruto Uzumaki"],
+    videos: [
+      {
+        preview: "assets/videos/naruto-live/preview/desktop/naruto/1.webm",
+        download: "assets/videos/naruto-live/desktop/naruto/1.mp4",
+        date: "2025-09-04",
+      },
+      {
+        preview: "assets/videos/naruto-live/preview/desktop/naruto/2.webm",
+        download: "assets/videos/naruto-live/desktop/naruto/2.mp4",
+        date: "2025-09-04",
+      },
+      {
+        preview: "assets/videos/naruto-live/preview/desktop/naruto/3.webm",
+        download: "assets/videos/naruto-live/desktop/naruto/3.mp4",
+        date: "2025-09-04",
+      },
+    ]
+  },
+  {
+    character: "Itachi Uchiha",
+    type: "Desktop Live",
+    tags: ["Itachi", "Live Wallpaper", "Desktop", "Naruto", "Itachi Uchiha"],
+    videos: [
+      {
+        preview: "assets/videos/naruto-live/preview/desktop/itachi/1.webm",
+        download: "assets/videos/naruto-live/desktop/itachi/1.mp4",
+        date: "2025-09-04",
+      },
+      {
+        preview: "assets/videos/naruto-live/preview/desktop/itachi/2.webm",
+        download: "assets/videos/naruto-live/desktop/itachi/2.mp4",
+        date: "2025-09-04",
+      },
+    ]
+  },
+  {
+    character: "Itachi Uchiha",
+    type: "Mobile Live",
+    tags: ["Itachi", "Live Wallpaper", "Mobile", "Naruto", "Itachi Uchiha"],
+    videos: [
+      {
+        preview: "assets/videos/naruto-live/preview/mobile/itachi/1.webm",
+        download: "assets/videos/naruto-live/mobile/itachi/1.mp4",
+        date: "2025-09-04",
+      },
+    ]
+  },
+  {
+    character: "Kakashi Hatake",
+    type: "Desktop Live",
+    tags: ["Kakashi", "Live Wallpaper", "Desktop", "Naruto", "Kakashi Hatake"],
+    videos: [
+      {
+        preview: "assets/videos/naruto-live/preview/desktop/kakashi/1.webm",
+        download: "assets/videos/naruto-live/desktop/kakashi/1.mp4",
+        date: "2025-09-04",
+      },
+    ]
+  },
+  {
+    character: "Sasuke Uchiha",
+    type: "Desktop Live",
+    tags: ["Sasuke", "Live Wallpaper", "Desktop", "Naruto", "Sasuke Uchiha"],
+    videos: [
+      {
+        preview: "assets/videos/naruto-live/preview/desktop/sasuke/1.webm",
+        download: "assets/videos/naruto-live/desktop/sasuke/1.mp4",
+        date: "2025-09-04",
+      },
+    ]
+  },
+  {
+    character: "Madara Uchiha",
+    type: "Desktop Live",
+    tags: ["Madara", "Live Wallpaper", "Desktop", "Naruto", "Madara Uchiha"],
+    videos: [
+      {
+        preview: "assets/videos/naruto-live/preview/desktop/madara/1.webm",
+        download: "assets/videos/naruto-live/desktop/madara/1.mp4",
+        date: "2025-09-04",
+      },
+    ]
+  },
+  // Dragon Ball Live Wallpaper
+  {
+    character: "Son Goku",
+    type: "Desktop Live",
+    tags: ["Dragon Ball", "Goku", "Live Wallpaper", "Desktop", "Son Goku"],
+    videos: [
+      {
+        preview: "assets/videos/dragon-ball-live/preview/desktop/goku/1.webm",
+        download: "assets/videos/dragon-ball-live/desktop/goku/1.mp4",
+        date: "2025-09-04",
+      },
+    ]
+  },
+  {
+    character: "Vegeta",
+    type: "Desktop Live",
+    tags: ["Vegeta", "Live Wallpaper", "Desktop", "Dragon Ball", "Vegeta"],
+    videos: [
+      {
+        preview: "assets/videos/dragon-ball-live/preview/desktop/vegeta/1.webm",
+        download: "assets/videos/dragon-ball-live/desktop/vegeta/1.mp4",
+        date: "2025-09-04",
+      },
+    ]
+  },
+  // Add more wallpaper objects here...
 ];

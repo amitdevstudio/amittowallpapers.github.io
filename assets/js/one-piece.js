@@ -87,44 +87,56 @@ function createCard(wallpaper) {
   card.innerHTML = `
     <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}&mobile=${encodeURIComponent(wallpaper.mobile)}&tablet=${encodeURIComponent(wallpaper.tablet)}&desktop=${encodeURIComponent(wallpaper.desktop)}" 
      target="_blank" class="relative group block overflow-hidden rounded-lg">
-    <img loading="lazy"
-      src="${wallpaper.url}" 
-      alt="${wallpaper.character}" 
-      class="w-auto object-fill mx-auto transition-transform duration-300 ease-in-out ${wallpaper.type.toLowerCase() === 'mobile' ? 'h-80' : 'h-60'} group-hover:scale-105 group-hover:brightness-110" 
-    />
-    <span class="absolute z-10 top-3 left-3 ${wallpaper.type.toLowerCase() === 'desktop' ? 'bg-red-600' : 'bg-green-600'} text-white px-2 py-1 text-xs rounded-lg">
-      ${wallpaper.type.charAt(0).toUpperCase() + wallpaper.type.slice(1)}
-    </span>
-  </a>
-  <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
-    <div class="flex flex-wrap gap-2">
-      <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}&mobile=${encodeURIComponent(wallpaper.mobile)}&tablet=${encodeURIComponent(wallpaper.tablet)}&desktop=${encodeURIComponent(wallpaper.desktop)}"
-          target="_blank" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-white">
-        <i class="fa-solid fa-download mr-1"></i>Download
-      </a>
-      <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white">
-        <i class="likeIcon far fa-thumbs-up mr-1"></i>
-        <span class="likeCount">${formatNumber(likes)}</span>
-      </button>
+
+      <!-- Loader overlay -->
+      <div class="loader-container absolute inset-0 flex items-center justify-center">
+        <div class="loader">
+          <div></div><div></div><div></div>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <img 
+        src="${wallpaper.url}" 
+        alt="${wallpaper.character}" 
+        class="wallpaper-img w-auto object-cover mx-auto opacity-0 transition-opacity duration-500 ${wallpaper.type.toLowerCase() === 'mobile' ? 'h-80' : 'h-60'} group-hover:scale-105 group-hover:brightness-110" 
+        loading="lazy"
+      />
+
+      <span class="absolute z-10 top-3 left-3 ${wallpaper.type.toLowerCase() === 'desktop' ? 'bg-red-600' : 'bg-green-600'} text-white px-2 py-1 text-xs rounded-lg">
+        ${wallpaper.type.charAt(0).toUpperCase() + wallpaper.type.slice(1)}
+      </span>
+    </a>
+
+    <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
+      <div class="flex flex-wrap gap-2">
+        <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}&mobile=${encodeURIComponent(wallpaper.mobile)}&tablet=${encodeURIComponent(wallpaper.tablet)}&desktop=${encodeURIComponent(wallpaper.desktop)}"
+            target="_blank" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-white">
+          <i class="fa-solid fa-download mr-1"></i>Download
+        </a>
+        <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white">
+          <i class="likeIcon far fa-thumbs-up mr-1"></i>
+          <span class="likeCount">${formatNumber(likes)}</span>
+        </button>
+      </div>
+      <div class="text-xs text-gray-400">
+        <i class="fa-solid fa-eye ml-1 mr-1"></i>${formatNumber(views)}
+      </div>
     </div>
-    <div class="text-xs text-gray-400">
-      <i class="fa-solid fa-eye ml-1 mr-1"></i>${formatNumber(views)}
+
+    <div class="px-4 py-4 flex flex-wrap gap-2 text-sm">
+      <span class="font-bold">
+        <i class="fa-solid fa-tags mr-1"></i>Tags:
+      </span>
+      ${wallpaper.tags.map(tag => `<span class="bg-gray-800 px-3 py-1 rounded-full">${tag}</span>`).join('')}
     </div>
-  </div>
-  <div class="px-4 py-4 flex flex-wrap gap-2 text-sm">
-    <span class="font-bold">
-      <i class="fa-solid fa-tags mr-1"></i>Tags:
-    </span>
-    ${wallpaper.tags.map(tag => `<span class="bg-gray-800 px-3 py-1 rounded-full">${tag}</span>`).join('')}
-  </div>
-`;
+  `;
 
   const likeBtn = card.querySelector('.likeBtn');
   const likeIcon = card.querySelector('.likeIcon');
   const likeCountSpan = card.querySelector('.likeCount');
 
   let userLiked = false;
-
   likeBtn.addEventListener('click', () => {
     if (!userLiked) {
       likes++;
@@ -145,8 +157,20 @@ function createCard(wallpaper) {
     likeIcon.classList.toggle('fas', userLiked);
   });
 
+  // -------------------------------
+  // Loader → Image fade logic
+  const img = card.querySelector('.wallpaper-img');
+  const loaderContainer = card.querySelector('.loader-container');
+  img.addEventListener('load', () => {
+    loaderContainer.style.opacity = '0';
+    loaderContainer.style.transition = 'opacity 0.5s ease';
+    setTimeout(() => loaderContainer.style.display = 'none', 500);
+    img.classList.remove('opacity-0');
+  });
+
   return card;
 }
+
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
