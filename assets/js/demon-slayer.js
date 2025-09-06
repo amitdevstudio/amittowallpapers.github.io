@@ -78,22 +78,11 @@ function renderCard(wallpaper, grid) {
   card.innerHTML = `
   <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}&mobile=${encodeURIComponent(wallpaper.mobile)}&tablet=${encodeURIComponent(wallpaper.tablet)}&desktop=${encodeURIComponent(wallpaper.desktop)}" 
      target="_blank" class="relative group block overflow-hidden rounded-lg">
-     
-    <!-- Loader -->
-    <div class="loader-container absolute inset-0 flex items-center justify-center">
-      <div class="loader">
-        <div></div><div></div><div></div>
-      </div>
-    </div>
-
-    <!-- Image -->
-    <img 
+    <img loading="lazy"
       src="${wallpaper.url}" 
       alt="${wallpaper.character}" 
-      class="wallpaper-img w-full object-cover mx-auto opacity-0 transition-opacity duration-500 group-hover:scale-105 ${wallpaper.type.toLowerCase() === 'mobile' ? 'h-80' : 'h-60'} group-hover:brightness-110" 
-      loading="lazy"
+      class="w-auto object-fill mx-auto transition-transform duration-300 ease-in-out ${wallpaper.type.toLowerCase() === 'mobile' ? 'h-80' : 'h-60'} group-hover:scale-105 group-hover:brightness-110" 
     />
-    
     <span class="absolute z-10 top-3 left-3 ${wallpaper.type.toLowerCase() === 'desktop' ? 'bg-red-600' : 'bg-green-600'} text-white px-2 py-1 text-xs rounded-lg">
       ${wallpaper.type.charAt(0).toUpperCase() + wallpaper.type.slice(1)}
     </span>
@@ -119,26 +108,15 @@ function renderCard(wallpaper, grid) {
   </div>
 `;
 
+
   grid.appendChild(card);
 
-  // -------------------------------
-  // Loader -> Image fade logic
-  const img = card.querySelector('.wallpaper-img');
-  const loaderContainer = card.querySelector('.loader-container');
-  img.addEventListener('load', () => {
-    loaderContainer.style.opacity = '0';
-    loaderContainer.style.transition = 'opacity 0.5s ease';
-    setTimeout(() => loaderContainer.style.display = 'none', 500);
-    img.classList.remove('opacity-0');
-  });
-
-  // -------------------------------
-  // Like button logic
   const likeBtn = card.querySelector('.likeBtn');
   const likeIcon = card.querySelector('.likeIcon');
   const likeCountSpan = card.querySelector('.likeCount');
 
   let userLiked = false;
+
   likeBtn.addEventListener('click', () => {
     if (!userLiked) {
       likes++;
