@@ -106,50 +106,6 @@
         background-size: calc(100%/3) 100%, calc(100%/3) 100%, calc(100%/3) 0%
       }
     }
-
-    .loader-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-      background: #1a1a1a;
-      /* matches card bg */
-      transition: opacity 0.5s ease;
-    }
-
-    .loader {
-      display: flex;
-      gap: 6px;
-    }
-
-    .loader div {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #888;
-      /* visible against dark bg */
-      animation: bounce 0.6s infinite alternate;
-    }
-
-    .loader div:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-
-    .loader div:nth-child(3) {
-      animation-delay: 0.4s;
-    }
-
-    @keyframes bounce {
-      from {
-        transform: translateY(0);
-        opacity: 0.5;
-      }
-
-      to {
-        transform: translateY(-8px);
-        opacity: 1;
-      }
-    }
   </style>
 </head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-048LX9JF5P"></script>
