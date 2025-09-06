@@ -30,7 +30,7 @@
   <link rel="preload" href="assets/images/hero-images/hero-bg.jpg" as="image">
   <link rel="preload" href="assets/images/logo/luffy-hat.png" as="image">
 
-  <link href="./assets/src/output.css" rel="stylesheet">
+  <link href="/src/output.css" rel="stylesheet">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -101,6 +101,48 @@
       line-height: 1.75rem;
       font-weight: 400;
       letter-spacing: 0.025em;
+    }
+
+    .loader-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      background: #1a1a1a;
+      transition: opacity 0.5s ease;
+    }
+
+    .loader {
+      display: flex;
+      gap: 6px;
+    }
+
+    .loader div {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #888;
+      animation: bounce 0.6s infinite alternate;
+    }
+
+    .loader div:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .loader div:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes bounce {
+      from {
+        transform: translateY(0);
+        opacity: 0.5;
+      }
+
+      to {
+        transform: translateY(-8px);
+        opacity: 1;
+      }
     }
   </style>
 </head>
@@ -969,7 +1011,6 @@
     console.log("User's preferred color scheme:", window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   </script>
 </body>
-
 
 
 </html>
