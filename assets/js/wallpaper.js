@@ -654,6 +654,104 @@ export const wallpapers = [
       },
     ]
   },
+  // Your Name
+  {
+    character: "Taki Tachibana, Mitsuha Miyamizu",
+    type: "Desktop",
+    tags: ["Your Name", "Anime", "Desktop", "Mitsuha Miyamizu", "Mitsuha", "Taki Tachibana", "Taki"],
+    images: [
+      {
+        url: "assets/images/wallpapers/your-name/desktop/1.jpg",
+        date: "2025-09-15"
+      },
+      {
+        url: "assets/images/wallpapers/your-name/desktop/2.jpg",
+        date: "2025-09-15"
+      },
+      {
+        url: "assets/images/wallpapers/your-name/desktop/3.jpg",
+        date: "2025-09-15"
+      },
+      {
+        url: "assets/images/wallpapers/your-name/desktop/4.jpg",
+        date: "2025-09-15"
+      },
+      {
+        url: "assets/images/wallpapers/your-name/desktop/5.jpg",
+        date: "2025-09-15"
+      },
+      {
+        url: "assets/images/wallpapers/your-name/desktop/6.jpg",
+        date: "2025-09-15"
+      },
+    ]
+  },
+  {
+    character: "Taki Tachibana, Mitsuha Miyamizu",
+    type: "Mobile",
+    tags: ["Your Name", "Anime", "Mobile", "Mitsuha Miyamizu", "Mitsuha", "Taki Tachibana", "Taki"],
+    images: [
+      {
+        url: "assets/images/wallpapers/your-name/mobile/1.jpg",
+        date: "2025-09-15"
+      },
+      {
+        url: "assets/images/wallpapers/your-name/mobile/2.jpg",
+        date: "2025-09-15"
+      },
+      {
+        url: "assets/images/wallpapers/your-name/mobile/3.jpg",
+        date: "2025-09-15"
+      },
+      {
+        url: "assets/images/wallpapers/your-name/mobile/4.jpg",
+        date: "2025-09-15"
+      },
+      {
+        url: "assets/images/wallpapers/your-name/mobile/5.jpg",
+        date: "2025-09-15"
+      },
+      {
+        url: "assets/images/wallpapers/your-name/mobile/6.jpg",
+        date: "2025-09-15"
+      },
+    ]
+  },
+  {
+    character: "Taki Tachibana",
+    type: "Mobile",
+    tags: ["Your Name", "Anime", "Mobile", "Taki Tachibana"],
+    images: [
+      {
+        url: "assets/images/wallpapers/your-name/mobile/taki/1.jpg",
+        date: "2025-09-15"
+      },
+      {
+        url: "assets/images/wallpapers/your-name/mobile/taki/2.jpg",
+        date: "2025-09-15"
+      },
+      {
+        url: "assets/images/wallpapers/your-name/mobile/taki/3.jpg",
+        date: "2025-09-15"
+      },
+    ]
+  },
+  {
+    character: "Mitsuha Miyamizu",
+    type: "Mobile",
+    tags: ["Your Name", "Anime", "Mobile", "Mitsuha Miyamizu"],
+    images: [
+      {
+        url: "assets/images/wallpapers/your-name/mobile/mitsuha/1.jpg",
+        date: "2025-09-15"
+      },
+      {
+        url: "assets/images/wallpapers/your-name/mobile/mitsuha/2.jpg",
+        date: "2025-09-15"
+      },
+    ]
+  },
   // Add more wallpaper objects here...
 
 ];
+
