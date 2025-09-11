@@ -332,39 +332,9 @@
       subscribeModal.classList.remove('flex');
     });
   </script>
-  <script>
-    // Scroll to top button
-    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        scrollToTopBtn.classList.remove('hidden');
-      } else {
-        scrollToTopBtn.classList.add('hidden');
-      }
-    });
-
-    scrollToTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  </script>
-  <script>
-    // Initialize AOS
-    AOS.init({
-      duration: 800, // Animation duration in milliseconds
-      easing: 'ease-in-out', // Easing function for animations
-      once: true, // Whether animation should happen only once - while scrolling down
-    });
-
-    // Refresh AOS on content load
-    window.addEventListener('load', AOS.refresh);
-  </script>
-
 </body>
 
 
 
 </html>
+
