@@ -362,97 +362,9 @@
     // Refresh AOS on content load
     window.addEventListener('load', AOS.refresh);
   </script>
-  <script>
-    // Image gallery
-    const galleryImages = document.querySelectorAll('.gallery img');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
 
-    galleryImages.forEach(img => {
-      img.addEventListener('click', () => {
-        lightbox.classList.remove('hidden');
-        lightboxImg.src = img.src;
-      });
-    });
-
-    lightbox.addEventListener('click', () => {
-      lightbox.classList.add('hidden');
-    });
-
-    // Disable text selection
-    document.addEventListener('selectstart', function (e) {
-      e.preventDefault();
-    });
-
-    // Disable copy/paste
-    document.addEventListener('copy', function (e) {
-      e.preventDefault();
-    });
-
-    // Disable paste
-    document.addEventListener('paste', function (e) {
-      e.preventDefault();
-    });
-
-    // Disable drag and drop
-    document.addEventListener('dragstart', function (e) {
-      e.preventDefault();
-    });
-
-    // Disable keyboard shortcuts
-    document.addEventListener('keydown', function (e) {
-      if (e.ctrlKey || e.metaKey) {
-        e.preventDefault();
-      }
-    });
-
-    // Disable text selection via mouse
-    document.addEventListener('mousedown', function (e) {
-      e.preventDefault();
-    });
-
-    // Disable text selection via keyboard
-    document.addEventListener('keydown', function (e) {
-      if (e.ctrlKey || e.metaKey) {
-        e.preventDefault();
-      }
-    });
-
-    // Disable text selection via touch
-    document.addEventListener('touchstart', function (e) {
-      e.preventDefault();
-    });
-  </script>
-  <script>
-    // Disable right-click context menu
-    document.addEventListener('contextmenu', function (e) {
-      e.preventDefault();
-    });
-
-    // Disable developer tools and view source
-    document.addEventListener('keydown', function (e) {
-      const key = e.key.toLowerCase();
-
-      // F12
-      if (key === 'f12') {
-        e.preventDefault();
-        return false;
-      }
-
-      // Ctrl/Cmd + Shift + I/J/C
-      if ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].includes(key)) {
-        e.preventDefault();
-        return false;
-      }
-
-      // Ctrl/Cmd + U or Ctrl/Cmd + S
-      if ((e.ctrlKey || e.metaKey) && ['u', 's'].includes(key)) {
-        e.preventDefault();
-        return false;
-      }
-    });
-  </script>
 </body>
+
 
 
 </html>
