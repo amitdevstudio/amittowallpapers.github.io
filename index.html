@@ -949,9 +949,39 @@
     console.log("Viewport size:", window.innerWidth, "x", window.innerHeight);
     console.log("User's preferred color scheme:", window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   </script>
+    <script>
+  function addImageSchema(url, name) {
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "contentUrl": url,
+      "name": name + " Wallpaper",
+      "license": "https://amittowallpapers.netlify.app/terms.html",
+      "acquireLicensePage": "https://amittowallpapers.netlify.app/terms.html",
+      "creator": {
+        "@type": "Organization",
+        "name": "AmittoWallpapers",
+        "url": "https://amittowallpapers.netlify.app"
+      },
+      "creditText": "AmittoWallpapers",
+      "copyrightNotice": "© 2025 AmittoWallpapers"
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+  }
+
+  // Example usage: call this with your wallpaper data
+  addImageSchema(
+    "https://amittowallpapers.netlify.app/images/goku-blue.jpg"
+  );
+</script>
 </body>
 
 
 
 </html>
+
 
