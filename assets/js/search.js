@@ -53,7 +53,7 @@ if (query && searchGrid) {
 }
 
 // -------------------------------
-// LIVE SEARCH (DEBOUNCED)
+// DEBOUNCE
 function debounce(fn, delay = 200) {
   let timer;
   return (...args) => {
@@ -62,13 +62,14 @@ function debounce(fn, delay = 200) {
   };
 }
 
+// -------------------------------
+// LIVE SEARCH
 if (searchInput && searchGrid) {
   searchInput.addEventListener(
     'input',
     debounce((e) => {
       const q = e.target.value.trim();
 
-      // update URL without reload
       const url = new URL(window.location.href);
       if (q) url.searchParams.set('q', q);
       else url.searchParams.delete('q');
@@ -81,20 +82,23 @@ if (searchInput && searchGrid) {
 }
 
 // -------------------------------
-// FILTER LOGIC
+// FILTER (FULL SAFE FIXED VERSION)
 function filterWallpapers(q) {
-  const term = q.toLowerCase().trim();
+  const term = String(q || '').toLowerCase().trim();
   if (!term) return [];
 
   return allWallpapers.filter(w => {
-    const character = (w.character || '').toLowerCase();
-    const type = (w.type || '').toLowerCase();
-    const tags = Array.isArray(w.tags) ? w.tags : [];
+    const character = String(w.character || '').toLowerCase();
+    const type = String(w.type || '').toLowerCase();
+
+    const tags = Array.isArray(w.tags)
+      ? w.tags.map(t => String(t || '').toLowerCase())
+      : [];
 
     return (
       character.includes(term) ||
       type.includes(term) ||
-      tags.some(tag => (tag || '').toLowerCase().includes(term))
+      tags.some(tag => tag.includes(term))
     );
   });
 }
@@ -124,14 +128,14 @@ function renderSearchResults(list, query) {
 // CARD CREATION
 function createCard(wallpaper, grid) {
 
-  const uniqueId = wallpaper.url; // FIXED
+  const uniqueId = wallpaper.url; // SAFE
   const characterName = wallpaper.character || 'Unknown';
 
   const wpData = window.wallpaperStorage.getWallpaper(uniqueId, characterName);
   let likes = wpData.likes;
   let views = wpData.views;
 
-  const type = wallpaper.type || '';
+  const type = String(wallpaper.type || '');
   const isMobile = type === 'mobile';
   const isDesktop = type.includes('desktop');
 
@@ -156,7 +160,7 @@ function createCard(wallpaper, grid) {
         ${wallpaper.isVideo
           ? `<video loop muted playsinline
               class="wallpaper-img w-full object-fill mx-auto opacity-0 transition duration-300 group-hover:scale-105 group-hover:brightness-110 ${mediaHeight}">
-              <source src="${wallpaper.url}" type="video/mp4">
+              <source src="${wallpaper.url}">
              </video>`
           : `<img src="${wallpaper.url}"
               class="wallpaper-img w-full object-fill mx-auto opacity-0 transition duration-300 group-hover:scale-105 group-hover:brightness-110 ${mediaHeight}"/>`
@@ -164,7 +168,7 @@ function createCard(wallpaper, grid) {
 
       </a>
 
-      <span class="absolute z-20 top-3 left-3 ${badgeBg} text-white px-2 py-1 text-xs rounded-lg pointer-events-none">
+      <span class="absolute z-20 top-3 left-3 ${badgeBg} text-white px-2 py-1 text-xs rounded-lg">
         ${type}
       </span>
 
