@@ -1,28 +1,32 @@
 import { wallpapers } from './wallpaper.js';
 
-const wallpaperGrid = document.getElementById('wallpaperGrid');
-const searchInput = document.getElementById('searchInput');
+const latestGrid = document.getElementById('latestGrid');
 
-const allWallpapers = [];
+const latestWallpapers = [];
 
-// -------------------------------
-// FORMAT DATA
 wallpapers.forEach(item => {
-  if (Array.isArray(item.images)) {
+  if (item.images) {
     item.images.forEach(img => {
-      allWallpapers.push({
-        character: String(item.character || ''),
-        type: String(item.type || '').toLowerCase(),
-        tags: Array.isArray(item.tags) ? item.tags.map(tag => String(tag)) : [],
-        url: String(img.url || ''),
-        date: img.date || new Date().toISOString(),
-        mobile: img.mobile || '',
-        tablet: img.tablet || '',
-        desktop: img.desktop || '',
-        isVideo: false
+      latestWallpapers.push({
+        character: item.character,
+        image: img,
+        tags: item.tags || []
       });
     });
   }
+});
+
+// show only first 6 latest
+latestWallpapers.slice(0, 6).forEach(wp => {
+  latestGrid.innerHTML += `
+    <div class="bg-[#1a1a1a] rounded-xl overflow-hidden">
+      <img src="${wp.image}" class="w-full h-48 object-cover">
+      <div class="p-3">
+        <h3 class="text-white text-sm">${wp.character}</h3>
+      </div>
+    </div>
+  `;
+});
 
   if (Array.isArray(item.videos)) {
     item.videos.forEach(video => {
