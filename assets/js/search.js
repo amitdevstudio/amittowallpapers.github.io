@@ -44,22 +44,24 @@ const params = new URLSearchParams(window.location.search);
 const query = params.get('q') || '';
 
 // -------------------------------
-// DEBOUNCE UTILITY
+// DEBOUNCE
 function debounce(fn, delay = 250) {
   let timer;
-  return (...args) => {
+  return function(...args) {
     clearTimeout(timer);
-    timer = setTimeout(() => fn(...args), delay);
+    timer = setTimeout(() => fn.apply(this, args), delay);
   };
 }
 
 // -------------------------------
-// FIXED FILTER (EMPTY = ALL WALLPAPERS)
+// 🔥 FIXED FILTER - EMPTY RETURNS ALL
 function filterWallpapers(q) {
   const term = String(q || '').toLowerCase().trim();
   
-  // 🔥 KEY FIX: empty search returns ALL wallpapers
-  if (!term) return allWallpapers;
+  // CRITICAL FIX: Empty search = ALL wallpapers
+  if (term.length === 0) {
+    return allWallpapers;
+  }
 
   return allWallpapers.filter(w => {
     const character = String(w.character || '').toLowerCase();
@@ -86,27 +88,19 @@ function renderSearchResults(list) {
 
   searchGrid.innerHTML = '';
 
-  // Empty state
   if (!list || list.length === 0) {
     searchGrid.innerHTML = `
-      <div class="col-span-full flex flex-col items-center justify-center h-64 text-gray-400 text-center p-8">
+      <div class="col-span-full flex flex-col items-center justify-center h-64 p-8 text-center">
         <div class="text-4xl mb-4">🔍</div>
-        <div class="text-xl font-medium mb-2">No wallpapers found</div>
-        <div class="text-sm">Try searching for characters, types, or tags</div>
+        <h3 class="text-xl font-semibold text-gray-300 mb-2">No Results Found</h3>
+        <p class="text-gray-500">Try different keywords like character names or tags</p>
       </div>
     `;
     return;
   }
 
-  // Render cards
   const fragment = document.createDocumentFragment();
-  list.forEach(w => {
-    try {
-      fragment.appendChild(createCard(w));
-    } catch (error) {
-      console.warn('Failed to create card:', w);
-    }
-  });
+  list.forEach(w => fragment.appendChild(createCard(w)));
   searchGrid.appendChild(fragment);
 }
 
@@ -125,68 +119,56 @@ function createCard(w) {
   card.className = 'wallpaper-card break-inside-avoid mb-6 w-full flex justify-center';
 
   card.innerHTML = `
-    <div class="
-      relative group overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 to-black/90 
-      shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-800/50
-      ${widthClass} max-w-sm mx-auto
-    ">
+    <div class="relative group overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900/90 to-black/95 shadow-2xl hover:shadow-3xl transition-all duration-500 border border-slate-800/50 ${widthClass} max-w-sm mx-auto">
       
       <!-- LOADER -->
-      <div class="loader-container absolute inset-0 flex items-center justify-center bg-black/70 backdrop-blur-sm z-20">
-        <div class="loader w-12 h-12 border-4 border-gray-600 border-t-white rounded-full animate-spin"></div>
+      <div class="loader-container absolute inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm z-20 transition-opacity duration-300">
+        <div class="w-12 h-12 border-4 border-slate-600/50 border-t-white rounded-full animate-spin"></div>
       </div>
 
-      <!-- MEDIA -->
-      <a href="wallpaper.html?title=${encodeURIComponent(w.character)}&img=${encodeURIComponent(w.url)}&download=${encodeURIComponent(w.download)}&isVideo=${w.isVideo}"
-         target="_blank"
-         class="block w-full h-full group-hover:scale-[1.02] transition-transform duration-700">
-        
+      <!-- LINK -->
+      <a href="wallpaper.html?title=${encodeURIComponent(w.character)}&img=${encodeURIComponent(w.url)}&download=${encodeURIComponent(w.download)}&isVideo=${w.isVideo}" target="_blank" class="block w-full h-full relative group-hover:scale-[1.02] transition-all duration-700">
+
         ${w.isVideo ? `
-          <video class="wallpaper-img w-full object-cover ${height}" 
-                 muted loop playsinline preload="none"
-                 poster="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjE2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMjIyIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPlZpZGVvPC90ZXh0Pjwvc3ZnPg==">
+          <video class="wallpaper-img w-full object-cover ${height} opacity-0 transition-opacity duration-700" muted loop playsinline preload="metadata">
             <source src="${w.url}" type="video/mp4">
           </video>
         ` : `
-          <img class="wallpaper-img w-full object-cover ${height}" 
-               src="${w.url}" 
-               loading="lazy"
-               alt="${w.character} wallpaper"
-               onerror="this.parentElement.querySelector('.loader-container').classList.add('fade-out')"
-               data-loaded="false"/>
+          <img class="wallpaper-img w-full object-cover ${height} opacity-0 transition-opacity duration-700" 
+               src="${w.url}" loading="lazy" alt="${w.character} wallpaper" 
+               onerror="this.closest('.wallpaper-card').querySelector('.loader-container').classList.add('opacity-0')"/>
         `}
 
       </a>
 
-      <!-- TYPE BADGE -->
-      <span class="absolute top-4 left-4 z-20 ${badgeColor} text-white px-3 py-1.5 text-xs font-semibold rounded-full shadow-lg">
-        ${type.includes('desktop') ? '🖥️ PC' : '📱 Phone'}
+      <!-- BADGE -->
+      <span class="absolute top-4 left-4 z-30 ${badgeColor} text-white px-3 py-1.5 text-xs font-bold rounded-full shadow-lg">
+        ${isDesktop ? '🖥️ PC' : '📱 Mobile'}
       </span>
 
-      <!-- CHARACTER NAME -->
-      <div class="absolute bottom-4 left-4 right-4 bg-black/80 backdrop-blur-sm text-white px-4 py-2 text-sm font-semibold rounded-xl truncate z-20 shadow-2xl">
+      <!-- CHARACTER -->
+      <div class="absolute bottom-4 left-4 right-4 bg-black/90 backdrop-blur-md text-white px-4 py-2 text-sm font-semibold rounded-xl truncate z-30 shadow-2xl">
         ${w.character}
       </div>
+
     </div>
   `;
 
-  // Media load handlers
+  // Loader handlers
   const media = card.querySelector('.wallpaper-img');
   const loader = card.querySelector('.loader-container');
   
-  const hideLoader = () => {
-    if (loader) {
-      loader.classList.add('fade-out');
+  if (media && loader) {
+    const hideLoader = () => {
+      loader.classList.add('opacity-0');
+      media.classList.remove('opacity-0');
       setTimeout(() => loader.remove(), 300);
-    }
-    if (media) media.dataset.loaded = 'true';
-  };
+    };
 
-  if (media) {
     if (media.tagName === 'VIDEO') {
       media.addEventListener('loadeddata', hideLoader, { once: true });
-      media.addEventListener('mouseenter', () => media.play().catch(() => {}));
-      media.addEventListener('mouseleave', () => {
+      card.addEventListener('mouseenter', () => media.play().catch(() => {}));
+      card.addEventListener('mouseleave', () => {
         media.pause();
         media.currentTime = 0;
       });
@@ -194,7 +176,6 @@ function createCard(w) {
       media.addEventListener('load', hideLoader, { once: true });
       media.addEventListener('error', hideLoader, { once: true });
       
-      // Immediate check
       if (media.complete && media.naturalWidth > 0) {
         hideLoader();
       }
@@ -205,86 +186,80 @@ function createCard(w) {
 }
 
 // -------------------------------
-// FIXED INITIALIZATION (KEY FIX HERE)
+// 🔥 FIXED INITIALIZATION
 function initSearch() {
-  if (!searchGrid || !searchInput) {
-    console.warn('Search DOM elements not found');
+  if (!searchGrid) {
+    console.warn('searchGrid element missing');
     return;
   }
 
-  // 1. Set input value from URL (NO auto-search)
-  if (query) {
-    searchInput.value = query;
+  if (searchInput && query) {
+    searchInput.value = query; // Set input from URL
   }
 
-  // 2. ALWAYS start with ALL wallpapers
+  // ALWAYS start with ALL wallpapers
+  console.log(`🌟 Initial load: ${allWallpapers.length} wallpapers`);
   renderSearchResults(allWallpapers);
 }
 
 // -------------------------------
-// LIVE SEARCH HANDLER
+// 🔥 FIXED LIVE SEARCH
 function setupLiveSearch() {
   if (!searchInput || !searchGrid) return;
 
-  const debouncedSearch = debounce((searchTerm) => {
-    const trimmedTerm = String(searchTerm || '').trim();
+  const debouncedSearch = debounce((value) => {
+    const trimmedValue = String(value || '').trim();
     
     // Update URL
     const url = new URL(window.location.href);
-    if (trimmedTerm) {
-      url.searchParams.set('q', trimmedTerm);
+    if (trimmedValue.length > 0) {
+      url.searchParams.set('q', trimmedValue);
     } else {
       url.searchParams.delete('q');
     }
     window.history.replaceState({}, '', url);
 
-    // Render results
-    if (trimmedTerm) {
-      renderSearchResults(filterWallpapers(trimmedTerm));
-    } else {
-      renderSearchResults(allWallpapers); // Show ALL when empty
-    }
+    // FIXED LOGIC: Filter ONLY when there's a search term
+    const results = trimmedValue.length > 0 
+      ? filterWallpapers(trimmedValue)
+      : allWallpapers;
+
+    console.log(`🔍 "${trimmedValue}" → ${results.length} results`);
+    renderSearchResults(results);
   }, 250);
 
   searchInput.addEventListener('input', (e) => {
     debouncedSearch(e.target.value);
   });
 
-  // Clear button support
+  // ESC clears search
   searchInput.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      searchInput.value = '';
+      e.target.value = '';
       debouncedSearch('');
     }
   });
 }
 
 // -------------------------------
-// CSS INJECTION
-const style = document.createElement('style');
-style.textContent = `
-  .wallpaper-card { contain: layout style paint; }
-  .loader-container { 
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-  }
-  .loader-container.fade-out { 
-    opacity: 0 !important; 
-    pointer-events: none; 
-  }
-  .wallpaper-img { 
-    transition: opacity 0.5s ease, transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-  }
-  .wallpaper-img[data-loaded="true"] { opacity: 1; }
-`;
-style.setAttribute('data-search-styles', '');
-document.head.appendChild(style);
+// STYLES
+if (!document.querySelector('style[data-search]')) {
+  const style = document.createElement('style');
+  style.setAttribute('data-search', '');
+  style.textContent = `
+    .wallpaper-card { contain: layout style paint; }
+    .loader-container { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+    .wallpaper-img { transition: opacity 0.6s ease-out; }
+  `;
+  document.head.appendChild(style);
+}
 
 // -------------------------------
-// MAIN INITIALIZATION
+// INIT ON DOM READY
 document.addEventListener('DOMContentLoaded', () => {
   initSearch();
   setupLiveSearch();
 });
 
-// Export for testing (optional)
-window.searchDebug = { allWallpapers, filterWallpapers };
+// Debug export
+window.__searchDebug = { allWallpapers, filterWallpapers };
