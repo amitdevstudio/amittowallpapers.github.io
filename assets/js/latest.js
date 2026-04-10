@@ -6,35 +6,38 @@ const showMoreBtn = document.getElementById('latest-show-more');
 const latestWallpapers = [];
 
 // -------------------------------
-// FLATTEN DATA
+// FLATTEN DATA (Naruto filter kept)
 wallpapers.forEach(item => {
 
-  if (Array.isArray(item.images)) {
-    item.images.forEach(img => {
-      latestWallpapers.push({
-        character: item.character || '',
-        type: (item.type || '').toLowerCase(),
-        tags: Array.isArray(item.tags) ? item.tags : [],
-        url: img.url,
-        download: img.url,
-        date: img.date || new Date().toISOString(),
-        isVideo: false
-      });
-    });
-  }
+  if (Array.isArray(item.tags) && item.tags.includes('Naruto')) {
 
-  if (Array.isArray(item.videos)) {
-    item.videos.forEach(video => {
-      latestWallpapers.push({
-        character: item.character || '',
-        type: (item.type || '').toLowerCase(),
-        tags: Array.isArray(item.tags) ? item.tags : [],
-        url: video.preview || '',
-        download: video.download || video.preview || '',
-        date: video.date || new Date().toISOString(),
-        isVideo: true
+    if (Array.isArray(item.images)) {
+      item.images.forEach(img => {
+        latestWallpapers.push({
+          character: item.character || 'Unknown',
+          type: (item.type || 'desktop').toLowerCase(),
+          tags: Array.isArray(item.tags) ? item.tags : [],
+          url: img.url,
+          download: img.url,
+          date: img.date || new Date().toISOString(),
+          isVideo: false
+        });
       });
-    });
+    }
+
+    if (Array.isArray(item.videos)) {
+      item.videos.forEach(video => {
+        latestWallpapers.push({
+          character: item.character || 'Unknown',
+          type: (item.type || 'desktop').toLowerCase(),
+          tags: Array.isArray(item.tags) ? item.tags : [],
+          url: video.preview || '',
+          download: video.download || video.preview || '',
+          date: video.date || new Date().toISOString(),
+          isVideo: true
+        });
+      });
+    }
   }
 });
 
@@ -59,7 +62,7 @@ if (showMoreBtn) {
 }
 
 // -------------------------------
-// CARD RENDER
+// MAIN RENDER FUNCTION
 function renderLatest(list) {
   if (!latestGrid) return;
 
@@ -68,7 +71,6 @@ function renderLatest(list) {
   list.forEach(wallpaper => {
 
     const uniqueId = wallpaper.url;
-
     const wpData = window.wallpaperStorage.getWallpaper(
       uniqueId,
       wallpaper.character || 'Unknown'
@@ -80,7 +82,6 @@ function renderLatest(list) {
     const type = String(wallpaper.type || '');
 
     const isMobile = type.includes('mobile');
-
     const isDesktop = type.includes('desktop');
 
     const mediaHeight = isMobile ? 'h-80' : 'h-60';
@@ -88,12 +89,10 @@ function renderLatest(list) {
 
     const card = document.createElement('div');
 
-    // 🔥 FIX: MOBILE CENTER + NOT FULL WIDTH
+    // 🔥 MOBILE CENTER FIX + NO FULL WIDTH ISSUE
     card.className = `
       wallpaper-card break-inside-avoid
-      flex justify-center
-      overflow-hidden
-      mb-6
+      flex justify-center mb-6
     `;
 
     card.innerHTML = `
@@ -101,12 +100,13 @@ function renderLatest(list) {
         relative group overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg
 
         ${isMobile
-          ? 'w-[85%] sm:w-[70%] md:w-[60%]'   /* 🔥 MOBILE CENTER FIX */
+          ? 'w-[85%] sm:w-[70%] md:w-[60%]'
           : 'w-full'
         }
       ">
 
-        <div class="loader-container absolute inset-0 flex items-center justify-center bg-black/40 z-10">
+        <!-- 🔥 LOADER ONLY (NO IMAGE OPACITY CONTROL) -->
+        <div class="loader-container absolute inset-0 flex items-center justify-center bg-black/40 z-20">
           <div class="loader"><div></div><div></div><div></div></div>
         </div>
 
@@ -116,16 +116,17 @@ function renderLatest(list) {
 
           ${wallpaper.isVideo
             ? `<video loop muted playsinline
-                class="wallpaper-img w-full object-cover mx-auto opacity-0 transition duration-300 group-hover:scale-105 group-hover:brightness-110 ${mediaHeight}">
-                <source src="${wallpaper.url}" type="video/mp4">
+                class="wallpaper-img w-full object-cover mx-auto ${mediaHeight} group-hover:scale-105 group-hover:brightness-110">
+                <source src="${wallpaper.url}">
               </video>`
             : `<img src="${wallpaper.url}"
-                class="wallpaper-img w-full object-cover mx-auto opacity-0 transition duration-300 group-hover:scale-105 group-hover:brightness-110 ${mediaHeight}"/>`
+                class="wallpaper-img w-full object-cover mx-auto ${mediaHeight} group-hover:scale-105 group-hover:brightness-110"/>`
           }
 
         </a>
 
-        <span class="absolute z-20 top-3 left-3 ${badgeBg} text-white px-2 py-1 text-xs rounded-lg">
+        <!-- BADGE -->
+        <span class="absolute z-10 top-3 left-3 ${badgeBg} text-white px-2 py-1 text-xs rounded-lg">
           ${type}
         </span>
 
@@ -163,38 +164,38 @@ function renderLatest(list) {
 
     latestGrid.appendChild(card);
 
-    // ---------------- LOADER
-    const media = card.querySelector('.wallpaper-img');
+    // ---------------- LOADER LOGIC (ONLY REMOVE LOADER)
+    const img = card.querySelector('.wallpaper-img');
     const loader = card.querySelector('.loader-container');
 
     function hideLoader() {
       if (!loader) return;
       loader.style.opacity = '0';
+
       setTimeout(() => {
         loader.style.display = 'none';
-        media.style.opacity = '1';
       }, 300);
     }
 
     if (wallpaper.isVideo) {
-      media.addEventListener('loadeddata', hideLoader, { once: true });
+      img.addEventListener('loadeddata', hideLoader, { once: true });
 
       setTimeout(() => {
         if (loader.style.display !== 'none') hideLoader();
       }, 4000);
 
-      card.addEventListener('mouseenter', () => media.play().catch(() => {}));
+      card.addEventListener('mouseenter', () => img.play().catch(() => {}));
       card.addEventListener('mouseleave', () => {
-        media.pause();
-        media.currentTime = 0;
+        img.pause();
+        img.currentTime = 0;
       });
 
     } else {
-      if (media.complete && media.naturalWidth > 0) {
+      if (img.complete && img.naturalWidth > 0) {
         hideLoader();
       } else {
-        media.addEventListener('load', hideLoader, { once: true });
-        media.addEventListener('error', hideLoader, { once: true });
+        img.addEventListener('load', hideLoader, { once: true });
+        img.addEventListener('error', hideLoader, { once: true });
       }
     }
 
