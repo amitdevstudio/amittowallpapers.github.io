@@ -72,10 +72,14 @@ function filterWallpapers(q) {
   if (!term) return [];
 
   return allWallpapers.filter(w => {
+    const character = String(w.character || '').toLowerCase();
+    const type = String(w.type || '').toLowerCase();
+    const tags = Array.isArray(w.tags) ? w.tags : [];
+
     return (
-      w.character.toLowerCase().includes(term) ||
-      w.type.includes(term) ||
-      w.tags.some(tag => tag.toLowerCase().includes(term))
+      character.includes(term) ||
+      type.includes(term) ||
+      tags.some(tag => String(tag || '').toLowerCase().includes(term))
     );
   });
 }
