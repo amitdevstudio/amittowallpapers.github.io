@@ -20,8 +20,7 @@
   <!-- Favicon -->
   <link rel="icon" href="assets/images/logo/luffy-hat.png" type="image/png" />
 
-  <link href="/src/output.css" rel="stylesheet">
-
+  <link href="./assets/src/output.css" rel="stylesheet">
   <!-- AOS (for animations) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 
@@ -109,39 +108,35 @@
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#home" class="block text-[18px] font-medium"
-              data-aos="fade-down" data-aos-delay="200">Home</a>
+            <a href="#home" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="200">Home</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#latest" class="block text-[18px] font-medium"
-              data-aos="fade-down" data-aos-delay="400">Latest</a>
+            <a href="#latest" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="400">Latest</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#categories" class="block text-[18px] font-medium"
-              data-aos="fade-down" data-aos-delay="600">Categories</a>
+            <a href="#categories" class="block text-[18px] font-medium" data-aos="fade-down"
+              data-aos-delay="600">Categories</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#live" class="block text-[18px] font-medium"
-              data-aos="fade-down" data-aos-delay="600">Live
+            <a href="#live" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="600">Live
               Wallpapers</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#about" class="block text-[18px] font-medium"
-              data-aos="fade-down" data-aos-delay="800">About</a>
+            <a href="#about" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="800">About</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#community" class="block text-[18px] font-medium"
-              data-aos="fade-down" data-aos-delay="1000">Community</a>
+            <a href="#community" class="block text-[18px] font-medium" data-aos="fade-down"
+              data-aos-delay="1000">Community</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#contact" class="block text-[18px] font-medium"
-              data-aos="fade-down" data-aos-delay="1200">Contact</a>
+            <a href="#contact" class="block text-[18px] font-medium" data-aos="fade-down"
+              data-aos-delay="1200">Contact</a>
           </li>
         </ul>
       </div>
@@ -246,7 +241,9 @@
           <!-- JS injects cards here -->
         </div>
         <div class="mt-8 text-center">
-          <button id="latest-show-more" class="px-6 py-3 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition">Show More</button>
+          <button id="latest-show-more"
+            class="px-6 py-3 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition">Show
+            More</button>
         </div>
       </div>
     </section>
@@ -259,7 +256,7 @@
           <i class="fa-solid fa-layer-group mr-2" aria-hidden="true"></i>Explore by Category
         </h2>
         <h3 class="text-2xl md:text-3xl font-bold mb-12" data-aos="fade-up" data-aos-delay="100">
-          <i class="fa-solid fa-tags mr-2" aria-hidden="true"></i>Browse by Anime 
+          <i class="fa-solid fa-tags mr-2" aria-hidden="true"></i>Browse by Anime
         </h3>
         <div id="categoryGrid" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           <!-- Naruto -->
@@ -318,17 +315,27 @@
               <h3 class="text-lg font-semibold">Demon Slayer</h3>
             </div>
           </a>
+          <a href="date-a-live.html" target="_blank" rel="noreferrer noopener"
+            class="group hidden more-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
+            data-aos="zoom-in" data-aos-delay="500">
+            <img src="assets/images/anime-logos/date-a-live.png" alt="Date A Live category"
+              class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
+              height="320" loading="lazy" />
+            <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-4 text-center">
+              <h3 class="text-lg font-semibold">Date A Live</h3>
+            </div>
+          </a>
           <a href="your-name.html" target="_blank" rel="noreferrer noopener"
             class="group hidden more-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
             data-aos="zoom-in" data-aos-delay="600">
-            <img src="assets/images/anime-logos/your-name.jpg" alt="Your Name category"
+            <img src="assets/images/anime-logos/your-name.png" alt="Your Name category"
               class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
               height="320" loading="lazy" />
             <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-4 text-center">
               <h3 class="text-lg font-semibold">Your Name</h3>
             </div>
           </a>
-         
+
         </div>
 
         <!-- Show More / Less -->
@@ -342,7 +349,7 @@
         </div>
 
         <!-- Live Wallpapers -->
-        <h3 class="text-2xl md:text-3xl font-bold mb-12 mt-16" data-aos="fade-up" data-aos-delay="100">
+        <h3 id="live" class="scroll-mt-40 text-2xl md:text-3xl font-bold mb-12 mt-16" data-aos="fade-up" data-aos-delay="100">
           <i class="fa-solid fa-circle-play mr-2" aria-hidden="true"></i>Browse Live Wallpapers
         </h3>
         <div id="liveGrid" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -350,9 +357,11 @@
           <a href="naruto-live.html" target="_blank" rel="noreferrer noopener"
             class="group relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
             data-aos="zoom-in" data-aos-delay="100">
-            <video src="assets/videos/naruto-live/desktop/naruto/2.mp4" alt="Naruto live wallpapers"
+            <video src="https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788048/1_i51dwz.webm"
+              alt="Naruto live wallpapers"
               class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
-              height="320" autoplay muted loop></video>
+              height="320" muted loop playsinline preload="metadata" onmouseenter="this.play()"
+              onmouseleave="this.pause(); this.currentTime = 0;"></video>
             <div class="absolute bottom-0 left-0 right-0 bg-black/65 p-4 text-center">
               <h3 class="text-lg font-semibold">Naruto</h3>
             </div>
@@ -361,9 +370,11 @@
           <a href="one-piece-live.html" target="_blank" rel="noreferrer noopener"
             class="group relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
             data-aos="zoom-in" data-aos-delay="200">
-            <video src="assets/videos/one-piece-live/desktop/1.mp4" alt="One Piece live wallpapers"
+            <video src="https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788063/2_n00b1b.webm"
+              alt="One Piece live wallpapers"
               class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
-              height="320" autoplay muted loop></video>
+              height="320" muted loop playsinline preload="metadata" onmouseenter="this.play()"
+              onmouseleave="this.pause(); this.currentTime = 0;"></video>
             <div class="absolute bottom-0 left-0 right-0 bg-black/65 p-4 text-center">
               <h3 class="text-lg font-semibold">One Piece</h3>
             </div>
@@ -372,9 +383,11 @@
           <a href="dragon-ball-live.html" target="_blank" rel="noreferrer noopener"
             class="group relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
             data-aos="zoom-in" data-aos-delay="300">
-            <video src="assets/videos/dragon-ball-live/desktop/1.mp4" alt="Dragon Ball live wallpapers"
+            <video src="https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788049/1_xnqigh.webm"
+              alt="Dragon Ball live wallpapers"
               class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
-              height="320" autoplay muted loop></video>
+              height="320" muted loop playsinline preload="metadata" onmouseenter="this.play()"
+              onmouseleave="this.pause(); this.currentTime = 0;"></video>
             <div class="absolute bottom-0 left-0 right-0 bg-black/65 p-4 text-center">
               <h3 class="text-lg font-semibold">Dragon Ball</h3>
             </div>
@@ -383,9 +396,11 @@
           <a href="demon-slayer-live.html" target="_blank" rel="noreferrer noopener"
             class="group relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
             data-aos="zoom-in" data-aos-delay="400">
-            <video src="assets/videos/demon-slayer-live/giyu/1.mp4" alt="Demon Slayer live wallpapers"
+            <video src="https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775792246/1_suftuj.webm"
+              alt="Demon Slayer live wallpapers"
               class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
-              height="320" autoplay muted loop></video>
+              height="320" muted loop playsinline preload="metadata" onmouseenter="this.play()"
+              onmouseleave="this.pause(); this.currentTime = 0;"></video>
             <div class="absolute bottom-0 left-0 right-0 bg-black/65 p-4 text-center">
               <h3 class="text-lg font-semibold">Demon Slayer</h3>
             </div>
@@ -395,9 +410,11 @@
           <a href="rezero-live.html" target="_blank" rel="noreferrer noopener"
             class="group hidden more-live-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
             data-aos="zoom-in" data-aos-delay="500">
-            <video src="assets/videos/rezero-live/preview/1.webm" alt="Re:Zero live wallpapers"
+            <video src="https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788077/1_e4sgnb.webm"
+              alt="Re:Zero live wallpapers"
               class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
-              height="320" autoplay muted loop></video>
+              height="320" muted loop playsinline preload="metadata" onmouseenter="this.play()"
+              onmouseleave="this.pause(); this.currentTime = 0;"></video>
             <div class="absolute bottom-0 left-0 right-0 bg-black/65 p-4 text-center">
               <h3 class="text-lg font-semibold">Re:Zero</h3>
             </div>
@@ -405,9 +422,11 @@
           <a href="your-name-live.html" target="_blank" rel="noreferrer noopener"
             class="group hidden more-live-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
             data-aos="zoom-in" data-aos-delay="600">
-            <video src="assets/videos/your-name-live/preview/desktop/1.webm" alt="Your Name live wallpapers"
+            <video src="https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788065/1_cay0ss.webm"
+              alt="Your Name live wallpapers"
               class="w-full h-48 object-fill opacity-80 group-hover:opacity-100 transition duration-300" width="640"
-              height="320" autoplay muted loop></video>
+              height="320" muted loop playsinline preload="metadata" onmouseenter="this.play()"
+              onmouseleave="this.pause(); this.currentTime = 0;"></video>
             <div class="absolute bottom-0 left-0 right-0 bg-black/65 p-4 text-center">
               <h3 class="text-lg font-semibold">Your Name</h3>
             </div>
@@ -417,7 +436,8 @@
             data-aos="zoom-in" data-aos-delay="600">
             <video src="assets/videos/genshin-live/1.mp4" alt="Genshin Impact live wallpapers"
               class="w-full h-48 object-fill opacity-80 group-hover:opacity-100 transition duration-300" width="640"
-              height="320" autoplay muted loop></video>
+              height="320" muted loop playsinline preload="metadata" onmouseenter="this.play()"
+              onmouseleave="this.pause(); this.currentTime = 0;"></video>
             <div class="absolute bottom-0 left-0 right-0 bg-black/65 p-4 text-center">
               <h3 class="text-lg font-semibold">Genshin Impact</h3>
             </div>
@@ -1046,40 +1066,38 @@
     console.log("Viewport size:", window.innerWidth, "x", window.innerHeight);
     console.log("User's preferred color scheme:", window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   </script>
-    <script>
-  function addImageSchema(url, name) {
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "ImageObject",
-      "contentUrl": url,
-      "name": name + " Wallpaper",
-      "license": "https://amittowallpapers.netlify.app/terms.html",
-      "acquireLicensePage": "https://amittowallpapers.netlify.app/terms.html",
-      "creator": {
-        "@type": "Organization",
-        "name": "AmittoWallpapers",
-        "url": "https://amittowallpapers.netlify.app"
-      },
-      "creditText": "AmittoWallpapers",
-      "copyrightNotice": "© 2025 AmittoWallpapers"
-    };
+  <script>
+    function addImageSchema(url, name) {
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "ImageObject",
+        "contentUrl": url,
+        "name": name + " Wallpaper",
+        "license": "https://amittowallpapers.netlify.app/terms.html",
+        "acquireLicensePage": "https://amittowallpapers.netlify.app/terms.html",
+        "creator": {
+          "@type": "Organization",
+          "name": "AmittoWallpapers",
+          "url": "https://amittowallpapers.netlify.app"
+        },
+        "creditText": "AmittoWallpapers",
+        "copyrightNotice": "© 2025 AmittoWallpapers"
+      };
 
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify(schema);
-    document.head.appendChild(script);
-  }
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
+    }
 
-  // Example usage: call this with your wallpaper data
-  addImageSchema(
-    "https://amittowallpapers.netlify.app/images/goku-blue.jpg",
-    "Goku Blue"
-  );
-</script>
+    // Example usage: call this with your wallpaper data
+    addImageSchema(
+      "https://amittowallpapers.netlify.app/images/goku-blue.jpg",
+      "Goku Blue"
+    );
+  </script>
 </body>
 
 
 
 </html>
-
-

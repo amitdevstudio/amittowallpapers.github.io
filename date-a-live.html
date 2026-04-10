@@ -4,51 +4,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Date A Live Wallpapers HD | Shido, Kurumi, Kotori, Tohka, Yoshino, Natsumi, Miku & More Free Downloads</title>
+  <title>Date A Live Wallpapers HD | Tohka, Kurumi, Yoshino, Kotori & More Free Downloads</title>
+
+  <!-- Basic SEO -->
+  <meta name="description"
+    content="Download free HD anime wallpapers for Date A Live, One Piece, Bleach, and more. High-quality wallpapers for desktop and mobile." />
+  <meta name="robots" content="index,follow" />
+
   <!-- Open Graph (for social sharing) -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="AmittoWallpapers | Free Anime HD Wallpapers" />
   <meta property="og:description"
-    content="Get stunning Date A Live anime wallpapers featuring Shido, Kurumi, Kotori, Tohka, Yoshino, Natsumi, Miku, and more. Free high-resolution Date A Live backgrounds for desktop and mobile. Perfect for any Date A Live fan!" />
-  <!-- Favicon -->
-  <link rel="icon" href="assets/images/logo/luffy-hat.png" type="image/png" />
-
-  <!-- Favicon as Open Graph image (for link previews) -->
+    content="HD anime wallpapers for desktop & mobile - Date A Live, One Piece, Bleach, Demon Slayer and more." />
   <meta property="og:image" content="assets/images/logo/luffy-hat.png" />
   <meta property="og:image:width" content="490" />
   <meta property="og:image:height" content="490" />
   <meta property="og:image:alt" content="AmittoWallpapers Logo" />
 
-  <link rel="preload" href="assets/images/logo/luffy-hat.png" as="image">
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/logo/luffy-hat.png" type="image/png" />
 
-  <link href="/src/output.css" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <link href="./assets/src/output.css" rel="stylesheet">
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- AOS (for animations) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-048LX9JF5P"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-048LX9JF5P');
-  </script>
   <style>
     /* Custom styles for the Inter font */
     body {
-      font-family: "Inter", sans-serif;
+      font-family: 'Inter', sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+    }
+
+    header [data-aos] {
+      opacity: 1 !important;
+      transform: none !important;
     }
 
     .brand-logo {
@@ -82,7 +79,6 @@
       justify-content: center;
       z-index: 10;
       background: #1a1a1a;
-      /* matches card bg */
       transition: opacity 0.5s ease;
     }
 
@@ -119,21 +115,26 @@
         opacity: 1;
       }
     }
+
+    header [data-aos] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    #menuOverlay {
+      display: none;
+      /* Ensure it's hidden by default */
+    }
+
+    body,
+    html {
+      overflow-x: visible;
+      /* Prevent clipping */
+    }
   </style>
 </head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-048LX9JF5P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
 
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
-
-  gtag('config', 'G-048LX9JF5P');
-</script>
-
-<body class="bg-[#0d0d0d] text-white">
+<body class="bg-[#0d0d0d] text-white overflow-x-hidden">
   <!-- HTML HEADER -->
   <header class="border-b border-gray-300 bg-black min-h-[60px] px-4 py-6 tracking-wide relative z-50">
     <div class="flex flex-wrap items-center max-lg:gap-y-6 max-sm:gap-x-4">
@@ -155,42 +156,47 @@
 
         <ul class="flex flex-col space-y-8 lg:space-y-0 text-center lg:text-left lg:flex-row space-x-4 w-full">
           <li class="mb-10 hidden max-lg:block">
-            <a href="index.html" class="flex text-xl text-left items-center font-bold  font-sans">
+            <a href="https://amittowallpapers.netlify.app/"
+              class="flex text-xl text-left items-center font-bold  font-sans">
               <img src="assets/images/logo/luffy-hat.png" class="w-10 lg:-mt-1" alt="">
               Amitto<span class="text-red-400">Wallpapers</span>
             </a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#home" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="200">Home</a>
+            <a href="https://amittowallpapers.netlify.app/#home" class="block text-[18px] font-medium"
+              data-aos="fade-down" data-aos-delay="200">Home</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#latest" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="400">Latest</a>
+            <a href="https://amittowallpapers.netlify.app/#latest" class="block text-[18px] font-medium"
+              data-aos="fade-down" data-aos-delay="400">Latest</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#categories" class="block text-[18px] font-medium" data-aos="fade-down"
-              data-aos-delay="600">Categories</a>
+            <a href="https://amittowallpapers.netlify.app/#categories" class="block text-[18px] font-medium"
+              data-aos="fade-down" data-aos-delay="600">Categories</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#live" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="600">Live
+            <a href="https://amittowallpapers.netlify.app/#live" class="block text-[18px] font-medium"
+              data-aos="fade-down" data-aos-delay="600">Live
               Wallpapers</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#about" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="800">About</a>
+            <a href="https://amittowallpapers.netlify.app/#about" class="block text-[18px] font-medium"
+              data-aos="fade-down" data-aos-delay="800">About</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#community" class="block text-[18px] font-medium" data-aos="fade-down"
-              data-aos-delay="1000">Community</a>
+            <a href="https://amittowallpapers.netlify.app/#community" class="block text-[18px] font-medium"
+              data-aos="fade-down" data-aos-delay="1000">Community</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#contact" class="block text-[18px] font-medium" data-aos="fade-down"
-              data-aos-delay="1200">Contact</a>
+            <a href="https://amittowallpapers.netlify.app/#contact" class="block text-[18px] font-medium"
+              data-aos="fade-down" data-aos-delay="1200">Contact</a>
           </li>
         </ul>
       </div>
@@ -242,8 +248,7 @@
         class="w-full outline-none bg-white text-black text-[15px] placeholder-gray-500 placeholder-opacity-100 focus:placeholder-gray-400 transition" />
     </div>
   </header>
-
-  <!-- MASONRY GRID (JS populates) -->
+  <!-- Grid container -->
   <div id="wallpaperGrid" class="w-[95%] mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4"></div>
 
   <section id="hero-section" class="relative bg-[#101014] text-white py-4 px-6 md:px-12">
@@ -405,6 +410,4 @@
 
 </body>
 
-
 </html>
-
