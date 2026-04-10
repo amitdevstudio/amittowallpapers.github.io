@@ -42,7 +42,7 @@ wallpapers.forEach(item => {
 
 });
 
-// SORT (latest first)
+// SORT NEWEST FIRST
 latestWallpapers.sort((a, b) => new Date(b.date) - new Date(a.date));
 
 // -------------------------------
@@ -77,11 +77,11 @@ function renderLatest(list) {
     const card = document.createElement('div');
     card.className = "break-inside-avoid overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg mb-6";
 
-    // MEDIA
+    // MEDIA HTML
     let mediaHTML = `
       <div class="relative group">
 
-        <div class="loader-container absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity duration-500">
+        <div class="loader-container absolute inset-0 flex items-center justify-center bg-black/40">
           <div class="loader"><div></div><div></div><div></div></div>
         </div>
     `;
@@ -102,15 +102,14 @@ function renderLatest(list) {
 
     mediaHTML += `</div>`;
 
-    // CARD
     card.innerHTML = `
       <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}"
          target="_blank"
-         class="block overflow-hidden rounded-lg relative">
+         class="block relative overflow-hidden rounded-lg">
 
         ${mediaHTML}
 
-        <span class="absolute z-10 top-3 left-3 ${wallpaper.type.includes('desktop') ? 'bg-red-600' : 'bg-green-600'} text-white px-2 py-1 text-xs rounded-lg">
+        <span class="absolute top-3 left-3 z-10 ${wallpaper.type.includes('desktop') ? 'bg-red-600' : 'bg-green-600'} text-white px-2 py-1 text-xs rounded-lg">
           ${wallpaper.type}
         </span>
       </a>
@@ -140,14 +139,35 @@ function renderLatest(list) {
 
     latestGrid.appendChild(card);
 
+    // -------------------------------
     const media = card.querySelector('.wallpaper-img');
     const loader = card.querySelector('.loader-container');
 
-    // LOAD EFFECT (same as search.js)
+    // FORCE loader visible (important fix)
+    loader.style.opacity = '1';
+    loader.style.display = 'flex';
+
+    // IMAGE LOAD FIX (CACHE SAFE)
+    if (!wallpaper.isVideo) {
+
+      if (media.complete) {
+        loader.style.opacity = '0';
+        setTimeout(() => loader.style.display = 'none', 300);
+        media.classList.remove('opacity-0');
+      }
+
+      media.addEventListener('load', () => {
+        loader.style.opacity = '0';
+        setTimeout(() => loader.style.display = 'none', 300);
+        media.classList.remove('opacity-0');
+      });
+    }
+
+    // VIDEO LOAD FIX
     if (wallpaper.isVideo) {
       media.addEventListener('loadeddata', () => {
         loader.style.opacity = '0';
-        setTimeout(() => loader.style.display = 'none', 500);
+        setTimeout(() => loader.style.display = 'none', 300);
         media.classList.remove('opacity-0');
       });
 
@@ -156,16 +176,10 @@ function renderLatest(list) {
         media.pause();
         media.currentTime = 0;
       });
-
-    } else {
-      media.addEventListener('load', () => {
-        loader.style.opacity = '0';
-        setTimeout(() => loader.style.display = 'none', 500);
-        media.classList.remove('opacity-0');
-      });
     }
 
-    // LIKE
+    // -------------------------------
+    // LIKE SYSTEM
     const likeBtn = card.querySelector('.likeBtn');
     const likeIcon = card.querySelector('.likeIcon');
     const likeCount = card.querySelector('.likeCount');
