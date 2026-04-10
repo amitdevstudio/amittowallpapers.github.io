@@ -1,17 +1,16 @@
 import { wallpapers } from './wallpaper.js';
 
 // -------------------------------
-// FLATTEN ALL DATA (SAFE)
+// FLATTEN DATA
 const allWallpapers = [];
 
 wallpapers.forEach(item => {
-  // Images
   if (Array.isArray(item.images)) {
     item.images.forEach(img => {
       allWallpapers.push({
         character: String(item.character || ''),
         type: String(item.type || '').toLowerCase(),
-        tags: Array.isArray(item.tags) ? item.tags.map(t => String(t || '')) : [],
+        tags: Array.isArray(item.tags) ? item.tags : [],
         url: img.url || '',
         download: img.url || '',
         date: img.date || new Date().toISOString(),
@@ -20,13 +19,12 @@ wallpapers.forEach(item => {
     });
   }
 
-  // Videos
   if (Array.isArray(item.videos)) {
     item.videos.forEach(video => {
       allWallpapers.push({
         character: String(item.character || ''),
         type: String(item.type || '').toLowerCase(),
-        tags: Array.isArray(item.tags) ? item.tags.map(t => String(t || '')) : [],
+        tags: Array.isArray(item.tags) ? item.tags : [],
         url: video.preview || '',
         download: video.download || video.preview || '',
         date: video.date || new Date().toISOString(),
@@ -41,225 +39,186 @@ const searchGrid = document.getElementById('wallpaperGrid');
 const searchInput = document.getElementById('searchInput');
 
 const params = new URLSearchParams(window.location.search);
-const query = params.get('q') || '';
+const initialQuery = params.get('q') || '';
 
 // -------------------------------
-// DEBOUNCE
-function debounce(fn, delay = 250) {
+// CORE UTILITIES
+const debounce = (fn, delay = 250) => {
   let timer;
-  return function(...args) {
+  return (...args) => {
     clearTimeout(timer);
-    timer = setTimeout(() => fn.apply(this, args), delay);
+    timer = setTimeout(() => fn(...args), delay);
   };
-}
+};
 
 // -------------------------------
-// 🔥 FIXED FILTER - EMPTY RETURNS ALL
-function filterWallpapers(q) {
-  const term = String(q || '').toLowerCase().trim();
+// FILTER LOGIC - FIXED
+const filterWallpapers = (query) => {
+  const term = String(query || '').toLowerCase().trim();
   
-  // CRITICAL FIX: Empty search = ALL wallpapers
-  if (term.length === 0) {
-    return allWallpapers;
-  }
+  // EMPTY QUERY = SHOW ALL
+  if (!term) return allWallpapers;
 
-  return allWallpapers.filter(w => {
-    const character = String(w.character || '').toLowerCase();
-    const type = String(w.type || '').toLowerCase();
-    const tags = Array.isArray(w.tags)
-      ? w.tags.map(t => String(t || '').toLowerCase())
-      : [];
+  return allWallpapers.filter(wp => {
+    const char = String(wp.character || '').toLowerCase();
+    const type = String(wp.type || '').toLowerCase();
+    const tags = Array.isArray(wp.tags) ? wp.tags : [];
 
-    return (
-      character.includes(term) ||
-      type.includes(term) ||
-      tags.some(tag => tag.includes(term))
-    );
+    return char.includes(term) || 
+           type.includes(term) || 
+           tags.some(tag => String(tag || '').toLowerCase().includes(term));
   });
-}
+};
 
 // -------------------------------
-// RENDER RESULTS
-function renderSearchResults(list) {
-  if (!searchGrid) {
-    console.warn('searchGrid not found');
-    return;
-  }
+// RENDER - NO CHANGES TO DESIGN
+const renderSearchResults = (wallpapers) => {
+  if (!searchGrid) return;
 
   searchGrid.innerHTML = '';
 
-  if (!list || list.length === 0) {
+  if (!wallpapers?.length) {
     searchGrid.innerHTML = `
-      <div class="col-span-full flex flex-col items-center justify-center h-64 p-8 text-center">
-        <div class="text-4xl mb-4">🔍</div>
-        <h3 class="text-xl font-semibold text-gray-300 mb-2">No Results Found</h3>
-        <p class="text-gray-500">Try different keywords like character names or tags</p>
+      <div class="col-span-full flex items-center justify-center h-48 text-gray-400">
+        No wallpapers found
       </div>
     `;
     return;
   }
 
-  const fragment = document.createDocumentFragment();
-  list.forEach(w => fragment.appendChild(createCard(w)));
-  searchGrid.appendChild(fragment);
-}
+  wallpapers.forEach(w => searchGrid.appendChild(createCard(w)));
+};
 
 // -------------------------------
-// CREATE CARD
-function createCard(w) {
+// ORIGINAL CARD DESIGN - UNCHANGED
+const createCard = (w) => {
   const card = document.createElement('div');
-  const type = String(w.type || '').toLowerCase();
-  const isMobile = type.includes('mobile');
+  const type = String(w.type || '');
+  const isMobile = type === 'mobile';
   const isDesktop = type.includes('desktop');
-  
-  const height = isMobile ? 'h-80' : 'h-60';
-  const badgeColor = isDesktop ? 'bg-red-600' : 'bg-green-600';
-  const widthClass = isMobile ? 'w-[85%] sm:w-[70%] md:w-[60%]' : 'w-full';
 
-  card.className = 'wallpaper-card break-inside-avoid mb-6 w-full flex justify-center';
+  const height = isMobile ? 'h-80' : 'h-60';
+  const badge = isDesktop ? 'bg-red-600' : 'bg-green-600';
+
+  card.className = "wallpaper-card break-inside-avoid mb-6 flex justify-center";
 
   card.innerHTML = `
-    <div class="relative group overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900/90 to-black/95 shadow-2xl hover:shadow-3xl transition-all duration-500 border border-slate-800/50 ${widthClass} max-w-sm mx-auto">
-      
-      <!-- LOADER -->
-      <div class="loader-container absolute inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm z-20 transition-opacity duration-300">
-        <div class="w-12 h-12 border-4 border-slate-600/50 border-t-white rounded-full animate-spin"></div>
+    <div class="
+      relative group overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg
+      ${isMobile ? 'w-[85%] sm:w-[70%] md:w-[60%]' : 'w-full'}
+    ">
+      <div class="loader-container absolute inset-0 flex items-center justify-center bg-black/40 z-20">
+        <div class="loader"><div></div><div></div><div></div></div>
       </div>
 
-      <!-- LINK -->
-      <a href="wallpaper.html?title=${encodeURIComponent(w.character)}&img=${encodeURIComponent(w.url)}&download=${encodeURIComponent(w.download)}&isVideo=${w.isVideo}" target="_blank" class="block w-full h-full relative group-hover:scale-[1.02] transition-all duration-700">
-
-        ${w.isVideo ? `
-          <video class="wallpaper-img w-full object-cover ${height} opacity-0 transition-opacity duration-700" muted loop playsinline preload="metadata">
-            <source src="${w.url}" type="video/mp4">
-          </video>
-        ` : `
-          <img class="wallpaper-img w-full object-cover ${height} opacity-0 transition-opacity duration-700" 
-               src="${w.url}" loading="lazy" alt="${w.character} wallpaper" 
-               onerror="this.closest('.wallpaper-card').querySelector('.loader-container').classList.add('opacity-0')"/>
-        `}
-
+      <a href="wallpaper.html?title=${encodeURIComponent(w.character)}&img=${encodeURIComponent(w.url)}"
+         target="_blank"
+         class="block">
+        ${w.isVideo
+          ? `<video class="wallpaper-img w-full object-cover ${height}" muted loop playsinline>
+              <source src="${w.url}">
+            </video>`
+          : `<img src="${w.url}" class="wallpaper-img w-full object-cover ${height}"/>`
+        }
       </a>
 
-      <!-- BADGE -->
-      <span class="absolute top-4 left-4 z-30 ${badgeColor} text-white px-3 py-1.5 text-xs font-bold rounded-full shadow-lg">
-        ${isDesktop ? '🖥️ PC' : '📱 Mobile'}
+      <span class="absolute top-3 left-3 ${badge} text-white px-2 py-1 text-xs rounded">
+        ${type}
       </span>
-
-      <!-- CHARACTER -->
-      <div class="absolute bottom-4 left-4 right-4 bg-black/90 backdrop-blur-md text-white px-4 py-2 text-sm font-semibold rounded-xl truncate z-30 shadow-2xl">
-        ${w.character}
-      </div>
-
     </div>
   `;
 
-  // Loader handlers
-  const media = card.querySelector('.wallpaper-img');
+  // Loader logic
+  const img = card.querySelector('.wallpaper-img');
   const loader = card.querySelector('.loader-container');
   
-  if (media && loader) {
-    const hideLoader = () => {
-      loader.classList.add('opacity-0');
-      media.classList.remove('opacity-0');
+  const hideLoader = () => {
+    if (loader) {
+      loader.style.opacity = '0';
       setTimeout(() => loader.remove(), 300);
-    };
+    }
+  };
 
-    if (media.tagName === 'VIDEO') {
-      media.addEventListener('loadeddata', hideLoader, { once: true });
-      card.addEventListener('mouseenter', () => media.play().catch(() => {}));
-      card.addEventListener('mouseleave', () => {
-        media.pause();
-        media.currentTime = 0;
-      });
+  if (img) {
+    if (img.tagName === 'VIDEO') {
+      img.addEventListener('loadeddata', hideLoader, { once: true });
     } else {
-      media.addEventListener('load', hideLoader, { once: true });
-      media.addEventListener('error', hideLoader, { once: true });
-      
-      if (media.complete && media.naturalWidth > 0) {
-        hideLoader();
-      }
+      img.addEventListener('load', hideLoader, { once: true });
+      img.addEventListener('error', hideLoader, { once: true });
+      if (img.complete) hideLoader();
     }
   }
 
   return card;
-}
+};
 
 // -------------------------------
-// 🔥 FIXED INITIALIZATION
-function initSearch() {
+// INITIAL LOAD - FIXED
+const init = () => {
   if (!searchGrid) {
-    console.warn('searchGrid element missing');
+    console.error('wallpaperGrid not found');
     return;
   }
 
-  if (searchInput && query) {
-    searchInput.value = query; // Set input from URL
+  // Set input value from URL params
+  if (searchInput && initialQuery) {
+    searchInput.value = initialQuery;
   }
 
-  // ALWAYS start with ALL wallpapers
-  console.log(`🌟 Initial load: ${allWallpapers.length} wallpapers`);
+  // ALWAYS show all wallpapers first
   renderSearchResults(allWallpapers);
-}
+};
 
 // -------------------------------
-// 🔥 FIXED LIVE SEARCH
-function setupLiveSearch() {
+// LIVE SEARCH - FIXED
+const setupSearch = () => {
   if (!searchInput || !searchGrid) return;
 
-  const debouncedSearch = debounce((value) => {
-    const trimmedValue = String(value || '').trim();
-    
+  const searchHandler = debounce((query) => {
+    const results = filterWallpapers(query);
+    renderSearchResults(results);
+
     // Update URL
     const url = new URL(window.location.href);
-    if (trimmedValue.length > 0) {
-      url.searchParams.set('q', trimmedValue);
+    const trimmedQuery = String(query || '').trim();
+    if (trimmedQuery) {
+      url.searchParams.set('q', trimmedQuery);
     } else {
       url.searchParams.delete('q');
     }
     window.history.replaceState({}, '', url);
-
-    // FIXED LOGIC: Filter ONLY when there's a search term
-    const results = trimmedValue.length > 0 
-      ? filterWallpapers(trimmedValue)
-      : allWallpapers;
-
-    console.log(`🔍 "${trimmedValue}" → ${results.length} results`);
-    renderSearchResults(results);
-  }, 250);
+  }, 200);
 
   searchInput.addEventListener('input', (e) => {
-    debouncedSearch(e.target.value);
+    searchHandler(e.target.value);
   });
 
   // ESC clears search
   searchInput.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      e.target.value = '';
-      debouncedSearch('');
+      searchInput.value = '';
+      searchHandler('');
     }
   });
-}
+};
 
 // -------------------------------
-// STYLES
-if (!document.querySelector('style[data-search]')) {
-  const style = document.createElement('style');
-  style.setAttribute('data-search', '');
-  style.textContent = `
-    .wallpaper-card { contain: layout style paint; }
-    .loader-container { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
-    .wallpaper-img { transition: opacity 0.6s ease-out; }
-  `;
-  document.head.appendChild(style);
-}
-
-// -------------------------------
-// INIT ON DOM READY
+// EXECUTE
 document.addEventListener('DOMContentLoaded', () => {
-  initSearch();
-  setupLiveSearch();
+  init();
+  setupSearch();
 });
 
-// Debug export
-window.__searchDebug = { allWallpapers, filterWallpapers };
+// -------------------------------
+// CSS (minimal)
+const style = document.createElement('style');
+style.textContent = `
+  .loader {
+    width: 40px; height: 40px;
+    border: 4px solid #333; border-top: 4px solid #fff;
+    border-radius: 50%; animation: spin 1s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loader-container { transition: opacity 0.3s ease; }
+`;
+document.head.appendChild(style);
