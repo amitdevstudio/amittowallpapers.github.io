@@ -13,7 +13,6 @@ const latestWallpapers = [];
 // PROCESS DATA
 wallpapers.forEach(item => {
 
-  // IMAGES
   if (Array.isArray(item.images)) {
     item.images.forEach(img => {
       latestWallpapers.push({
@@ -27,7 +26,6 @@ wallpapers.forEach(item => {
     });
   }
 
-  // VIDEOS
   if (Array.isArray(item.videos)) {
     item.videos.forEach(video => {
       latestWallpapers.push({
@@ -44,13 +42,12 @@ wallpapers.forEach(item => {
 
 });
 
-// SORT (NEWEST FIRST)
+// SORT
 latestWallpapers.sort((a, b) => new Date(b.date) - new Date(a.date));
 
 // -------------------------------
 let visibleCount = 6;
 
-// INITIAL RENDER
 renderLatest(latestWallpapers.slice(0, visibleCount));
 
 // SHOW MORE
@@ -62,6 +59,12 @@ showMoreBtn.addEventListener('click', () => {
     showMoreBtn.style.display = 'none';
   }
 });
+
+// -------------------------------
+function getAspect(type) {
+  // ✅ SAME FEEL AS SEARCH (but fixed)
+  return type.includes('mobile') ? 'aspect-[2/3]' : 'aspect-[16/9]';
+}
 
 // -------------------------------
 function renderLatest(list) {
@@ -80,7 +83,7 @@ function renderLatest(list) {
 
     // MEDIA
     let mediaHTML = `
-      <div class="relative group w-full ${wallpaper.type === 'mobile' ? 'aspect-[9/16]' : 'aspect-[16/9]'} overflow-hidden bg-black">
+      <div class="relative group w-full ${getAspect(wallpaper.type)} overflow-hidden bg-black">
 
         <div class="loader-container absolute inset-0 flex items-center justify-center">
           <div class="loader"><div></div><div></div><div></div></div>
@@ -90,20 +93,20 @@ function renderLatest(list) {
     if (wallpaper.isVideo) {
       mediaHTML += `
         <video loop muted playsinline
-          class="wallpaper-img w-full h-full object-cover transition duration-300 group-hover:scale-105 group-hover:brightness-110">
+          class="wallpaper-img w-full h-full object-cover object-center transition duration-300 group-hover:scale-105 group-hover:brightness-110">
           <source src="${wallpaper.url}" type="video/mp4">
         </video>
       `;
     } else {
       mediaHTML += `
-        <img src="${wallpaper.url}"
-          class="wallpaper-img w-full h-full object-cover transition duration-300 group-hover:scale-105 group-hover:brightness-110"/>
+        <img src="${wallpaper.url}" alt="${wallpaper.character}"
+          class="wallpaper-img w-full h-full object-cover object-center transition duration-300 group-hover:scale-105 group-hover:brightness-110"/>
       `;
     }
 
     mediaHTML += `</div>`;
 
-    // CARD UI
+    // CARD
     card.innerHTML = `
       <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}"
          target="_blank"
@@ -144,11 +147,9 @@ function renderLatest(list) {
     const media = card.querySelector('.wallpaper-img');
     const loader = card.querySelector('.loader-container');
 
-    // LOAD EFFECT
+    // LOAD
     if (wallpaper.isVideo) {
-      media.addEventListener('loadeddata', () => {
-        loader.style.display = 'none';
-      });
+      media.addEventListener('loadeddata', () => loader.style.display = 'none');
 
       card.addEventListener('mouseenter', () => media.play());
       card.addEventListener('mouseleave', () => {
@@ -156,12 +157,10 @@ function renderLatest(list) {
         media.currentTime = 0;
       });
     } else {
-      media.addEventListener('load', () => {
-        loader.style.display = 'none';
-      });
+      media.addEventListener('load', () => loader.style.display = 'none');
     }
 
-    // LIKE SYSTEM
+    // LIKE
     const likeBtn = card.querySelector('.likeBtn');
     const likeIcon = card.querySelector('.likeIcon');
     const likeCount = card.querySelector('.likeCount');
