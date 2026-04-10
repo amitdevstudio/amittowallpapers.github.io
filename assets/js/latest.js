@@ -19,8 +19,8 @@ wallpapers.forEach(item => {
         character: item.character || '',
         type: (item.type || '').toLowerCase(),
         tags: item.tags || [],
-        url: img,
-        date: item.date || new Date().toISOString(),
+        url: img.url || img,
+        date: img.date || new Date().toISOString(),
         isVideo: false
       });
     });
@@ -42,7 +42,7 @@ wallpapers.forEach(item => {
 
 });
 
-// SORT
+// SORT (latest first)
 latestWallpapers.sort((a, b) => new Date(b.date) - new Date(a.date));
 
 // -------------------------------
@@ -51,19 +51,15 @@ let visibleCount = 6;
 renderLatest(latestWallpapers.slice(0, visibleCount));
 
 // SHOW MORE
-showMoreBtn.addEventListener('click', () => {
-  visibleCount += 6;
-  renderLatest(latestWallpapers.slice(0, visibleCount));
+if (showMoreBtn) {
+  showMoreBtn.addEventListener('click', () => {
+    visibleCount += 6;
+    renderLatest(latestWallpapers.slice(0, visibleCount));
 
-  if (visibleCount >= latestWallpapers.length) {
-    showMoreBtn.style.display = 'none';
-  }
-});
-
-// -------------------------------
-function getAspect(type) {
-  // ✅ SAME FEEL AS SEARCH (but fixed)
-  return type.includes('mobile') ? 'aspect-[2/3]' : 'aspect-[16/9]';
+    if (visibleCount >= latestWallpapers.length) {
+      showMoreBtn.style.display = 'none';
+    }
+  });
 }
 
 // -------------------------------
@@ -83,9 +79,9 @@ function renderLatest(list) {
 
     // MEDIA
     let mediaHTML = `
-      <div class="relative group w-full ${getAspect(wallpaper.type)} overflow-hidden bg-black">
+      <div class="relative group">
 
-        <div class="loader-container absolute inset-0 flex items-center justify-center">
+        <div class="loader-container absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity duration-500">
           <div class="loader"><div></div><div></div><div></div></div>
         </div>
     `;
@@ -93,14 +89,14 @@ function renderLatest(list) {
     if (wallpaper.isVideo) {
       mediaHTML += `
         <video loop muted playsinline
-          class="wallpaper-img w-full h-60 mx-auto object-fit object-center transition duration-300 group-hover:scale-105 group-hover:brightness-110">
+          class="wallpaper-img w-auto mx-auto object-fill transition-transform duration-300 ease-in-out ${wallpaper.type === 'mobile' ? 'h-80' : 'h-60'} group-hover:scale-105 group-hover:brightness-110 opacity-0">
           <source src="${wallpaper.url}" type="video/mp4">
         </video>
       `;
     } else {
       mediaHTML += `
         <img src="${wallpaper.url}" alt="${wallpaper.character}"
-          class="wallpaper-img w-full h-60 mx-auto object-fit object-center transition duration-300 group-hover:scale-105 group-hover:brightness-110"/>
+          class="wallpaper-img w-auto mx-auto object-fill transition-transform duration-300 ease-in-out ${wallpaper.type === 'mobile' ? 'h-80' : 'h-60'} group-hover:scale-105 group-hover:brightness-110 opacity-0"/>
       `;
     }
 
@@ -110,7 +106,7 @@ function renderLatest(list) {
     card.innerHTML = `
       <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}"
          target="_blank"
-         class="block overflow-hidden rounded-lg">
+         class="block overflow-hidden rounded-lg relative">
 
         ${mediaHTML}
 
@@ -147,17 +143,26 @@ function renderLatest(list) {
     const media = card.querySelector('.wallpaper-img');
     const loader = card.querySelector('.loader-container');
 
-    // LOAD
+    // LOAD EFFECT (same as search.js)
     if (wallpaper.isVideo) {
-      media.addEventListener('loadeddata', () => loader.style.display = 'none');
+      media.addEventListener('loadeddata', () => {
+        loader.style.opacity = '0';
+        setTimeout(() => loader.style.display = 'none', 500);
+        media.classList.remove('opacity-0');
+      });
 
       card.addEventListener('mouseenter', () => media.play());
       card.addEventListener('mouseleave', () => {
         media.pause();
         media.currentTime = 0;
       });
+
     } else {
-      media.addEventListener('load', () => loader.style.display = 'none');
+      media.addEventListener('load', () => {
+        loader.style.opacity = '0';
+        setTimeout(() => loader.style.display = 'none', 500);
+        media.classList.remove('opacity-0');
+      });
     }
 
     // LIKE
