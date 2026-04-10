@@ -116,7 +116,7 @@ function renderCard(wallpaper, grid, index = 0) {
         <div class="loader-container absolute inset-0 flex items-center justify-center">
           <div class="loader"><div></div><div></div><div></div></div>
         </div>
-        <video loop muted playsinline class="wallpaper-img w-full h-48 sm:h-56 md:h-64 object-cover opacity-0 transition-opacity duration-500 group-hover:scale-105">
+        <video loop muted playsinline class="wallpaper-img w-fit h-48 sm:h-56 md:h-64 object-cover opacity-0 transition-opacity duration-500 group-hover:scale-105">
           <source src="${wallpaper.url}" type="video/mp4">
         </video>
       </div>
@@ -127,8 +127,7 @@ function renderCard(wallpaper, grid, index = 0) {
         <div class="loader-container absolute inset-0 flex items-center justify-center">
           <div class="loader"><div></div><div></div><div></div></div>
         </div>
-        <img loading="lazy" src="${wallpaper.url}" alt="${wallpaper.character}" 
-class="wallpaper-img w-full h-48 sm:h-56 md:h-64 object-cover opacity-0 transition-opacity duration-500 group-hover:scale-105"/>
+        <img loading="lazy" src="${wallpaper.url}" alt="${wallpaper.character}" class="wallpaper-img w-full h-48 sm:h-56 md:h-64 object-cover opacity-0 transition-opacity duration-500 group-hover:scale-105"/>
       </div>
     `;
   }
