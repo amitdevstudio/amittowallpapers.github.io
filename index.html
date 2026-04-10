@@ -20,40 +20,13 @@
   <!-- Favicon -->
   <link rel="icon" href="assets/images/logo/luffy-hat.png" type="image/png" />
 
-  <!-- Favicon as Open Graph image (for link previews) -->
-  <meta property="og:image" content="assets/images/logo/luffy-hat.png" />
-  <meta property="og:image:width" content="490" />
-  <meta property="og:image:height" content="490" />
-  <meta property="og:image:alt" content="AmittoWallpapers Logo" />
-
-  <link rel="preload" href="assets/images/hero-images/heroimg.png" as="image" fetchpriority="high">
-  <link rel="preload" href="assets/images/hero-images/hero-bg.jpg" as="image">
-  <link rel="preload" href="assets/images/logo/luffy-hat.png" as="image">
-
-  <link href="./assets/src/output.css" rel="stylesheet">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
+  <link href="/src/output.css" rel="stylesheet">
 
   <!-- AOS (for animations) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-048LX9JF5P"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-048LX9JF5P');
-  </script>
 
   <style>
     body {
@@ -107,7 +80,7 @@
 
 <body class="bg-[#0d0d0d] text-white overflow-x-hidden">
 
-  <!-- ✅ HTML HEADER -->
+  <!-- HTML HEADER -->
   <header class="border-b border-gray-300 bg-black min-h-[60px] px-4 py-6 tracking-wide relative z-50">
     <div class="flex flex-wrap items-center max-lg:gap-y-6 max-sm:gap-x-4">
       <!-- Brand -->
@@ -128,37 +101,47 @@
 
         <ul class="flex flex-col space-y-8 lg:space-y-0 text-center lg:text-left lg:flex-row space-x-4 w-full">
           <li class="mb-10 hidden max-lg:block">
-            <a href="index.html" class="flex text-xl text-left items-center font-bold  font-sans">
+            <a href="https://amittowallpapers.netlify.app/"
+              class="flex text-xl text-left items-center font-bold  font-sans">
               <img src="assets/images/logo/luffy-hat.png" class="w-10 lg:-mt-1" alt="">
               Amitto<span class="text-red-400">Wallpapers</span>
             </a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#home" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="200">Home</a>
+            <a href="#home" class="block text-[18px] font-medium"
+              data-aos="fade-down" data-aos-delay="200">Home</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#latest" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="400">Latest</a>
+            <a href="#latest" class="block text-[18px] font-medium"
+              data-aos="fade-down" data-aos-delay="400">Latest</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#categories" class="block text-[18px] font-medium" data-aos="fade-down"
-              data-aos-delay="600">Categories</a>
+            <a href="#categories" class="block text-[18px] font-medium"
+              data-aos="fade-down" data-aos-delay="600">Categories</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#about" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="800">About</a>
+            <a href="#live" class="block text-[18px] font-medium"
+              data-aos="fade-down" data-aos-delay="600">Live
+              Wallpapers</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#community" class="block text-[18px] font-medium" data-aos="fade-down"
-              data-aos-delay="1000">Community</a>
+            <a href="#about" class="block text-[18px] font-medium"
+              data-aos="fade-down" data-aos-delay="800">About</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#contact" class="block text-[18px] font-medium" data-aos="fade-down"
-              data-aos-delay="1200">Contact</a>
+            <a href="#community" class="block text-[18px] font-medium"
+              data-aos="fade-down" data-aos-delay="1000">Community</a>
+          </li>
+          <li
+            class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
+            <a href="#contact" class="block text-[18px] font-medium"
+              data-aos="fade-down" data-aos-delay="1200">Contact</a>
           </li>
         </ul>
       </div>
@@ -171,19 +154,19 @@
         <ul class="flex text-2xl space-x-4" aria-label="Social media">
           <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Instagram"
               aria-label="Instagram" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="800"
-              class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-pink-600 transition-colors"><i
+              class="h-10 w-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-pink-600 transition-colors"><i
                 class="fab fa-instagram text-white"></i></a></li>
           <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Facebook" aria-label="Facebook"
               data-aos="zoom-in" data-aos-delay="700" data-aos-duration="800"
-              class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-blue-600 transition-colors"><i
+              class="h-10 w-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-blue-600 transition-colors"><i
                 class="fab fa-facebook-f text-white"></i></a></li>
           <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="YouTube" aria-label="YouTube"
               data-aos="zoom-in" data-aos-delay="900" data-aos-duration="800"
-              class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-red-600 transition-colors"><i
+              class="h-10 w-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-red-600 transition-colors"><i
                 class="fab fa-youtube text-white"></i></a></li>
           <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Discord" aria-label="Discord"
               data-aos="zoom-in" data-aos-delay="1100" data-aos-duration="800"
-              class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-purple-700 transition-colors"><i
+              class="h-10 w-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-purple-700 transition-colors"><i
                 class="fab fa-discord text-white"></i></a></li>
         </ul>
       </div>
@@ -210,8 +193,7 @@
         class="w-full outline-none bg-white text-black text-[15px] placeholder-gray-500 placeholder-opacity-100 focus:placeholder-gray-400 transition" />
     </div>
   </header>
-
-  <!-- MASONRY GRID (JS populates) -->
+  <!-- Grid container -->
   <div id="wallpaperGrid" class="w-[95%] mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4"></div>
 
   <main id="main">
@@ -260,8 +242,11 @@
         <h2 id="latest-heading" class="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">
           <i class="fa-solid fa-clock mr-2" aria-hidden="true"></i>Latest Wallpapers
         </h2>
-        <div id="latestwallpaperGrid" class="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
+        <div id="latestwallpaperGrid" class="columns-1 sm:columns-2 md:columns-2 lg:columns-3 gap-4">
           <!-- JS injects cards here -->
+        </div>
+        <div class="mt-8 text-center">
+          <button id="latest-show-more" class="px-6 py-3 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition">Show More</button>
         </div>
       </div>
     </section>
@@ -274,7 +259,7 @@
           <i class="fa-solid fa-layer-group mr-2" aria-hidden="true"></i>Explore by Category
         </h2>
         <h3 class="text-2xl md:text-3xl font-bold mb-12" data-aos="fade-up" data-aos-delay="100">
-          <i class="fa-solid fa-tags mr-2" aria-hidden="true"></i>Browse by Anime
+          <i class="fa-solid fa-tags mr-2" aria-hidden="true"></i>Browse by Anime 
         </h3>
         <div id="categoryGrid" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           <!-- Naruto -->
@@ -352,6 +337,99 @@
             class="px-6 py-3 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition"
             data-aos="zoom-in" data-aos-delay="500">Show More</button>
           <button id="showLessCategories"
+            class="px-6 py-3 cursor-pointer bg-red-600 hover:bg-red-700 text-white rounded-lg font-semibold transition hidden">Show
+            Less</button>
+        </div>
+
+        <!-- Live Wallpapers -->
+        <h3 class="text-2xl md:text-3xl font-bold mb-12 mt-16" data-aos="fade-up" data-aos-delay="100">
+          <i class="fa-solid fa-circle-play mr-2" aria-hidden="true"></i>Browse Live Wallpapers
+        </h3>
+        <div id="liveGrid" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <!-- Live: Naruto -->
+          <a href="naruto-live.html" target="_blank" rel="noreferrer noopener"
+            class="group relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
+            data-aos="zoom-in" data-aos-delay="100">
+            <video src="assets/videos/naruto-live/desktop/naruto/2.mp4" alt="Naruto live wallpapers"
+              class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
+              height="320" autoplay muted loop></video>
+            <div class="absolute bottom-0 left-0 right-0 bg-black/65 p-4 text-center">
+              <h3 class="text-lg font-semibold">Naruto</h3>
+            </div>
+          </a>
+          <!-- Live: One Piece -->
+          <a href="one-piece-live.html" target="_blank" rel="noreferrer noopener"
+            class="group relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
+            data-aos="zoom-in" data-aos-delay="200">
+            <video src="assets/videos/one-piece-live/desktop/1.mp4" alt="One Piece live wallpapers"
+              class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
+              height="320" autoplay muted loop></video>
+            <div class="absolute bottom-0 left-0 right-0 bg-black/65 p-4 text-center">
+              <h3 class="text-lg font-semibold">One Piece</h3>
+            </div>
+          </a>
+          <!-- Live: Dragon Ball -->
+          <a href="dragon-ball-live.html" target="_blank" rel="noreferrer noopener"
+            class="group relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
+            data-aos="zoom-in" data-aos-delay="300">
+            <video src="assets/videos/dragon-ball-live/desktop/1.mp4" alt="Dragon Ball live wallpapers"
+              class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
+              height="320" autoplay muted loop></video>
+            <div class="absolute bottom-0 left-0 right-0 bg-black/65 p-4 text-center">
+              <h3 class="text-lg font-semibold">Dragon Ball</h3>
+            </div>
+          </a>
+          <!-- Live: Demon Slayer -->
+          <a href="demon-slayer-live.html" target="_blank" rel="noreferrer noopener"
+            class="group relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
+            data-aos="zoom-in" data-aos-delay="400">
+            <video src="assets/videos/demon-slayer-live/giyu/1.mp4" alt="Demon Slayer live wallpapers"
+              class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
+              height="320" autoplay muted loop></video>
+            <div class="absolute bottom-0 left-0 right-0 bg-black/65 p-4 text-center">
+              <h3 class="text-lg font-semibold">Demon Slayer</h3>
+            </div>
+          </a>
+
+          <!-- Hidden initially -->
+          <a href="rezero-live.html" target="_blank" rel="noreferrer noopener"
+            class="group hidden more-live-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
+            data-aos="zoom-in" data-aos-delay="500">
+            <video src="assets/videos/rezero-live/preview/1.webm" alt="Re:Zero live wallpapers"
+              class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
+              height="320" autoplay muted loop></video>
+            <div class="absolute bottom-0 left-0 right-0 bg-black/65 p-4 text-center">
+              <h3 class="text-lg font-semibold">Re:Zero</h3>
+            </div>
+          </a>
+          <a href="your-name-live.html" target="_blank" rel="noreferrer noopener"
+            class="group hidden more-live-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
+            data-aos="zoom-in" data-aos-delay="600">
+            <video src="assets/videos/your-name-live/preview/desktop/1.webm" alt="Your Name live wallpapers"
+              class="w-full h-48 object-fill opacity-80 group-hover:opacity-100 transition duration-300" width="640"
+              height="320" autoplay muted loop></video>
+            <div class="absolute bottom-0 left-0 right-0 bg-black/65 p-4 text-center">
+              <h3 class="text-lg font-semibold">Your Name</h3>
+            </div>
+          </a>
+          <a href="genshin-live.html" target="_blank" rel="noreferrer noopener"
+            class="group hidden more-live-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
+            data-aos="zoom-in" data-aos-delay="600">
+            <video src="assets/videos/genshin-live/1.mp4" alt="Genshin Impact live wallpapers"
+              class="w-full h-48 object-fill opacity-80 group-hover:opacity-100 transition duration-300" width="640"
+              height="320" autoplay muted loop></video>
+            <div class="absolute bottom-0 left-0 right-0 bg-black/65 p-4 text-center">
+              <h3 class="text-lg font-semibold">Genshin Impact</h3>
+            </div>
+          </a>
+        </div>
+
+        <!-- Show More / Less for Live -->
+        <div class="mt-8 text-center space-x-4">
+          <button id="showMoreLiveCategories"
+            class="px-6 py-3 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition"
+            data-aos="zoom-in" data-aos-delay="500">Show More</button>
+          <button id="showLessLiveCategories"
             class="px-6 py-3 cursor-pointer bg-red-600 hover:bg-red-700 text-white rounded-lg font-semibold transition hidden">Show
             Less</button>
         </div>
@@ -626,10 +704,11 @@
   </footer>
 
   <!-- External Modules (your existing app logic) -->
-  <script type="module" src="assets/js/index.js" defer></script>
+  <script src="assets/js/wallpaperStorage.js" defer></script>
+  <script src="assets/js/sortHelper.js" defer></script>
   <script type="module" src="assets/js/latest.js" defer></script>
   <script type="module" src="assets/js/search.js" defer></script>
-  <!-- <script type="module" src="assets/js/wallpaper.js" defer></script> -->
+  <script type="module" src="assets/js/wallpaper.js" defer></script>
 
   <!-- AOS JS (once) -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
@@ -867,6 +946,24 @@
         });
       }
 
+      // Live Categories Show More / Less
+      const showMoreLiveBtn = document.getElementById('showMoreLiveCategories');
+      const showLessLiveBtn = document.getElementById('showLessLiveCategories');
+      const moreLiveCategoryCards = document.querySelectorAll('.more-live-category');
+
+      if (showMoreLiveBtn && showLessLiveBtn && moreLiveCategoryCards.length) {
+        showMoreLiveBtn.addEventListener('click', () => {
+          moreLiveCategoryCards.forEach(card => card.classList.remove('hidden'));
+          showMoreLiveBtn.classList.add('hidden');
+          showLessLiveBtn.classList.remove('hidden');
+        });
+        showLessLiveBtn.addEventListener('click', () => {
+          moreLiveCategoryCards.forEach(card => card.classList.add('hidden'));
+          showLessLiveBtn.classList.add('hidden');
+          showMoreLiveBtn.classList.remove('hidden');
+        });
+      }
+
       // Simple client-side search passthrough (press Enter to navigate to ?q=)
       const searchInput = document.getElementById('searchInput');
       if (searchInput) {
@@ -975,7 +1072,8 @@
 
   // Example usage: call this with your wallpaper data
   addImageSchema(
-    "https://amittowallpapers.netlify.app/images/goku-blue.jpg"
+    "https://amittowallpapers.netlify.app/images/goku-blue.jpg",
+    "Goku Blue"
   );
 </script>
 </body>

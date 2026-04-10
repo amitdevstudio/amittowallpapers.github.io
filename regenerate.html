@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regenerate Wallpaper Values</title>
+    <link href="/src/output.css" rel="stylesheet">
+    <link rel="icon" href="assets/images/logo/luffy-hat.png" type="image/png" />
+</head>
+<body class="bg-[#0d0d0d] text-white min-h-screen p-6">
+
+    <div class="max-w-2xl mx-auto">
+        <h1 class="text-4xl font-bold mb-6">🎨 Regenerate Wallpaper Values</h1>
+        
+        <div class="bg-[#1a1a1a] rounded-lg p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">Current Status</h2>
+            <div id="status" class="text-gray-300">Loading...</div>
+        </div>
+
+        <div class="bg-[#1a1a1a] rounded-lg p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">Actions</h2>
+            
+            <button id="regenerateBtn" class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded text-white font-semibold mb-3 w-full">
+                ✓ Regenerate All Values (Likes: 1k-5k, Views: 3k-8k)
+            </button>
+
+            <button id="clearBtn" class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded text-white font-semibold mb-3 w-full">
+                🗑️ Clear All Data
+            </button>
+
+            <button id="exportBtn" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded text-white font-semibold w-full">
+                📥 Export Data as JSON
+            </button>
+        </div>
+
+        <div id="result" class="bg-[#1a1a1a] rounded-lg p-6 hidden">
+            <h2 class="text-xl font-semibold mb-4">Result</h2>
+            <div id="resultText" class="text-gray-300 whitespace-pre-wrap font-mono text-sm max-h-96 overflow-y-auto"></div>
+        </div>
+
+        <div class="bg-[#2a2a2a] rounded-lg p-6 mt-6 text-sm text-gray-400">
+            <h3 class="font-semibold mb-2 text-gray-300">📊 Data Format:</h3>
+            <ul class="list-disc list-inside space-y-1">
+                <li>Likes: Random between 1,000 - 5,000</li>
+                <li>Views: Random between (likes + 1,000) - 8,000</li>
+                <li>All values regenerated with new random numbers</li>
+                <li>Synced across all pages immediately</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="assets/js/wallpaperStorage.js" defer></script>
+    <script defer>
+        // Wait for storage to load
+        setTimeout(() => {
+            updateStatus();
+        }, 500);
+
+        function updateStatus() {
+            const stats = window.wallpaperStorage.getStats();
+            const statusDiv = document.getElementById('status');
+            
+            statusDiv.innerHTML = `
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <div class="text-gray-500">Total Wallpapers</div>
+                        <div class="text-2xl font-bold text-green-400">${stats.total}</div>
+                    </div>
+                    <div>
+                        <div class="text-gray-500">Total Likes</div>
+                        <div class="text-2xl font-bold text-blue-400">${stats.totalLikes.toLocaleString()}</div>
+                    </div>
+                    <div>
+                        <div class="text-gray-500">Total Views</div>
+                        <div class="text-2xl font-bold text-yellow-400">${stats.totalViews.toLocaleString()}</div>
+                    </div>
+                    <div>
+                        <div class="text-gray-500">Avg Likes/Views</div>
+                        <div class="text-lg font-bold text-purple-400">${stats.averageLikes}/${stats.averageViews}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        document.getElementById('regenerateBtn').addEventListener('click', () => {
+            if (confirm('Regenerate all wallpaper likes and views with new random values?')) {
+                window.wallpaperStorage.regenerateValues();
+                showResult('✓ Success! All wallpaper values have been regenerated.');
+                updateStatus();
+            }
+        });
+
+        document.getElementById('clearBtn').addEventListener('click', () => {
+            if (confirm('⚠️ This will delete ALL wallpaper data! Continue?')) {
+                window.wallpaperStorage.clearAll();
+                showResult('✓ All data cleared. Storage reset to empty.');
+                updateStatus();
+            }
+        });
+
+        document.getElementById('exportBtn').addEventListener('click', () => {
+            const data = window.wallpaperStorage.data;
+            const json = JSON.stringify(data, null, 2);
+            document.getElementById('resultText').textContent = json;
+            document.getElementById('result').classList.remove('hidden');
+            
+            // Copy to clipboard
+            navigator.clipboard.writeText(json).then(() => {
+                showResult('✓ Data copied to clipboard!');
+            });
+        });
+
+        function showResult(message) {
+            const resultDiv = document.getElementById('result');
+            const resultText = document.getElementById('resultText');
+            resultText.textContent = message;
+            resultDiv.classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>

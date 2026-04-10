@@ -7,7 +7,8 @@
   <title>One Piece Wallpapers HD | Luffy, Zoro & Straw Hat Pirates</title>
   <meta name="description"
     content="Set sail with the Straw Hats! Download epic One Piece wallpapers of Luffy, Zoro, and your favorite pirates in HD. Free One Piece anime backgrounds for desktop and mobile devices." />
-
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo/luffy-hat.png" />
   <!-- Open Graph (for social sharing) -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="AmittoWallpapers | Free Anime HD Wallpapers" />
@@ -20,7 +21,7 @@
 
   <link rel="preload" href="assets/images/logo/luffy-hat.png" as="image">
 
-  <link href="./assets/src/output.css" rel="stylesheet">
+  <link href="/src/output.css" rel="stylesheet">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -48,6 +49,11 @@
     /* Custom styles for the Inter font */
     body {
       font-family: "Inter", sans-serif;
+    }
+
+    header [data-aos] {
+      opacity: 1 !important;
+      transform: none !important;
     }
 
     .brand-logo {
@@ -78,6 +84,50 @@
       transform: scale(1.05);
       filter: brightness(1.1);
     }
+
+    .loader-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      background: #1a1a1a;
+      /* matches card bg */
+      transition: opacity 0.5s ease;
+    }
+
+    .loader {
+      display: flex;
+      gap: 6px;
+    }
+
+    .loader div {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #888;
+      /* visible against dark bg */
+      animation: bounce 0.6s infinite alternate;
+    }
+
+    .loader div:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .loader div:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes bounce {
+      from {
+        transform: translateY(0);
+        opacity: 0.5;
+      }
+
+      to {
+        transform: translateY(-8px);
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -91,11 +141,12 @@
 </script>
 
 <body class="bg-[#0d0d0d] text-white">
-  <!-- ✅ HTML HEADER -->
+<!-- HTML HEADER -->
   <header class="border-b border-gray-300 bg-black min-h-[60px] px-4 py-6 tracking-wide relative z-50">
     <div class="flex flex-wrap items-center max-lg:gap-y-6 max-sm:gap-x-4">
       <!-- Brand -->
-      <a href="index.html" class="flex text-2xl items-center font-bold flex-wrap font-sans">
+      <a href="index.html" class="flex text-2xl items-center font-bold flex-wrap font-sans" data-aos="zoom-in"
+        data-aos-duration="800">
         <img src="assets/images/logo/luffy-hat.png" class="w-10 lg:-mt-1" alt="">
         Amitto<span class="text-red-400">Wallpapers</span>
       </a>
@@ -108,36 +159,45 @@
           class="lg:hidden fixed top-4 right-4 z-[100] rounded-full text-black bg-white w-9 h-9 flex items-center justify-center border border-gray-200 cursor-pointer">
           <i class="fa-solid fa-xmark"></i>
         </button>
+
         <ul class="flex flex-col space-y-8 lg:space-y-0 text-center lg:text-left lg:flex-row space-x-4 w-full">
           <li class="mb-10 hidden max-lg:block">
-            <a href="index.html" class="flex text-xl text-left items-center font-bold flex-wrap font-sans">
+            <a href="index.html" class="flex text-xl text-left items-center font-bold  font-sans">
               <img src="assets/images/logo/luffy-hat.png" class="w-10 lg:-mt-1" alt="">
               Amitto<span class="text-red-400">Wallpapers</span>
             </a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#home" class="block text-[18px] font-medium">Home</a>
+            <a href="#home" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="200">Home</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#latest" class="block text-[18px] font-medium">Latest</a>
+            <a href="#latest" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="400">Latest</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#categories" class="block text-[18px] font-medium">Categories</a>
+            <a href="#categories" class="block text-[18px] font-medium" data-aos="fade-down"
+              data-aos-delay="600">Categories</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#about" class="block text-[18px] font-medium">About</a>
+            <a href="#live" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="600">Live
+              Wallpapers</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#community" class="block text-[18px] font-medium">Community</a>
+            <a href="#about" class="block text-[18px] font-medium" data-aos="fade-down" data-aos-delay="800">About</a>
           </li>
           <li
             class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
-            <a href="#contact" class="block text-[18px] font-medium">Contact</a>
+            <a href="#community" class="block text-[18px] font-medium" data-aos="fade-down"
+              data-aos-delay="1000">Community</a>
+          </li>
+          <li
+            class="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bg-red-400 after:h-[2px] after:w-0 hover:after:w-full after:origin-center after:transition-all after:duration-300 after:-bottom-1">
+            <a href="#contact" class="block text-[18px] font-medium" data-aos="fade-down"
+              data-aos-delay="1200">Contact</a>
           </li>
         </ul>
       </div>
@@ -147,16 +207,29 @@
 
       <!-- Social icons (desktop only) -->
       <div class="hidden lg:flex items-center ml-6 text-2xl space-x-6 text-white">
-        <!-- Add your social icons here -->
-        <a href="comingsoon.html" class="text-red-400" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="comingsoon.html" class="text-purple-600" target="_blank"><i class="fa-brands fa-discord"></i></a>
-        <a href="comingsoon.html" class="text-red-500" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-        <a href="comingsoon.html" class="text-blue-500" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <ul class="flex text-2xl space-x-4" aria-label="Social media">
+          <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Instagram"
+              aria-label="Instagram" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="800"
+              class="h-10 w-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-pink-600 transition-colors"><i
+                class="fab fa-instagram text-white"></i></a></li>
+          <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Facebook" aria-label="Facebook"
+              data-aos="zoom-in" data-aos-delay="700" data-aos-duration="800"
+              class="h-10 w-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-blue-600 transition-colors"><i
+                class="fab fa-facebook-f text-white"></i></a></li>
+          <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="YouTube" aria-label="YouTube"
+              data-aos="zoom-in" data-aos-delay="900" data-aos-duration="800"
+              class="h-10 w-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-red-600 transition-colors"><i
+                class="fab fa-youtube text-white"></i></a></li>
+          <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Discord" aria-label="Discord"
+              data-aos="zoom-in" data-aos-delay="1100" data-aos-duration="800"
+              class="h-10 w-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-purple-700 transition-colors"><i
+                class="fab fa-discord text-white"></i></a></li>
+        </ul>
       </div>
 
       <!-- Toggle button (hamburger) -->
-      <button id="toggleOpen" class="lg:hidden cursor-pointer ml-auto">
-        <svg class="w-7 h-7" fill="white" viewBox="0 0 20 20">
+      <button id="toggleOpen" class="lg:hidden cursor-pointer ml-auto" aria-label="Open navigation menu">
+        <svg class="w-7 h-7" fill="white" viewBox="0 0 20 20" aria-hidden="true">
           <path fill-rule="evenodd"
             d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
             clip-rule="evenodd"></path>
@@ -166,17 +239,20 @@
 
     <!-- Search bar -->
     <div
-      class="bg-white border focus-within:border-slate-900 flex items-center px-4 rounded-full h-10 lg:w-2/4 mt-3 mx-auto transition-all">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" class="w-4 h-4 mr-3">
+      class="bg-white border focus-within:border-slate-900 flex items-center px-4 rounded-full h-10 lg:w-2/4 mt-3 mx-auto transition-all"
+      id="searchBar" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" class="w-4 h-4 mr-3 text-gray-500">
         <path
           d="M190.707 180.101l-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 005.303 2.197 7.498 7.498 0 005.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z" />
       </svg>
       <input type="search" id="searchInput" placeholder="Search..." autocomplete="off"
-        class="w-full outline-none bg-white text-black text-[15px]" />
+        class="w-full outline-none bg-white text-black text-[15px] placeholder-gray-500 placeholder-opacity-100 focus:placeholder-gray-400 transition" />
     </div>
   </header>
-  <!-- Grid container -->
+
+  <!-- MASONRY GRID (JS populates) -->
   <div id="wallpaperGrid" class="w-[95%] mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4"></div>
+
   <section id="hero-section" class="relative bg-[#101014] text-white py-4 px-6 md:px-12 overflow-hidden">
 
     <h1 class="text-4xl font-bold mb-6 text-center">One Piece Wallpapers</h1>
@@ -265,10 +341,13 @@
         class="font-semibold text-white hover:underline">AmitDevStudio</a>.
     </div>
   </footer>
-  <!-- ✅ JS file -->
-  <script type="module" src="assets/js/one-piece.js"></script>
-  <script type="module" src="assets/js/search.js"></script>
-  <script type="module" src="assets/js/wallpaper.js"></script>
+  <!-- Storage and Sorting -->
+  <script src="assets/js/wallpaperStorage.js" defer></script>
+
+  <!-- External Modules -->
+  <script type="module" src="assets/js/one-piece.js" defer></script>
+  <script type="module" src="assets/js/search.js" defer></script>
+  <script type="module" src="assets/js/wallpaper.js" defer></script>
   <script>
     // Menu Button
     const toggleOpen = document.getElementById("toggleOpen");
@@ -328,35 +407,6 @@
     closeSubscribeModal.addEventListener('click', () => {
       subscribeModal.classList.add('hidden');
       subscribeModal.classList.remove('flex');
-    });
-  </script>
-  <script>
-    // Disable right-click context menu
-    document.addEventListener('contextmenu', function (e) {
-      e.preventDefault();
-    });
-
-    // Disable developer tools and view source
-    document.addEventListener('keydown', function (e) {
-      const key = e.key.toLowerCase();
-
-      // F12
-      if (key === 'f12') {
-        e.preventDefault();
-        return false;
-      }
-
-      // Ctrl/Cmd + Shift + I/J/C
-      if ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].includes(key)) {
-        e.preventDefault();
-        return false;
-      }
-
-      // Ctrl/Cmd + U or Ctrl/Cmd + S
-      if ((e.ctrlKey || e.metaKey) && ['u', 's'].includes(key)) {
-        e.preventDefault();
-        return false;
-      }
     });
   </script>
 </body>
