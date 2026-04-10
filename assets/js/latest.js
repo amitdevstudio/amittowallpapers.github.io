@@ -93,14 +93,14 @@ function renderLatest(list) {
     if (wallpaper.isVideo) {
       mediaHTML += `
         <video loop muted playsinline
-          class="wallpaper-img w-full h-full object-cover object-center transition duration-300 group-hover:scale-105 group-hover:brightness-110">
+          class="wallpaper-img w-full h-60 object-cover object-center transition duration-300 group-hover:scale-105 group-hover:brightness-110">
           <source src="${wallpaper.url}" type="video/mp4">
         </video>
       `;
     } else {
       mediaHTML += `
         <img src="${wallpaper.url}" alt="${wallpaper.character}"
-          class="wallpaper-img w-full h-full object-cover object-center transition duration-300 group-hover:scale-105 group-hover:brightness-110"/>
+          class="wallpaper-img w-full h-60 object-cover object-center transition duration-300 group-hover:scale-105 group-hover:brightness-110"/>
       `;
     }
 
