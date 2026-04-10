@@ -1,24 +1,21 @@
 import { wallpapers } from './wallpaper.js';
 
-const wallpaperGrid = document.getElementById('wallpaperGrid');
-const searchInput = document.getElementById('searchInput');
+const latestGrid = document.getElementById('latestwallpaperGrid');
+const showMoreBtn = document.getElementById('latest-show-more');
 
-const allWallpapers = [];
+const latestWallpapers = [];
 
 // -------------------------------
 // BUILD DATA
 wallpapers.forEach(item => {
   if (Array.isArray(item.images)) {
     item.images.forEach(img => {
-      allWallpapers.push({
-        character: String(item.character || ''),
-        type: String(item.type || '').toLowerCase(),
-        tags: Array.isArray(item.tags) ? item.tags.map(String) : [],
-        url: String(img.url || ''),
+      latestWallpapers.push({
+        character: item.character || '',
+        type: (item.type || '').toLowerCase(),
+        tags: item.tags || [],
+        url: img.url,
         date: img.date || new Date().toISOString(),
-        mobile: img.mobile || '',
-        tablet: img.tablet || '',
-        desktop: img.desktop || '',
         isVideo: false
       });
     });
@@ -26,13 +23,12 @@ wallpapers.forEach(item => {
 
   if (Array.isArray(item.videos)) {
     item.videos.forEach(video => {
-      allWallpapers.push({
-        character: String(item.character || ''),
-        type: String(item.type || '').toLowerCase(),
-        tags: Array.isArray(item.tags) ? item.tags.map(String) : [],
-        url: String(video.preview || ''),
-        preview: String(video.preview || ''),
-        download: String(video.download || ''),
+      latestWallpapers.push({
+        character: item.character || '',
+        type: (item.type || '').toLowerCase(),
+        tags: item.tags || [],
+        url: video.preview || '',
+        download: video.download || '',
         date: video.date || new Date().toISOString(),
         isVideo: true
       });
@@ -40,58 +36,38 @@ wallpapers.forEach(item => {
   }
 });
 
-allWallpapers.sort((a, b) => new Date(b.date) - new Date(a.date));
+latestWallpapers.sort((a, b) => new Date(b.date) - new Date(a.date));
 
 // -------------------------------
-// SEARCH
-searchInput.addEventListener('input', () => {
-  const term = searchInput.value.trim().toLowerCase();
-  if (!term) {
-    wallpaperGrid.innerHTML = '';
-    return;
+let visibleCount = 6;
+
+renderLatest(latestWallpapers.slice(0, visibleCount));
+
+showMoreBtn.addEventListener('click', () => {
+  visibleCount += 6;
+  renderLatest(latestWallpapers.slice(0, visibleCount));
+
+  if (visibleCount >= latestWallpapers.length) {
+    showMoreBtn.style.display = 'none';
   }
-
-  const filtered = allWallpapers.filter(wp => {
-    const character = wp.character.toLowerCase();
-    const type = wp.type.toLowerCase();
-
-    if (term === 'live') return wp.isVideo;
-
-    return (
-      character.includes(term) ||
-      type.includes(term) ||
-      wp.tags.some(tag => tag.toLowerCase().includes(term))
-    );
-  });
-
-  renderWallpapers(filtered);
 });
 
 // -------------------------------
 // RENDER
-function renderWallpapers(list) {
-  wallpaperGrid.innerHTML = '';
+function renderLatest(list) {
+  latestGrid.innerHTML = '';
 
-  if (!list.length) {
-    wallpaperGrid.innerHTML = `
-      <div class="text-center text-white mt-10">
-        No wallpapers found.
-      </div>
-    `;
-    return;
-  }
-
-  list.forEach(wallpaper => renderCard(wallpaper, wallpaperGrid));
+  list.forEach(wallpaper => renderCard(wallpaper, latestGrid));
 }
 
 // -------------------------------
-// CARD (FIXED LOADER)
+// CARD (SAME FIXED LOADER)
 function renderCard(wallpaper, grid) {
   const card = document.createElement('div');
   card.className =
     "break-inside-avoid overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg relative";
 
-  const uniqueId = wallpaper.url || wallpaper.preview;
+  const uniqueId = wallpaper.url;
   const wpData = window.wallpaperStorage.getWallpaper(uniqueId, wallpaper.character);
 
   const isMobile = wallpaper.type.includes('mobile');
@@ -100,7 +76,6 @@ function renderCard(wallpaper, grid) {
     <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}"
        class="block relative group overflow-hidden rounded-lg">
 
-      <!-- LOADER -->
       <div class="absolute inset-0 flex items-center justify-center bg-black/60 loader">
         <div class="dot-loader"><div></div><div></div><div></div></div>
       </div>
