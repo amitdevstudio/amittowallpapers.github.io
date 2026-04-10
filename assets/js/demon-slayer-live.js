@@ -2,9 +2,9 @@ import { wallpapers } from './wallpaper.js';
 
 const liveWallpapers = [];
 
-// Flatten Naruto live wallpapers
+// Flatten Demon Slayer live wallpapers
 wallpapers.forEach(item => {
-  if (item.tags.includes('Naruto') && item.type.toLowerCase().includes('live')) {
+  if (item.tags.includes('Demon Slayer') && item.type.toLowerCase().includes('live')) {
     if (item.videos) {
       item.videos.forEach(video => {
         liveWallpapers.push({
@@ -200,10 +200,11 @@ function renderLiveCard(wallpaper, grid) {
   const likeIcon = card.querySelector('.likeIcon');
   const likeCountSpan = card.querySelector('.likeCount');
 
+  // Check if user already liked this wallpaper
   const isUserLiked = window.wallpaperStorage.getUserLiked(uniqueId);
   likeIcon.classList.toggle('fas', isUserLiked);
   likeIcon.classList.toggle('far', !isUserLiked);
-
+  
   likeBtn.addEventListener('click', (e) => {
     e.preventDefault();
     const isCurrentlyLiked = window.wallpaperStorage.getUserLiked(uniqueId);

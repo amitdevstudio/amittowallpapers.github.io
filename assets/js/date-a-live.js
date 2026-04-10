@@ -2,9 +2,9 @@ import { wallpapers } from './wallpaper.js';
 
 const allWallpapers = [];
 
-// Filter One Piece only 
+// Filter Date A Live only
 wallpapers.forEach(item => {
-  if (Array.isArray(item.tags) && item.tags.includes('One Piece')) {
+  if (Array.isArray(item.tags) && item.tags.includes('Date A Live')) {
     if (Array.isArray(item.images)) {
       item.images.forEach(img => {
         allWallpapers.push({
@@ -58,7 +58,7 @@ function renderCard(wallpaper, grid) {
   card.className =
     "wallpaper-card break-inside-avoid overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg relative";
 
-  const uniqueId = wallpaper.url || 'unknown';
+  const uniqueId = wallpaper.url || wallpaper.preview;
   const characterName = wallpaper.character || 'Unknown';
   const wpData = window.wallpaperStorage.getWallpaper(uniqueId, characterName);
   let likes = wpData.likes;
@@ -127,7 +127,7 @@ function renderCard(wallpaper, grid) {
   const isUserLiked = window.wallpaperStorage.getUserLiked(uniqueId);
   likeIcon.classList.toggle('fas', isUserLiked);
   likeIcon.classList.toggle('far', !isUserLiked);
-  
+
   likeBtn.addEventListener('click', (e) => {
     e.preventDefault();
     const isCurrentlyLiked = window.wallpaperStorage.getUserLiked(uniqueId);

@@ -2,9 +2,9 @@ import { wallpapers } from './wallpaper.js';
 
 const allWallpapers = [];
 
-// Filter One Piece only 
+// Filter Re:Zero only 
 wallpapers.forEach(item => {
-  if (Array.isArray(item.tags) && item.tags.includes('One Piece')) {
+  if (Array.isArray(item.tags) && item.tags.includes('Re:Zero')) {
     if (Array.isArray(item.images)) {
       item.images.forEach(img => {
         allWallpapers.push({
@@ -127,7 +127,7 @@ function renderCard(wallpaper, grid) {
   const isUserLiked = window.wallpaperStorage.getUserLiked(uniqueId);
   likeIcon.classList.toggle('fas', isUserLiked);
   likeIcon.classList.toggle('far', !isUserLiked);
-  
+
   likeBtn.addEventListener('click', (e) => {
     e.preventDefault();
     const isCurrentlyLiked = window.wallpaperStorage.getUserLiked(uniqueId);

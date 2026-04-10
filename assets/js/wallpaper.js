@@ -332,11 +332,11 @@ export const wallpapers = [
       },
     ]
   },
-   // Jujutsu Kaisen
+  // Jujutsu Kaisen
   {
     character: "Satoru Gojo",
     type: "Mobile",
-    tags: ["Dragon Ball", "Anime", "Mobile", "Satoru Gojo", "Gojo"],
+    tags: ["Jujutsu Kaisen", "Anime", "Mobile", "Satoru Gojo", "Gojo"],
     images: [
       {
         url: "assets/images/wallpapers/jujutsu-kaisen/mobile/gojo/1.jpg",
@@ -470,7 +470,7 @@ export const wallpapers = [
   {
     character: ["Nagato Uzumaki", "Pain"],
     type: "Mobile",
-    tags: ["Naruto", "Anime", "Mobile", "Naruto" ,"Nagato Uzumaki", "Pain"],
+    tags: ["Naruto", "Anime", "Mobile", "Naruto", "Nagato Uzumaki", "Pain"],
     images: [
       {
         url: "assets/images/wallpapers/naruto/mobile/pain/1.jpg",
@@ -720,7 +720,7 @@ export const wallpapers = [
   {
     character: "Taki Tachibana",
     type: "Mobile",
-    tags: ["Your Name", "Anime", "Mobile", "Taki Tachibana"],
+    tags: ["Your Name", "Anime", "Mobile", "Taki", "Taki Tachibana"],
     images: [
       {
         url: "assets/images/wallpapers/your-name/mobile/taki/1.jpg",
@@ -739,7 +739,7 @@ export const wallpapers = [
   {
     character: "Mitsuha Miyamizu",
     type: "Mobile",
-    tags: ["Your Name", "Anime", "Mobile", "Mitsuha Miyamizu"],
+    tags: ["Your Name", "Anime", "Mobile", "Mitsuha", "Mitsuha Miyamizu"],
     images: [
       {
         url: "assets/images/wallpapers/your-name/mobile/mitsuha/1.jpg",
@@ -751,7 +751,562 @@ export const wallpapers = [
       },
     ]
   },
+  // Date a Live
+  {
+    character: "Kurumi Tokisaki, Kotori Itsuka, Tohka Yatogami, Yoshino Himekawa",
+    type: "Desktop",
+    tags: ["Date A Live", "Anime", "Desktop", "Kotori Itsuka", "Yoshino Himekawa", "Tohka Yatogami", "Kurumi Tokisaki"],
+    images: [
+      {
+        url: "assets/images/wallpapers/date-a-live/desktop/1.png",
+        date: "2025-10-15"
+      },
+    ]
+  },
+  {
+    character: "Kurumi Tokisaki",
+    type: "Desktop",
+    tags: ["Date A Live", "Anime", "Desktop", "Kurumi Tokisaki", "Kurumi"],
+    images: [
+      {
+        url: "assets/images/wallpapers/date-a-live/desktop/kurumi/1.jpg",
+        date: "2025-10-15"
+      },
+      {
+        url: "assets/images/wallpapers/date-a-live/desktop/kurumi/2.jpg",
+        date: "2025-10-15"
+      },
+      {
+        url: "assets/images/wallpapers/date-a-live/desktop/kurumi/3.jpg",
+        date: "2025-10-15"
+      },
+      {
+        url: "assets/images/wallpapers/date-a-live/desktop/kurumi/4.jpg",
+        date: "2025-10-15"
+      },
+    ]
+  },
+  {
+    character: "Yoshino Himekawa",
+    type: "Desktop",
+    tags: ["Date A Live", "Anime", "Desktop", "Yoshino", "Yoshino Himekawa"],
+    images: [
+      {
+        url: "assets/images/wallpapers/date-a-live/desktop/yoshino/1.jpg",
+        date: "2025-10-15"
+      },
+      {
+        url: "assets/images/wallpapers/date-a-live/desktop/yoshino/2.jpg",
+        date: "2025-10-15"
+      },
+      {
+        url: "assets/images/wallpapers/date-a-live/desktop/yoshino/3.jpg",
+        date: "2025-10-15"
+      },
+    ]
+  },
+  {
+    character: "Kurumi Tokisaki",
+    type: "Mobile",
+    tags: ["Date A Live", "Anime", "Mobile", "Kurumi Tokisaki", "Kurumi"],
+    images: [
+      {
+        url: "assets/images/wallpapers/date-a-live/mobile/kurumi/1.jpg",
+        date: "2025-10-15"
+      },
+      {
+        url: "assets/images/wallpapers/date-a-live/mobile/kurumi/2.jpg",
+        date: "2025-10-15"
+      },
+      {
+        url: "assets/images/wallpapers/date-a-live/mobile/kurumi/3.jpg",
+        date: "2025-10-15"
+      },
+      {
+        url: "assets/images/wallpapers/date-a-live/mobile/kurumi/4.jpg",
+        date: "2025-10-15"
+      }
+    ]
+  },
+  {
+    character: "Yoshino Himekawa",
+    type: "Mobile",
+    tags: ["Date A Live", "Anime", "Mobile", "Yoshino", "Yoshino Himekawa"],
+    images: [
+      {
+        url: "assets/images/wallpapers/date-a-live/mobile/yoshino/1.jpg",
+        date: "2025-10-15"
+      },
+      {
+        url: "assets/images/wallpapers/date-a-live/mobile/yoshino/2.jpg",
+        date: "2025-10-15"
+      },
+      {
+        url: "assets/images/wallpapers/date-a-live/mobile/yoshino/3.jpg",
+        date: "2025-10-15"
+      },
+    ]
+  },
+  {
+    character: "Tohka Yatogami",
+    type: "Mobile",
+    tags: ["Date A Live", "Anime", "Mobile", "Tohka", "Tohka Yatogami"],
+    images: [
+      {
+        url: "assets/images/wallpapers/date-a-live/mobile/tohka/1.jpg",
+        date: "2025-10-15"
+      },
+    ]
+  },
+  // Re:Zero
+  {
+    character: "Re:ZERO - Starting Life in Another World",
+    type: "Mobile",
+    tags: ["Re:Zero", "Anime", "Mobile", "Subaru", "Emilia", "Rem", "Ram"],
+    images: [
+      {
+        url: "assets/images/wallpapers/rezero/mobile/2.jpg",
+        date: "2025-11-15"
+      },
+    ]
+  },
+  {
+    character: "Rem & Ram",
+    type: "Mobile",
+    tags: ["Re:Zero", "Anime", "Mobile", "Rem", "Ram"],
+    images: [
+      {
+        url: "assets/images/wallpapers/rezero/mobile/1.jpg",
+        date: "2025-11-15"
+      },
+    ]
+  },
+  {
+    character: "Rem",
+    type: "Desktop",
+    tags: ["Re:Zero", "Anime", "Desktop", "Rem"],
+    images: [
+      {
+        url: "assets/images/wallpapers/rezero/desktop/rem/1.jpg",
+        date: "2025-11-15"
+      },
+      {
+        url: "assets/images/wallpapers/rezero/desktop/rem/2.jpg",
+        date: "2025-11-15"
+      },
+    ]
+  },
+    {
+    character: "Rem",
+    type: "Mobile",
+    tags: ["Re:Zero", "Anime", "Mobile", "Rem"],
+    images: [
+      {
+        url: "assets/images/wallpapers/rezero/mobile/rem/1.jpg",
+        date: "2025-11-15"
+      },
+      {
+        url: "assets/images/wallpapers/rezero/mobile/rem/2.jpg",
+        date: "2025-11-15"
+      },
+      {
+        url: "assets/images/wallpapers/rezero/mobile/rem/3.jpg",
+        date: "2025-11-15"
+      },
+      {
+        url: "assets/images/wallpapers/rezero/mobile/rem/4.jpg",
+        date: "2025-11-15"
+      },
+      {
+        url: "assets/images/wallpapers/rezero/mobile/rem/5.jpg",
+        date: "2025-11-15"
+      },
+      {
+        url: "assets/images/wallpapers/rezero/mobile/rem/6.jpg",
+        date: "2025-11-15"
+      },
+      {
+        url: "assets/images/wallpapers/rezero/mobile/rem/7.jpg",
+        date: "2025-11-15"
+      },
+      {
+        url: "assets/images/wallpapers/rezero/mobile/rem/8.jpg",
+        date: "2025-11-15"
+      },
+      {
+        url: "assets/images/wallpapers/rezero/mobile/rem/9.jpg",
+        date: "2025-11-15"
+      },
+      {
+        url: "assets/images/wallpapers/rezero/mobile/rem/10.jpg",
+        date: "2025-11-15"
+      },
+      {
+        url: "assets/images/wallpapers/rezero/mobile/rem/11.jpg",
+        date: "2025-11-15"
+      },
+    ]
+  },
+  {
+    character: "Emilia",
+    type: "Desktop",
+    tags: ["Re:Zero", "Anime", "Desktop", "Emilia"],
+    images: [
+      {
+        url: "assets/images/wallpapers/rezero/desktop/emilia/1.jpg",
+        date: "2025-11-15"
+      },,
+    ]
+  },
+  {
+    character: "Emilia",
+    type: "Mobile",
+    tags: ["Re:Zero", "Anime", "Mobile", "Emilia"],
+    images: [
+      {
+        url: "assets/images/wallpapers/rezero/mobile/emilia/1.jpg",
+        date: "2025-11-15"
+      },
+      {
+        url: "assets/images/wallpapers/rezero/mobile/emilia/2.jpg",
+        date: "2025-11-15"
+      },
+    ]
+  },
+  {
+    character: "Ram",
+    type: "Mobile",
+    tags: ["Re:Zero", "Anime", "Mobile", "Ram"],
+    images: [
+      {
+        url: "assets/images/wallpapers/rezero/mobile/ram/1.jpg",
+        date: "2025-11-15"
+      },
+      {
+        url: "assets/images/wallpapers/rezero/mobile/ram/2.jpg",
+        date: "2025-11-15"
+      },
+      {
+        url: "assets/images/wallpapers/rezero/mobile/ram/3.jpg",
+        date: "2025-11-15"
+      },
+    ]
+  },
+  {
+    character: "Beatrice",
+    type: "Mobile",
+    tags: ["Re:Zero", "Anime", "Mobile", "Beatrice"],
+    images: [
+      {
+        url: "assets/images/wallpapers/rezero/mobile/beatrice/1.jpg",
+        date: "2025-11-15"
+      },
+    ]
+  },
+  {
+    character: "Subaru Natsuki",
+    type: "Mobile",
+    tags: ["Re:Zero", "Anime", "Mobile", "Subaru Natsuki", "Subaru"],
+    images: [
+      {
+        url: "assets/images/wallpapers/rezero/mobile/subaru/1.jpg",
+        date: "2025-11-15"
+      },
+    ]
+  },
+  // Sword Art Online
+  {
+    character: "Asuna Yuuki, Kirito",
+    type: "Mobile",
+    tags: ["Sword Art Online", "Anime", "Mobile", "Asuna Yuuki", "Kirito"],
+    images: [
+      {
+        url: "assets/images/wallpapers/sword-art-online/mobile/1.jpg",
+        date: "2025-12-15"
+      },
+      {
+        url: "assets/images/wallpapers/sword-art-online/mobile/2.jpg",
+        date: "2025-12-15"
+      },
+      {
+        url: "assets/images/wallpapers/sword-art-online/mobile/3.jpg",
+        date: "2025-12-15"
+      },
+    ]
+  },
+  {
+    character: "Asada Shino (Sinon)",
+    type: "Mobile",
+    tags: ["Sword Art Online", "Anime", "Mobile", "Sinon", "Asada Shino"],
+    images: [
+      {
+        url: "assets/images/wallpapers/sword-art-online/mobile/sinon/1.jpg",
+        date: "2025-12-15"
+      },
+      {
+        url: "assets/images/wallpapers/sword-art-online/mobile/sinon/2.jpg",
+        date: "2025-12-15"
+      },
+      {
+        url: "assets/images/wallpapers/sword-art-online/mobile/sinon/3.jpg",
+        date: "2025-12-15"
+      },
+      {
+        url: "assets/images/wallpapers/sword-art-online/mobile/sinon/4.jpg",
+        date: "2025-12-15"
+      },
+    ]
+  },
+  {
+    character: "Kazuto Kirigaya (Kirito)",
+    type: "Mobile",
+    tags: ["Sword Art Online", "Anime", "Mobile", "Kirito", "Kazuto Kirigaya"],
+    images: [
+      {
+        url: "assets/images/wallpapers/sword-art-online/mobile/kirito/1.jpg",
+        date: "2025-12-15"
+      },
+      {
+        url: "assets/images/wallpapers/sword-art-online/mobile/kirito/2.jpg",
+        date: "2025-12-15"
+      },
+      {
+        url: "assets/images/wallpapers/sword-art-online/mobile/kirito/3.jpg",
+        date: "2025-12-15"
+      },
+      {
+        url: "assets/images/wallpapers/sword-art-online/mobile/kirito/4.jpg",
+        date: "2025-12-15"
+      },
+    ]
+  },
+
+  //   // Live Wallpapers
+  //   // Naruto Live Wallpaper
+  {
+    character: "Naruto Uzumaki",
+    type: "Desktop Live",
+    tags: ["Naruto", "Live Wallpaper", "Desktop", "Naruto", "Naruto Uzumaki"],
+    videos: [
+      {
+        preview: "assets/videos/naruto-live/preview/desktop/naruto/1.webm",
+        download: "assets/videos/naruto-live/desktop/naruto/1.mp4",
+        date: "2027-09-04",
+      },  
+    ]
+  },
+  {
+    character: "Itachi Uchiha",
+    type: "Desktop Live",
+    tags: ["Itachi", "Live Wallpaper", "Desktop", "Naruto", "Itachi Uchiha"],
+    videos: [
+      {
+        preview: "assets/videos/naruto-live/preview/desktop/itachi/1.webm",
+        download: "assets/videos/naruto-live/desktop/itachi/1.mp4",
+        date: "2027-09-04",
+      },
+      {
+        preview: "assets/videos/naruto-live/preview/desktop/itachi/2.webm",
+        download: "assets/videos/naruto-live/desktop/itachi/2.mp4",
+        date: "2027-09-04",
+      },
+      {
+        preview: "assets/videos/naruto-live/preview/desktop/itachi/3.webm",
+        download: "assets/videos/naruto-live/desktop/itachi/3.mp4",
+        date: "2027-09-04",
+      },
+      {
+        preview: "assets/videos/naruto-live/preview/desktop/itachi/4.webm",
+        download: "assets/videos/naruto-live/desktop/itachi/4.mp4",
+        date: "2027-09-04",
+      },
+      {
+        preview: "assets/videos/naruto-live/preview/desktop/itachi/5.webm",
+        download: "assets/videos/naruto-live/desktop/itachi/5.mp4",
+        date: "2027-09-04",
+      },
+    ]
+  },
+  {
+    character: "Itachi Uchiha",
+    type: "Mobile Live",
+    tags: ["Itachi", "Live Wallpaper", "Mobile", "Naruto", "Itachi Uchiha"],
+    videos: [
+      {
+        preview: "assets/videos/naruto-live/preview/mobile/itachi/1.webm",
+        download: "assets/videos/naruto-live/mobile/itachi/1.mp4",
+        date: "2027-09-04",
+      },
+    ]
+  },
+  // {
+  //   character: "Kakashi Hatake",
+  //   type: "Desktop Live",
+  //   tags: ["Kakashi", "Live Wallpaper", "Desktop", "Naruto", "Kakashi Hatake"],
+  //   videos: [
+  //     {
+  //       preview: "assets/videos/naruto-live/preview/desktop/kakashi/1.webm",
+  //       download: "assets/videos/naruto-live/desktop/kakashi/1.mp4",
+  //       date: "2027-09-04",
+  //     },
+  //   ]
+  // },
+  {
+    character: "Sasuke Uchiha",
+    type: "Desktop Live",
+    tags: ["Sasuke", "Live Wallpaper", "Desktop", "Naruto", "Sasuke Uchiha"],
+    videos: [
+      {
+        preview: "assets/videos/naruto-live/preview/desktop/sasuke/1.webm",
+        download: "assets/videos/naruto-live/desktop/sasuke/1.mp4",
+        date: "2027-09-04",
+      },
+    ]
+  },
+  {
+    character: "Madara Uchiha",
+    type: "Desktop Live",
+    tags: ["Madara", "Live Wallpaper", "Desktop", "Naruto", "Madara Uchiha"],
+    videos: [
+      {
+        preview: "assets/videos/naruto-live/preview/desktop/madara/1.webm",
+        download: "assets/videos/naruto-live/desktop/madara/1.mp4",
+        date: "2027-09-04",
+      },
+    ]
+  },
+  // Dragon Ball Live Wallpaper
+  {
+    character: "Son Goku",
+    type: "Desktop Live",
+    tags: ["Dragon Ball", "Goku", "Vegeta", "Live Wallpaper", "Desktop", "Prince Vegeta","Son Goku"],
+    videos: [
+      {
+        preview: "assets/videos/dragon-ball-live/preview/desktop/1.webm",
+        download: "assets/videos/dragon-ball-live/desktop/1.mp4",
+        date: "2027-09-04",
+      },
+    ]
+  },
+  {
+    character: "Son Goku, Vegeta",
+    type: "Mobile Live",
+    tags: ["Dragon Ball", "Goku", "Vegeta", "Live Wallpaper", "Mobile", "Prince Vegeta","Son Goku"],
+    videos: [
+      {
+        preview: "assets/videos/dragon-ball-live/preview/mobile/1.webm",
+        download: "assets/videos/dragon-ball-live/mobile/1.mp4",
+        date: "2027-09-04",
+      },
+    ]
+  },
+  {
+    character: "Son Goku",
+    type: "Desktop Live",
+    tags: ["Dragon Ball", "Goku", "Live Wallpaper", "Desktop", "Son Goku"],
+    videos: [
+      {
+        preview: "assets/videos/dragon-ball-live/preview/desktop/goku/1.webm",
+        download: "assets/videos/dragon-ball-live/desktop/goku/1.mp4",
+        date: "2027-09-04",
+      },
+    ]
+  },
+  {
+    character: "Vegeta",
+    type: "Desktop Live",
+    tags: ["Vegeta", "Live Wallpaper", "Desktop", "Dragon Ball", "Vegeta"],
+    videos: [
+      {
+        preview: "assets/videos/dragon-ball-live/preview/desktop/vegeta/1.webm",
+        download: "assets/videos/dragon-ball-live/desktop/vegeta/1.mp4",
+        date: "2027-09-04",
+      },
+    ]
+  },
+  // One Piece Live Wallpapers
+  {
+    character: "Going Merry",
+    type: "Desktop Live",
+    tags: ["Going Merry", "Live Wallpaper", "Desktop", "One Piece", "Merry"],
+    videos: [
+      {
+        preview: "assets/videos/one-piece-live/preview/desktop/1.webm",
+        download: "assets/videos/one-piece-live/desktop/1.mp4",
+        date: "2027-09-04",
+      },
+      {
+        preview: "assets/videos/one-piece-live/preview/desktop/2.webm",
+        download: "assets/videos/one-piece-live/desktop/2.mp4",
+        date: "2027-09-04",
+      },
+    ]
+  },
+  // Re:Zero Live Wallpapers
+  {
+    character: "Going Merry",
+    type: "Desktop Live",
+    tags: ["Going Merry", "Live Wallpaper", "Desktop", "Re:Zero", "Merry"],
+    videos: [
+      {
+        preview: "assets/videos/rezero-live/preview/1.webm",
+        download: "assets/videos/rezero-live/1.mp4",
+        date: "2027-09-04",
+      },
+    ]
+  },
+  // Your Name Live Wallpapers
+  {
+    character: "Going Merry",
+    type: "Desktop Live",
+    tags: ["Going Merry", "Live Wallpaper", "Desktop", "Your Name", "Merry"],
+    videos: [
+      {
+        preview: "assets/videos/your-name-live/preview/desktop/1.webm",
+        download: "assets/videos/your-name-live/desktop/1.mp4",
+        date: "2027-09-04",
+      },
+    ]
+  },
+  // Demon Slayer Live Wallpapers
+  // {
+  //   character: "Giyu Tomioka",
+  //   type: "Desktop Live",
+  //   tags: ["Demon Slayer", "Live Wallpaper", "Desktop", "Anime", "Giyu", "Giyu Tomioka",],
+  //   videos: [
+  //     {
+  //       preview: "assets/videos/demon-slayer-live/preview/desktop/giyu/1.webm",
+  //       download: "assets/videos/demon-slayer-live/desktop/giyu/1.mp4",
+  //       date: "2027-09-04",
+  //     },
+  //   ]
+  // },
+  // {
+  //   character: "Michikatsu Tsugikuni (Kokoshibu)",
+  //   type: "Desktop Live",
+  //   tags: ["Demon Slayer", "Live Wallpaper", "Desktop", "Anime", "Kokoshibu", "Michikatsu Tsugikuni",],
+  //   videos: [
+  //     {
+  //       preview: "assets/videos/demon-slayer-live/preview/desktop/kokoshibu/1.webm",
+  //       download: "assets/videos/demon-slayer-live/desktop/kokoshibu/1.mp4",
+  //       date: "2027-09-04",
+  //     },
+  //   ]
+  // },
+  // {},
+
+  // Genshin Impact Live Wallpapers
+    {
+    character: "Flins",
+    type: "Desktop Live",
+    tags: ["Genshin Impact", "Live Wallpaper", "Desktop", "Flins", ],
+    videos: [
+      {
+        preview: "assets/videos/genshin-live/1.mp4",
+        download: "assets/videos/genshin-live/1.mp4",
+        date: "2027-09-04",
+      },
+    ]
+  },
   // Add more wallpaper objects here...
-
 ];
-

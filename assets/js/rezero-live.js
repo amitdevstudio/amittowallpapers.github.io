@@ -2,9 +2,9 @@ import { wallpapers } from './wallpaper.js';
 
 const liveWallpapers = [];
 
-// Flatten Naruto live wallpapers
+// Flatten Re:Zero live wallpapers
 wallpapers.forEach(item => {
-  if (item.tags.includes('Naruto') && item.type.toLowerCase().includes('live')) {
+  if (item.tags.includes('Re:Zero') && item.type.toLowerCase().includes('live')) {
     if (item.videos) {
       item.videos.forEach(video => {
         liveWallpapers.push({

@@ -2,9 +2,9 @@ import { wallpapers } from './wallpaper.js';
 
 const liveWallpapers = [];
 
-// Flatten Naruto live wallpapers
+// Flatten Your Name live wallpapers
 wallpapers.forEach(item => {
-  if (item.tags.includes('Naruto') && item.type.toLowerCase().includes('live')) {
+  if (item.tags.includes('Your Name') && item.type.toLowerCase().includes('live')) {
     if (item.videos) {
       item.videos.forEach(video => {
         liveWallpapers.push({
@@ -78,7 +78,7 @@ function renderLiveCard(wallpaper, grid) {
 
     <!-- Video -->
     <video muted playsinline preload="metadata" 
-      class="preview-video w-auto h-full object-cover mx-auto opacity-0 transition-opacity duration-500"
+      class="preview-video w-auto h-full object-fill mx-auto opacity-0 transition-opacity duration-500"
       style="background-color: #1a1a1a;">
       <source data-src="${wallpaper.preview}" type="video/webm">
     </video>
