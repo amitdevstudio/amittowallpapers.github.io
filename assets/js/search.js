@@ -1,19 +1,24 @@
 import { wallpapers } from './wallpaper.js';
 
-// -------------------------------
-// FLATTEN DATA
+const wallpaperGrid = document.getElementById('wallpaperGrid');
+const searchInput = document.getElementById('searchInput');
+
 const allWallpapers = [];
 
+// -------------------------------
+// BUILD DATA
 wallpapers.forEach(item => {
   if (Array.isArray(item.images)) {
     item.images.forEach(img => {
       allWallpapers.push({
         character: String(item.character || ''),
         type: String(item.type || '').toLowerCase(),
-        tags: Array.isArray(item.tags) ? item.tags : [],
-        url: img.url || '',
-        download: img.url || '',
+        tags: Array.isArray(item.tags) ? item.tags.map(String) : [],
+        url: String(img.url || ''),
         date: img.date || new Date().toISOString(),
+        mobile: img.mobile || '',
+        tablet: img.tablet || '',
+        desktop: img.desktop || '',
         isVideo: false
       });
     });
@@ -24,9 +29,10 @@ wallpapers.forEach(item => {
       allWallpapers.push({
         character: String(item.character || ''),
         type: String(item.type || '').toLowerCase(),
-        tags: Array.isArray(item.tags) ? item.tags : [],
-        url: video.preview || '',
-        download: video.download || video.preview || '',
+        tags: Array.isArray(item.tags) ? item.tags.map(String) : [],
+        url: String(video.preview || ''),
+        preview: String(video.preview || ''),
+        download: String(video.download || ''),
         date: video.date || new Date().toISOString(),
         isVideo: true
       });
@@ -34,215 +40,140 @@ wallpapers.forEach(item => {
   }
 });
 
-// -------------------------------
-const searchGrid = document.getElementById('wallpaperGrid');
-const searchInput = document.getElementById('searchInput');
-
-const params = new URLSearchParams(window.location.search);
-const initialQuery = params.get('q') || '';
+allWallpapers.sort((a, b) => new Date(b.date) - new Date(a.date));
 
 // -------------------------------
-// DEBOUNCE
-const debounce = (fn, delay = 250) => {
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => fn(...args), delay);
-  };
-};
+// SEARCH
+searchInput.addEventListener('input', () => {
+  const term = searchInput.value.trim().toLowerCase();
+  if (!term) {
+    wallpaperGrid.innerHTML = '';
+    return;
+  }
 
-// -------------------------------
-// FILTER
-const filterWallpapers = (query) => {
-  const term = String(query || '').toLowerCase().trim();
-
-  if (!term) return [];
-
-  return allWallpapers.filter(wp => {
-    const char = wp.character.toLowerCase();
+  const filtered = allWallpapers.filter(wp => {
+    const character = wp.character.toLowerCase();
     const type = wp.type.toLowerCase();
 
+    if (term === 'live') return wp.isVideo;
+
     return (
-      char.includes(term) ||
+      character.includes(term) ||
       type.includes(term) ||
       wp.tags.some(tag => tag.toLowerCase().includes(term))
     );
   });
-};
+
+  renderWallpapers(filtered);
+});
 
 // -------------------------------
 // RENDER
-const renderSearchResults = (wallpapers) => {
-  if (!searchGrid) return;
+function renderWallpapers(list) {
+  wallpaperGrid.innerHTML = '';
 
-  searchGrid.innerHTML = '';
-
-  if (!wallpapers.length) {
-    searchGrid.innerHTML = `
-      <div class="col-span-full flex items-center justify-center h-48 text-gray-400">
-        No wallpapers found
+  if (!list.length) {
+    wallpaperGrid.innerHTML = `
+      <div class="text-center text-white mt-10">
+        No wallpapers found.
       </div>
     `;
     return;
   }
 
-  wallpapers.forEach(w => {
-    searchGrid.appendChild(createCard(w));
-  });
-};
+  list.forEach(wallpaper => renderCard(wallpaper, wallpaperGrid));
+}
 
 // -------------------------------
-// CARD
-const createCard = (w) => {
+// CARD (FIXED LOADER)
+function renderCard(wallpaper, grid) {
   const card = document.createElement('div');
+  card.className =
+    "break-inside-avoid overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg relative";
 
-  const isMobile = w.type === 'mobile';
-  const isDesktop = w.type.includes('desktop');
+  const uniqueId = wallpaper.url || wallpaper.preview;
+  const wpData = window.wallpaperStorage.getWallpaper(uniqueId, wallpaper.character);
 
-  const height = isMobile ? 'h-80' : 'h-60';
-  const badge = isDesktop ? 'bg-red-600' : 'bg-green-600';
-
-  card.className = "wallpaper-card break-inside-avoid mb-6 flex justify-center";
+  const isMobile = wallpaper.type.includes('mobile');
 
   card.innerHTML = `
-    <div class="relative group overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg
-      ${isMobile ? 'w-[85%] sm:w-[70%] md:w-[60%]' : 'w-full'}">
+    <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}"
+       class="block relative group overflow-hidden rounded-lg">
 
-      <div class="loader-container absolute inset-0 flex items-center justify-center bg-black/40 z-20">
-        <div class="loader"></div>
+      <!-- LOADER -->
+      <div class="absolute inset-0 flex items-center justify-center bg-black/60 loader">
+        <div class="dot-loader"><div></div><div></div><div></div></div>
       </div>
 
-      <a href="wallpaper.html?title=${encodeURIComponent(w.character)}&img=${encodeURIComponent(w.url)}"
-         target="_blank" class="block">
+      ${
+        wallpaper.isVideo
+          ? `<video class="wallpaper-img w-full ${isMobile ? 'h-80' : 'h-60'} object-cover opacity-0" muted loop playsinline>
+               <source src="${wallpaper.url}">
+             </video>`
+          : `<img src="${wallpaper.url}" class="wallpaper-img w-full ${isMobile ? 'h-80' : 'h-60'} object-cover opacity-0"/>`
+      }
 
-        ${
-          w.isVideo
-            ? `<video class="wallpaper-img w-full object-cover ${height}" muted loop playsinline>
-                <source src="${w.url}">
-               </video>`
-            : `<img src="${w.url}" class="wallpaper-img w-full object-cover ${height}" />`
-        }
-
-      </a>
-
-      <span class="absolute top-3 left-3 ${badge} text-white px-2 py-1 text-xs rounded">
-        ${w.type}
+      <span class="absolute top-3 left-3 px-2 py-1 text-xs rounded text-white
+        ${wallpaper.type.includes('desktop') ? 'bg-red-600' : 'bg-green-600'}">
+        ${wallpaper.type}
       </span>
+    </a>
+
+    <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
+      <button class="likeBtn bg-green-600 px-3 py-1 rounded text-white">
+        <i class="likeIcon far fa-thumbs-up"></i>
+        <span class="likeCount">${formatNumber(wpData.likes)}</span>
+      </button>
+
+      <div class="text-xs text-gray-400">👁 ${formatNumber(wpData.views)}</div>
     </div>
   `;
 
+  grid.appendChild(card);
+
   const media = card.querySelector('.wallpaper-img');
-  const loader = card.querySelector('.loader-container');
+  const loader = card.querySelector('.loader');
 
-  // hide media initially
-  if (media) {
-    media.style.opacity = '0';
-    media.style.transition = 'opacity 0.4s ease';
+  function hideLoader() {
+    loader.style.opacity = '0';
+    setTimeout(() => loader.style.display = 'none', 300);
+    media.style.opacity = '1';
   }
 
-  const hideLoader = () => {
-    if (loader) {
-      loader.style.opacity = '0';
-
-      if (media) media.style.opacity = '1';
-
-      setTimeout(() => loader.remove(), 300);
-    }
-  };
-
-  if (media) {
-    if (media.tagName === 'VIDEO') {
-      media.addEventListener('loadeddata', () => {
-        media.play().catch(() => {});
-        hideLoader();
-      }, { once: true });
-    } else {
-      media.addEventListener('load', hideLoader, { once: true });
-      media.addEventListener('error', hideLoader, { once: true });
-      if (media.complete) hideLoader();
-    }
-  }
-
-  return card;
-};
-
-// -------------------------------
-// INIT
-const init = () => {
-  if (!searchGrid) return;
-
-  // Set input from URL
-  if (searchInput && initialQuery) {
-    searchInput.value = initialQuery;
-  }
-
-  if (initialQuery) {
-    renderSearchResults(filterWallpapers(initialQuery));
+  if (media.tagName === 'IMG') {
+    if (media.complete) hideLoader();
+    else media.addEventListener('load', hideLoader);
   } else {
-    // show nothing initially (clean UX)
-    searchGrid.innerHTML = `
-      <div class="col-span-full flex items-center justify-center h-48 text-gray-400">
-        Start typing to search wallpapers...
-      </div>
-    `;
+    media.addEventListener('loadeddata', hideLoader);
   }
-};
 
-// -------------------------------
-// SEARCH
-const setupSearch = () => {
-  if (!searchInput) return;
+  // LIKE
+  const likeBtn = card.querySelector('.likeBtn');
+  const likeIcon = card.querySelector('.likeIcon');
+  const likeCount = card.querySelector('.likeCount');
 
-  const handleSearch = debounce((query) => {
-    const results = filterWallpapers(query);
-    renderSearchResults(results);
+  const isLiked = window.wallpaperStorage.getUserLiked(uniqueId);
 
-    // update URL
-    const url = new URL(window.location.href);
-    if (query.trim()) {
-      url.searchParams.set('q', query.trim());
-    } else {
-      url.searchParams.delete('q');
-    }
-    window.history.replaceState({}, '', url);
-  }, 200);
+  likeIcon.classList.toggle('fas', isLiked);
+  likeIcon.classList.toggle('far', !isLiked);
 
-  searchInput.addEventListener('input', (e) => {
-    handleSearch(e.target.value);
+  likeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const current = window.wallpaperStorage.getUserLiked(uniqueId);
+    const updated = window.wallpaperStorage.updateLikes(uniqueId, current ? -1 : 1);
+
+    window.wallpaperStorage.setUserLiked(uniqueId, !current);
+
+    likeCount.innerText = formatNumber(updated);
+    likeIcon.classList.toggle('fas');
+    likeIcon.classList.toggle('far');
   });
-
-  // ESC clears search
-  searchInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      searchInput.value = '';
-      handleSearch('');
-    }
-  });
-};
+}
 
 // -------------------------------
-document.addEventListener('DOMContentLoaded', () => {
-  init();
-  setupSearch();
-});
-
-// -------------------------------
-// CSS
-const style = document.createElement('style');
-style.textContent = `
-.loader {
-  width: 40px;
-  height: 40px;
-  border: 4px solid #333;
-  border-top: 4px solid #fff;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+function formatNumber(num) {
+  if (num >= 1_000_000) return (num / 1_000_000).toFixed(1) + 'M';
+  if (num >= 1_000) return (num / 1_000).toFixed(1) + 'k';
+  return num;
 }
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-.loader-container {
-  transition: opacity 0.3s ease;
-}
-`;
-document.head.appendChild(style);
