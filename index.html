@@ -20,7 +20,7 @@
   <!-- Favicon -->
   <link rel="icon" href="assets/images/logo/luffy-hat.png" type="image/png" />
 
-  <link href="./assets/src/output.css" rel="stylesheet">
+  <link href="/src/output.css" rel="stylesheet">
   <!-- AOS (for animations) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 
@@ -73,6 +73,50 @@
       line-height: 1.75rem;
       font-weight: 400;
       letter-spacing: 0.025em;
+    }
+
+    /* Loader Container */
+.loader-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      background: #1a1a1a;
+      transition: opacity 0.5s ease;
+    }
+
+    .loader {
+      display: flex;
+      gap: 6px;
+    }
+
+    .loader div {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #888;
+      /* visible against dark bg */
+      animation: bounce 0.6s infinite alternate;
+    }
+
+    .loader div:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .loader div:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes bounce {
+      from {
+        transform: translateY(0);
+        opacity: 0.5;
+      }
+
+      to {
+        transform: translateY(-8px);
+        opacity: 1;
+      }
     }
   </style>
 </head>
@@ -237,7 +281,7 @@
         <h2 id="latest-heading" class="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">
           <i class="fa-solid fa-clock mr-2" aria-hidden="true"></i>Latest Wallpapers
         </h2>
-        <div id="latestwallpaperGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div id="latestwallpaperGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- JS injects cards here -->
         </div>
         <div class="mt-8 text-center">
@@ -349,7 +393,8 @@
         </div>
 
         <!-- Live Wallpapers -->
-        <h3 id="live" class="scroll-mt-40 text-2xl md:text-3xl font-bold mb-12 mt-16" data-aos="fade-up" data-aos-delay="100">
+        <h3 id="live" class="scroll-mt-40 text-2xl md:text-3xl font-bold mb-12 mt-16" data-aos="fade-up"
+          data-aos-delay="100">
           <i class="fa-solid fa-circle-play mr-2" aria-hidden="true"></i>Browse Live Wallpapers
         </h3>
         <div id="liveGrid" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -434,7 +479,8 @@
           <a href="genshin-live.html" target="_blank" rel="noreferrer noopener"
             class="group hidden more-live-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
             data-aos="zoom-in" data-aos-delay="600">
-            <video src="https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788052/1_opgpqz.mp4" alt="Genshin Impact live wallpapers"
+            <video src="https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788052/1_opgpqz.mp4"
+              alt="Genshin Impact live wallpapers"
               class="w-full h-48 object-fill opacity-80 group-hover:opacity-100 transition duration-300" width="640"
               height="320" muted loop playsinline preload="metadata" onmouseenter="this.play()"
               onmouseleave="this.pause(); this.currentTime = 0;"></video>
@@ -608,8 +654,10 @@
           <div class="flex items-center mt-2" data-aos="zoom-in" data-aos-delay="1400">
             <input type="checkbox" id="emailConsentCheckbox"
               class="h-4 w-4 text-blue-600 cursor-pointer focus:ring-blue-500 border-gray-700 rounded bg-[#1a1a1a]" />
-            <label for="emailConsentCheckbox" class="ml-2 cursor-pointer block text-sm text-gray-300">I agree to receive
-              emails about updates and promotions.</label>
+            <label class="flex items-center gap-2 text-sm text-gray-300">
+              <input type="checkbox" id="promoCheck" class="accent-blue-600">
+              I agree to receive emails about updates and promotions.
+            </label>
           </div>
           <button type="submit" data-aos="zoom-in" data-aos-delay="1600"
             class="text-white bg-blue-600 hover:bg-blue-700 rounded-md text-[15px] font-medium px-4 py-2 w-full cursor-pointer mt-2">Send
@@ -1089,6 +1137,8 @@
       script.textContent = JSON.stringify(schema);
       document.head.appendChild(script);
     }
+
+    
 
     // Example usage: call this with your wallpaper data
     addImageSchema(
