@@ -1,19 +1,24 @@
 import { wallpapers } from './wallpaper.js';
 
-const wallpaperGrid = document.getElementById('wallpaperGrid');
-const searchInput = document.getElementById('searchInput');
+const wallpaperGrid = document.getElementById('latestwallpaperGrid');
+const showMoreBtn = document.getElementById('latest-show-more');
+const sortContainer = document.getElementById('sortContainer');
 
+// Initialize sort buttons when DOM is ready
+if (sortContainer && window.wallpaperSortHelper) {
+  window.wallpaperSortHelper.createSortButtons(sortContainer);
+}
+
+// --- Flatten all wallpapers ---
 const allWallpapers = [];
 
-// -------------------------------
-// FORMAT DATA
-wallpapers.forEach(item => {
-  if (Array.isArray(item.images)) {
-    item.images.forEach(img => {
+wallpapers.forEach(wp => {
+  if (Array.isArray(wp.images)) {
+    wp.images.forEach(img => {
       allWallpapers.push({
-        character: String(item.character || ''),
-        type: String(item.type || '').toLowerCase(),
-        tags: Array.isArray(item.tags) ? item.tags.map(tag => String(tag)) : [],
+        character: String(wp.character || ''),
+        type: String(wp.type || '').toLowerCase(),
+        tags: Array.isArray(wp.tags) ? wp.tags.map(tag => String(tag)) : [],
         url: String(img.url || ''),
         date: img.date || new Date().toISOString(),
         mobile: img.mobile || '',
@@ -23,13 +28,12 @@ wallpapers.forEach(item => {
       });
     });
   }
-
-  if (Array.isArray(item.videos)) {
-    item.videos.forEach(video => {
+  if (Array.isArray(wp.videos)) {
+    wp.videos.forEach(video => {
       allWallpapers.push({
-        character: String(item.character || ''),
-        type: String(item.type || '').toLowerCase(),
-        tags: Array.isArray(item.tags) ? item.tags.map(tag => String(tag)) : [],
+        character: String(wp.character || ''),
+        type: String(wp.type || '').toLowerCase(),
+        tags: Array.isArray(wp.tags) ? wp.tags.map(tag => String(tag)) : [],
         url: String(video.preview || ''),
         preview: String(video.preview || ''),
         download: String(video.download || ''),
@@ -40,183 +44,165 @@ wallpapers.forEach(item => {
   }
 });
 
-// -------------------------------
-// SORT (NEWEST FIRST)
-allWallpapers.sort((a, b) => new Date(b.date) - new Date(a.date));
+// --- Sort newest first ---
+const sortedWallpapers = allWallpapers.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-// -------------------------------
-// SEARCH
-searchInput.addEventListener('input', () => {
-  const term = searchInput.value.trim().toLowerCase();
+// --- Take only first 60 wallpapers ---
+const limitedWallpapers = sortedWallpapers.slice(0, 60);
 
-  if (!term) {
-    wallpaperGrid.innerHTML = '';
-    return;
-  }
+// --- Pagination ---
+let currentIndex = 0;
+const batchSize = 6; // wallpapers per batch
 
-  const filtered = allWallpapers.filter(wp => {
-    const character = wp.character.toLowerCase();
-    const type = wp.type.toLowerCase();
-    const isLive = wp.isVideo;
+renderNextBatch();
+if (showMoreBtn) showMoreBtn.addEventListener('click', renderNextBatch);
 
-    if (term === 'live' || term === 'live wallpaper') return isLive;
+// --- Render next batch ---
+function renderNextBatch() {
+  const nextBatch = limitedWallpapers.slice(currentIndex, currentIndex + batchSize);
 
-    return (
-      character.includes(term) ||
-      type.includes(term) ||
-      wp.tags.some(tag => tag.toLowerCase().includes(term)) ||
-      (isLive && 'live wallpaper'.includes(term))
-    );
-  });
-
-  renderWallpapers(filtered);
-});
-
-// -------------------------------
-// RENDER
-function renderWallpapers(list) {
-  wallpaperGrid.innerHTML = '';
-
-  if (!list.length) {
+  if (nextBatch.length === 0 && currentIndex === 0) {
     wallpaperGrid.innerHTML = `
-      <div class="flex flex-col justify-center mt-8 w-full items-center h-48 text-center mx-auto space-y-1 p-2">
-        <p class="text-white text-lg font-semibold">
-          No wallpapers found matching your search.<br>
-          Can't find what you want? 
-          <a href="#contact" class="text-yellow-500 font-semibold hover:underline">
-            Request your wallpaper!
-          </a>
-        </p>
+      <div class="flex flex-col items-center justify-center h-96 text-center text-white mx-auto">
+        <p class="text-lg font-semibold">No wallpapers found.</p>
+        <p class="text-sm text-gray-400 mt-2">Please try a different search term.</p>
       </div>
     `;
+    if (showMoreBtn) showMoreBtn.style.display = 'none';
     return;
   }
 
-  list.forEach(wallpaper => {
-    const uniqueId = wallpaper.url || wallpaper.preview;
-    const characterName = wallpaper.character || 'Unknown';
+  // Add a column break to force new items below
+  if (currentIndex > 0) {
+    const breakElement = document.createElement('div');
+    breakElement.style.columnSpan = 'all';
+    breakElement.style.height = '0px';
+    wallpaperGrid.appendChild(breakElement);
+  }
 
-    const wpData = window.wallpaperStorage.getWallpaper(uniqueId, characterName);
-    let likes = wpData.likes;
-    let views = wpData.views;
+  nextBatch.forEach((wallpaper, idx) => {
+    // pass current index for staggered AOS delay
+    renderCard(wallpaper, wallpaperGrid, currentIndex + idx);
+  });
 
-    const card = document.createElement('div');
-    card.className = "wallpaper-card break-inside-avoid overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg mb-6";
+  currentIndex += batchSize;
+  if (currentIndex >= limitedWallpapers.length && showMoreBtn) showMoreBtn.style.display = 'none';
 
-    // ✅ FIXED MEDIA (UNIFORM SIZE)
-    let mediaHTML = `
-      <div class="relative group w-full ${wallpaper.type === 'mobile' ? 'aspect-[9/16]' : 'aspect-[16/9]'} overflow-hidden bg-black">
+  // Refresh AOS to apply animations to new cards
+  if (window.AOS) AOS.refresh();
+}
 
+// --- Render individual card ---
+function renderCard(wallpaper, grid, index = 0) {
+  const card = document.createElement('div');
+  card.className = "wallpaper-card break-inside-avoid overflow-hidden border-gray-700 border-1 rounded-xl bg-[#1a1a1a] mb-6";
+
+  // --- AOS animation with staggered delay ---
+  card.setAttribute('data-aos', 'zoom-in');
+  card.setAttribute('data-aos-duration', '800');
+  card.setAttribute('data-aos-delay', '100'); // 100ms per card
+
+  const uniqueId = wallpaper.url || wallpaper.preview;
+  const characterName = wallpaper.character || 'Unknown';
+  const wpData = window.wallpaperStorage.getWallpaper(uniqueId, characterName);
+  let likes = wpData.likes;
+  let views = wpData.views;
+
+  // --- Media HTML with loader ---
+  let mediaHTML = '';
+  if (wallpaper.isVideo) {
+    mediaHTML = `
+      <div class="relative group">
         <div class="loader-container absolute inset-0 flex items-center justify-center">
           <div class="loader"><div></div><div></div><div></div></div>
         </div>
-    `;
-
-    if (wallpaper.isVideo) {
-      mediaHTML += `
-        <video loop muted playsinline
-          class="wallpaper-img w-full h-full object-cover transition duration-300 group-hover:scale-105 group-hover:brightness-110">
+        <video loop muted playsinline class="wallpaper-img h-72 w-auto mx-auto object-cover opacity-0 transition-opacity duration-500 group-hover:scale-105">
           <source src="${wallpaper.url}" type="video/mp4">
         </video>
-      `;
-    } else {
-      mediaHTML += `
-        <img loading="lazy" src="${wallpaper.url}" alt="${wallpaper.character}"
-          class="wallpaper-img w-full h-full object-cover transition duration-300 group-hover:scale-105 group-hover:brightness-110"/>
-      `;
-    }
-
-    mediaHTML += `</div>`;
-
-    // -------------------------------
-    card.innerHTML = `
-      <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}"
-         target="_blank"
-         class="block overflow-hidden rounded-lg">
-        ${mediaHTML}
-
-        <span class="absolute z-10 top-3 left-3 ${wallpaper.type.includes('desktop') ? 'bg-red-600' : 'bg-green-600'} text-white px-2 py-1 text-xs rounded-lg">
-          ${wallpaper.type.charAt(0).toUpperCase() + wallpaper.type.slice(1)}
-        </span>
-      </a>
-
-      <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
-        <div class="flex gap-2">
-          <a href="${wallpaper.url}" download
-             class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-white">
-            Download
-          </a>
-
-          <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white">
-            <i class="likeIcon far fa-thumbs-up mr-1"></i>
-            <span class="likeCount">${formatNumber(likes)}</span>
-          </button>
-        </div>
-
-        <div class="text-xs text-gray-400">
-          👁 ${formatNumber(views)}
-        </div>
-      </div>
-
-      <div class="px-4 py-4 flex flex-wrap gap-2 text-sm">
-        <span class="font-bold">Tags:</span>
-        ${wallpaper.tags.map(tag => `<span class="bg-gray-800 px-3 py-1 rounded-full">${tag}</span>`).join('')}
       </div>
     `;
+  } else {
+    mediaHTML = `
+      <div class="relative group">
+        <div class="loader-container absolute inset-0 flex items-center justify-center">
+          <div class="loader"><div></div><div></div><div></div></div>
+        </div>
+        <img loading="lazy" src="${wallpaper.url}" alt="${wallpaper.character}" class="wallpaper-img h-72 w-auto mx-auto object-cover opacity-0 transition-opacity duration-500 group-hover:scale-105"/>
+      </div>
+    `;
+  }
 
-    wallpaperGrid.appendChild(card);
+  card.innerHTML = `
+    <a href="wallpaper.html?title=${encodeURIComponent(wallpaper.character)}&img=${encodeURIComponent(wallpaper.url)}" target="_blank" class="relative block overflow-hidden rounded-lg">
+      ${mediaHTML}
+      <span class="absolute z-10 top-3 left-3 ${wallpaper.type.includes('desktop') ? 'bg-red-600' : 'bg-green-600'} text-white px-2 py-1 text-xs rounded-lg">
+          ${wallpaper.type.charAt(0).toUpperCase() + wallpaper.type.slice(1)}
+        </span>
+    </a>
+    <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
+      <div class="flex gap-2">
+        <a href="${wallpaper.url}" download class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-white">
+          <i class="fa-solid fa-download mr-1"></i>Download
+        </a>
+        <button class="likeBtn cursor-pointer bg-green-600 px-3 py-1 rounded text-white">
+          <i class="likeIcon far fa-thumbs-up mr-1"></i>
+          <span class="likeCount">${formatNumber(likes)}</span>
+        </button>
+      </div>
+      <div class="text-xs text-gray-400">
+        <i class="fa-solid fa-eye ml-1 mr-1"></i>${formatNumber(views)}
+      </div>
+    </div>
+    <div class="px-4 py-4 flex flex-wrap gap-2 text-sm">
+      <span class="font-bold"><i class="fa-solid fa-tags mr-1"></i>Tags:</span>
+      ${wallpaper.tags.map(tag => `<span class="bg-gray-800 px-3 py-1 rounded-full">${tag}</span>`).join('')}
+    </div>
+  `;
 
-    const media = card.querySelector('.wallpaper-img');
-    const loader = card.querySelector('.loader-container');
+  grid.appendChild(card);
 
-    // -------------------------------
-    // LOAD EFFECT
-    if (wallpaper.isVideo) {
-      media.addEventListener('loadeddata', () => {
-        loader.style.opacity = '0';
-        setTimeout(() => loader.style.display = 'none', 400);
-      });
+  const media = card.querySelector('.wallpaper-img');
+  const loaderContainer = card.querySelector('.loader-container');
 
-      card.addEventListener('mouseenter', () => media.play());
-      card.addEventListener('mouseleave', () => {
-        media.pause();
-        media.currentTime = 0;
-      });
-    } else {
-      media.addEventListener('load', () => {
-        loader.style.opacity = '0';
-        setTimeout(() => loader.style.display = 'none', 400);
-      });
-    }
-
-    // -------------------------------
-    // LIKE SYSTEM
-    const likeBtn = card.querySelector('.likeBtn');
-    const likeIcon = card.querySelector('.likeIcon');
-    const likeCount = card.querySelector('.likeCount');
-
-    const isLiked = window.wallpaperStorage.getUserLiked(uniqueId);
-
-    likeIcon.classList.toggle('fas', isLiked);
-    likeIcon.classList.toggle('far', !isLiked);
-
-    likeBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      const current = window.wallpaperStorage.getUserLiked(uniqueId);
-      const updatedLikes = window.wallpaperStorage.updateLikes(uniqueId, current ? -1 : 1);
-
-      window.wallpaperStorage.setUserLiked(uniqueId, !current);
-
-      likeCount.innerText = formatNumber(updatedLikes);
-
-      likeIcon.classList.toggle('fas');
-      likeIcon.classList.toggle('far');
+  if (wallpaper.isVideo) {
+    media.addEventListener('loadeddata', () => {
+      loaderContainer.style.opacity = '0';
+      setTimeout(() => loaderContainer.style.display = 'none', 500);
+      media.classList.remove('opacity-0');
     });
+    card.addEventListener('mouseenter', () => media.play());
+    card.addEventListener('mouseleave', () => { media.pause(); media.currentTime = 0; });
+  } else {
+    media.addEventListener('load', () => {
+      loaderContainer.style.opacity = '0';
+      setTimeout(() => loaderContainer.style.display = 'none', 500);
+      media.classList.remove('opacity-0');
+    });
+  }
+
+  // --- Like button ---
+  const likeBtn = card.querySelector('.likeBtn');
+  const likeIcon = card.querySelector('.likeIcon');
+  const likeCountSpan = card.querySelector('.likeCount');
+
+  const isUserLiked = window.wallpaperStorage.getUserLiked(uniqueId);
+  likeIcon.classList.toggle('fas', isUserLiked);
+  likeIcon.classList.toggle('far', !isUserLiked);
+
+  likeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const isCurrentlyLiked = window.wallpaperStorage.getUserLiked(uniqueId);
+    const newLikesCount = window.wallpaperStorage.updateLikes(uniqueId, isCurrentlyLiked ? -1 : 1);
+    window.wallpaperStorage.setUserLiked(uniqueId, !isCurrentlyLiked);
+    
+    likeCountSpan.innerText = formatNumber(newLikesCount);
+    likeIcon.classList.toggle('far');
+    likeIcon.classList.toggle('fas');
   });
 }
 
-// -------------------------------
+// --- Helpers ---
+function randomRange(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
 function formatNumber(num) {
   if (num >= 1_000_000) return (num / 1_000_000).toFixed(1).replace(/\.0$/, '') + 'M';
   if (num >= 1_000) return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
