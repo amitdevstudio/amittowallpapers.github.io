@@ -76,7 +76,7 @@
     }
 
     /* Loader Container */
-.loader-container {
+    .loader-container {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -855,6 +855,10 @@
 
           try {
             const formData = new FormData(contactForm);
+            formData.set(
+              "promoConsent",
+              document.getElementById("promoCheck").checked ? "Yes" : "No"
+            );
             const response = await fetch("https://formspree.io/f/xgvydqkp", {
               method: "POST",
               body: formData,
@@ -1124,8 +1128,6 @@
       document.head.appendChild(script);
     }
 
-    
-
     // Example usage: call this with your wallpaper data
     addImageSchema(
       "https://amittowallpapers.netlify.app/images/goku-blue.jpg",
@@ -1133,7 +1135,4 @@
     );
   </script>
 </body>
-
-
-
 </html>
