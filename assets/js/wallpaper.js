@@ -1311,8 +1311,8 @@ export const wallpapers = [
     tags: ["Genshin Impact", "Live Wallpaper", "Desktop", "Flins", ],
     videos: [
       {
-        preview: "assets/videos/genshin-live/1.mp4",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788052/1_opgpqz.mp4",
+        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775965305/1_oindrp.mp4  ",
+        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775965305/1_oindrp.mp4",
         date: "2027-09-04",
       },
     ]
