@@ -20,40 +20,12 @@
   <!-- Favicon -->
   <link rel="icon" href="assets/images/logo/luffy-hat.png" type="image/png" />
 
-  <!-- Favicon as Open Graph image (for link previews) -->
-  <meta property="og:image" content="assets/images/logo/luffy-hat.png" />
-  <meta property="og:image:width" content="490" />
-  <meta property="og:image:height" content="490" />
-  <meta property="og:image:alt" content="AmittoWallpapers Logo" />
-
-  <link rel="preload" href="assets/images/hero-images/heroimg.png" as="image" fetchpriority="high">
-  <link rel="preload" href="assets/images/hero-images/hero-bg.jpg" as="image">
-  <link rel="preload" href="assets/images/logo/luffy-hat.png" as="image">
-
   <link href="./assets/src/output.css" rel="stylesheet">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
-
   <!-- AOS (for animations) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-048LX9JF5P"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-048LX9JF5P');
-  </script>
 
   <style>
     body {
@@ -102,12 +74,56 @@
       font-weight: 400;
       letter-spacing: 0.025em;
     }
+
+    /* Loader Container */
+    .loader-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      background: #1a1a1a;
+      transition: opacity 0.5s ease;
+    }
+
+    .loader {
+      display: flex;
+      gap: 6px;
+    }
+
+    .loader div {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #888;
+      /* visible against dark bg */
+      animation: bounce 0.6s infinite alternate;
+    }
+
+    .loader div:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .loader div:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes bounce {
+      from {
+        transform: translateY(0);
+        opacity: 0.5;
+      }
+
+      to {
+        transform: translateY(-8px);
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 
 <body class="bg-[#0d0d0d] text-white overflow-x-hidden">
 
-  <!-- ✅ HTML HEADER -->
+  <!-- HTML HEADER -->
   <header class="border-b border-gray-300 bg-black min-h-[60px] px-4 py-6 tracking-wide relative z-50">
     <div class="flex flex-wrap items-center max-lg:gap-y-6 max-sm:gap-x-4">
       <!-- Brand -->
@@ -128,7 +144,8 @@
 
         <ul class="flex flex-col space-y-8 lg:space-y-0 text-center lg:text-left lg:flex-row space-x-4 w-full">
           <li class="mb-10 hidden max-lg:block">
-            <a href="index.html" class="flex text-xl text-left items-center font-bold  font-sans">
+            <a href="https://amittowallpapers.netlify.app/"
+              class="flex text-xl text-left items-center font-bold  font-sans">
               <img src="assets/images/logo/luffy-hat.png" class="w-10 lg:-mt-1" alt="">
               Amitto<span class="text-red-400">Wallpapers</span>
             </a>
@@ -171,19 +188,19 @@
         <ul class="flex text-2xl space-x-4" aria-label="Social media">
           <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Instagram"
               aria-label="Instagram" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="800"
-              class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-pink-600 transition-colors"><i
+              class="h-10 w-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-pink-600 transition-colors"><i
                 class="fab fa-instagram text-white"></i></a></li>
           <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Facebook" aria-label="Facebook"
               data-aos="zoom-in" data-aos-delay="700" data-aos-duration="800"
-              class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-blue-600 transition-colors"><i
+              class="h-10 w-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-blue-600 transition-colors"><i
                 class="fab fa-facebook-f text-white"></i></a></li>
           <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="YouTube" aria-label="YouTube"
               data-aos="zoom-in" data-aos-delay="900" data-aos-duration="800"
-              class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-red-600 transition-colors"><i
+              class="h-10 w-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-red-600 transition-colors"><i
                 class="fab fa-youtube text-white"></i></a></li>
           <li><a href="comingsoon.html" target="_blank" rel="noreferrer noopener" title="Discord" aria-label="Discord"
               data-aos="zoom-in" data-aos-delay="1100" data-aos-duration="800"
-              class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-purple-700 transition-colors"><i
+              class="h-10 w-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-purple-700 transition-colors"><i
                 class="fab fa-discord text-white"></i></a></li>
         </ul>
       </div>
@@ -210,8 +227,7 @@
         class="w-full outline-none bg-white text-black text-[15px] placeholder-gray-500 placeholder-opacity-100 focus:placeholder-gray-400 transition" />
     </div>
   </header>
-
-  <!-- MASONRY GRID (JS populates) -->
+  <!-- Grid container -->
   <div id="wallpaperGrid" class="w-[95%] mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4"></div>
 
   <main id="main">
@@ -260,8 +276,13 @@
         <h2 id="latest-heading" class="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">
           <i class="fa-solid fa-clock mr-2" aria-hidden="true"></i>Latest Wallpapers
         </h2>
-        <div id="latestwallpaperGrid" class="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
+        <div id="latestwallpaperGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- JS injects cards here -->
+        </div>
+        <div class="mt-8 text-center">
+          <button id="latest-show-more"
+            class="px-6 py-3 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition">Show
+            More</button>
         </div>
       </div>
     </section>
@@ -333,17 +354,27 @@
               <h3 class="text-lg font-semibold">Demon Slayer</h3>
             </div>
           </a>
+          <a href="date-a-live.html" target="_blank" rel="noreferrer noopener"
+            class="group hidden more-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
+            data-aos="zoom-in" data-aos-delay="500">
+            <img src="assets/images/anime-logos/date-a-live.png" alt="Date A Live category"
+              class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
+              height="320" loading="lazy" />
+            <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-4 text-center">
+              <h3 class="text-lg font-semibold">Date A Live</h3>
+            </div>
+          </a>
           <a href="your-name.html" target="_blank" rel="noreferrer noopener"
             class="group hidden more-category relative rounded-xl overflow-hidden shadow-lg bg-[#1a1a1a] hover:scale-105 transition duration-300"
             data-aos="zoom-in" data-aos-delay="600">
-            <img src="assets/images/anime-logos/your-name.jpg" alt="Your Name category"
+            <img src="assets/images/anime-logos/your-name.png" alt="Your Name category"
               class="w-full h-48 object-cover opacity-80 group-hover:opacity-100 transition duration-300" width="640"
               height="320" loading="lazy" />
             <div class="absolute bottom-0 left-0 right-0 bg-black/80 p-4 text-center">
               <h3 class="text-lg font-semibold">Your Name</h3>
             </div>
           </a>
-         
+
         </div>
 
         <!-- Show More / Less -->
@@ -355,6 +386,7 @@
             class="px-6 py-3 cursor-pointer bg-red-600 hover:bg-red-700 text-white rounded-lg font-semibold transition hidden">Show
             Less</button>
         </div>
+
       </div>
     </section>
 
@@ -508,10 +540,13 @@
                 rel="noreferrer noopener" class="text-green-500 hover:underline">Privacy</a></label>
           </div>
           <div class="flex items-center mt-2" data-aos="zoom-in" data-aos-delay="1400">
-            <input type="checkbox" id="emailConsentCheckbox"
-              class="h-4 w-4 text-blue-600 cursor-pointer focus:ring-blue-500 border-gray-700 rounded bg-[#1a1a1a]" />
-            <label for="emailConsentCheckbox" class="ml-2 cursor-pointer block text-sm text-gray-300">I agree to receive
-              emails about updates and promotions.</label>
+            <div class="flex items-center mt-2">
+              <input type="checkbox" id="promoCheck" name="promoConsent" value="Yes"
+                class="h-4 w-4 text-blue-600 cursor-pointer border-gray-700 rounded bg-[#1a1a1a]" />
+              <label for="promoCheck" class="ml-2 text-sm text-gray-300 cursor-pointer">
+                I agree to receive emails about updates and promotions.
+              </label>
+            </div>
           </div>
           <button type="submit" data-aos="zoom-in" data-aos-delay="1600"
             class="text-white bg-blue-600 hover:bg-blue-700 rounded-md text-[15px] font-medium px-4 py-2 w-full cursor-pointer mt-2">Send
@@ -626,10 +661,11 @@
   </footer>
 
   <!-- External Modules (your existing app logic) -->
-  <script type="module" src="assets/js/index.js" defer></script>
+  <script src="assets/js/wallpaperStorage.js" defer></script>
+  <script src="assets/js/sortHelper.js" defer></script>
   <script type="module" src="assets/js/latest.js" defer></script>
   <script type="module" src="assets/js/search.js" defer></script>
-  <!-- <script type="module" src="assets/js/wallpaper.js" defer></script> -->
+  <script type="module" src="assets/js/wallpaper.js" defer></script>
 
   <!-- AOS JS (once) -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
@@ -707,6 +743,10 @@
 
           try {
             const formData = new FormData(contactForm);
+            formData.set(
+              "promoConsent",
+              document.getElementById("promoCheck").checked ? "Yes" : "No"
+            );
             const response = await fetch("https://formspree.io/f/xgvydqkp", {
               method: "POST",
               body: formData,
@@ -935,52 +975,34 @@
     });
   </script>
   <script>
-    console.log("code is running perfectly!");
-    console.log("No errors!");
-    console.log("All systems operational!");
+    function addImageSchema(url, name) {
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "ImageObject",
+        "contentUrl": url,
+        "name": name + " Wallpaper",
+        "license": "https://amittowallpapers.netlify.app/terms.html",
+        "acquireLicensePage": "https://amittowallpapers.netlify.app/terms.html",
+        "creator": {
+          "@type": "Organization",
+          "name": "AmittoWallpapers",
+          "url": "https://amittowallpapers.netlify.app"
+        },
+        "creditText": "AmittoWallpapers",
+        "copyrightNotice": "© 2025 AmittoWallpapers"
+      };
 
-    // Additional logging for debugging
-    console.log("Debugging information:");
-    console.log("User is on page:", window.location.href);
-    console.log("Current time:", new Date().toLocaleTimeString());
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
+    }
 
-    // You can add more logs as needed for specific functionalities
-    console.log("Additional debugging information:");
-    console.log("Viewport size:", window.innerWidth, "x", window.innerHeight);
-    console.log("User's preferred color scheme:", window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    // Example usage: call this with your wallpaper data
+    addImageSchema(
+      "https://amittowallpapers.netlify.app/images/goku-blue.jpg",
+      "Goku Blue"
+    );
   </script>
-    <script>
-  function addImageSchema(url, name) {
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "ImageObject",
-      "contentUrl": url,
-      "name": name + " Wallpaper",
-      "license": "https://amittowallpapers.netlify.app/terms.html",
-      "acquireLicensePage": "https://amittowallpapers.netlify.app/terms.html",
-      "creator": {
-        "@type": "Organization",
-        "name": "AmittoWallpapers",
-        "url": "https://amittowallpapers.netlify.app"
-      },
-      "creditText": "AmittoWallpapers",
-      "copyrightNotice": "© 2025 AmittoWallpapers"
-    };
-
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify(schema);
-    document.head.appendChild(script);
-  }
-
-  // Example usage: call this with your wallpaper data
-  addImageSchema(
-    "https://amittowallpapers.netlify.app/images/goku-blue.jpg"
-  );
-</script>
 </body>
-
-
-
 </html>
-
