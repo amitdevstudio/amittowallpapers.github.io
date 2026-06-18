@@ -1083,67 +1083,67 @@ export const wallpapers = [
 
   //   // Live Wallpapers
   //   // Naruto Live Wallpaper
-  {
-    character: "Naruto Uzumaki",
-    type: "Desktop Live",
-    tags: ["Naruto", "Live Wallpaper", "Desktop", "Naruto", "Naruto Uzumaki"],
-    videos: [
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788048/1_i51dwz.webm",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788053/1_zipeew.mp4",
-        date: "2027-09-04",
-      },  
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788054/2_shacw5.webm",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788054/2_ba4gfy.mp4",
-        date: "2027-09-04",
-      },  
-    ]
-  },
-  {
-    character: "Itachi Uchiha",
-    type: "Desktop Live",
-    tags: ["Itachi", "Live Wallpaper", "Desktop", "Naruto", "Itachi Uchiha"],
-    videos: [
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788046/1_vuw12c.webm",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788050/1_qfmjwx.mp4",
-        date: "2027-09-04",
-      },
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788049/2_rdyyyy.webm",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788052/2_tnj9qi.mp4",
-        date: "2027-09-04",
-      },
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788046/3_dleky9.webm",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788040/3_ts7cyt.mp4",
-        date: "2027-09-04",
-      },
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788046/4_n8diqc.webm",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788043/4_duzeoe.mp4",
-        date: "2027-09-04",
-      },
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788046/5_vovchl.webm",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788041/5_fr4edd.mp4",
-        date: "2027-09-04",
-      },
-    ]
-  },
-  {
-    character: "Itachi Uchiha",
-    type: "Mobile Live",
-    tags: ["Itachi", "Live Wallpaper", "Mobile", "Naruto", "Itachi Uchiha"],
-    videos: [
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788061/1_h5sbr6.webm",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788043/1_urpunt.mp4",
-        date: "2027-09-04",
-      },
-    ]
-  },
+  // {
+  //   character: "Naruto Uzumaki",
+  //   type: "Desktop Live",
+  //   tags: ["Naruto", "Live Wallpaper", "Desktop", "Naruto", "Naruto Uzumaki"],
+  //   videos: [
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788048/1_i51dwz.webm",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788053/1_zipeew.mp4",
+  //       date: "2027-09-04",
+  //     },  
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788054/2_shacw5.webm",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788054/2_ba4gfy.mp4",
+  //       date: "2027-09-04",
+  //     },  
+  //   ]
+  // },
+  // {
+  //   character: "Itachi Uchiha",
+  //   type: "Desktop Live",
+  //   tags: ["Itachi", "Live Wallpaper", "Desktop", "Naruto", "Itachi Uchiha"],
+  //   videos: [
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788046/1_vuw12c.webm",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788050/1_qfmjwx.mp4",
+  //       date: "2027-09-04",
+  //     },
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788049/2_rdyyyy.webm",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788052/2_tnj9qi.mp4",
+  //       date: "2027-09-04",
+  //     },
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788046/3_dleky9.webm",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788040/3_ts7cyt.mp4",
+  //       date: "2027-09-04",
+  //     },
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788046/4_n8diqc.webm",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788043/4_duzeoe.mp4",
+  //       date: "2027-09-04",
+  //     },
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788046/5_vovchl.webm",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788041/5_fr4edd.mp4",
+  //       date: "2027-09-04",
+  //     },
+  //   ]
+  // },
+  // {
+  //   character: "Itachi Uchiha",
+  //   type: "Mobile Live",
+  //   tags: ["Itachi", "Live Wallpaper", "Mobile", "Naruto", "Itachi Uchiha"],
+  //   videos: [
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788061/1_h5sbr6.webm",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788043/1_urpunt.mp4",
+  //       date: "2027-09-04",
+  //     },
+  //   ]
+  // },
   // {
   //   character: "Kakashi Hatake",
   //   type: "Desktop Live",
@@ -1156,166 +1156,166 @@ export const wallpapers = [
   //     },
   //   ]
   // },
-  {
-    character: "Sasuke Uchiha",
-    type: "Desktop Live",
-    tags: ["Sasuke", "Live Wallpaper", "Desktop", "Naruto", "Sasuke Uchiha"],
-    videos: [
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788058/1_gbnxz1.webm",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788044/1_frkxld.mp4",
-        date: "2027-09-04",
-      },
-    ]
-  },
-  {
-    character: "Madara Uchiha",
-    type: "Desktop Live",
-    tags: ["Madara", "Live Wallpaper", "Desktop", "Naruto", "Madara Uchiha"],
-    videos: [
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788046/1_cs2tt8.webm",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788059/1_mayhfd.mp4",
-        date: "2027-09-04",
-      },
-    ]
-  },
+  // {
+  //   character: "Sasuke Uchiha",
+  //   type: "Desktop Live",
+  //   tags: ["Sasuke", "Live Wallpaper", "Desktop", "Naruto", "Sasuke Uchiha"],
+  //   videos: [
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788058/1_gbnxz1.webm",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788044/1_frkxld.mp4",
+  //       date: "2027-09-04",
+  //     },
+  //   ]
+  // },
+  // {
+  //   character: "Madara Uchiha",
+  //   type: "Desktop Live",
+  //   tags: ["Madara", "Live Wallpaper", "Desktop", "Naruto", "Madara Uchiha"],
+  //   videos: [
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788046/1_cs2tt8.webm",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788059/1_mayhfd.mp4",
+  //       date: "2027-09-04",
+  //     },
+  //   ]
+  // },
   // Dragon Ball Live Wallpaper
-  {
-    character: "Son Goku",
-    type: "Desktop Live",
-    tags: ["Dragon Ball", "Goku", "Vegeta", "Live Wallpaper", "Desktop", "Prince Vegeta","Son Goku"],
-    videos: [
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788049/1_xnqigh.webm",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788037/1_vqorj1.mp4",
-        date: "2027-09-05",
-      },
-    ]
-  },
-  {
-    character: "Son Goku, Vegeta",
-    type: "Mobile Live",
-    tags: ["Dragon Ball", "Goku", "Vegeta", "Live Wallpaper", "Mobile", "Prince Vegeta","Son Goku"],
-    videos: [
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788039/1_k9c6ap.webm",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788033/1_xi3lgb.mp4",
-        date: "2027-09-04",
-      },
-    ]
-  },
-  {
-    character: "Son Goku",
-    type: "Desktop Live",
-    tags: ["Dragon Ball", "Goku", "Live Wallpaper", "Desktop", "Son Goku"],
-    videos: [
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788035/1_rz3fsz.webm",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788059/1_xrn29s.mp4",
-        date: "2027-09-04",
-      },
-    ]
-  },
-  {
-    character: "Vegeta",
-    type: "Desktop Live",
-    tags: ["Vegeta", "Live Wallpaper", "Desktop", "Dragon Ball", "Vegeta"],
-    videos: [
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788037/1_urfphj.webm",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788036/1_xyjdy9.mp4",
-        date: "2027-09-04",
-      },
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788039/2_bon8r7.webm",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788036/2_gk4yyg.mp4",
-        date: "2027-09-04",
-      },
-    ]
-  },
+  // {
+  //   character: "Son Goku",
+  //   type: "Desktop Live",
+  //   tags: ["Dragon Ball", "Goku", "Vegeta", "Live Wallpaper", "Desktop", "Prince Vegeta","Son Goku"],
+  //   videos: [
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788049/1_xnqigh.webm",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788037/1_vqorj1.mp4",
+  //       date: "2027-09-05",
+  //     },
+  //   ]
+  // },
+  // {
+  //   character: "Son Goku, Vegeta",
+  //   type: "Mobile Live",
+  //   tags: ["Dragon Ball", "Goku", "Vegeta", "Live Wallpaper", "Mobile", "Prince Vegeta","Son Goku"],
+  //   videos: [
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788039/1_k9c6ap.webm",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788033/1_xi3lgb.mp4",
+  //       date: "2027-09-04",
+  //     },
+  //   ]
+  // },
+  // {
+  //   character: "Son Goku",
+  //   type: "Desktop Live",
+  //   tags: ["Dragon Ball", "Goku", "Live Wallpaper", "Desktop", "Son Goku"],
+  //   videos: [
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788035/1_rz3fsz.webm",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788059/1_xrn29s.mp4",
+  //       date: "2027-09-04",
+  //     },
+  //   ]
+  // },
+  // {
+  //   character: "Vegeta",
+  //   type: "Desktop Live",
+  //   tags: ["Vegeta", "Live Wallpaper", "Desktop", "Dragon Ball", "Vegeta"],
+  //   videos: [
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788037/1_urfphj.webm",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788036/1_xyjdy9.mp4",
+  //       date: "2027-09-04",
+  //     },
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788039/2_bon8r7.webm",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788036/2_gk4yyg.mp4",
+  //       date: "2027-09-04",
+  //     },
+  //   ]
+  // },
   // One Piece Live Wallpapers
-  {
-    character: "Going Merry",
-    type: "Desktop Live",
-    tags: ["Going Merry", "Live Wallpaper", "Desktop", "One Piece", "Merry"],
-    videos: [
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788067/1_g3akfi.webm",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788068/1_td0cra.mp4",
-        date: "2027-09-04",
-      },
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788063/2_n00b1b.webm",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788073/2_iazlcr.mp4",
-        date: "2027-09-04",
-      },
-    ]
-  },
+  // {
+  //   character: "Going Merry",
+  //   type: "Desktop Live",
+  //   tags: ["Going Merry", "Live Wallpaper", "Desktop", "One Piece", "Merry"],
+  //   videos: [
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788067/1_g3akfi.webm",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788068/1_td0cra.mp4",
+  //       date: "2027-09-04",
+  //     },
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788063/2_n00b1b.webm",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788073/2_iazlcr.mp4",
+  //       date: "2027-09-04",
+  //     },
+  //   ]
+  // },
   // Re:Zero Live Wallpapers
-  {
-    character: "Rem & Ram",
-    type: "Desktop Live",
-    tags: ["Rem", "Ram", "Live Wallpaper", "Desktop", "Re:Zero"],
-    videos: [
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788077/1_e4sgnb.webm",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788073/1_nkl5y9.mp4",
-        date: "2027-09-04",
-      },
-    ]
-  },
+  // {
+  //   character: "Rem & Ram",
+  //   type: "Desktop Live",
+  //   tags: ["Rem", "Ram", "Live Wallpaper", "Desktop", "Re:Zero"],
+  //   videos: [
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788077/1_e4sgnb.webm",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788073/1_nkl5y9.mp4",
+  //       date: "2027-09-04",
+  //     },
+  //   ]
+  // },
   // Your Name Live Wallpapers
-  {
-    character: "Taki Tachibana &  Mitsuha Miyamizu",
-    type: "Desktop Live",
-    tags: ["Taki Tachibana", "Mitsuha Miyamizu", "Live Wallpaper", "Desktop", "Your Name"],
-    videos: [
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788065/1_cay0ss.webm",
-        download: "https://res.cloudinary.com/YOUR_CLOUD_NAME/video/upload/q_auto,f_auto,w_500/videos/",
-        date: "2027-09-05",
-      },
-    ]
-  },
+  // {
+  //   character: "Taki Tachibana &  Mitsuha Miyamizu",
+  //   type: "Desktop Live",
+  //   tags: ["Taki Tachibana", "Mitsuha Miyamizu", "Live Wallpaper", "Desktop", "Your Name"],
+  //   videos: [
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775788065/1_cay0ss.webm",
+  //       download: "https://res.cloudinary.com/YOUR_CLOUD_NAME/video/upload/q_auto,f_auto,w_500/videos/",
+  //       date: "2027-09-05",
+  //     },
+  //   ]
+  // },
   // Demon Slayer Live Wallpapers
-  {
-    character: "Giyu Tomioka",
-    type: "Desktop Live",
-    tags: ["Demon Slayer", "Live Wallpaper", "Desktop", "Anime", "Giyu", "Giyu Tomioka",],
-    videos: [
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775792246/1_suftuj.webm",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775792246/1_suftuj.webm",
-        date: "2027-09-04",
-      },
-    ]
-  },
-  {
-    character: "Michikatsu Tsugikuni (Kokoshibu)",
-    type: "Desktop Live",
-    tags: ["Demon Slayer", "Live Wallpaper", "Desktop", "Anime", "Kokoshibu", "Michikatsu Tsugikuni",],
-    videos: [
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775792249/1_qxn0nx.webm",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775792246/1_nkmgoy.mp4",
-        date: "2027-09-04",
-      },
-    ]
-  },
+  // {
+  //   character: "Giyu Tomioka",
+  //   type: "Desktop Live",
+  //   tags: ["Demon Slayer", "Live Wallpaper", "Desktop", "Anime", "Giyu", "Giyu Tomioka",],
+  //   videos: [
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775792246/1_suftuj.webm",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775792246/1_suftuj.webm",
+  //       date: "2027-09-04",
+  //     },
+  //   ]
+  // },
+  // {
+  //   character: "Michikatsu Tsugikuni (Kokoshibu)",
+  //   type: "Desktop Live",
+  //   tags: ["Demon Slayer", "Live Wallpaper", "Desktop", "Anime", "Kokoshibu", "Michikatsu Tsugikuni",],
+  //   videos: [
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775792249/1_qxn0nx.webm",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775792246/1_nkmgoy.mp4",
+  //       date: "2027-09-04",
+  //     },
+  //   ]
+  // },
 
   // Genshin Impact Live Wallpapers
-    {
-    character: "Flins",
-    type: "Desktop Live",
-    tags: ["Genshin Impact", "Live Wallpaper", "Desktop", "Flins", ],
-    videos: [
-      {
-        preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775965305/1_oindrp.mp4  ",
-        download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775965305/1_oindrp.mp4",
-        date: "2027-09-04",
-      },
-    ]
-  },
+  //   {
+  //   character: "Flins",
+  //   type: "Desktop Live",
+  //   tags: ["Genshin Impact", "Live Wallpaper", "Desktop", "Flins", ],
+  //   videos: [
+  //     {
+  //       preview: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775965305/1_oindrp.mp4  ",
+  //       download: "https://res.cloudinary.com/dgvq5d7ur/video/upload/v1775965305/1_oindrp.mp4",
+  //       date: "2027-09-04",
+  //     },
+  //   ]
+  // },
   // Add more wallpaper objects here...
 ];
