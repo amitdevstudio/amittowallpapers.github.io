@@ -1,39 +1,60 @@
 export const wallpapers = [
   // Bleach
+  
   {
-    character: "Ichigo Kurosaki",
+    character: "Ichigo Kurosaki", // Desktop Wallpapers
     type: "Desktop",
     tags: ["Bleach", "Anime", "Desktop", "Ichigo"],
     images: [
       {
-        url: "assets/images/wallpapers/bleach/desktop/ichigo/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847151/5_swjlxf.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/bleach/desktop/ichigo/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847151/4_e8bxpq.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847150/3_uan5lk.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847149/2_kgzdiw.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847149/1_flwgg8.jpg",
         date: "2025-07-26"
       },
     ]
   },
   {
-    character: "Ichigo Kurosaki",
+    character: "Ichigo Kurosaki", // Mobile Wallpapers
     type: "Mobile",
     tags: ["Bleach", "Anime", "Mobile", "Ichigo"],
     images: [
       {
-        url: "assets/images/wallpapers/bleach/mobile/ichigo/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847163/6_hu9iss.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/bleach/mobile/ichigo/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847162/5_e04m8w.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/bleach/mobile/ichigo/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847161/4_fwi9qt.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/bleach/mobile/ichigo/4.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847160/3_uduzeb.jpg",
+        date: "2025-07-27"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847160/2_gzvij6.jpg",
+        date: "2025-07-27"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847159/1_gfpiz0.jpg",
         date: "2025-07-27"
       },
     ]
@@ -44,7 +65,7 @@ export const wallpapers = [
     tags: ["Bleach", "Anime", "Mobile", "Aizen"],
     images: [
       {
-        url: "assets/images/wallpapers/bleach/mobile/aizen/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847157/1_m5utci.jpg",
         date: "2025-07-26"
       },
     ]
@@ -55,30 +76,45 @@ export const wallpapers = [
     tags: ["Bleach", "Anime", "Desktop", "Urahara"],
     images: [
       {
-        url: "assets/images/wallpapers/bleach/desktop/urahara/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847155/1_tirszl.jpg",
         date: "2025-07-26"
       },
     ]
   },
-  // {
-  //   character: "Kisuke Urahara",
-  //   type: "Mobile",
-  //   tags: ["Bleach", "Anime", "Mobile", "Urahara"],
-  //   images: [
-  //     {
-  //       url: "assets/images/wallpapers/bleach/mobile/urahara/1.jpg",
-  //       date: "2025-07-26"
-  //     },
-  //   ]
-  // },
+  {
+    character: "Kisuke Urahara",
+    type: "Mobile",
+    tags: ["Bleach", "Anime", "Mobile", "Urahara"],
+    images: [
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847157/1_m5utci.jpg",
+        date: "2025-07-26"
+      },
+    ]
+  },
   {
     character: "Genryusai Shigekuni Yamamoto",
     type: "Desktop",
     tags: ["Bleach", "Anime", "Desktop", "Yamamoto"],
     images: [
       {
-        url: "assets/images/wallpapers/bleach/desktop/yamamoto/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847156/1_z23aao.jpg",
         date: "2025-07-27"
+      },
+    ]
+  },
+  {
+    character: "Rukia Kuchiki",
+    type: "Mobile",
+    tags: ["Bleach", "Anime", "Mobile", "Rukia"],
+    images: [
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847154/2_jttfq2.png",
+        date: "2025-07-26"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847153/1_dn6kdm.png",
+        date: "2025-07-26"
       },
     ]
   },
@@ -88,7 +124,7 @@ export const wallpapers = [
     tags: ["Bleach", "Anime", "Mobile", "Grimmjow"],
     images: [
       {
-        url: "assets/images/wallpapers/bleach/mobile/grimmjow/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847158/1_liva84.jpg",
         date: "2025-07-27"
       },
     ]
@@ -99,11 +135,11 @@ export const wallpapers = [
     tags: ["Bleach", "Anime", "Mobile", "Tōshirō"],
     images: [
       {
-        url: "assets/images/wallpapers/bleach/mobile/toshiro/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847166/2_zyun2y.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/bleach/mobile/toshiro/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847164/1_zrqxwq.jpg",
         date: "2025-07-27"
       },
     ]
@@ -115,15 +151,15 @@ export const wallpapers = [
     tags: ["Demon Slayer", "Anime", "Mobile", "Tanjiro"],
     images: [
       {
-        url: "assets/images/wallpapers/demon-slayer/mobile/tanjiro/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847203/3_j2lsxw.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/demon-slayer/mobile/tanjiro/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847203/2_f2ak91.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/demon-slayer/mobile/tanjiro/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847202/1_qlmtho.jpg",
         date: "2025-07-26"
       },
     ]
@@ -134,23 +170,23 @@ export const wallpapers = [
     tags: ["Demon Slayer", "Anime", "Mobile", "Nezuko"],
     images: [
       {
-        url: "assets/images/wallpapers/demon-slayer/mobile/nezuko/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847198/5_ntapch.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/demon-slayer/mobile/nezuko/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847197/4_mi1hp9.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/demon-slayer/mobile/nezuko/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847196/3_pq9p6c.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/demon-slayer/mobile/nezuko/4.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847194/2_lb185x.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/demon-slayer/mobile/nezuko/5.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847193/1_grzrlt.jpg",
         date: "2025-07-27"
       },
     ]
@@ -161,11 +197,11 @@ export const wallpapers = [
     tags: ["Demon Slayer", "Anime", "Mobile", "zenitsu"],
     images: [
       {
-        url: "assets/images/wallpapers/demon-slayer/mobile/zenitsu/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847207/2_drgf6x.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/demon-slayer/mobile/zenitsu/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847206/1_tsekz7.jpg",
         date: "2025-07-26"
       },
     ]
@@ -176,7 +212,7 @@ export const wallpapers = [
     tags: ["Demon Slayer", "Anime", "Mobile", "Kokoshibu", "Michikatsu Tsugikuni"],
     images: [
       {
-        url: "assets/images/wallpapers/demon-slayer/mobile/kokoshibu/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847192/1_mclosz.jpg",
         date: "2025-07-26"
       },
     ]
@@ -187,7 +223,7 @@ export const wallpapers = [
     tags: ["Demon Slayer", "Anime", "Mobile", "Giyu Tomioka"],
     images: [
       {
-        url: "assets/images/wallpapers/demon-slayer/mobile/giyu/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847189/1_uzitss.jpg",
         date: "2025-07-26"
       },
     ]
@@ -199,19 +235,19 @@ export const wallpapers = [
     tags: ["Dragon Ball", "Anime", "Desktop", "Goku", "Son Goku"],
     images: [
       {
-        url: "assets/images/wallpapers/dragon-ball/desktop/goku/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847209/4_mhlqnv.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/desktop/goku/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847208/3_x12yhy.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/desktop/goku/3.jpg",
-        date: "2025-07-26"
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847208/2_bacu7v.jpg",
+        date: "2025-07-26" 
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/desktop/goku/4.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847207/1_x45wk3.jpg",
         date: "2025-08-1"
       },
     ]
@@ -222,67 +258,67 @@ export const wallpapers = [
     tags: ["Dragon Ball", "Anime", "Mobile", "Goku", "Son Goku"],
     images: [
       {
-        url: "assets/images/wallpapers/dragon-ball/mobile/goku/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847220/9_tmtlaz.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/mobile/goku/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847220/8_ngeqvk.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/mobile/goku/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847219/7_tskunh.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/mobile/goku/4.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847218/6_vowqy5.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/mobile/goku/5.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847218/6_vowqy5.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/mobile/goku/6.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847217/4_dtzt6b.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/mobile/goku/7.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847217/3_so2cpy.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/mobile/goku/8.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847216/2_malcks.jpg",
         date: "2025-08-31"
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/mobile/goku/9.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847215/16_mxikoc.jpg",
         date: "2025-08-31"
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/mobile/goku/10.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847215/15_j0stmb.jpg",
         date: "2025-08-31"
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/mobile/goku/11.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847214/14_epficr.jpg",
         date: "2025-08-31"
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/mobile/goku/12.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847213/12_ggzoo0.jpg",
         date: "2025-08-31"
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/mobile/goku/13.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847213/12_ggzoo0.jpg",
         date: "2025-08-31"
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/mobile/goku/14.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847212/11_dccf9o.jpg",
         date: "2025-08-31"
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/mobile/goku/15.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847212/10_qdnnty.jpg",
         date: "2025-08-31"
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/mobile/goku/16.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847211/1_zofb4g.jpg",
         date: "2025-09-01"
       },
     ]
@@ -293,7 +329,7 @@ export const wallpapers = [
     tags: ["Dragon Ball", "Anime", "Mobile", "Goku", "Goku Black"],
     images: [
       {
-        url: "assets/images/wallpapers/dragon-ball/mobile/goku-black/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847221/1_w5esyh.jpg",
         date: "2025-08-01"
       },
     ]
@@ -304,11 +340,11 @@ export const wallpapers = [
     tags: ["Dragon Ball", "Anime", "Desktop", "Vegeta", "Prince Vegeta", "Vegeta IV"],
     images: [
       {
-        url: "assets/images/wallpapers/dragon-ball/desktop/vegeta/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847210/2_s92phj.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/desktop/vegeta/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847210/1_w7gstt.jpg",
         date: "2025-07-26"
       },
     ]
@@ -319,15 +355,15 @@ export const wallpapers = [
     tags: ["Dragon Ball", "Anime", "Mobile", "Vegeta", "Prince Vegeta", "Vegeta IV"],
     images: [
       {
-        url: "assets/images/wallpapers/dragon-ball/mobile/vegeta/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847210/1_w7gstt.jpg",
         date: "2025-07-03"
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/mobile/vegeta/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847224/2_boi8wf.jpg",
         date: "2025-07-27"
       },
       {
-        url: "assets/images/wallpapers/dragon-ball/mobile/vegeta/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847221/1_s5syhu.jpg",
         date: "2025-09-01"
       },
     ]
@@ -339,7 +375,7 @@ export const wallpapers = [
     tags: ["Jujutsu Kaisen", "Anime", "Mobile", "Satoru Gojo", "Gojo"],
     images: [
       {
-        url: "assets/images/wallpapers/jujutsu-kaisen/mobile/gojo/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847226/1_gqh10i.jpg",
         date: "2025-07-27"
       },
     ]
@@ -351,27 +387,27 @@ export const wallpapers = [
     tags: ["Naruto", "Anime", "Mobile", "Naruto", "Akatsuki"],
     images: [
       {
-        url: "assets/images/wallpapers/naruto/mobile/akatsuki/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847233/4_ajy6yr.jpg",
         date: "2025-07-27"
       },
       {
-        url: "assets/images/wallpapers/naruto/mobile/akatsuki/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847246/5_ntdyms.jpg",
         date: "2025-07-27"
       },
       {
-        url: "assets/images/wallpapers/naruto/mobile/akatsuki/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847245/4_oguctq.jpg",
         date: "2025-07-27"
       },
       {
-        url: "assets/images/wallpapers/naruto/mobile/akatsuki/4.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847245/3_sracf0.jpg",
         date: "2025-07-27"
       },
       {
-        url: "assets/images/wallpapers/naruto/mobile/akatsuki/5.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847244/2_ms0qhh.jpg",
         date: "2025-07-27"
       },
       {
-        url: "assets/images/wallpapers/naruto/mobile/akatsuki/6.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847244/1_zy2jmi.jpg",
         date: "2025-07-27"
       },
     ]
@@ -382,11 +418,15 @@ export const wallpapers = [
     tags: ["Naruto", "Anime", "Desktop", "Naruto", "Naruto Uzumaki"],
     images: [
       {
-        url: "assets/images/wallpapers/naruto/desktop/naruto/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847243/3_yjgylr.jpg",
         date: "2025-07-27"
       },
       {
-        url: "assets/images/wallpapers/naruto/desktop/naruto/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847243/2_rpqhvy.jpg",
+        date: "2025-07-27"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847242/1_eb2hgz.jpg",
         date: "2025-07-27"
       },
     ]
@@ -397,12 +437,43 @@ export const wallpapers = [
     tags: ["Naruto", "Anime", "Mobile", "Naruto", "Naruto Uzumaki"],
     images: [
       {
-        url: "assets/images/wallpapers/naruto/mobile/naruto/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847257/4_uejbz9.jpg",
         date: "2025-07-27"
       },
       {
-        url: "assets/images/wallpapers/naruto/mobile/naruto/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847256/3_p4vk8p.jpg",
         date: "2025-07-27"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847255/2_oxgci2.jpg",
+        date: "2025-07-27"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847255/1_c514ha.jpg",
+        date: "2025-07-27"
+      },
+    ]
+  },
+    {
+    character: "Itachi Uchiha",
+    type: "Desktop",
+    tags: ["Naruto", "Anime", "Desktop", "Itachi Uchiha", "Itachi"],
+    images: [
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847233/4_ajy6yr.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847231/3_y7mpl3.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847230/2_n6rfq0.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847228/1_lqbbpn.jpg",
+        date: "2025-07-26"
       },
     ]
   },
@@ -412,46 +483,135 @@ export const wallpapers = [
     tags: ["Naruto", "Anime", "Mobile", "Naruto", "Itachi Uchiha"],
     images: [
       {
-        url: "assets/images/wallpapers/naruto/mobile/itachi/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847251/8_m1eurw.jpg",
         date: "2025-07-03"
       },
       {
-        url: "assets/images/wallpapers/naruto/mobile/itachi/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847250/7_xiufe3.jpg",
         date: "2025-07-03"
       },
       {
-        url: "assets/images/wallpapers/naruto/mobile/itachi/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847250/6_yz530g.jpg",
         date: "2025-07-03"
       },
       {
-        url: "assets/images/wallpapers/naruto/mobile/itachi/4.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847249/5_dhdosw.jpg",
         date: "2025-07-03"
       },
       {
-        url: "assets/images/wallpapers/naruto/mobile/itachi/5.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847249/4_zj7pqa.jpg",
         date: "2025-07-03"
       },
       {
-        url: "assets/images/wallpapers/naruto/mobile/itachi/6.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847248/3_zkgr9h.jpg",
         date: "2025-07-03"
       },
       {
-        url: "assets/images/wallpapers/naruto/mobile/itachi/7.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847248/2_fdeuww.jpg",
         date: "2025-07-03"
       },
       {
-        url: "assets/images/wallpapers/naruto/mobile/itachi/8.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847247/1_fspiui.jpg",
         date: "2025-07-03"
       },
     ]
   },
   {
+    character: "Kakashi Hatake",
+    type: "Desktop",
+    tags: ["Naruto", "Anime", "Desktop", "Kakashi Hatake"],
+    images: [
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847241/9_xlaiwj.png",
+        date: "2025-07-03"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847241/8_jjpqf5.png",
+        date: "2025-07-03"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847240/7_tymynq.png",
+        date: "2025-07-03"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847240/6_yctd9x.png",
+        date: "2025-07-03"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847239/5_qky4wt.jpg",
+        date: "2025-07-03"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847239/4_nqxt1z.png",
+        date: "2025-07-03"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847238/3_v4isld.jpg",
+        date: "2025-07-03"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847237/2_c08a9f.jpg",
+        date: "2025-07-03"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847235/10_uryajf.png",
+        date: "2025-07-03"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847234/1_f8wq9g.jpg",
+        date: "2025-07-03"
+      },
+    ]
+  },
+  {
+    character: "Kakashi Hatake",
+    type: "Mobile",
+    tags: ["Naruto", "Anime", "Mobile", "Naruto", "Kakashi Hatake"],
+    images: [
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847253/3_ojeqzb.webp",
+        date: "2025-07-03"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847253/2_trbe8r.webp",
+        date: "2025-07-03"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847252/1_ozm417.webp",
+        date: "2025-07-03"
+      },
+    ]
+  },
+  {
+    character: "Sasuke Uchiha",
+    type: "Mobile",
+    tags: ["Naruto", "Anime", "Mobile", "Naruto", "Sasuke Uchiha"],
+    images: [
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847264/4_jnzpbk.webp",
+        date: "2025-07-03"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847263/3_j1e19k.webp",
+        date: "2025-07-03"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847261/2_xsvwah.webp",
+        date: "2025-07-03"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847260/1_dkcbj5.webp",
+        date: "2025-07-03"
+      },
+    ]
+  },
+  {  
     character: "Jiraya",
     type: "Mobile",
     tags: ["Naruto", "Anime", "Mobile", "Naruto", "Jiraya"],
     images: [
       {
-        url: "assets/images/wallpapers/naruto/mobile/jiraya/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847252/1_ezri8z.jpg",
         date: "2025-07-03"
       },
     ]
@@ -462,7 +622,7 @@ export const wallpapers = [
     tags: ["Naruto", "Anime", "Mobile", "Naruto", "Minato Namikaze"],
     images: [
       {
-        url: "assets/images/wallpapers/naruto/mobile/minato/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847254/1_ehggn3.jpg",
         date: "2025-07-03"
       },
     ]
@@ -473,7 +633,7 @@ export const wallpapers = [
     tags: ["Naruto", "Anime", "Mobile", "Naruto", "Nagato Uzumaki", "Pain"],
     images: [
       {
-        url: "assets/images/wallpapers/naruto/mobile/pain/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847259/1_gidm7x.jpg",
         date: "2025-07-03"
       },
     ]
@@ -485,15 +645,23 @@ export const wallpapers = [
     tags: ["One Piece", "Anime", "Mobile", "Luffy", "Monkey D Luffy"],
     images: [
       {
-        url: "assets/images/wallpapers/one-piece/desktop/luffy/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847271/5_zzov8r.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/desktop/luffy/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847270/4_f0ojud.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/desktop/luffy/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847268/3_lsixax.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847267/2_dbqtcn.jpg",
+        date: "2025-07-26" 
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847266/1_mmoqcg.jpg",
         date: "2025-07-26"
       },
     ]
@@ -504,63 +672,63 @@ export const wallpapers = [
     tags: ["One Piece", "Anime", "Mobile", "Luffy", "Monkey D Luffy"],
     images: [
       {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847298/9_qsvsyk.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847297/8_ezadjy.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847296/7_vvsoua.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/4.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847294/6_p9akzg.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/5.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847293/5_zt9k4w.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/6.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847293/4_bihnmd.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/7.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847292/3_x9wwr5.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/8.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847292/2_syb16g.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/9.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847291/15_bb42md.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/10.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847289/14_kif20z.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/11.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847289/13_yv8iwf.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/12.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847287/12_bxrj8r.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/13.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847286/11_faonsz.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/14.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847284/10_kusvtz.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/15.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847284/1_ja59ng.jpg",
         date: "2025-08-31"
       },
     ]
@@ -571,23 +739,27 @@ export const wallpapers = [
     tags: ["One Piece", "Anime", "Mobile", "Zoro", "Roronoa Zoro"],
     images: [
       {
-        url: "assets/images/wallpapers/one-piece/desktop/zoro/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847279/6_dygsx2.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/desktop/zoro/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847278/5_sr7vvm.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/desktop/zoro/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847277/4_ltppaw.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/desktop/zoro/5.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847275/3_luwlcq.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/desktop/zoro/6.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847272/1_ufgfqi.jpg",
+        date: "2025-07-26"
+      },
+      {
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847274/2_wi0yr4.jpg",
         date: "2025-07-26"
       },
     ]
@@ -598,43 +770,43 @@ export const wallpapers = [
     tags: ["One Piece", "Anime", "Mobile", "Zoro", "Roronoa Zoro"],
     images: [
       {
-        url: "assets/images/wallpapers/one-piece/mobile/zoro/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847311/9_eyixhg.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/zoro/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847309/8_qizafi.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/zoro/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847309/7_xfsqfp.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/zoro/4.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847307/6_prjuzh.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/zoro/5.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847305/5_iblztu.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/zoro/6.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847305/4_rfcqns.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/luffy/7.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847303/3_s8m6by.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/zoro/8.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847302/2_tyhpvc.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/zoro/9.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847301/10_oppiiu.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/zoro/10.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847300/1_qmizdb.jpg",
         date: "2025-07-26"
       },
     ]
@@ -645,11 +817,11 @@ export const wallpapers = [
     tags: ["One Piece", "Anime", "Mobile", "Ace", "Portgas D. Ace"],
     images: [
       {
-        url: "assets/images/wallpapers/one-piece/mobile/ace/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847282/2_a8ldl2.jpg",
         date: "2025-07-26"
       },
       {
-        url: "assets/images/wallpapers/one-piece/mobile/ace/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847281/1_zsclkn.jpg",
         date: "2025-07-26"
       },
     ]
@@ -661,27 +833,27 @@ export const wallpapers = [
     tags: ["Your Name", "Anime", "Desktop", "Mitsuha Miyamizu", "Mitsuha", "Taki Tachibana", "Taki"],
     images: [
       {
-        url: "assets/images/wallpapers/your-name/desktop/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847361/6_owxmfg.jpg",
         date: "2025-09-15"
       },
       {
-        url: "assets/images/wallpapers/your-name/desktop/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847361/5_sgpscm.jpg",
         date: "2025-09-15"
       },
       {
-        url: "assets/images/wallpapers/your-name/desktop/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847359/4_gqybhv.jpg",
         date: "2025-09-15"
       },
       {
-        url: "assets/images/wallpapers/your-name/desktop/4.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847357/3_qsjaar.jpg",
         date: "2025-09-15"
       },
       {
-        url: "assets/images/wallpapers/your-name/desktop/5.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847357/2_uce508.jpg",
         date: "2025-09-15"
       },
       {
-        url: "assets/images/wallpapers/your-name/desktop/6.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847354/1_vnap6y.webp",
         date: "2025-09-15"
       },
     ]
@@ -692,27 +864,27 @@ export const wallpapers = [
     tags: ["Your Name", "Anime", "Mobile", "Mitsuha Miyamizu", "Mitsuha", "Taki Tachibana", "Taki"],
     images: [
       {
-        url: "assets/images/wallpapers/your-name/mobile/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847370/6_tab7kg.jpg",
         date: "2025-09-15"
       },
       {
-        url: "assets/images/wallpapers/your-name/mobile/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847369/5_qnftfm.jpg",
         date: "2025-09-15"
       },
       {
-        url: "assets/images/wallpapers/your-name/mobile/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847367/4_kalauk.jpg",
         date: "2025-09-15"
       },
       {
-        url: "assets/images/wallpapers/your-name/mobile/4.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847366/3_l54z3g.jpg",
         date: "2025-09-15"
       },
       {
-        url: "assets/images/wallpapers/your-name/mobile/5.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847365/2_fzmdai.jpg",
         date: "2025-09-15"
       },
       {
-        url: "assets/images/wallpapers/your-name/mobile/6.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847363/1_rzzoje.jpg",
         date: "2025-09-15"
       },
     ]
@@ -723,15 +895,15 @@ export const wallpapers = [
     tags: ["Your Name", "Anime", "Mobile", "Taki", "Taki Tachibana"],
     images: [
       {
-        url: "assets/images/wallpapers/your-name/mobile/taki/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847377/3_hvqyh7.jpg",
         date: "2025-09-15"
       },
       {
-        url: "assets/images/wallpapers/your-name/mobile/taki/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847375/2_nednss.jpg",
         date: "2025-09-15"
       },
       {
-        url: "assets/images/wallpapers/your-name/mobile/taki/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847373/1_rfwfec.jpg",
         date: "2025-09-15"
       },
     ]
@@ -742,11 +914,11 @@ export const wallpapers = [
     tags: ["Your Name", "Anime", "Mobile", "Mitsuha", "Mitsuha Miyamizu"],
     images: [
       {
-        url: "assets/images/wallpapers/your-name/mobile/mitsuha/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847373/2_xz4zad.jpg",
         date: "2025-09-15"
       },
       {
-        url: "assets/images/wallpapers/your-name/mobile/mitsuha/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847371/1_egtdrd.jpg",
         date: "2025-09-15"
       },
     ]
@@ -758,7 +930,7 @@ export const wallpapers = [
     tags: ["Date A Live", "Anime", "Desktop", "Kotori Itsuka", "Yoshino Himekawa", "Tohka Yatogami", "Kurumi Tokisaki"],
     images: [
       {
-        url: "assets/images/wallpapers/date-a-live/desktop/1.png",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1784866054/1_j8udsq.png",
         date: "2025-10-15"
       },
     ]
@@ -769,19 +941,19 @@ export const wallpapers = [
     tags: ["Date A Live", "Anime", "Desktop", "Kurumi Tokisaki", "Kurumi"],
     images: [
       {
-        url: "assets/images/wallpapers/date-a-live/desktop/kurumi/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847173/4_mewws5.jpg",
         date: "2025-10-15"
       },
       {
-        url: "assets/images/wallpapers/date-a-live/desktop/kurumi/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847171/3_dye49s.jpg",
         date: "2025-10-15"
       },
       {
-        url: "assets/images/wallpapers/date-a-live/desktop/kurumi/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847171/2_wgx6hx.jpg",
         date: "2025-10-15"
       },
       {
-        url: "assets/images/wallpapers/date-a-live/desktop/kurumi/4.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847169/1_zeid1b.jpg",
         date: "2025-10-15"
       },
     ]
@@ -792,15 +964,15 @@ export const wallpapers = [
     tags: ["Date A Live", "Anime", "Desktop", "Yoshino", "Yoshino Himekawa"],
     images: [
       {
-        url: "assets/images/wallpapers/date-a-live/desktop/yoshino/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847176/3_jztg0d.jpg",
         date: "2025-10-15"
       },
       {
-        url: "assets/images/wallpapers/date-a-live/desktop/yoshino/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847175/2_f6h5o9.jpg",
         date: "2025-10-15"
       },
       {
-        url: "assets/images/wallpapers/date-a-live/desktop/yoshino/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847174/1_d62rkc.jpg",
         date: "2025-10-15"
       },
     ]
@@ -811,19 +983,19 @@ export const wallpapers = [
     tags: ["Date A Live", "Anime", "Mobile", "Kurumi Tokisaki", "Kurumi"],
     images: [
       {
-        url: "assets/images/wallpapers/date-a-live/mobile/kurumi/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847183/4_y8zdwb.jpg",
         date: "2025-10-15"
       },
       {
-        url: "assets/images/wallpapers/date-a-live/mobile/kurumi/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847181/3_c6qyek.jpg",
         date: "2025-10-15"
       },
       {
-        url: "assets/images/wallpapers/date-a-live/mobile/kurumi/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847179/2_utbilc.jpg",
         date: "2025-10-15"
       },
       {
-        url: "assets/images/wallpapers/date-a-live/mobile/kurumi/4.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847178/1_qgyoeg.jpg",
         date: "2025-10-15"
       }
     ]
@@ -834,15 +1006,15 @@ export const wallpapers = [
     tags: ["Date A Live", "Anime", "Mobile", "Yoshino", "Yoshino Himekawa"],
     images: [
       {
-        url: "assets/images/wallpapers/date-a-live/mobile/yoshino/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847189/3_m7flpj.jpg",
         date: "2025-10-15"
       },
       {
-        url: "assets/images/wallpapers/date-a-live/mobile/yoshino/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847186/2_zrn0lp.jpg",
         date: "2025-10-15"
       },
       {
-        url: "assets/images/wallpapers/date-a-live/mobile/yoshino/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847185/1_ho233z.jpg",
         date: "2025-10-15"
       },
     ]
@@ -853,7 +1025,7 @@ export const wallpapers = [
     tags: ["Date A Live", "Anime", "Mobile", "Tohka", "Tohka Yatogami"],
     images: [
       {
-        url: "assets/images/wallpapers/date-a-live/mobile/tohka/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847183/1_fbqhwy.jpg",
         date: "2025-10-15"
       },
     ]
@@ -865,7 +1037,7 @@ export const wallpapers = [
     tags: ["Re:Zero", "Anime", "Mobile", "Subaru", "Emilia", "Rem", "Ram"],
     images: [
       {
-        url: "assets/images/wallpapers/rezero/mobile/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847317/2_odc6es.jpg",
         date: "2025-11-15"
       },
     ]
@@ -876,7 +1048,7 @@ export const wallpapers = [
     tags: ["Re:Zero", "Anime", "Mobile", "Rem", "Ram"],
     images: [
       {
-        url: "assets/images/wallpapers/rezero/mobile/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847316/1_jwpfxx.jpg",
         date: "2025-11-15"
       },
     ]
@@ -887,11 +1059,11 @@ export const wallpapers = [
     tags: ["Re:Zero", "Anime", "Desktop", "Rem"],
     images: [
       {
-        url: "assets/images/wallpapers/rezero/desktop/rem/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847315/2_aouwlz.jpg",
         date: "2025-11-15"
       },
       {
-        url: "assets/images/wallpapers/rezero/desktop/rem/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847313/1_ymxgdj.jpg",
         date: "2025-11-15"
       },
     ]
@@ -902,47 +1074,47 @@ export const wallpapers = [
     tags: ["Re:Zero", "Anime", "Mobile", "Rem"],
     images: [
       {
-        url: "assets/images/wallpapers/rezero/mobile/rem/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847341/9_qkmm5e.jpg",
         date: "2025-11-15"
       },
       {
-        url: "assets/images/wallpapers/rezero/mobile/rem/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847338/8_iohh1a.jpg",
         date: "2025-11-15"
       },
       {
-        url: "assets/images/wallpapers/rezero/mobile/rem/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847337/7_sgou8q.jpg",
         date: "2025-11-15"
       },
       {
-        url: "assets/images/wallpapers/rezero/mobile/rem/4.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847337/6_icd7ul.jpg",
         date: "2025-11-15"
       },
       {
-        url: "assets/images/wallpapers/rezero/mobile/rem/5.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847334/5_yymlpp.jpg",
         date: "2025-11-15"
       },
       {
-        url: "assets/images/wallpapers/rezero/mobile/rem/6.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847334/3_t05d82.jpg",
         date: "2025-11-15"
       },
       {
-        url: "assets/images/wallpapers/rezero/mobile/rem/7.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847334/4_ekyigv.jpg",
         date: "2025-11-15"
       },
       {
-        url: "assets/images/wallpapers/rezero/mobile/rem/8.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847331/2_obzmqt.jpg",
         date: "2025-11-15"
       },
       {
-        url: "assets/images/wallpapers/rezero/mobile/rem/9.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847330/11_r6bwqv.jpg",
         date: "2025-11-15"
       },
       {
-        url: "assets/images/wallpapers/rezero/mobile/rem/10.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847329/10_baljow.jpg",
         date: "2025-11-15"
       },
       {
-        url: "assets/images/wallpapers/rezero/mobile/rem/11.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847327/1_wrghhi.jpg",
         date: "2025-11-15"
       },
     ]
@@ -953,7 +1125,7 @@ export const wallpapers = [
     tags: ["Re:Zero", "Anime", "Desktop", "Emilia"],
     images: [
       {
-        url: "assets/images/wallpapers/rezero/desktop/emilia/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847327/1_wrghhi.jpg",
         date: "2025-11-15"
       },,
     ]
@@ -964,11 +1136,11 @@ export const wallpapers = [
     tags: ["Re:Zero", "Anime", "Mobile", "Emilia"],
     images: [
       {
-        url: "assets/images/wallpapers/rezero/mobile/emilia/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847322/2_svhqym.jpg",
         date: "2025-11-15"
       },
       {
-        url: "assets/images/wallpapers/rezero/mobile/emilia/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847320/1_fuq9as.jpg",
         date: "2025-11-15"
       },
     ]
@@ -979,15 +1151,15 @@ export const wallpapers = [
     tags: ["Re:Zero", "Anime", "Mobile", "Ram"],
     images: [
       {
-        url: "assets/images/wallpapers/rezero/mobile/ram/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847327/3_tel4fy.jpg",
         date: "2025-11-15"
       },
       {
-        url: "assets/images/wallpapers/rezero/mobile/ram/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847324/2_k6nsma.jpg",
         date: "2025-11-15"
       },
       {
-        url: "assets/images/wallpapers/rezero/mobile/ram/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847324/1_s8zgxi.jpg",
         date: "2025-11-15"
       },
     ]
@@ -998,7 +1170,7 @@ export const wallpapers = [
     tags: ["Re:Zero", "Anime", "Mobile", "Beatrice"],
     images: [
       {
-        url: "assets/images/wallpapers/rezero/mobile/beatrice/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847320/1_okhybq.jpg",
         date: "2025-11-15"
       },
     ]
@@ -1009,7 +1181,7 @@ export const wallpapers = [
     tags: ["Re:Zero", "Anime", "Mobile", "Subaru Natsuki", "Subaru"],
     images: [
       {
-        url: "assets/images/wallpapers/rezero/mobile/subaru/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847341/1_s3mtdp.jpg",
         date: "2025-11-15"
       },
     ]
@@ -1021,15 +1193,15 @@ export const wallpapers = [
     tags: ["Sword Art Online", "Anime", "Mobile", "Asuna Yuuki", "Kirito"],
     images: [
       {
-        url: "assets/images/wallpapers/sword-art-online/mobile/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1784866616/2_qmfhsj.jpg",
         date: "2025-12-15"
       },
       {
-        url: "assets/images/wallpapers/sword-art-online/mobile/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1784866619/1_o0zn8h.jpg",
         date: "2025-12-15"
       },
       {
-        url: "assets/images/wallpapers/sword-art-online/mobile/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1784866628/3_aqmwot.jpg",
         date: "2025-12-15"
       },
     ]
@@ -1040,19 +1212,19 @@ export const wallpapers = [
     tags: ["Sword Art Online", "Anime", "Mobile", "Sinon", "Asada Shino"],
     images: [
       {
-        url: "assets/images/wallpapers/sword-art-online/mobile/sinon/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847354/4_el4lsw.jpg",
         date: "2025-12-15"
       },
       {
-        url: "assets/images/wallpapers/sword-art-online/mobile/sinon/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847353/3_jkbcxf.jpg",
         date: "2025-12-15"
       },
       {
-        url: "assets/images/wallpapers/sword-art-online/mobile/sinon/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847351/2_njdifc.jpg",
         date: "2025-12-15"
       },
       {
-        url: "assets/images/wallpapers/sword-art-online/mobile/sinon/4.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847350/1_zzep7z.jpg",
         date: "2025-12-15"
       },
     ]
@@ -1063,19 +1235,19 @@ export const wallpapers = [
     tags: ["Sword Art Online", "Anime", "Mobile", "Kirito", "Kazuto Kirigaya"],
     images: [
       {
-        url: "assets/images/wallpapers/sword-art-online/mobile/kirito/1.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847349/4_eyxfbz.jpg",
         date: "2025-12-15"
       },
       {
-        url: "assets/images/wallpapers/sword-art-online/mobile/kirito/2.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847349/3_wf9nqf.jpg",
         date: "2025-12-15"
       },
       {
-        url: "assets/images/wallpapers/sword-art-online/mobile/kirito/3.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847348/2_qdsjrv.jpg",
         date: "2025-12-15"
       },
       {
-        url: "assets/images/wallpapers/sword-art-online/mobile/kirito/4.jpg",
+        url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847347/1_k82kta.jpg",
         date: "2025-12-15"
       },
     ]
@@ -1180,7 +1352,7 @@ export const wallpapers = [
   //     },
   //   ]
   // },
-  // Dragon Ball Live Wallpaper
+  // // Dragon Ball Live Wallpaper
   // {
   //   character: "Son Goku",
   //   type: "Desktop Live",
@@ -1234,7 +1406,7 @@ export const wallpapers = [
   //     },
   //   ]
   // },
-  // One Piece Live Wallpapers
+  // // One Piece Live Wallpapers
   // {
   //   character: "Going Merry",
   //   type: "Desktop Live",
@@ -1252,7 +1424,7 @@ export const wallpapers = [
   //     },
   //   ]
   // },
-  // Re:Zero Live Wallpapers
+  // // Re:Zero Live Wallpapers
   // {
   //   character: "Rem & Ram",
   //   type: "Desktop Live",
@@ -1265,7 +1437,7 @@ export const wallpapers = [
   //     },
   //   ]
   // },
-  // Your Name Live Wallpapers
+  // // Your Name Live Wallpapers
   // {
   //   character: "Taki Tachibana &  Mitsuha Miyamizu",
   //   type: "Desktop Live",
@@ -1278,7 +1450,7 @@ export const wallpapers = [
   //     },
   //   ]
   // },
-  // Demon Slayer Live Wallpapers
+  // // Demon Slayer Live Wallpapers
   // {
   //   character: "Giyu Tomioka",
   //   type: "Desktop Live",
@@ -1304,7 +1476,7 @@ export const wallpapers = [
   //   ]
   // },
 
-  // Genshin Impact Live Wallpapers
+  // // Genshin Impact Live Wallpapers
   //   {
   //   character: "Flins",
   //   type: "Desktop Live",
