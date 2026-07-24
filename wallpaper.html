@@ -95,6 +95,41 @@
         opacity: 0.6;
       }
     }
+
+    /* Wallpaper preview sizing (kept as plain CSS so it doesn't depend on
+       a Tailwind rebuild for arbitrary-value utility classes) */
+    .wallpaper-preview-media {
+      max-height: 40vh;
+    }
+
+    @media (min-width: 640px) {
+      .wallpaper-preview-media {
+        max-height: 60vh;
+      }
+    }
+
+    /* Preview section spacing (plain CSS, same reason as above) */
+    #main-wallpaper {
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+
+    #main-wallpaper .preview-layout {
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      #main-wallpaper {
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      #main-wallpaper .preview-layout {
+        gap: 3rem;
+      }
+    }
   </style>
 </head>
 
@@ -214,8 +249,8 @@
   <div id="wallpaperGrid" class="w-[95%] mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4"></div>
 
   <!-- Main Wallpaper -->
-  <section id="main-wallpaper" class="max-w-6xl mx-auto rounded-xl shadow-lg p-6 mt-6 bg-[#1a1a1a]">
-    <div class="flex flex-col lg:flex-row gap-12">
+  <section id="main-wallpaper" class="max-w-6xl mx-auto rounded-xl shadow-lg bg-[#1a1a1a]">
+    <div class="flex flex-col lg:flex-row preview-layout">
       <div id="previewWrapper" class="flex mx-auto justify-center items-center w-full"></div>
       <div class="w-full lg:w-1/2 my-auto space-y-4">
         <h1 id="wallpaperTitle" class="text-2xl font-bold">Wallpaper</h1>
@@ -310,7 +345,28 @@
           const a = document.createElement('a');
           a.href = URL.createObjectURL(b); a.download = filename;
           document.body.appendChild(a); a.click(); a.remove();
-        }, 'image/webp', 0.9);
+        }, 'image/jpeg', 0.92);
+      };
+    }
+
+    function downloadImageAsJpeg(url, filename) {
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.src = url;
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        const ctx = canvas.getContext('2d');
+        // Fill white behind any transparency, since JPEG has no alpha channel
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0);
+        canvas.toBlob(b => {
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(b); a.download = filename;
+          document.body.appendChild(a); a.click(); a.remove();
+        }, 'image/jpeg', 0.92);
       };
     }
 
@@ -371,7 +427,7 @@
         video.loop = true;
         video.muted = true;
         video.playsInline = true;
-        video.className = "max-h-[60vh] w-auto rounded-lg cursor-pointer";
+        video.className = "wallpaper-preview-media w-auto rounded-lg cursor-pointer";
         video.addEventListener('click', () => toggleFullscreen(video));
         previewBtn.addEventListener('click', () => toggleFullscreen(video));
         originalDownload.href = currentWallpaper.currentFile.download;
@@ -387,14 +443,18 @@
       } else {
         const img = document.createElement('img');
         img.src = currentWallpaper.currentFile.url;
-        img.className = "w-full object-contain max-h-[60vh] rounded-lg cursor-pointer";
+        img.className = "wallpaper-preview-media w-full object-contain rounded-lg cursor-pointer";
         img.addEventListener('click', () => toggleFullscreen(img));
         previewBtn.addEventListener('click', () => toggleFullscreen(img));
-        originalDownload.href = currentWallpaper.currentFile.url;
-        originalDownload.download = `${name}-original.webp`;
+        originalDownload.href = "javascript:void(0)";
+        originalDownload.removeAttribute('download');
+        originalDownload.addEventListener('click', (e) => {
+          e.preventDefault();
+          downloadImageAsJpeg(currentWallpaper.currentFile.url, `${name}-original.jpg`);
+        });
         document.getElementById('screenRes').textContent = `${screen.width}x${screen.height}`;
         autoDownloadResizeBtn.addEventListener('click', () => {
-          resizeAndDownloadImage(currentWallpaper.currentFile.url, screen.width, screen.height, `${name}-${screen.width}x${screen.height}.webp`);
+          resizeAndDownloadImage(currentWallpaper.currentFile.url, screen.width, screen.height, `${name}-${screen.width}x${screen.height}.jpg`);
         });
         wrapper.appendChild(img);
       }
@@ -513,8 +573,8 @@
 
       const mediaURL = wp.isVideo ? wp.preview : wp.url;
       const mediaHTML = wp.isVideo
-        ? `<video loop muted playsinline class="wallpaper-img w-auto mx-auto ${wp.type === 'Mobile Live' ? 'h-56' : ''} rounded opacity-0 transition-opacity duration-500"><source src="${wp.preview}" type="video/mp4"></video>`
-        : `<img loading="lazy" src="${wp.url}" alt="${wp.character}" class="wallpaper-img ${wp.type === 'Mobile' ? 'h-56' : 'h-72'} w-auto mx-auto rounded opacity-0 transition-opacity duration-500"/>`;
+        ? `<video loop muted playsinline class="wallpaper-img w-auto mx-auto ${wp.type === 'Mobile' ? 'h-40' : 'h-72'} rounded opacity-0 transition-opacity duration-500"><source src="${wp.preview}" type="video/mp4"></video>`
+        : `<img loading="lazy" src="${wp.url}" alt="${wp.character}" class="wallpaper-img ${wp.type === 'Mobile' ? 'h-40' : 'h-72'} w-auto mx-auto rounded opacity-0 transition-opacity duration-500"/>`;
 
       card.innerHTML = `
     <a href="wallpaper.html?title=${encodeURIComponent(wp.character)}&img=${encodeURIComponent(mediaURL)}" target="_blank">
@@ -531,9 +591,9 @@
     </a>
     <div class="flex justify-between items-center px-4 py-3 border-b border-gray-700">
       <div class="flex gap-2">
-        <a href="${wp.download || wp.url}" download class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-white">
-          <i class="fa-solid fa-download mr-1"></i>Download
-        </a>
+        ${wp.isVideo
+          ? `<a href="${wp.download || wp.url}" download="${(wp.character || 'wallpaper')}.mp4" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-white"><i class="fa-solid fa-download mr-1"></i>Download</a>`
+          : `<a href="javascript:void(0)" class="downloadJpgBtn bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-white"><i class="fa-solid fa-download mr-1"></i>Download</a>`}
         <button class="likeBtn bg-green-600 px-3 py-1 rounded text-white flex items-center">
           <i class="likeIcon far fa-thumbs-up mr-1"></i>
           <span class="likeCount">${formatNumber(likes)}</span>
@@ -555,6 +615,14 @@
       const likeBtn = card.querySelector('.likeBtn');
       const likeIcon = card.querySelector('.likeIcon');
       const likeCount = card.querySelector('.likeCount');
+      const downloadJpgBtn = card.querySelector('.downloadJpgBtn');
+
+      if (downloadJpgBtn) {
+        downloadJpgBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          downloadImageAsJpeg(wp.download || wp.url, `${characterName}.jpg`);
+        });
+      }
       
       if (wp.isVideo) {
         media.controls = false; // force disable
