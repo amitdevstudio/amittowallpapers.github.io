@@ -294,8 +294,13 @@
   </section>
 
   <!-- Related Wallpapers -->
-  <section id="relatedWallpapers" class="w-[95%] mx-auto mt-4 p-6 rounded-xl shadow-lg">
-    <h2 class="text-4xl font-bold mb-6">You May Also Like</h2>
+  <section id="relatedWallpapers" class="max-w-6xl mx-auto mt-6 sm:mt-10 px-6 rounded-xl shadow-lg ">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="w-1.5 h-7 rounded-full bg-red-400"></span>
+      <h2 class="text-2xl sm:text-3xl font-bold tracking-wide">
+        You May Also <span class="text-red-400">Like</span>
+      </h2>
+    </div>
     <div id="relatedGrid" class="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4"></div>
   </section>
 
@@ -569,17 +574,17 @@
       const views = wpData.views;
 
       const card = document.createElement('div');
-      card.className = "break-inside-avoid overflow-hidden rounded-xl bg-[#1a1a1a] shadow-lg mb-6";
+      card.className = "break-inside-avoid overflow-hidden border border-gray-700 rounded-xl bg-[#1a1a1a] shadow-lg mb-6";
 
       const mediaURL = wp.isVideo ? wp.preview : wp.url;
       const mediaHTML = wp.isVideo
-        ? `<video loop muted playsinline class="wallpaper-img w-auto mx-auto ${wp.type === 'Mobile' ? 'h-40' : 'h-72'} rounded opacity-0 transition-opacity duration-500"><source src="${wp.preview}" type="video/mp4"></video>`
-        : `<img loading="lazy" src="${wp.url}" alt="${wp.character}" class="wallpaper-img ${wp.type === 'Mobile' ? 'h-40' : 'h-72'} w-auto mx-auto rounded opacity-0 transition-opacity duration-500"/>`;
+        ? `<video loop muted playsinline class="wallpaper-img w-auto mx-auto h-60 rounded opacity-0 transition-opacity duration-500"><source src="${wp.preview}" type="video/mp4"></video>`
+        : `<img loading="lazy" src="${wp.url}" alt="${wp.character}" class="wallpaper-img h-60 w-auto mx-auto rounded opacity-0 transition-opacity duration-500"/>`;
 
       card.innerHTML = `
     <a href="wallpaper.html?title=${encodeURIComponent(wp.character)}&img=${encodeURIComponent(mediaURL)}" target="_blank">
       <div class="relative group">
-        <span class="absolute top-2 left-2 px-2 py-1 text-xs rounded-full text-white 
+        <span class="absolute mt-3 ml-3 px-2 py-1 text-xs rounded-full text-white 
           ${wp.isVideo ? 'bg-yellow-500' : wp.type?.toLowerCase() === 'desktop' ? 'bg-red-600' : 'bg-green-600'}">
           ${wp.isVideo ? 'Live' : wp.type?.charAt(0).toUpperCase() + wp.type?.slice(1)}
         </span>
