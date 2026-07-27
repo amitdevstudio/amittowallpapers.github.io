@@ -1127,7 +1127,7 @@ export const wallpapers = [
       {
         url: "https://res.cloudinary.com/dgvq5d7ur/image/upload/v1781847327/1_wrghhi.jpg",
         date: "2025-11-15"
-      },,
+      },
     ]
   },
   {
